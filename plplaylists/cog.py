@@ -101,12 +101,12 @@ class PyLavPlaylists(
             ephemeral=True,
         )
 
-    @slash_playlist.command(name="create", description=shorten_string(max_length=100, string=_("Create a playlist")))
+    @slash_playlist.command(name="create", description=shorten_string(max_length=100, string=_("Napravi playlistu")))
     @app_commands.describe(
         url=shorten_string(
             max_length=100,
             string=_(
-                "The URL of the playlist to create. YouTube, Spotify, SoundCloud, Apple Music playlists or albums"
+                "URL playliste. YouTube, Spotify, SoundCloud, Apple Music ili albumi"
             ),
         ),
         name=shorten_string(max_length=100, string=_("The name of the playlist")),
@@ -186,7 +186,7 @@ class PyLavPlaylists(
             ephemeral=True,
         )
 
-    @slash_playlist.command(name="list", description=_("List all playlists you have access to on the invoked context"))
+    @slash_playlist.command(name="list", description=_("Sve playliste kojima imaš pristup"))
     @app_commands.guild_only()
     async def slash_playlist_list(self, interaction: DISCORD_INTERACTION_TYPE):
         if not interaction.response.is_done():
@@ -216,11 +216,11 @@ class PyLavPlaylists(
 
     @slash_playlist.command(
         name="manage",
-        description=_("Manage a playlist"),
+        description=_("Upravljaj playlistom"),
     )
     @app_commands.describe(
-        operation=_("The operation to perform on the playlist, if not specified a menu will be shown for full control"),
-        playlist=_("The playlist to perform the operation on"),
+        operation=_("Operacija koju treba izvršiti na playlisti. Ako nije navedena, prikazat će se izbornik za potpunu kontrolu"),
+        playlist=_("Playlista koja se uređuje"),
     )
     @app_commands.guild_only()
     async def slash_playlist_manage(
@@ -503,9 +503,9 @@ class PyLavPlaylists(
 
     @slash_playlist.command(
         name="play",
-        description=_("Enqueue a playlist"),
+        description=_("Stavi playlistu u red čekanja"),
     )
-    @app_commands.describe(playlist=_("The playlist to enqueue"))
+    @app_commands.describe(playlist=_("Playlista koju želiš staviti u red čekanja"))
     @app_commands.guild_only()
     @invoker_is_dj(slash=True)
     async def slash_playlist_play(self, interaction: DISCORD_INTERACTION_TYPE, playlist: PlaylistConverter):
@@ -521,9 +521,9 @@ class PyLavPlaylists(
 
     @slash_playlist.command(
         name="delete",
-        description=_("Delete a playlist"),
+        description=_("Izbriši playlistu"),
     )
-    @app_commands.describe(playlist=_("The playlist to delete"))
+    @app_commands.describe(playlist=_("Playlista koju želiš izbrisati"))
     @app_commands.guild_only()
     async def slash_playlist_delete(self, interaction: DISCORD_INTERACTION_TYPE, playlist: PlaylistConverter):
         if not interaction.response.is_done():
@@ -563,9 +563,9 @@ class PyLavPlaylists(
 
     @slash_playlist.command(
         name="info",
-        description=_("Display info about a playlist"),
+        description=_("Prikaži informacije o playlisti"),
     )
-    @app_commands.describe(playlist=_("The playlist show info about"))
+    @app_commands.describe(playlist=_("Playlista čije informacije želiš vidjeti"))
     @app_commands.guild_only()
     async def slash_playlist_info(self, interaction: DISCORD_INTERACTION_TYPE, playlist: PlaylistConverter):
         if not interaction.response.is_done():
@@ -592,8 +592,8 @@ class PyLavPlaylists(
             original_author=context.author,
         ).start(context)
 
-    @slash_playlist.command(name="save", description=_("Add the currently player queue to a playlist"))
-    @app_commands.describe(playlist=_("The playlist to append the queue to"))
+    @slash_playlist.command(name="save", description=_("Spremi trenutni red čekanja kao playlistu"))
+    @app_commands.describe(playlist=_("Playlistu kojoj želiš dodati trenutni red čekanja"))
     @app_commands.guild_only()
     @requires_player(slash=True)
     async def slash_playlist_save(self, interaction: DISCORD_INTERACTION_TYPE, playlist: PlaylistConverter):
@@ -669,9 +669,9 @@ class PyLavPlaylists(
                 ephemeral=True,
             )
 
-    @slash_playlist.command(name="upload", description=_("Upload a playlist to the bot"))
+    @slash_playlist.command(name="upload", description=_("Prenesi playlistu na bota"))
     @app_commands.describe(
-        url=_("The URL of the playlist to upload"),
+        url=_("URL playliste koju želiš prenijeti na bota"),
     )
     @app_commands.guild_only()
     @invoker_is_dj(slash=True)

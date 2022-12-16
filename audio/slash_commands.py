@@ -28,11 +28,11 @@ class SlashCommands(DISCORD_COG_TYPE_MIXIN):
 
     @app_commands.command(
         name="search",
-        description=shorten_string(max_length=100, string=_("Search for a track, then play the selected response")),
+        description=shorten_string(max_length=100, string=_("Pretraži pjesmu i dodaj ju u red.")),
     )
     @app_commands.describe(
-        source=shorten_string(max_length=100, string=_("Where to search in")),
-        query=shorten_string(max_length=100, string=_("The query to search for search query")),
+        source=shorten_string(max_length=100, string=_("Gdje pretražiti pjesmu?")),
+        query=shorten_string(max_length=100, string=_("Što pretražiti?")),
     )
     @app_commands.guild_only()
     @invoker_is_dj(slash=True)

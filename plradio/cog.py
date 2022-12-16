@@ -43,21 +43,21 @@ class PyLavRadio(DISCORD_COG_TYPE_MIXIN):
     @app_commands.command(
         name="radio",
         description=shorten_string(
-            max_length=100, string=_("Enqueue a radio station. Use the arguments to filter for a possible station")
+            max_length=100, string=_("Stavi radio stanicu u red čekanja. Koristi argumente za filtriranje.")
         ),
     )
     @app_commands.describe(
-        stations=shorten_string(max_length=100, string=_("The radio station to enqueue")),
-        language=shorten_string(max_length=100, string=_("The language code to filter stations by")),
-        countrycode=shorten_string(max_length=100, string=_("The country code to filter stations and countries by")),
-        country=shorten_string(max_length=100, string=_("The country filter to filter stations and states by")),
-        state=shorten_string(max_length=100, string=_("The state filter to filter stations by")),
-        codec=shorten_string(max_length=100, string=_("The codec filter to filter stations by")),
-        tag1=shorten_string(max_length=100, string=_("The tag filter to filter stations by")),
-        tag2=shorten_string(max_length=100, string=_("The tag filter to filter stations by")),
-        tag3=shorten_string(max_length=100, string=_("The tag filter to filter stations by")),
-        tag4=shorten_string(max_length=100, string=_("The tag filter to filter stations by")),
-        tag5=shorten_string(max_length=100, string=_("The tag filter to filter stations by")),
+        stations=shorten_string(max_length=100, string=_("Ime stanice")),
+        language=shorten_string(max_length=100, string=_("Jezik stanice")),
+        countrycode=shorten_string(max_length=100, string=_("Kod države")),
+        country=shorten_string(max_length=100, string=_("Država")),
+        state=shorten_string(max_length=100, string=_("Županija")),
+        codec=shorten_string(max_length=100, string=_("Kodiranje stanice")),
+        tag1=shorten_string(max_length=100, string=_("Prvi tag")),
+        tag2=shorten_string(max_length=100, string=_("Drugi tag")),
+        tag3=shorten_string(max_length=100, string=_("Treći tag")),
+        tag4=shorten_string(max_length=100, string=_("Četvrti tag")),
+        tag5=shorten_string(max_length=100, string=_("Peti tag")),
     )
     @app_commands.guild_only()
     async def slash_radio(

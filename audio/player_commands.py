@@ -27,7 +27,7 @@ _ = Translator("PyLavPlayer", Path(__file__))
 class PlayerCommands(DISCORD_COG_TYPE_MIXIN):
     @commands.command(
         name="bump",
-        description=shorten_string(max_length=100, string=_("Plays the specified track in the queue")),
+        description=shorten_string(max_length=100, string=_("Reproducira navedenu pjesmu u redu čekanja")),
     )
     @commands.guild_only()
     @invoker_is_dj()
@@ -112,7 +112,7 @@ class PlayerCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.command(
         name="playnext",
-        description=shorten_string(max_length=100, string=_("Enqueue a track at the top of the queue")),
+        description=shorten_string(max_length=100, string=_("Reproduciraj pjesmu na vrhu reda čekanja")),
         aliases=["pn"],
     )
     @commands.guild_only()
@@ -248,7 +248,7 @@ class PlayerCommands(DISCORD_COG_TYPE_MIXIN):
                 ephemeral=True,
             )
 
-    @commands.command(name="remove", description=_("Remove the specified track from the queue"))
+    @commands.command(name="remove", description=_("Ukloni navedenu pjesmu iz reda čekanja"))
     @commands.guild_only()
     @invoker_is_dj()
     async def command_remove(self, context: PyLavContext, track_url_or_index: str, remove_duplicates: bool = False):

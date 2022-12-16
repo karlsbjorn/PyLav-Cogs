@@ -32,11 +32,11 @@ _RE_TIME_CONVERTER: Final[Pattern] = re.compile(r"(?:(\d+):)?(\d+):(\d+)")
 class HybridCommands(DISCORD_COG_TYPE_MIXIN):
     @commands.hybrid_command(
         name="play",
-        description=shorten_string(max_length=100, string=_("Plays a specified query")),
+        description=shorten_string(max_length=100, string=_("Reproduciraj pjesmu.")),
         aliases=["p"],
     )
     @app_commands.describe(
-        query=shorten_string(max_length=100, string=_("The query to play, either a link or a search query"))
+        query=shorten_string(max_length=100, string=_("Upit za reprodukciju, link ili tekst za pretraživanje")),
     )
     @commands.guild_only()
     @invoker_is_dj()
@@ -200,10 +200,10 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
     @commands.hybrid_command(
         name="connect",
         description=shorten_string(
-            max_length=100, string=_("Connects the Player to the specified channel or your current channel")
+            max_length=100, string=_("Povezuje se na navedeni kanal ili tvoj trenutni kanal")
         ),
     )
-    @app_commands.describe(channel=shorten_string(max_length=100, string=_("The voice channel to connect to")))
+    @app_commands.describe(channel=shorten_string(max_length=100, string=_("Glasovni kanal u koji se povezujem")))
     @commands.guild_only()
     @invoker_is_dj()
     async def command_connect(self, context: PyLavContext, *, channel: discord.VoiceChannel | None = None):
@@ -283,7 +283,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.hybrid_command(
         name="np",
-        description=shorten_string(max_length=100, string=_("Shows the track currently being played")),
+        description=shorten_string(max_length=100, string=_("Prikazuje pjesmu koja se trenutno reproducira")),
         aliases=["now"],
     )
     @commands.guild_only()
@@ -313,7 +313,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.hybrid_command(
         name="skip",
-        description=shorten_string(max_length=100, string=_("Skips or votes to skip the current track")),
+        description=shorten_string(max_length=100, string=_("Preskoči trenutnu pjesmu")),
     )
     @commands.guild_only()
     @requires_player()
@@ -353,7 +353,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.hybrid_command(
         name="stop",
-        description=shorten_string(max_length=100, string=_("Stops the player and remove all tracks from the queue")),
+        description=shorten_string(max_length=100, string=_("Zaustavlja reprodukciju i uklanja sve u redu čekanja")),
     )
     @commands.guild_only()
     @requires_player()
@@ -386,7 +386,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.hybrid_command(
         name="dc",
-        description=shorten_string(max_length=100, string=_("Disconnects the player from the voice channel")),
+        description=shorten_string(max_length=100, string=_("Isključuje bota iz glasovnog kanala")),
         aliases=["disconnect"],
     )
     @requires_player()
@@ -415,7 +415,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.hybrid_command(
         name="queue",
-        description=shorten_string(max_length=100, string=_("Shows the current queue for the player")),
+        description=shorten_string(max_length=100, string=_("Prikazuje trenutni red čekanja")),
         aliases=["q"],
     )
     @commands.guild_only()
@@ -440,7 +440,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         ).start(ctx=context)
 
     @commands.hybrid_command(
-        name="shuffle", description=shorten_string(max_length=100, string=_("Shuffles the player's queue"))
+        name="shuffle", description=shorten_string(max_length=100, string=_("Miješa trenutni red čekanja"))
     )
     @commands.guild_only()
     @requires_player()
@@ -484,9 +484,9 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.hybrid_command(
         name="repeat",
-        description=shorten_string(max_length=100, string=_("Set whether to repeat current song or queue")),
+        description=shorten_string(max_length=100, string=_("Ponavljaj trenutnu pjesmu ili red čekanja")),
     )
-    @app_commands.describe(queue=shorten_string(max_length=100, string=_("Should the whole queue be repeated")))
+    @app_commands.describe(queue=shorten_string(max_length=100, string=_("Ponavlja li se red čekanja?")))
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -523,7 +523,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             embed=await context.pylav.construct_embed(description=msg, messageable=context), ephemeral=True
         )
 
-    @commands.hybrid_command(name="pause", description=shorten_string(max_length=100, string=_("Pause the player")))
+    @commands.hybrid_command(name="pause", description=shorten_string(max_length=100, string=_("Pauziraj pjesmu")))
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -558,7 +558,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
-    @commands.hybrid_command(name="resume", description=shorten_string(max_length=100, string=_("Resume the player")))
+    @commands.hybrid_command(name="resume", description=shorten_string(max_length=100, string=_("Nastavi pjesmu")))
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -593,8 +593,8 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
-    @commands.hybrid_command(name="volume", description=_("Set the player volume"))
-    @app_commands.describe(volume=_("The volume to set"))
+    @commands.hybrid_command(name="volume", description=_("Promijeni glasnoću"))
+    @app_commands.describe(volume=_("Glasnoća"))
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -647,8 +647,8 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
-    @commands.hybrid_command(name="seek", description=_("Seek the current track"))
-    @app_commands.describe(seek=_("The player position to seek to"))
+    @commands.hybrid_command(name="seek", description=_("Pomakni pjesmu"))
+    @app_commands.describe(seek=_("Pomak"))
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -754,7 +754,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
         await context.player.seek(seek_ms, context.author, False)
 
-    @commands.hybrid_command(name="prev", description=_("Play the previous tracks"), aliases=["previous"])
+    @commands.hybrid_command(name="prev", description=_("Pusti prethodnu pjesmu"), aliases=["previous"])
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
