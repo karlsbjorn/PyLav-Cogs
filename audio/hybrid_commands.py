@@ -7,7 +7,6 @@ from typing import Final
 
 import discord
 from discord import app_commands
-from pylav.player import Player
 from redbot.core import commands
 from redbot.core.i18n import Translator
 
