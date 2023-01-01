@@ -7,6 +7,7 @@ from typing import Final
 
 import discord
 from discord import app_commands
+from pylav.player import Player
 from redbot.core import commands
 from redbot.core.i18n import Translator
 
@@ -111,6 +112,9 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
                 )
                 return
             player = await self.pylav.connect_player(channel=channel, requester=context.author)
+        elif player.is_connected and player.channel != context.author.voice.channel:
+            await player.stop(context.author)
+            await player.move_to(context.author, context.author.voice.channel)
 
         queries = [
             await Query.from_string(qf, partial=True) for q in query.split("\n") if (qf := q.strip("<>").strip())
