@@ -111,7 +111,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
                 )
                 return
             player = await self.pylav.connect_player(channel=channel, requester=context.author)
-        elif player.is_connected and player.channel != context.author.voice.channel:
+        elif player.is_connected and context.author.voice and player.channel != context.author.voice.channel:
             await player.stop(context.author)
             await player.move_to(context.author, context.author.voice.channel)
 
