@@ -37,7 +37,7 @@ class PyLavMigrator(DISCORD_COG_TYPE_MIXIN):
 
     lavalink: Client
 
-    __version__ = "1.0.0.0rc1"
+    __version__ = "1.0.0"
 
     def __init__(self, bot: DISCORD_BOT_TYPE, *args: typing.Any, **kwargs: typing.Any) -> None:
         super().__init__(*args, **kwargs)
@@ -52,6 +52,8 @@ class PyLavMigrator(DISCORD_COG_TYPE_MIXIN):
 
         If you are sure you want to proceed please run this command again with the confirm argument set to 1
         i.e `[p]pylavmigrate 1`
+
+        Once you complete the migration unload this cog and uninstall it as you will not need it again.
         """
         if not confirm:
             await context.send_help()

@@ -31,9 +31,9 @@ _ = Translator("PyLavEffects", Path(__file__))
 class PyLavEffects(DISCORD_COG_TYPE_MIXIN):
     """Apply filters and effects to the PyLav player"""
 
-    __version__ = "1.0.0.0rc1"
+    __version__ = "1.0.0"
 
-    slash_fx = app_commands.Group(name="fx", description="Apply or remove bundled filters")
+    slash_fx = app_commands.Group(name="fx", description="Apply or remove filters")
 
     def __init__(self, bot: DISCORD_BOT_TYPE, *args, **kwargs):
         super().__init__(*args, **kwargs)

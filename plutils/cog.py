@@ -57,7 +57,7 @@ def get_top(snapshot, key_type="lineno", limit=10):
 class PyLavUtils(DISCORD_COG_TYPE_MIXIN):
     """Utility commands for PyLav"""
 
-    __version__ = "1.0.0.0rc1"
+    __version__ = "1.0.0"
 
     def __init__(self, bot: DISCORD_BOT_TYPE, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -259,6 +259,7 @@ class PyLavUtils(DISCORD_COG_TYPE_MIXIN):
         )
 
     @command_plutils_get.command(name="player")
+    @commands.is_owner()
     async def command_plutils_get_api(self, context: PyLavContext):
         """Get the API of the current track"""
         if isinstance(context, discord.Interaction):

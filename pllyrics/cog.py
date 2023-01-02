@@ -30,7 +30,7 @@ _ = Translator("PyLavLyrics", Path(__file__))
 class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
     """Lyrics commands for PyLav"""
 
-    __version__ = "1.0.0.0rc1"
+    __version__ = "1.0.0"
 
     def __init__(self, bot: DISCORD_BOT_TYPE, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -74,6 +74,7 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
+    @commands.guildowner_or_permissions(manage_guild=True)
     @commands.guild_only()
     @command_pllyrics.group(name="set")
     async def command_pllyrics_set(self, context: PyLavContext):
@@ -363,4 +364,8 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
 
     @commands.Cog.listener()
     async def on_pylav_track_start_deezer_event(self, event: TrackStartEvent) -> None:
+        await self.process_event(event)
+
+    @commands.Cog.listener()
+    async def on_pylav_track_start_event(self, event: TrackStartEvent) -> None:
         await self.process_event(event)
