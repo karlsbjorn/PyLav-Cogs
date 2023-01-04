@@ -20,7 +20,7 @@
     ],
     "required_cogs": {},
     "requirements": [
-        "Py-Lav>=1.0.12<1.1"
+        "Py-Lav>=1.0.14<1.1"
     ],
     "short": "Control Playlists from PyLav",
     "tags": [
@@ -30,12 +30,12 @@
         "media player",
         "lavalink",
         "youtube",
-        "pylav",
         "tts",
         "mp3",
         "flac",
         "playlists",
-        "PyLav"
+        "PyLav",
+        "slash"
     ],
     "type": "COG"
 }

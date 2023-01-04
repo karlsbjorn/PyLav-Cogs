@@ -20,7 +20,7 @@
     ],
     "required_cogs": {},
     "requirements": [
-        "Py-Lav>=1.0.12<1.1"
+        "Py-Lav>=1.0.14<1.1"
     ],
     "short": "Commands to interact with local media files.",
     "tags": [
@@ -28,11 +28,11 @@
         "music",
         "media player",
         "lavalink",
-        "pylav",
         "PyLav",
         "local",
         "mp3",
-        "flac"
+        "flac",
+        "slash"
     ],
     "type": "COG"
 }

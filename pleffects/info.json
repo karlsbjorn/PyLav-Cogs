@@ -20,7 +20,7 @@
     ],
     "required_cogs": {},
     "requirements": [
-        "Py-Lav>=1.0.12<1.1"
+        "Py-Lav>=1.0.14<1.1"
     ],
     "short": "Commands to manage and apply effects to the players.",
     "tags": [
@@ -28,7 +28,6 @@
         "music",
         "media player",
         "lavalink",
-        "pylav",
         "PyLav",
         "filters",
         "effects",
@@ -42,7 +41,8 @@
         "tremolo",
         "vibrato",
         "eq",
-        "equalizer"
+        "equalizer",
+        "slash"
     ],
     "type": "COG"
 }
