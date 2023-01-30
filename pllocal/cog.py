@@ -2,15 +2,15 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import heapq
 import os.path
 import re
 import typing
 from functools import partial
+from itertools import islice
 from pathlib import Path
 
-import asyncstdlib
 import discord
-from asyncstdlib import heapq
 from discord import app_commands
 from discord.app_commands import Choice
 from rapidfuzz import fuzz
@@ -27,11 +27,12 @@ from pylav.logging import getLogger
 from pylav.players.query.local_files import LocalFile
 from pylav.players.query.obj import Query
 from pylav.type_hints.bot import DISCORD_BOT_TYPE, DISCORD_COG_TYPE_MIXIN, DISCORD_INTERACTION_TYPE
-from pylav.utils.vendor.redbot import AsyncIter
 
 LOGGER = getLogger("PyLav.cog.LocalFiles")
 
 _ = Translator("PyLavLocalFiles", Path(__file__))
+
+REGEX_FILE_NAME = re.compile(r"[.\-_/\\ ]+")
 
 
 async def cache_filled(interaction: DISCORD_INTERACTION_TYPE) -> bool:
@@ -55,7 +56,7 @@ class PyLavLocalFiles(DISCORD_COG_TYPE_MIXIN):
         self.ready_event = asyncio.Event()
 
     @staticmethod
-    async def _filter_is_folder_alphabetical(x: list[Query]) -> tuple[int, str]:
+    def _filter_is_folder_alphabetical(x: list[Query]) -> tuple[int, str]:
         # noinspection PyProtectedMember
         string = f"{x[1]._query}"
         return -1 if os.path.isdir(string) else 2, string
@@ -72,7 +73,7 @@ class PyLavLocalFiles(DISCORD_COG_TYPE_MIXIN):
             # noinspection PyProtectedMember
             temp[hashlib.md5(f"{file._query}".encode()).hexdigest()] = file
 
-        extracted: typing.Iterable[tuple[str, Query]] = await heapq.nsmallest(asyncstdlib.iter(temp.items()), n=len(temp.items()), key=self._filter_is_folder_alphabetical)  # type: ignore
+        extracted: typing.Iterable[tuple[str, Query]] = heapq.nsmallest(len(temp.items()), temp.items(), key=self._filter_is_folder_alphabetical)  # type: ignore
         self.cache = dict(extracted)
 
     async def initialize(self):
@@ -82,12 +83,12 @@ class PyLavLocalFiles(DISCORD_COG_TYPE_MIXIN):
     async def cog_check(self, ctx: PyLavContext):
         return bool(self.ready_event.is_set())
 
-    @commands.group(name="localset")
-    async def command_localset(self, ctx: PyLavContext):
+    @commands.group(name="pllocalset")
+    async def command_pllocalset(self, ctx: PyLavContext):
         """Configure cog settings"""
 
-    @command_localset.command(name="version")
-    async def command_localset_version(self, context: PyLavContext) -> None:
+    @command_pllocalset.command(name="version")
+    async def command_pllocalset_version(self, context: PyLavContext) -> None:
         """Show the version of the Cog and its PyLav dependencies"""
         if isinstance(context, discord.Interaction):
             context = await self.bot.get_context(context)
@@ -116,9 +117,9 @@ class PyLavLocalFiles(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
-    @command_localset.command(name="update")
+    @command_pllocalset.command(name="update")
     @commands.is_owner()
-    async def command_localset_update(self, context: PyLavContext) -> None:
+    async def command_pllocalset_update(self, context: PyLavContext) -> None:
         """Update the track list for /local"""
         if isinstance(context, discord.Interaction):
             context = await self.cog.bot.get_context(context)
@@ -155,10 +156,19 @@ class PyLavLocalFiles(DISCORD_COG_TYPE_MIXIN):
         recursive: bool | None = False,
     ):  # sourcery no-metrics
         """Play a local file or folder, supports partial searching"""
-        send = partial(interaction.followup.send, wait=True)
         if not interaction.response.is_done():
             await interaction.response.defer(ephemeral=True)
+        send = partial(interaction.followup.send, wait=True)
         author = interaction.user
+        if entry not in self.cache:
+            await send(
+                embed=await self.pylav.construct_embed(
+                    description=_("{query} is not a valid local file or folder").format(query=entry),
+                    messageable=interaction,
+                ),
+                ephemeral=True,
+            )
+            return
         entry = self.cache[entry]
         entry._recursive = recursive
         player = self.pylav.get_player(interaction.guild.id)
@@ -233,32 +243,33 @@ class PyLavLocalFiles(DISCORD_COG_TYPE_MIXIN):
 
     @slash_local.autocomplete("entry")
     async def slash_local_autocomplete_entry(self, interaction: DISCORD_INTERACTION_TYPE, current: str):
-        entries = []
         if not self.cache:
             return []
 
         if not current:
-            extracted = await asyncstdlib.list(asyncstdlib.itertools.islice(self.cache.items(), 0, 25))
+            extracted = list(islice(self.cache.items(), 25))
         else:
-            current = re.sub(r"[/\\]", r" ", current)
+            current = re.sub(REGEX_FILE_NAME, r" ", current)
 
-            async def _filter_partial_ratio(x: tuple[str, Query]):
+            def _filter_partial_ratio(x: tuple[str, Query]):
                 # noinspection PyProtectedMember
                 path = f"{x[1]._query}"
                 # noinspection PyProtectedMember
                 return (
-                    await asyncio.to_thread(
-                        fuzz.partial_ratio, re.sub(r"[.\-_/\\]", r" ", path), current, score_cutoff=75
-                    ),
-                    10 if await x[1]._query.path.is_dir() else 0,
+                    fuzz.partial_ratio(re.sub(REGEX_FILE_NAME, r" ", path), current, score_cutoff=75),
+                    10 if os.path.isdir(path) else 0,
                     [-ord(i) for i in path],
                 )
 
-            extracted = await heapq.nlargest(asyncstdlib.iter(self.cache.items()), n=25, key=_filter_partial_ratio)
-
-        async for md5, query in AsyncIter(extracted):
+            extracted = heapq.nlargest(25, self.cache.items(), key=_filter_partial_ratio)
+        entries = []
+        for md5, query in extracted:
             entries.append(
-                Choice(name=await query.query_to_string(max_length=99, with_emoji=True, no_extension=True), value=md5)
+                Choice(
+                    name=await query.query_to_string(
+                        max_length=90, with_emoji=True, no_extension=True, add_ellipsis=True
+                    ),
+                    value=md5,
+                )
             )
-
         return entries

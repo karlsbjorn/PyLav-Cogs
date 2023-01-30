@@ -10,6 +10,7 @@ from discord import app_commands
 from redbot.core import commands
 from redbot.core.i18n import Translator
 
+from pylav.constants.config import PREFER_PARTIAL_TRACKS
 from pylav.core.context import PyLavContext
 from pylav.extension.red.ui.menus.queue import QueueMenu
 from pylav.extension.red.ui.sources.queue import QueueSource
@@ -18,6 +19,7 @@ from pylav.extension.red.utils.decorators import invoker_is_dj, requires_player
 from pylav.extension.red.utils.validators import valid_query_attachment
 from pylav.helpers.format.strings import format_time_dd_hh_mm_ss, shorten_string
 from pylav.logging import getLogger
+from pylav.nodes.api.responses.track import Track as TrackResponse
 from pylav.players.query.obj import Query
 from pylav.players.tracks.obj import Track
 from pylav.type_hints.bot import DISCORD_COG_TYPE_MIXIN
@@ -40,7 +42,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
     )
     @commands.guild_only()
     @invoker_is_dj()
-    async def command_play(self, context: PyLavContext, *, query: str = None):  # sourcery no-metrics
+    async def command_play(self, context: PyLavContext, *, query: str = None):  # sourcery skip: low-code-quality
         """Attempt to play the queries which you provide.
 
         Separate multiple queries with a new line (`shift + enter`).
@@ -115,8 +117,22 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             await player.stop(context.author)
             await player.move_to(context.author, context.author.voice.channel)
 
+        if isinstance(query, (Track, TrackResponse)):
+            track = await Track.build_track(
+                node=player.node,
+                data=query,
+                requester=context.author.id,
+                query=None,
+            )
+            await player.add(track=track, requester=context.author.id)
+            if not (player.is_playing or player.queue.empty()):
+                await player.next(requester=context.author)
+            await self._process_play_message(context, track, 1)
+            return
         queries = [
-            await Query.from_string(qf, partial=True) for q in query.split("\n") if (qf := q.strip("<>").strip())
+            await Query.from_string(qf, partial=PREFER_PARTIAL_TRACKS)
+            for q in query.split("\n")
+            if (qf := q.strip("<>").strip())
         ]
         search_queries = [q for q in queries if q.is_search or q.is_partial]
         non_search_queries = [q for q in queries if not (q.is_search or q.is_partial)]

@@ -9,7 +9,7 @@ files:
 -   source: plconfig/**/messages.pot
     translation: /%original_path%/%locale%.po
 -   source: pleffects/**/messages.pot
-    translation: /%original_path%/%locale%.poo
+    translation: /%original_path%/%locale%.po
 -   source: pllocal/**/messages.pot
     translation: /%original_path%/%locale%.po
 -   source: plmanagednode/**/messages.pot
