@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 17:14+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: el\n"
-"X-Crowdin-File: /plnotifier/locales/messages.pot\n"
-"X-Crowdin-File-ID: 660\n"
+"X-Crowdin-File: /cogs/plnotifier/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3351\n"
 "Language: el_GR\n"
 
 #: plnotifier/cog.py:84
@@ -30,15 +30,15 @@ msgstr "Ρύθμιση του κώδικα PyLavNotifier"
 #: plnotifier/cog.py:231
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Εμφάνιση της έκδοσης του Cog και των εξαρτήσεών του από το PyLav"
+msgstr "Εμφάνιση της έκδοσης του Cog και των εξαρτήσεών του PyLav"
 
 #: plnotifier/cog.py:247
 msgid "Library/Cog"
-msgstr "Βιβλιοθήκη/Σόργο"
+msgstr "Βιβλιοθήκη/Γρανάζι"
 
 #: plnotifier/cog.py:248
 msgid "Version"
-msgstr "Έκδοση"
+msgstr "Εκδοχή"
 
 #: plnotifier/cog.py:263
 #, docstring
@@ -55,7 +55,7 @@ msgstr "Δεν έχω άδεια για να δημιουργήσω ένα νή�
 
 #: plnotifier/cog.py:295 plnotifier/cog.py:311 plnotifier/cog.py:336
 msgid "PyLavNotifier"
-msgstr "PyLavNotifier"
+msgstr "PyLavΝοητής"
 
 #: plnotifier/cog.py:296 plnotifier/cog.py:314 plnotifier/cog.py:337
 msgid "PyLav Notifier - Requested by {author}"
@@ -402,11 +402,11 @@ msgstr "{requester} {status} επανάληψη ολόκληρης της ουρ
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "enabled"
-msgstr "ενεργοποιημένο"
+msgstr "Ενεργοποιημένη"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "disabled"
-msgstr "απενεργοποιημένο"
+msgstr "ανάπηρος"
 
 #: plnotifier/cog.py:1683
 msgid "[Node={node}] {requester} {status} repeat for {track}"
@@ -462,15 +462,15 @@ msgstr "[Κόμβος={node}] Χορηγός: Παραλήφθηκε {category} 
 
 #: plnotifier/cog.py:1784
 msgid "Effect"
-msgstr "Εφέ"
+msgstr "Επίδραση"
 
 #: plnotifier/cog.py:1785
 msgid "Not changed"
-msgstr "Δεν άλλαξε"
+msgstr "Δεν έχει αλλάξει"
 
 #: plnotifier/cog.py:1786
 msgid "Values"
-msgstr "Τιμές"
+msgstr "Αξιεσ"
 
 #: plnotifier/cog.py:1826
 msgid "Filters Applied Event"
@@ -478,11 +478,11 @@ msgstr "Εφαρμοσμένο Γεγονός Φίλτρων"
 
 #: plnotifier/cog.py:1829
 msgid "None"
-msgstr "Κανένα"
+msgstr "Κανένας"
 
 #: plnotifier/cog.py:1830
 msgid "Currently Applied"
-msgstr "Τρέχον Εφαρμοσμένο"
+msgstr "Εφαρμόζεται επί του παρόντος"
 
 #: plnotifier/cog.py:1832
 msgid "[Node={node}] {requester} changed the player filters"

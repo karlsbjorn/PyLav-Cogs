@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-12 20:08+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-02-01 00:31+0000\n"
+"PO-Revision-Date: 2023-02-01 00:40\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: el\n"
-"X-Crowdin-File: /plplaylists/locales/messages.pot\n"
-"X-Crowdin-File-ID: 666\n"
+"X-Crowdin-File: /cogs/plplaylists/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3319\n"
 "Language: el_GR\n"
 
 #: plplaylists/cog.py:47
@@ -33,11 +33,11 @@ msgstr "Εμφάνιση της έκδοσης του Cog και είναι PyLa
 
 #: plplaylists/cog.py:92
 msgid "Library/Cog"
-msgstr "Βιβλιοθήκη/Σόργο"
+msgstr "Βιβλιοθήκη/Γρανάζι"
 
 #: plplaylists/cog.py:93
 msgid "Version"
-msgstr "Έκδοση"
+msgstr "Εκδοχή"
 
 #: plplaylists/cog.py:130
 msgid "Let's create a playlist!"
@@ -148,18 +148,18 @@ msgstr "(**1**) - Κλείσιμο του μενού.\n"
 "(**5**) - Εμφάνιση κομματιών στην τρέχουσα λίστα αναπαραγωγής.\n\n\n"
 
 #: plplaylists/cog.py:327
-msgid "**__Currently managing__**:\n"
+msgid "__**Currently managing**__:\n"
 "**Name**:{space}{space}{space}{playlist_name}\n"
 "**Scope**:{space}{space}{space}{scope}\n"
 "**Author**:{space}{space}{author}\n"
 "**Tracks**:{space}{space}{space}{tracks} tracks\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
-msgstr "**__Τρέχουσα διαχείριση__**:\n"
+msgstr "__**Επί του παρόντος διαχειρίζεται**__:\n"
 "**Όνομα**:{space}{space}{space}{playlist_name}\n"
-"**Πεδίο**:{space}{space}{space}{scope}\n"
-"**Συγγραφέας:{space}{space}{author}\n"
+"**Εμβέλεια**:{space}{space}{space}{scope}\n"
+"**Συγγραφέας**:{space}{space}{author}\n"
 "**Κομμάτια**:{space}{space}{space}{tracks} Κομμάτια\n"
-"**URL**:{space}{space}{space}{space}{space}{url}\n"
+"**Διεύθυνση URL**:{space}{space}{space}{space}{space}{url}\n"
 
 #: plplaylists/cog.py:345
 msgid "Let's manage: {playlist_name}"
@@ -251,11 +251,11 @@ msgstr "Αποθηκεύτηκε επιτυχώς οι παρακάτω λίστ
 
 #: plplaylists/cog.py:774
 msgid "You must be in a voice channel to allow me to connect"
-msgstr "Πρέπει να είστε σε ένα κανάλι φωνής για να μου επιτρέψετε να συνδεθώ"
+msgstr "Πρέπει να βρίσκεστε σε ένα κανάλι φωνής για να μου επιτρέψετε να συνδεθώ"
 
 #: plplaylists/cog.py:782
 msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Δεν έχω άδεια να συνδεθώ ή να μιλήσω στο {channel}"
+msgstr "Δεν έχω δικαίωμα σύνδεσης ή ομιλίας {channel}"
 
 #: plplaylists/cog.py:812
 msgid "Playlist"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:09\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: de\n"
-"X-Crowdin-File: /plutils/locales/messages.pot\n"
-"X-Crowdin-File-ID: 684\n"
+"X-Crowdin-File: /cogs/plutils/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3305\n"
 "Language: de_DE\n"
 
 #: plutils/cog.py:58 plutils/cog.py:68
@@ -25,11 +25,11 @@ msgstr "Utility Befehle für PyLav"
 #: plutils/cog.py:72
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Zeige die Version des Cog und seine PyLav Abhängigkeiten"
+msgstr "Anzeigen der Version des Zahnrads und seiner PyLav-Abhängigkeiten"
 
 #: plutils/cog.py:88
 msgid "Library/Cog"
-msgstr "Bibliothek/Cog"
+msgstr "Bibliothek/Zahnrad"
 
 #: plutils/cog.py:89
 msgid "Version"
@@ -57,11 +57,11 @@ msgstr "Hole den Base64 des aktuellen Titels"
 #: plutils/cog.py:145 plutils/cog.py:177 plutils/cog.py:209 plutils/cog.py:240
 #: plutils/cog.py:273
 msgid "Not connected to a voice channel"
-msgstr "Keine Verbindung zu einem Sprachkanal"
+msgstr "Nicht mit einem Sprachkanal verbunden"
 
 #: plutils/cog.py:153 plutils/cog.py:185 plutils/cog.py:217 plutils/cog.py:248
 msgid "Nothing playing"
-msgstr "Nichts abgespielt"
+msgstr "Nichts spielt"
 
 #: plutils/cog.py:168
 #, docstring
@@ -144,15 +144,15 @@ msgid "Start memory tracing\n\n"
 "        `[p]plutils trace 1` turns on tracing\n"
 "        `[p]plutils trace` shows the current status of tracing\n"
 "        "
-msgstr "Starte Memory-Tracking\n\n"
-"        `[p]plutils trace 0` deaktiviert die Traktion\n"
-"        `[p]plutils trace 1` schaltet die Traktion ein\n"
-"        `[p]plutils trace` zeigt den aktuellen Status der Traktion\n"
+msgstr "Starten der Speicherablaufverfolgung\n\n"
+"        `[p]plutils trace 0' deaktiviert die Ablaufverfolgung\n"
+"        `[p]plutils trace 1' aktiviert die Ablaufverfolgung\n"
+"        `[p]plutils trace' zeigt den aktuellen Status des Tracing an\n"
 "        "
 
 #: plutils/cog.py:425
 msgid "Stopped memory tracing"
-msgstr "Speichernverfolgung angehalten"
+msgstr "Speicherablaufverfolgung beendet"
 
 #: plutils/cog.py:434
 msgid "Started memory tracing"

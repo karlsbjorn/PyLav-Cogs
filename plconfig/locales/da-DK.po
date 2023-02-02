@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: da\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: da_DK\n"
 
 #: plconfig/cog.py:32
@@ -30,11 +30,11 @@ msgstr "Skift globale indstillinger for PyLav"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Vis versionen af Cog og dens PyLav afhængigheder"
+msgstr "Vis versionen af tandhjulet og dets PyLav-afhængigheder"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "Bibliotek/Tåge"
+msgstr "Bibliotek/tandhjul"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -170,17 +170,17 @@ msgstr "PyLavs styrede node er blevet deaktiveret"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "Slå den administrerede node auto opdateringer til/fra.\n\n"
-"        Ændringer vil blive anvendt efter genstart af [botname].\n"
+msgstr "Slå de administrerede nodeopdateringer automatisk til/fra.\n\n"
+"        Ændringer vil blive anvendt efter genstart [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLavs administrerede node auto-opdateringer er blevet aktiveret"
+msgstr "PyLavs administrerede node automatiske opdateringer er blevet aktiveret"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLavs administrerede node auto-opdateringer er blevet deaktiveret"
+msgstr "PyLavs administrerede node automatiske opdateringer er blevet deaktiveret"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -270,7 +270,7 @@ msgstr "Aktiveret"
 #: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
 #: plconfig/view.py:212 plconfig/view.py:431
 msgid "Disabled"
-msgstr "Deaktiveret"
+msgstr "Handicappet"
 
 #: plconfig/view.py:32
 msgid "Use Managed Node"
@@ -313,19 +313,19 @@ msgstr "Maksimal Volumen"
 
 #: plconfig/view.py:77 plconfig/view.py:157 plconfig/view.py:261
 msgid "AutoPlay"
-msgstr "AutoPlay"
+msgstr "Automatisk afspilning"
 
 #: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
 msgid "Shuffling"
-msgstr "Shuffling"
+msgstr "Blander"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "Automatisk blanding"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
-msgstr "Auto Deafen"
+msgstr "Auto døv"
 
 #: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
 msgid "Auto Disconnect"
@@ -341,7 +341,7 @@ msgstr "{enabled}\n"
 
 #: plconfig/view.py:101 plconfig/view.py:172 plconfig/view.py:297
 msgid "Auto Alone Pause"
-msgstr "Auto Alone Pause"
+msgstr "Auto alene pause"
 
 #: plconfig/view.py:109 plconfig/view.py:180 plconfig/view.py:305
 msgid "Auto Alone Disconnect"
@@ -386,11 +386,11 @@ msgstr "Tvungen Meddelelseskanal"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "DJ-brugere"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
-msgstr "DJ Roller"
+msgstr "DJ-roller"
 
 #: plconfig/view.py:354
 msgid "Next Bundled\n"
@@ -472,7 +472,7 @@ msgstr "Byg Tid"
 
 #: plconfig/view.py:460
 msgid "Commit"
-msgstr "Commit"
+msgstr "Begå"
 
 #: plconfig/view.py:464
 msgid "Auto Update"
@@ -492,5 +492,5 @@ msgstr "Du har ikke tilladelse til at interagere med denne mulighed"
 
 #: plconfig/view.py:558
 msgid "You are not authorized to interact with this"
-msgstr "Du er ikke autoriseret til at interagere med dette"
+msgstr "Du har ikke tilladelse til at interagere med dette"
 

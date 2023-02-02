@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-30 18:28+0000\n"
-"PO-Revision-Date: 2023-01-30 18:28\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ja\n"
-"X-Crowdin-File: /pllocal/locales/messages.pot\n"
-"X-Crowdin-File-ID: 594\n"
+"X-Crowdin-File: /cogs/pllocal/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3339\n"
 "Language: ja_JP\n"
 
 #: pllocal/cog.py:48
@@ -22,59 +22,59 @@ msgstr ""
 msgid "Play local files and folders from the owner configured location"
 msgstr "所有者が設定した場所からローカルファイルとフォルダを再生します"
 
-#: pllocal/cog.py:88
+#: pllocal/cog.py:113
 #, docstring
 msgid "Configure cog settings"
 msgstr "コグの設定を構成する"
 
-#: pllocal/cog.py:92
+#: pllocal/cog.py:117
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog と PyLav の依存関係のバージョンを表示する"
+msgstr "歯車とそのPyLav依存関係のバージョンを表示する"
 
-#: pllocal/cog.py:108
+#: pllocal/cog.py:133
 msgid "Library/Cog"
-msgstr "ライブラリ/Cog"
+msgstr "ライブラリ/コグ"
 
-#: pllocal/cog.py:109
+#: pllocal/cog.py:134
 msgid "Version"
 msgstr "バージョン"
 
-#: pllocal/cog.py:123
+#: pllocal/cog.py:148
 #, docstring
 msgid "Update the track list for /local"
 msgstr "/local のトラックリストを更新します"
 
-#: pllocal/cog.py:133
+#: pllocal/cog.py:158
 msgid "Local track list updated {number} currently present"
 msgstr "ローカルトラックリストが更新されました {number} 現在存在します"
 
-#: pllocal/cog.py:158
+#: pllocal/cog.py:183
 #, docstring
 msgid "Play a local file or folder, supports partial searching"
 msgstr "ローカルファイルまたはフォルダを再生し、部分的な検索をサポートします"
 
-#: pllocal/cog.py:166
+#: pllocal/cog.py:191
 msgid "{query} is not a valid local file or folder"
-msgstr ""
+msgstr "{query} は有効なローカルファイルまたはフォルダではありません"
 
-#: pllocal/cog.py:182
+#: pllocal/cog.py:207
 msgid "You must be in a voice channel to allow me to connect"
-msgstr "接続を許可するにはボイスチャンネルにいる必要があります"
-
-#: pllocal/cog.py:195
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "{channel} に接続または話す権限がありません。"
+msgstr "接続できるようにするには、音声チャネルにいる必要があります"
 
 #: pllocal/cog.py:220
+msgid "I don't have permission to connect or speak in {channel}"
+msgstr "接続または発言する権限がありません {channel}"
+
+#: pllocal/cog.py:245
 msgid "{track_count} tracks enqueued"
-msgstr "{track_count} がキューに追加されました。"
+msgstr "{track_count} エンキューされたトラック"
 
-#: pllocal/cog.py:228
+#: pllocal/cog.py:253
 msgid "{track} enqueued"
-msgstr "{track} がキューに追加されました"
+msgstr "{track} エンキュー"
 
-#: pllocal/cog.py:238
+#: pllocal/cog.py:263
 msgid "No tracks were found for your query"
 msgstr "クエリのトラックが見つかりませんでした"
 

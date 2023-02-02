@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 17:14+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ja\n"
-"X-Crowdin-File: /plnotifier/locales/messages.pot\n"
-"X-Crowdin-File-ID: 660\n"
+"X-Crowdin-File: /cogs/plnotifier/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3351\n"
 "Language: ja_JP\n"
 
 #: plnotifier/cog.py:84
@@ -30,11 +30,11 @@ msgstr "PyLavNotifier コグを設定"
 #: plnotifier/cog.py:231
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog と PyLav の依存関係のバージョンを表示する"
+msgstr "歯車とそのPyLav依存関係のバージョンを表示する"
 
 #: plnotifier/cog.py:247
 msgid "Library/Cog"
-msgstr "ライブラリ/Cog"
+msgstr "ライブラリ/コグ"
 
 #: plnotifier/cog.py:248
 msgid "Version"
@@ -77,7 +77,12 @@ msgid "Set whether or not to notify for the specified event.\n\n"
 "            toggle -- Whether or not to notify upon receiving this event.\n"
 "            use_mention -- Whether or not to use a mention instead of the name for the action requested.\n"
 "        "
-msgstr ""
+msgstr "指定したイベントについて通知するかどうかを設定します。\n\n"
+"        引数：\n"
+"            イベント -- 設定するイベント。\n"
+"            toggle -- このイベントの受信時に通知するかどうか。\n"
+"            use_mention -- 要求されたアクションの名前の代わりにメンションを使用するかどうかを指定します。\n"
+"        "
 
 #: plnotifier/cog.py:378
 msgid "Invalid event, possible events are:\n\n"
@@ -163,13 +168,13 @@ msgstr "[Node={node}] YouTube Music track: {track} が再生を開始しまし�
 
 #: plnotifier/cog.py:533
 msgid "Deezer Track Start Event"
-msgstr "Deezer Track Start Event"
+msgstr "ディーザートラックスタートイベント"
 
 #: plnotifier/cog.py:534
 msgid "[Node={node}] Deezer track: {track} has started playing.\n"
 "Requested by: {requester}"
-msgstr "[Node={node}] Deezer track: {track} has started playing.\n"
-"Requested by: {requester}"
+msgstr "[ノード={node}]ディーザートラック: {track} が再生を開始しました。\n"
+"依頼者: {requester}"
 
 #: plnotifier/cog.py:563
 msgid "Spotify Track Start Event"
@@ -457,7 +462,7 @@ msgstr "[Node={node}] スポンサーブロック: {category} を {start}秒か�
 
 #: plnotifier/cog.py:1784
 msgid "Effect"
-msgstr "効果"
+msgstr "影響"
 
 #: plnotifier/cog.py:1785
 msgid "Not changed"
@@ -465,7 +470,7 @@ msgstr "変更なし"
 
 #: plnotifier/cog.py:1786
 msgid "Values"
-msgstr "値"
+msgstr "価値観"
 
 #: plnotifier/cog.py:1826
 msgid "Filters Applied Event"
@@ -473,11 +478,11 @@ msgstr "適用されたフィルターイベント"
 
 #: plnotifier/cog.py:1829
 msgid "None"
-msgstr "なし"
+msgstr "何一つ"
 
 #: plnotifier/cog.py:1830
 msgid "Currently Applied"
-msgstr "現在適用されました"
+msgstr "現在適用中"
 
 #: plnotifier/cog.py:1832
 msgid "[Node={node}] {requester} changed the player filters"

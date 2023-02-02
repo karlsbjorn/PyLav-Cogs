@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: /plmanagednode/locales/messages.pot\n"
-"X-Crowdin-File-ID: 610\n"
+"X-Crowdin-File: /cogs/plmanagednode/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3323\n"
 "Language: ru_RU\n"
 
 #: plmanagednode/cog.py:34 plmanagednode/cog.py:46
@@ -29,11 +29,11 @@ msgstr "Показать версию Cog и его зависимости PyLav
 
 #: plmanagednode/cog.py:66
 msgid "Library/Cog"
-msgstr "Библиотека/Ког"
+msgstr "Библиотека/Винтик"
 
 #: plmanagednode/cog.py:67
 msgid "Version"
-msgstr "Версии"
+msgstr "Версия"
 
 #: plmanagednode/cog.py:80
 #, docstring
@@ -94,7 +94,12 @@ msgid "Set the managed Lavalink node maximum heap-size.\n\n"
 "        This value only represents the maximum amount of RAM allowed to be used at any given point, and does not mean\n"
 "        that the managed Lavalink node will always use this amount of RAM.\n"
 "        "
-msgstr ""
+msgstr "Задайте для управляемого узла Lavalink максимальный размер кучи.\n\n"
+"        По умолчанию это значение равно 2G доступной оперативной памяти на хост-машине, представленной (65-1023M|1+G) (256M,\n"
+"        256G, например)\n\n"
+"        Это значение представляет только максимальный объем ОЗУ, разрешенный для использования в любой заданной точке, и не означает, что\n"
+"        что управляемый узел Lavalink всегда будет использовать этот объем ОЗУ.\n"
+"        "
 
 #: plmanagednode/cog.py:218
 msgid "Heap-size must be a valid measure of size, e.g. 256M, 256G"
@@ -208,11 +213,11 @@ msgstr "Недопустимый источник, {valid_list} являются
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "enabled"
-msgstr "включен"
+msgstr "Включен"
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "disabled"
-msgstr "отключено"
+msgstr "нетрудоспособный"
 
 #: plmanagednode/cog.py:651
 msgid "Managed node's {source} source set to {state}."
@@ -493,7 +498,7 @@ msgstr "Конфигуратор HTTP-прокси"
 
 #: plmanagednode/view.py:379
 msgid "Hostname"
-msgstr "Hostname"
+msgstr "Имя хоста"
 
 #: plmanagednode/view.py:382
 msgid "Hostname of the proxy, (ip or domain or localhost)"

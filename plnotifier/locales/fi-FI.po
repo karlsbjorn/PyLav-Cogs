@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 17:14+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: fi\n"
-"X-Crowdin-File: /plnotifier/locales/messages.pot\n"
-"X-Crowdin-File-ID: 660\n"
+"X-Crowdin-File: /cogs/plnotifier/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3351\n"
 "Language: fi_FI\n"
 
 #: plnotifier/cog.py:84
@@ -30,11 +30,11 @@ msgstr "Aseta PyLavNotifierin koodi"
 #: plnotifier/cog.py:231
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Näytä versio Cog ja sen PyLav riippuvuudet"
+msgstr "Näytä hammaspyörän versio ja sen PyLav-riippuvuudet"
 
 #: plnotifier/cog.py:247
 msgid "Library/Cog"
-msgstr "Kirjasto/Kokki"
+msgstr "Kirjasto/hammasratas"
 
 #: plnotifier/cog.py:248
 msgid "Version"
@@ -218,7 +218,7 @@ msgstr "[Node={node}] HTTP-kappale: {track} on alkanut pelata.\n"
 
 #: plnotifier/cog.py:683
 msgid "Text-To-Speech Track Start Event"
-msgstr "Text-To-Speech Track Start Event"
+msgstr "Teksti puheeksi -seurannan aloitustapahtuma"
 
 #: plnotifier/cog.py:684
 msgid "[Node={node}] Text-To-Speech track: {track} has started playing.\n"
@@ -402,11 +402,11 @@ msgstr "{requester} {status} toista koko jono"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "enabled"
-msgstr "käytössä"
+msgstr "Käytössä"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "disabled"
-msgstr "poistettu käytöstä"
+msgstr "vammainen"
 
 #: plnotifier/cog.py:1683
 msgid "[Node={node}] {requester} {status} repeat for {track}"
@@ -462,11 +462,11 @@ msgstr "[Node={node}] Sponsorohko: Ohitti {category} käynnissä {start}s:sta {t
 
 #: plnotifier/cog.py:1784
 msgid "Effect"
-msgstr "Efekti"
+msgstr "Vaikutus"
 
 #: plnotifier/cog.py:1785
 msgid "Not changed"
-msgstr "Ei muuttunut"
+msgstr "Ei muutettu"
 
 #: plnotifier/cog.py:1786
 msgid "Values"
@@ -478,11 +478,11 @@ msgstr "Suodattimet Käytetty Tapahtuma"
 
 #: plnotifier/cog.py:1829
 msgid "None"
-msgstr "Ei Mitään"
+msgstr "Ei lainkaan"
 
 #: plnotifier/cog.py:1830
 msgid "Currently Applied"
-msgstr "Tällä hetkellä Käytössä"
+msgstr "Tällä hetkellä voimassa"
 
 #: plnotifier/cog.py:1832
 msgid "[Node={node}] {requester} changed the player filters"

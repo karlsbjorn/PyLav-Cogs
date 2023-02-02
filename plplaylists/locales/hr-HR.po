@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-12 20:08+0000\n"
-"PO-Revision-Date: 2023-01-12 20:08\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-02-01 00:31+0000\n"
+"PO-Revision-Date: 2023-02-01 00:40\n"
 "Last-Translator: \n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: hr\n"
-"X-Crowdin-File: /plplaylists/locales/messages.pot\n"
-"X-Crowdin-File-ID: 666\n"
+"X-Crowdin-File: /cogs/plplaylists/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3319\n"
 "Language: hr_HR\n"
 
 #: plplaylists/cog.py:47
@@ -33,7 +33,7 @@ msgstr "Prikaži verziju Cog-a i njegovih PyLav ovisnosti"
 
 #: plplaylists/cog.py:92
 msgid "Library/Cog"
-msgstr "Biblioteka/Cog"
+msgstr "Biblioteka/Zupčanik"
 
 #: plplaylists/cog.py:93
 msgid "Version"
@@ -50,15 +50,20 @@ msgid "(**1**) - Apply changes to playlist.\n"
 "(**4**) - Link this playlist to an existing playlist/album.\n"
 "(**5**) - Add all tracks from the queue to the playlist.\n\n"
 "If you want the playlist name to be as the original playlist simply set the URL but no name.\n\n"
-msgstr ""
+msgstr "(**1**) - Primijeni promjene na popis za reproduciranje.\n"
+"(**2**) - Otkažite sve izvršene promjene.\n"
+"(**3**) - Dodajte ime na popis za reproduciranje.\n"
+"(**4**) - Povežite ovaj popis za reproduciranje s postojećim popisom za reprodukciju/albumom.\n"
+"(**5**) - Dodajte sve zapise iz reda čekanja na popis za reproduciranje.\n\n"
+"Ako želite da naziv popisa za reproduciranje bude kao izvorni popis za reproduciranje, jednostavno postavite URL, ali bez naziva.\n\n"
 
 #: plplaylists/cog.py:165
 msgid "Playlist not created"
-msgstr ""
+msgstr "Popis za reproduciranje nije stvoren"
 
 #: plplaylists/cog.py:166
 msgid "No tracks were provided in time."
-msgstr ""
+msgstr "Tragovi nisu bili osigurani na vrijeme."
 
 #: plplaylists/cog.py:179
 msgid "Playlist created"
@@ -109,7 +114,26 @@ msgid "(**1**){space} - Apply changes to playlist.\n"
 "The clear button will always be run first before any other operations.\n"
 "The URL button will always run last - Linking a playlist via the URL will overwrite any tracks added or removed to this playlist.\n\n"
 "If you interact with a button multiple times other than the add/remove buttons only the last interaction will take effect.\n\n\n"
-msgstr ""
+msgstr "(**1**){space} - Primijenite promjene na popis za reproduciranje.\n"
+"(**2**){space} - Otkažite sve izvršene promjene i zatvorite izbornik.\n"
+"(**3**){space} - Izbrišite ovaj popis za reproduciranje.\n"
+"(**4**){space} - Uklonite sve pjesme s ovog popisa za reproduciranje.\n"
+"(**5**){space} - Ažurirajte popis za reprodukciju najnovijim pjesmama.\n"
+"Imajte na umu da će ova akcija zanemariti sve zapise dodane /uklonjene putem ovog izbornika.\n"
+"(**6**){space} - Promijenite naziv popisa za reprodukciju.\n"
+"(**7**){space} - Povežite ovu reprodukcijsku listu s postojećim popisom/albumom za reprodukciju.\n"
+"(**8**){space} - Dodajte upit na ovaj popis za reproduciranje.\n"
+"(**9**){space} - Uklonite upit s ovog popisa za reproduciranje.\n"
+"(**10**) - Preuzmite datoteku popisa za reproduciranje.\n"
+"(**11**) - Dodajte trenutni popis za reproduciranje u red čekanja.\n"
+"(**12**) - Prikaži zapise na trenutnom popisu za reproduciranje.\n"
+"(**13**) - Dodajte zapise iz reda čekanja na ovaj popis za reproduciranje.\n"
+"(**14**) - Uklonite duplicirane unose na popisu za reproduciranje.\n\n"
+"Gumbi za dodavanje/uklanjanje zapisa mogu se koristiti više puta za dodavanje/uklanjanje više pjesama i popisa za reprodukciju odjednom.\n\n"
+"Upit je sve što se može reproducirati pomoću naredbe za reprodukciju - bilo koji upit može se koristiti pomoću gumba za dodavanje/uklanjanje\n\n"
+"Gumb za čišćenje uvijek će se prvo pokrenuti prije bilo koje druge operacije.\n"
+"Gumb URL uvijek će se izvoditi posljednji - Povezivanje popisa za reproduciranje putem URL-a prebrisat će sve zapise dodane ili uklonjene na ovaj popis za reproduciranje.\n\n"
+"Ako s gumbom stupite u interakciju više puta osim gumba za dodavanje/uklanjanje, stupit će na snagu samo posljednja interakcija.\n\n\n"
 
 #: plplaylists/cog.py:319
 msgid "(**1**) - Close the menu.\n"
@@ -117,20 +141,29 @@ msgid "(**1**) - Close the menu.\n"
 "(**3**) - Download the playlist file.\n"
 "(**4**) - Add current playlist to the queue.\n"
 "(**5**) - Show tracks in current playlist.\n\n\n"
-msgstr ""
+msgstr "(**1**) - Zatvorite izbornik.\n"
+"(**2**) - Ažurirajte popis za reprodukciju najnovijim pjesmama.\n"
+"(**3**) - Preuzmite datoteku popisa za reproduciranje.\n"
+"(**4**) - Dodajte trenutni popis za reproduciranje u red čekanja.\n"
+"(**5**) - Prikaži zapise na trenutnom popisu za reproduciranje.\n\n\n"
 
 #: plplaylists/cog.py:327
-msgid "**__Currently managing__**:\n"
+msgid "__**Currently managing**__:\n"
 "**Name**:{space}{space}{space}{playlist_name}\n"
 "**Scope**:{space}{space}{space}{scope}\n"
 "**Author**:{space}{space}{author}\n"
 "**Tracks**:{space}{space}{space}{tracks} tracks\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
-msgstr ""
+msgstr "__**Trenutno upravlja**__:\n"
+"**Ime**:{space}{space}{space}{playlist_name}\n"
+"**Opseg**:{space}{space}{space}{scope}\n"
+"**Autor**:{space}{space}{author}\n"
+"**Pjesme**:{space}{space}{space}{tracks} Pjesme\n"
+"**URL**:{space}{space}{space}{space}{space}{url}\n"
 
 #: plplaylists/cog.py:345
 msgid "Let's manage: {playlist_name}"
-msgstr "Ajmo upravljati: "
+msgstr "Upravljajmo: {playlist_name}"
 
 #: plplaylists/cog.py:347
 msgid "Let's take a look at: {playlist_name}"
@@ -155,7 +188,8 @@ msgstr "Popis za reprodukciju **{playlist_name}** se ne može ažurirati s URL-o
 #: plplaylists/cog.py:473
 msgid "\n"
 "{track_count} {track_plural} removed from the playlist"
-msgstr "{track_count} {track_plural} su uklonjene s popisa za reprodukciju"
+msgstr "\n"
+"{track_count} {track_plural} su uklonjene s popisa za reprodukciju"
 
 #: plplaylists/cog.py:474 plplaylists/cog.py:478 plplaylists/cog.py:644
 msgid "track"
@@ -168,7 +202,8 @@ msgstr "pjesme"
 #: plplaylists/cog.py:477 plplaylists/cog.py:643
 msgid "\n"
 "{track_count} {track_plural} added to the playlist"
-msgstr "{track_count} {track_plural} su dodane na popis za reprodukciju"
+msgstr "\n"
+"{track_count} {track_plural} su dodane na popis za reprodukciju"
 
 #: plplaylists/cog.py:483 plplaylists/cog.py:650
 msgid "Playlist updated"
@@ -216,11 +251,11 @@ msgstr "Uspješno su spremljeni sljedeći popisi za reprodukciju:\n"
 
 #: plplaylists/cog.py:774
 msgid "You must be in a voice channel to allow me to connect"
-msgstr "Morate biti u glasovnom kanalu kako bi se povezao"
+msgstr "Morate biti u glasovnom kanalu da biste mi omogućili povezivanje"
 
 #: plplaylists/cog.py:782
 msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Nemam dozvolu za povezivanje ili govor u {channel}"
+msgstr "Nemam dozvolu za povezivanje ili govor {channel}"
 
 #: plplaylists/cog.py:812
 msgid "Playlist"

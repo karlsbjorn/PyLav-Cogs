@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: el\n"
-"X-Crowdin-File: /plmanagednode/locales/messages.pot\n"
-"X-Crowdin-File-ID: 610\n"
+"X-Crowdin-File: /cogs/plmanagednode/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3323\n"
 "Language: el_GR\n"
 
 #: plmanagednode/cog.py:34 plmanagednode/cog.py:46
@@ -25,15 +25,15 @@ msgstr "Ρύθμιση του κόμβου Lavalink που χρησιμοποι�
 #: plmanagednode/cog.py:50
 #, docstring
 msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "Εμφάνιση της έκδοσης του Cog και είναι PyLav εξαρτήσεις"
+msgstr "Εμφάνιση της έκδοσης του Cog και των εξαρτήσεων PyLav"
 
 #: plmanagednode/cog.py:66
 msgid "Library/Cog"
-msgstr "Βιβλιοθήκη/Σόργο"
+msgstr "Βιβλιοθήκη/Γρανάζι"
 
 #: plmanagednode/cog.py:67
 msgid "Version"
-msgstr "Έκδοση"
+msgstr "Εκδοχή"
 
 #: plmanagednode/cog.py:80
 #, docstring
@@ -213,11 +213,11 @@ msgstr "Μη έγκυρη πηγή, {valid_list} είναι έγκυρες πη�
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "enabled"
-msgstr "ενεργοποιημένο"
+msgstr "Ενεργοποιημένη"
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "disabled"
-msgstr "απενεργοποιημένο"
+msgstr "ανάπηρος"
 
 #: plmanagednode/cog.py:651
 msgid "Managed node's {source} source set to {state}."
@@ -498,7 +498,7 @@ msgstr "Διακομιστής Μεσολάβησης HTTP"
 
 #: plmanagednode/view.py:379
 msgid "Hostname"
-msgstr "Hostname"
+msgstr "Όνομα κεντρικού υπολογιστή"
 
 #: plmanagednode/view.py:382
 msgid "Hostname of the proxy, (ip or domain or localhost)"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: no\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: no_NO\n"
 
 #: plconfig/cog.py:32
@@ -30,11 +30,11 @@ msgstr "Endre globale innstillinger for PyLav"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Vis versjonen av Cog dens PyLav avhengigheter"
+msgstr "Vis versjonen av tannhjulet og dets PyLav-avhengigheter"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "Bibliotek/Tannhjul"
+msgstr "Bibliotek/tannhjul"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -47,7 +47,7 @@ msgstr "Vis konfigurasjonsverdiene"
 
 #: plconfig/cog.py:85 plconfig/view.py:57
 msgid "PyLav Config"
-msgstr "PyLav Config"
+msgstr "PyLav-konfigurasjon"
 
 #: plconfig/cog.py:88
 msgid "Get information about the PyLav library settings"
@@ -170,17 +170,17 @@ msgstr "PyLav's administrerte node er deaktivert"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "Slå av/på de administrerte node automatisk oppdateringer på/av.\n\n"
+msgstr "Slå automatiske oppdateringer for administrerte noder på/av.\n\n"
 "        Endringer vil bli brukt etter omstart [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLav's administrerte node automatiske oppdateringer er aktivert"
+msgstr "PyLavs automatiske oppdateringer av administrerte noder er aktivert"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLav's administrerte node automatiske oppdateringer har blitt deaktivert"
+msgstr "PyLavs automatiske oppdateringer av administrerte noder er deaktivert"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -270,7 +270,7 @@ msgstr "Aktivert"
 #: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
 #: plconfig/view.py:212 plconfig/view.py:431
 msgid "Disabled"
-msgstr "Deaktivert"
+msgstr "Ufør"
 
 #: plconfig/view.py:32
 msgid "Use Managed Node"
@@ -321,11 +321,11 @@ msgstr "Shuffling"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "Automatisk stokking"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
-msgstr "Auto Deafen"
+msgstr "Auto Døve"
 
 #: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
 msgid "Auto Disconnect"
@@ -386,11 +386,11 @@ msgstr "Tvunget varslingskanal"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ brukere"
+msgstr "DJ-brukere"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
-msgstr "DJ Roller"
+msgstr "DJ-roller"
 
 #: plconfig/view.py:354
 msgid "Next Bundled\n"

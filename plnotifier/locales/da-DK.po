@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 17:14+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: da\n"
-"X-Crowdin-File: /plnotifier/locales/messages.pot\n"
-"X-Crowdin-File-ID: 660\n"
+"X-Crowdin-File: /cogs/plnotifier/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3351\n"
 "Language: da_DK\n"
 
 #: plnotifier/cog.py:84
@@ -30,11 +30,11 @@ msgstr "Konfigurer PyLavNotifier cog"
 #: plnotifier/cog.py:231
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Vis versionen af Cog og dens PyLav afhængigheder"
+msgstr "Vis versionen af tandhjulet og dets PyLav-afhængigheder"
 
 #: plnotifier/cog.py:247
 msgid "Library/Cog"
-msgstr "Bibliotek/Tåge"
+msgstr "Bibliotek/tandhjul"
 
 #: plnotifier/cog.py:248
 msgid "Version"
@@ -402,11 +402,11 @@ msgstr "{requester} {status} gentagelse af hele køen"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "enabled"
-msgstr "aktiveret"
+msgstr "Aktiveret"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "disabled"
-msgstr "deaktiveret"
+msgstr "handicappet"
 
 #: plnotifier/cog.py:1683
 msgid "[Node={node}] {requester} {status} repeat for {track}"
@@ -482,7 +482,7 @@ msgstr "Ingen"
 
 #: plnotifier/cog.py:1830
 msgid "Currently Applied"
-msgstr "Anvendes I øjeblikket"
+msgstr "Aktuelt anvendt"
 
 #: plnotifier/cog.py:1832
 msgid "[Node={node}] {requester} changed the player filters"

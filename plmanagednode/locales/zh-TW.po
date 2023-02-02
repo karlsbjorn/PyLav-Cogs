@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-27 18:03\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /plmanagednode/locales/messages.pot\n"
-"X-Crowdin-File-ID: 610\n"
+"X-Crowdin-File: /cogs/plmanagednode/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3323\n"
 "Language: zh_TW\n"
 
 #: plmanagednode/cog.py:34 plmanagednode/cog.py:46
@@ -25,11 +25,11 @@ msgstr "配置 PyLav 使用的託管 Lavalink 節點"
 #: plmanagednode/cog.py:50
 #, docstring
 msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "顯示 Cog 的版本及其 PyLav 依賴項"
+msgstr "顯示Cog的版本及其PyLav依賴項"
 
 #: plmanagednode/cog.py:66
 msgid "Library/Cog"
-msgstr "資料庫/Cog"
+msgstr "庫/齒輪"
 
 #: plmanagednode/cog.py:67
 msgid "Version"
@@ -111,7 +111,7 @@ msgstr "記憶體大小必須至少為 64M，但建議至少設置為 1G"
 
 #: plmanagednode/cog.py:240
 msgid "Heap-size must be less than your system RAM, You currently have {ram_in_bytes} of RAM available"
-msgstr "記憶體大小必須小於您的系統 RAM，您當前有 {ram_in_bytes} 可用 "
+msgstr "記憶體大小必須小於您的系統 RAM，您當前有 {ram_in_bytes} 可用"
 
 #: plmanagednode/cog.py:252
 msgid "Heap-size must be less than {limit} due to your system limitations"
@@ -190,7 +190,7 @@ msgstr "更新託管節點插件"
 
 #: plmanagednode/cog.py:592
 msgid "{name} was updated from {old_value} to {new_value}\n"
-msgstr "{name} 已從 {old_value} 更新至 {new_value}"
+msgstr "{name} 已從更新自 {old_value} 自 {new_value}\n"
 
 #: plmanagednode/cog.py:600
 msgid "Managed node's plugins updated.\n\n"
@@ -213,11 +213,11 @@ msgstr "來源無效，{valid_list} 是有效來源"
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "enabled"
-msgstr "已啟用"
+msgstr "啟用"
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "disabled"
-msgstr "已停用"
+msgstr "禁用"
 
 #: plmanagednode/cog.py:651
 msgid "Managed node's {source} source set to {state}."
@@ -303,7 +303,7 @@ msgstr "Seek ghosting 是一種效果，在進行搜索時，音頻緩衝區會�
 
 #: plmanagednode/cog.py:781
 msgid "How frequently in seconds to send player updates to clients, affects the current position accuracy. Accepted values: Range: 1 - 86400"
-msgstr "以秒為單位向客戶端發送玩家更新的頻率會影響當前位置的準確性。 可接受的值：範圍：1 - 86400"
+msgstr "向客戶端發送玩家更新的頻率（以秒為單位）會影響當前位置的準確性。接受的值：範圍：1 - 86400"
 
 #: plmanagednode/cog.py:785
 msgid "Enable or disable YouTube searches within the node, this will affect AppleMusic, Spotify and any functionality dependant on YouTube. Accepted values for True: `True`, `t`, `1`, Accepted values for False: `False`, `f`, `0`"
@@ -402,7 +402,7 @@ msgstr "IP 輪換配置器"
 
 #: plmanagednode/view.py:128
 msgid "IP Blocks"
-msgstr "IP Blocks"
+msgstr "IP 塊"
 
 #: plmanagednode/view.py:132
 msgid "1.0.0.0/8,...,... - Comma separated list of IP blocks"

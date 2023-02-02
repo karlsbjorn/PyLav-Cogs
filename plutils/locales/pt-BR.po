@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: pt-BR\n"
-"X-Crowdin-File: /plutils/locales/messages.pot\n"
-"X-Crowdin-File-ID: 684\n"
+"X-Crowdin-File: /cogs/plutils/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3305\n"
 "Language: pt_BR\n"
 
 #: plutils/cog.py:58 plutils/cog.py:68
@@ -25,11 +25,11 @@ msgstr "Comandos utilitários para PyLav"
 #: plutils/cog.py:72
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Mostrar a versão do Cog e suas dependências PyLav"
+msgstr "Mostrar a versão da Engrenagem e suas dependências PyLav"
 
 #: plutils/cog.py:88
 msgid "Library/Cog"
-msgstr "Biblioteca/Cog"
+msgstr "Biblioteca/Engrenagem"
 
 #: plutils/cog.py:89
 msgid "Version"
@@ -57,11 +57,11 @@ msgstr "Obtenha a base64 da faixa atual"
 #: plutils/cog.py:145 plutils/cog.py:177 plutils/cog.py:209 plutils/cog.py:240
 #: plutils/cog.py:273
 msgid "Not connected to a voice channel"
-msgstr "Não está conectado a um canal de voz"
+msgstr "Não conectado a um canal de voz"
 
 #: plutils/cog.py:153 plutils/cog.py:185 plutils/cog.py:217 plutils/cog.py:248
 msgid "Nothing playing"
-msgstr "Nada reproduzindo"
+msgstr "Nada jogando"
 
 #: plutils/cog.py:168
 #, docstring

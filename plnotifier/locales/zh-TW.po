@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 17:14+0000\n"
-"PO-Revision-Date: 2023-01-27 18:03\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: zh-TW\n"
-"X-Crowdin-File: /plnotifier/locales/messages.pot\n"
-"X-Crowdin-File-ID: 660\n"
+"X-Crowdin-File: /cogs/plnotifier/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3351\n"
 "Language: zh_TW\n"
 
 #: plnotifier/cog.py:84
@@ -30,11 +30,11 @@ msgstr "配置 PyLavNotifier cog"
 #: plnotifier/cog.py:231
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "顯示 Cog 的版本及其 PyLav 依賴項目"
+msgstr "顯示齒輪的版本及其 PyLav 依賴項"
 
 #: plnotifier/cog.py:247
 msgid "Library/Cog"
-msgstr "資料庫/Cog"
+msgstr "庫/齒輪"
 
 #: plnotifier/cog.py:248
 msgid "Version"
@@ -270,7 +270,7 @@ msgstr "跟蹤音軌搜索事件"
 
 #: plnotifier/cog.py:1236
 msgid "[Node={node}] {requester} requested that {track} is sought from position {fro} to position {after}"
-msgstr "[Node={node}] {requester} 請求從位置 {fro} 到位置 {after} 在 {track} 中尋找 "
+msgstr "[Node={node}] {requester} 請求從位置 {fro} 到位置 {after} 在 {track} 中尋找"
 
 #: plnotifier/cog.py:1270
 msgid "Track Previous Requested Event"
@@ -402,11 +402,11 @@ msgstr "{requester} {status} 重複播放整個列表"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "enabled"
-msgstr "已啟用"
+msgstr "啟用"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "disabled"
-msgstr "已停用"
+msgstr "禁用"
 
 #: plnotifier/cog.py:1683
 msgid "[Node={node}] {requester} {status} repeat for {track}"
@@ -462,15 +462,15 @@ msgstr "[Node={node}] Sponsorblock：跳過從 {start} 到 {to} 的 {category}"
 
 #: plnotifier/cog.py:1784
 msgid "Effect"
-msgstr "效果"
+msgstr "影響"
 
 #: plnotifier/cog.py:1785
 msgid "Not changed"
-msgstr "沒有更變"
+msgstr "未更改"
 
 #: plnotifier/cog.py:1786
 msgid "Values"
-msgstr "數值"
+msgstr "值"
 
 #: plnotifier/cog.py:1826
 msgid "Filters Applied Event"
@@ -482,7 +482,7 @@ msgstr "沒有"
 
 #: plnotifier/cog.py:1830
 msgid "Currently Applied"
-msgstr "目前已套用"
+msgstr "當前應用"
 
 #: plnotifier/cog.py:1832
 msgid "[Node={node}] {requester} changed the player filters"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /plutils/locales/messages.pot\n"
-"X-Crowdin-File-ID: 684\n"
+"X-Crowdin-File: /cogs/plutils/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3305\n"
 "Language: zh_CN\n"
 
 #: plutils/cog.py:58 plutils/cog.py:68
@@ -25,11 +25,11 @@ msgstr "PyLav 的实用命令"
 #: plutils/cog.py:72
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "显示 Cog版本和 PyLav 依赖关系"
+msgstr "显示齿轮的版本及其 PyLav 依赖项"
 
 #: plutils/cog.py:88
 msgid "Library/Cog"
-msgstr "库 / COG"
+msgstr "库/齿轮"
 
 #: plutils/cog.py:89
 msgid "Version"
@@ -57,11 +57,11 @@ msgstr "获取当前音轨的基准64"
 #: plutils/cog.py:145 plutils/cog.py:177 plutils/cog.py:209 plutils/cog.py:240
 #: plutils/cog.py:273
 msgid "Not connected to a voice channel"
-msgstr "未连接到语音频道"
+msgstr "未连接到语音通道"
 
 #: plutils/cog.py:153 plutils/cog.py:185 plutils/cog.py:217 plutils/cog.py:248
 msgid "Nothing playing"
-msgstr "没有播放记录"
+msgstr "什么都没玩"
 
 #: plutils/cog.py:168
 #, docstring

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:09\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ro\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: ro_RO\n"
 
 #: plconfig/cog.py:32
@@ -30,11 +30,11 @@ msgstr "Schimbă setările globale pentru PyLav"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Arată versiunea Cog şi dependenţele lui PyLav"
+msgstr "Afișați versiunea Cog și dependențele sale PyLav"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "Bibliotecă/Cog"
+msgstr "Biblioteca / Cog"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -170,17 +170,17 @@ msgstr "Nodul gestionat de PyLave a fost dezactivat"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "Comutați nodul gestionat actualizările pornit/oprit.\n\n"
-"        Modificările vor fi aplicate după repornirea [botname].\n"
+msgstr "Comutați actualizările automate ale nodului gestionat on/off.\n\n"
+"        Modificările vor fi aplicate după repornire [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "Actualizările modulului automat gestionate de PyLave au fost activate"
+msgstr "Actualizările automate ale nodului gestionat de PyLav au fost activate"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "Actualizările modulului automat gestionate de PyLave au fost dezactivate"
+msgstr "Actualizările automate ale nodului gestionat de PyLav au fost dezactivate"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -295,7 +295,8 @@ msgstr "Folosire Pachete\n"
 #: plconfig/view.py:48
 msgid "Use Bundled\n"
 "lava.link Nodes"
-msgstr ""
+msgstr "Utilizați bundled\n"
+"lava.link Noduri"
 
 #: plconfig/view.py:58 plconfig/view.py:124 plconfig/view.py:195
 #: plconfig/view.py:340 plconfig/view.py:475
@@ -316,11 +317,11 @@ msgstr "Redare automată"
 
 #: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
 msgid "Shuffling"
-msgstr "Shuffling"
+msgstr "Amestecare"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "Amestecare automată"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
@@ -385,7 +386,7 @@ msgstr "Canal de notificare forțată"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "Utilizatori DJ"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
@@ -491,5 +492,5 @@ msgstr "Nu sunteți autorizat să interacționați cu această opțiune"
 
 #: plconfig/view.py:558
 msgid "You are not authorized to interact with this"
-msgstr "Nu sunteți autorizat să interacționați cu acest"
+msgstr "Nu sunteți autorizat să interacționați cu acest lucru"
 

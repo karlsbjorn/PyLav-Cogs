@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 17:14+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:33\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: no\n"
-"X-Crowdin-File: /plnotifier/locales/messages.pot\n"
-"X-Crowdin-File-ID: 660\n"
+"X-Crowdin-File: /cogs/plnotifier/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3351\n"
 "Language: no_NO\n"
 
 #: plnotifier/cog.py:84
@@ -30,11 +30,11 @@ msgstr "Konfigurer PyLavNotifier cog"
 #: plnotifier/cog.py:231
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Vis versjonen av Cog dens PyLav avhengigheter"
+msgstr "Vis versjonen av tannhjulet og dets PyLav-avhengigheter"
 
 #: plnotifier/cog.py:247
 msgid "Library/Cog"
-msgstr "Bibliotek/Tannhjul"
+msgstr "Bibliotek/tannhjul"
 
 #: plnotifier/cog.py:248
 msgid "Version"
@@ -173,7 +173,8 @@ msgstr "Deezer slepestrek start event"
 #: plnotifier/cog.py:534
 msgid "[Node={node}] Deezer track: {track} has started playing.\n"
 "Requested by: {requester}"
-msgstr ""
+msgstr "[Node={node}] Deezer spor: {track} har begynt å spille.\n"
+"Forespurt av: {requester}"
 
 #: plnotifier/cog.py:563
 msgid "Spotify Track Start Event"
@@ -277,7 +278,7 @@ msgstr "Spor forrige forespurte hendelse"
 
 #: plnotifier/cog.py:1271
 msgid "[Node={node}] {requester} requested that the previous track {track} be played"
-msgstr "[Node={node}] {requester} ba om at forrige spor {spor} spilles av"
+msgstr "[Node={node}] {requester} bedt om at forrige spor {track} spilles"
 
 #: plnotifier/cog.py:1300
 msgid "Tracks Requested Event"
@@ -401,11 +402,11 @@ msgstr "{requester} {status} gjenta av hele køen"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "enabled"
-msgstr "aktivert"
+msgstr "Aktivert"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "disabled"
-msgstr "deaktivert"
+msgstr "ufør"
 
 #: plnotifier/cog.py:1683
 msgid "[Node={node}] {requester} {status} repeat for {track}"
@@ -481,7 +482,7 @@ msgstr "Ingen"
 
 #: plnotifier/cog.py:1830
 msgid "Currently Applied"
-msgstr "Brukt akkurat"
+msgstr "Brukes for øyeblikket"
 
 #: plnotifier/cog.py:1832
 msgid "[Node={node}] {requester} changed the player filters"
@@ -521,11 +522,11 @@ msgstr "[Node={node}] Lavalink websocket tilkobling til Discord lukket med koden
 
 #: plnotifier/cog.py:1945
 msgid "[Node={node}] {requester} automatically paused the player due to configured values"
-msgstr ""
+msgstr "[Node={node}] {requester} Satte spilleren automatisk på pause på grunn av konfigurerte verdier"
 
 #: plnotifier/cog.py:1973
 msgid "[Node={node}] {requester} automatically resumed the player due to configured values"
-msgstr ""
+msgstr "[Node={node}] {requester} gjenopptok spilleren automatisk på grunn av konfigurerte verdier"
 
 #: plnotifier/cog.py:2000 plnotifier/cog.py:2030
 msgid "Auto Player Disconnected Event"
@@ -533,7 +534,7 @@ msgstr "Auto Spiller frakoblet hendelse"
 
 #: plnotifier/cog.py:2001
 msgid "[Node={node}] {requester} automatically disconnected the player as there is no one listening"
-msgstr ""
+msgstr "[Node={node}] {requester} koblet automatisk fra spilleren, da det ikke er noen som lytter"
 
 #: plnotifier/cog.py:2031
 msgid "[Node={node}] {requester} automatically disconnected the player as the queue is empty"

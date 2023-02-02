@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-02 18:07+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ja\n"
-"X-Crowdin-File: /pleffects/locales/messages.pot\n"
-"X-Crowdin-File-ID: 558\n"
+"X-Crowdin-File: /cogs/pleffects/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3335\n"
 "Language: ja_JP\n"
 
 #: pleffects/cog.py:34
@@ -30,11 +30,11 @@ msgstr "エフェクトを設定したときのプレイヤーの動作を設定
 #: pleffects/cog.py:55
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog と PyLav の依存関係のバージョンを表示する"
+msgstr "歯車とそのPyLav依存関係のバージョンを表示する"
 
 #: pleffects/cog.py:71
 msgid "Library/Cog"
-msgstr "ライブラリ/Cog"
+msgstr "ライブラリ/コグ"
 
 #: pleffects/cog.py:72
 msgid "Version"
@@ -170,7 +170,7 @@ msgstr "速度"
 
 #: pleffects/cog.py:373
 msgid "Pitch"
-msgstr "Pitch"
+msgstr "ピッチ"
 
 #: pleffects/cog.py:374
 msgid "Rate"
@@ -332,7 +332,7 @@ msgstr "遅延"
 
 #: pleffects/cog.py:815
 msgid "Decay"
-msgstr "Decay"
+msgstr "ディケイ"
 
 #: pleffects/cog.py:824
 msgid "New echo effect applied to the player"
@@ -406,7 +406,7 @@ msgstr "現在のノードにはイコライザ機能が有効になっていま
 
 #: pleffects/cog.py:967
 msgid "Bass boost preset has been disabled"
-msgstr "Bass boost preset has been disabled"
+msgstr "低音ブーストプリセットが無効になっています"
 
 #: pleffects/cog.py:974
 msgid "Bass boost - Maximum"
@@ -450,11 +450,14 @@ msgid "Apply a Piano equalizer preset to the player.\n\n"
 "        Suitable for acoustic tracks, or tacks with an emphasis on female vocals.\n\n"
 "        Can also be used as a bass cut-off.\n"
 "        "
-msgstr ""
+msgstr "ピアノイコライザープリセットをプレーヤーに適用します。\n\n"
+"        アコースティックトラック、または女性ボーカルに重点を置いたタックに適しています。\n\n"
+"        低音カットオフとしても使用できます。\n"
+"        "
 
 #: pleffects/cog.py:1075
 msgid "Piano"
-msgstr "Piano"
+msgstr "ピアノ"
 
 #: pleffects/cog.py:1089
 msgid "Piano preset has been set"

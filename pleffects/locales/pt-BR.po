@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-02 18:07+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: pt-BR\n"
-"X-Crowdin-File: /pleffects/locales/messages.pot\n"
-"X-Crowdin-File-ID: 558\n"
+"X-Crowdin-File: /cogs/pleffects/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3335\n"
 "Language: pt_BR\n"
 
 #: pleffects/cog.py:34
@@ -30,11 +30,11 @@ msgstr "Configure o comportamento do jogador quando um efeito é definido"
 #: pleffects/cog.py:55
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Mostrar a versão do Cog e suas dependências PyLav"
+msgstr "Mostrar a versão da Engrenagem e suas dependências PyLav"
 
 #: pleffects/cog.py:71
 msgid "Library/Cog"
-msgstr "Biblioteca/Cog"
+msgstr "Biblioteca/Engrenagem"
 
 #: pleffects/cog.py:72
 msgid "Version"

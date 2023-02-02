@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ja\n"
-"X-Crowdin-File: /plmanagednode/locales/messages.pot\n"
-"X-Crowdin-File-ID: 610\n"
+"X-Crowdin-File: /cogs/plmanagednode/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3323\n"
 "Language: ja_JP\n"
 
 #: plmanagednode/cog.py:34 plmanagednode/cog.py:46
@@ -25,11 +25,11 @@ msgstr "PyLav が使用する Lavalink ノードを設定します。"
 #: plmanagednode/cog.py:50
 #, docstring
 msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "Cog のバージョンと PyLav の依存関係を表示する"
+msgstr "コグのバージョンとそのPyLav依存関係を表示する"
 
 #: plmanagednode/cog.py:66
 msgid "Library/Cog"
-msgstr "ライブラリ/Cog"
+msgstr "ライブラリ/コグ"
 
 #: plmanagednode/cog.py:67
 msgid "Version"
@@ -94,7 +94,12 @@ msgid "Set the managed Lavalink node maximum heap-size.\n\n"
 "        This value only represents the maximum amount of RAM allowed to be used at any given point, and does not mean\n"
 "        that the managed Lavalink node will always use this amount of RAM.\n"
 "        "
-msgstr ""
+msgstr "管理対象の Lavalink ノードの最大ヒープ・サイズを設定します。\n\n"
+"        デフォルトでは、この値は(65-1023M|1+G)(256M、\n"
+"        たとえば256G)\n\n"
+"        この値は、任意の時点で使用できるRAMの最大量を表すだけであり、意味しません。\n"
+"        管理対象のLavalinkノードは常にこの量のRAMを使用します。\n"
+"        "
 
 #: plmanagednode/cog.py:218
 msgid "Heap-size must be a valid measure of size, e.g. 256M, 256G"
@@ -137,7 +142,11 @@ msgid "`Dangerous command` Set the managed Lavalink node's connection port.\n\n"
 "        conflict with the default port because you already have an application using port 2154 on this device.\n\n"
 "        The value by default is `2154`.\n"
 "        "
-msgstr ""
+msgstr "「危険なコマンド」管理対象のLavalinkノードの接続ポートを設定します。\n\n"
+"        このポートは、管理対象のLavalinkノードがバインドするポートであり、\n"
+"        このデバイスでポート 2154 を使用するアプリケーションが既にあるため、既定のポートと競合します。\n\n"
+"        デフォルト値は '2154' です。\n"
+"        "
 
 #: plmanagednode/cog.py:320
 msgid "The port must be between 1024 and 49151"
@@ -243,7 +252,20 @@ msgid "Configure multiple settings for the managed node.\n\n"
 "        `youtubeSearchEnabled` : Boolean i.e True (Default True)\n"
 "        `soundcloudSearchEnabled` : Boolean i.e True (Default True)\n"
 "        "
-msgstr ""
+msgstr "管理対象ノードの複数の設定を構成します。\n\n"
+"        実行 '[p]PLマネージド構成サーバー <setting> info' をクリックして、設定とその機能に関する情報を表示します。\n\n"
+"        **名前の設定**:\n"
+"        'bufferDurationMs' : 整数、つまり 400 (デフォルトは 400) - JDA-NAS を無効にするには 0 に設定します。\n"
+"        'frameBufferDurationMs' : 整数、すなわち 1000 (デフォルトは 1000)\n"
+"        'trackStuckThresholdMs' : 整数、つまり 1000 (デフォルトは 1000)\n"
+"        'youtubePlaylistLoadLimit' : 整数、つまり 1000 (デフォルトは 1000)\n"
+"        'opusEncodingQuality' : 整数、すなわち 10 (デフォルトは 10)\n"
+"        'リサンプリング品質' : 文字列、つまり低 (デフォルトは高)\n"
+"        'useSeekGhosting' : ブール値、つまり true (デフォルトは true)\n"
+"        'playerUpdateInterval' : 整数、すなわち 30 (デフォルトは 30)\n"
+"        'youtubeSearchEnabled' : ブール値、つまり True (デフォルトは True)\n"
+"        'soundcloudSearchEnabled' : ブール値、つまり True (デフォルトは True)\n"
+"        "
 
 #: plmanagednode/cog.py:739
 msgid "{Setting} is not a valid Setting; Options are:\n\n"
@@ -294,7 +316,7 @@ msgstr "ノード内でSoundCloud検索を有効または無効にすると、So
 #: plmanagednode/cog.py:799
 msgid "{Setting} info.\n\n"
 "{info}"
-msgstr "{Setting} info.\n\n"
+msgstr "{Setting} の情報。\n\n"
 "{info}"
 
 #: plmanagednode/cog.py:827
@@ -376,7 +398,7 @@ msgstr "これとやり取りする権限がありません"
 
 #: plmanagednode/view.py:125
 msgid "IP Rotation Configurator"
-msgstr "IP Rotation Configurator"
+msgstr "IP ローテーション コンフィギュレーター"
 
 #: plmanagednode/view.py:128
 msgid "IP Blocks"
@@ -476,7 +498,7 @@ msgstr "HTTP プロキシ設定"
 
 #: plmanagednode/view.py:379
 msgid "Hostname"
-msgstr "Hostname"
+msgstr "ホスト名"
 
 #: plmanagednode/view.py:382
 msgid "Hostname of the proxy, (ip or domain or localhost)"

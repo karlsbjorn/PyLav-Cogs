@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-02 18:07+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: /pleffects/locales/messages.pot\n"
-"X-Crowdin-File-ID: 558\n"
+"X-Crowdin-File: /cogs/pleffects/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3335\n"
 "Language: ru_RU\n"
 
 #: pleffects/cog.py:34
@@ -30,15 +30,15 @@ msgstr "Настроить поведение игрока, когда уста�
 #: pleffects/cog.py:55
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Показать зависимости от версии Cog и PyLav"
+msgstr "Показать версию Cog и его зависимости PyLav"
 
 #: pleffects/cog.py:71
 msgid "Library/Cog"
-msgstr "Библиотека/Ког"
+msgstr "Библиотека/Винтик"
 
 #: pleffects/cog.py:72
 msgid "Version"
-msgstr "Версии"
+msgstr "Версия"
 
 #: pleffects/cog.py:87
 #, docstring

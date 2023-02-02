@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-12 20:08+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-02-01 00:31+0000\n"
+"PO-Revision-Date: 2023-02-01 00:40\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: nl\n"
-"X-Crowdin-File: /plplaylists/locales/messages.pot\n"
-"X-Crowdin-File-ID: 666\n"
+"X-Crowdin-File: /cogs/plplaylists/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3319\n"
 "Language: nl_NL\n"
 
 #: plplaylists/cog.py:47
@@ -148,13 +148,18 @@ msgstr "(**1**) - Sluit het menu.\n"
 "(**5**) - Toon nummers in de huidige afspeellijst.\n\n\n"
 
 #: plplaylists/cog.py:327
-msgid "**__Currently managing__**:\n"
+msgid "__**Currently managing**__:\n"
 "**Name**:{space}{space}{space}{playlist_name}\n"
 "**Scope**:{space}{space}{space}{scope}\n"
 "**Author**:{space}{space}{author}\n"
 "**Tracks**:{space}{space}{space}{tracks} tracks\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
-msgstr ""
+msgstr "__**Momenteel beheren**__:\n"
+"**Naam**:{space}{space}{space}{playlist_name}\n"
+"**Draagwijdte**:{space}{space}{space}{scope}\n"
+"**Auteur**:{space}{space}{author}\n"
+"**Tracks**:{space}{space}{space}{tracks} Tracks\n"
+"**URL**:{space}{space}{space}{space}{space}{url}\n"
 
 #: plplaylists/cog.py:345
 msgid "Let's manage: {playlist_name}"
@@ -246,11 +251,11 @@ msgstr "De volgende afspeellijsten zijn succesvol opgeslagen:\n"
 
 #: plplaylists/cog.py:774
 msgid "You must be in a voice channel to allow me to connect"
-msgstr "Je moet in een spraakkanaal zitten om me toe te staan verbinding te maken"
+msgstr "Je moet in een spraakkanaal zijn om me in staat te stellen verbinding te maken"
 
 #: plplaylists/cog.py:782
 msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Ik heb geen toestemming om te verbinden of te spreken in {channel}"
+msgstr "Ik heb geen toestemming om verbinding te maken of te spreken in {channel}"
 
 #: plplaylists/cog.py:812
 msgid "Playlist"

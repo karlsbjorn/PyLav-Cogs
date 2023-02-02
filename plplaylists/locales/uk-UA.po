@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-12 20:08+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-02-01 00:31+0000\n"
+"PO-Revision-Date: 2023-02-01 00:40\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: uk\n"
-"X-Crowdin-File: /plplaylists/locales/messages.pot\n"
-"X-Crowdin-File-ID: 666\n"
+"X-Crowdin-File: /cogs/plplaylists/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3319\n"
 "Language: uk_UA\n"
 
 #: plplaylists/cog.py:47
@@ -33,7 +33,7 @@ msgstr "Показати версію Кога і це pyLv залежності
 
 #: plplaylists/cog.py:92
 msgid "Library/Cog"
-msgstr "Бібліотека/Ког"
+msgstr "Бібліотека/гвинтик"
 
 #: plplaylists/cog.py:93
 msgid "Version"
@@ -50,11 +50,12 @@ msgid "(**1**) - Apply changes to playlist.\n"
 "(**4**) - Link this playlist to an existing playlist/album.\n"
 "(**5**) - Add all tracks from the queue to the playlist.\n\n"
 "If you want the playlist name to be as the original playlist simply set the URL but no name.\n\n"
-msgstr "(**1**) - Застосувати зміни до плейлісту.\n"
-"(**2**) - Скасувати будь-які внесені зміни.\n"
-"(**3**) - Додати назву до плейлісту.\n"
-"(**4**) - Пов’язати цей плейліст з існуючим плейлістом/альбомом.\n"
-"(**5**) - Додати всі пісні з черги до плейлісту. Якщо ви хочете, щоб назва плейлісту відповідала оригінальному плейлісту, просто вкажіть URL-адресу, але без назви."
+msgstr "(**1**) - Застосувати зміни до списку відтворення.\n"
+"(**2**) - Скасувати всі зміни, внесені.\n"
+"(**3**) - Додати назву до списку відтворення.\n"
+"(**4**) - прив'язати цей список відтворення до існуючого плейлісту/альбому.\n"
+"(**5**) - Додати всі треки з черги до списку відтворення.\n\n"
+"Якщо ви хочете, щоб назва плейлиста була оригіналом до початкового плейліста, просто вкажіть URL-адресу без імені.\n\n"
 
 #: plplaylists/cog.py:165
 msgid "Playlist not created"
@@ -62,7 +63,7 @@ msgstr "Плейліст не створено"
 
 #: plplaylists/cog.py:166
 msgid "No tracks were provided in time."
-msgstr "Вчасно не надано пісень."
+msgstr "Не було вказано жодного треку в часі."
 
 #: plplaylists/cog.py:179
 msgid "Playlist created"
@@ -147,17 +148,17 @@ msgstr "(**1**) - Закрити меню.\n"
 "(**5**) - Показати композиції в поточному списку відтворення\n\n\n"
 
 #: plplaylists/cog.py:327
-msgid "**__Currently managing__**:\n"
+msgid "__**Currently managing**__:\n"
 "**Name**:{space}{space}{space}{playlist_name}\n"
 "**Scope**:{space}{space}{space}{scope}\n"
 "**Author**:{space}{space}{author}\n"
 "**Tracks**:{space}{space}{space}{tracks} tracks\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
-msgstr "**__Наразі керуюча__**:\n"
-"**Назва**:{space}{space}{space}{playlist_name}\n"
-"**Копія**:{space}{space}{space}{scope}\n"
+msgstr "__**На даний момент управління**__:\n"
+"**Ім'я**:{space}{space}{space}{playlist_name}\n"
+"**Масштаб**:{space}{space}{space}{scope}\n"
 "**Автор**:{space}{space}{author}\n"
-"**Пісні**:{space}{space}{space}{tracks} пісень\n"
+"**Треків**:{space}{space}{space}{tracks} Треків\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
 
 #: plplaylists/cog.py:345
@@ -254,7 +255,7 @@ msgstr "Ви повинні бути в голосовому каналі, що�
 
 #: plplaylists/cog.py:782
 msgid "I don't have permission to connect or speak in {channel}"
-msgstr "У мене немає дозволу на додавання контактів або говорити в {channel}"
+msgstr "У мене немає дозволу на підключення або розмову {channel}"
 
 #: plplaylists/cog.py:812
 msgid "Playlist"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-23 21:08+0000\n"
-"PO-Revision-Date: 2023-01-23 21:08\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /audio/locales/messages.pot\n"
-"X-Crowdin-File-ID: 544\n"
+"X-Crowdin-File: /cogs/audio/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3301\n"
 "Language: zh_CN\n"
 
 #: audio/cog.py:35
@@ -28,7 +28,10 @@ msgid "Notifies PyLav that a Player is having issues.\n\n"
 "        If enough (50%+ of currently playing players) report issues, PyLav will automatically\n"
 "        switch to a different node or restart the current node where possible.\n"
 "        "
-msgstr ""
+msgstr "通知 PyLav 玩家有问题。\n\n"
+"        如果有足够多的玩家（50%+当前在玩的玩家）报告问题，PyLav 将自动\n"
+"        切换到其他节点或重新启动当前节点（如果可能）。\n"
+"        "
 
 #: audio/config_commands.py:49
 msgid "This server already voted recently, please try again in 10 minutes"
@@ -45,7 +48,11 @@ msgid "Removes a vote for a Player being down.\n\n"
 "        switch to a different node or restart the current node where possible.\n\n"
 "        This command is only useful if you previously voted for a node to be down and it is now back up.\n"
 "        "
-msgstr ""
+msgstr "删除玩家被关闭的投票。\n\n"
+"        如果有足够多的玩家（50%+当前在玩的玩家）报告问题，PyLav 将自动\n"
+"        切换到其他节点或重新启动当前节点（如果可能）。\n\n"
+"        仅当您之前投票支持节点关闭并且现在已备份时，此命令才有用。\n"
+"        "
 
 #: audio/config_commands.py:80
 msgid "There is no active votes for the current backend"
@@ -281,7 +288,7 @@ msgstr "DJ 角色"
 
 #: audio/config_commands.py:536 audio/config_commands.py:541
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "DJ 用户"
 
 #: audio/config_commands.py:549
 #, docstring

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:18\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: zh_CN\n"
 
 #: plconfig/cog.py:32
@@ -30,11 +30,11 @@ msgstr "更改 PyLav 的全局设置"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "显示 Cog版本和 PyLav 依赖关系"
+msgstr "显示齿轮的版本及其 PyLav 依赖项"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "库 / COG"
+msgstr "库/齿轮"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -47,7 +47,7 @@ msgstr "显示配置值"
 
 #: plconfig/cog.py:85 plconfig/view.py:57
 msgid "PyLav Config"
-msgstr "PyLav Config"
+msgstr "PyLav 配置"
 
 #: plconfig/cog.py:88
 msgid "Get information about the PyLav library settings"
@@ -170,17 +170,17 @@ msgstr "PyLav的管理节点已被禁用"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "切换管理节点自动更新开关。\n\n"
-"        更改将在重启 [botname]后应用。\n"
+msgstr "打开/关闭受管节点自动更新。\n\n"
+"        重新启动后将应用更改 [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLav的管理节点自动更新已启用"
+msgstr "已启用 PyLav 的受管节点自动更新"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLav的管理节点自动更新已被禁用"
+msgstr "PyLav 的受管节点自动更新已被禁用"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -227,14 +227,14 @@ msgid "1. Go to Spotify developers and log in with your Spotify account.\n"
 "5. Accept the terms and conditions.\n"
 "6. Copy your client ID and your client secret into:\n"
 "`{prefix}set api spotify client_id <your_client_id_here> client_secret <your_client_secret_here>`"
-msgstr "1. 前往Spotify开发者并使用您的 Spotify 帐户登录。\n"
-"(https://developer.spotify)。 om/dashboard/applications)\n"
-"2. 单击\"创建一个应用程序\"。\n"
-"3. 填写提供的表单中包含您的应用程序名称等\n"
-"4。 当您是否正在开发商业集成时，请选择“否”。\n"
+msgstr "1. 转到 Spotify 开发人员并使用您的 Spotify 帐户登录。\n"
+"（https://developer.spotify.com/dashboard/applications）\n"
+"2. 单击“创建应用程序”。\n"
+"3. 填写随附的应用名称等的表单。\n"
+"4. 当询问您是否正在开发商业集成时，请选择“否”。\n"
 "5. 接受条款和条件。\n"
-"6。 将您的客户端 ID 和客户端的秘密复制到:\n"
-"{prefix}设置 api 破坏客户端id <your_client_id_here> client_secret <your_client_secret_here>"
+"6. 将您的客户端 ID 和客户端密钥复制到：\n"
+"`{prefix}设置 API Spotify client_id <your_client_id_here> client_secret <your_client_secret_here>`"
 
 #: plconfig/cog.py:409
 #, docstring
@@ -265,12 +265,12 @@ msgstr "PyLav 将不再改变机器人活动"
 #: plconfig/view.py:27 plconfig/view.py:69 plconfig/view.py:140
 #: plconfig/view.py:211 plconfig/view.py:430
 msgid "Enabled"
-msgstr "已启用"
+msgstr "启用"
 
 #: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
 #: plconfig/view.py:212 plconfig/view.py:431
 msgid "Disabled"
-msgstr "已禁用"
+msgstr "禁用"
 
 #: plconfig/view.py:32
 msgid "Use Managed Node"
@@ -301,7 +301,7 @@ msgstr "使用捆绑的\n"
 #: plconfig/view.py:58 plconfig/view.py:124 plconfig/view.py:195
 #: plconfig/view.py:340 plconfig/view.py:475
 msgid "Value"
-msgstr "值"
+msgstr "价值"
 
 #: plconfig/view.py:73 plconfig/view.py:154 plconfig/view.py:258
 msgid "Volume"
@@ -317,15 +317,15 @@ msgstr "自动播放"
 
 #: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
 msgid "Shuffling"
-msgstr "Shuffling"
+msgstr "洗牌"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "自动随机播放"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
-msgstr "Auto Deafen"
+msgstr "自动耳聋"
 
 #: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
 msgid "Auto Disconnect"
@@ -358,7 +358,7 @@ msgstr "显示太多({count})"
 #: plconfig/view.py:248 plconfig/view.py:253 plconfig/view.py:316
 #: plconfig/view.py:322 plconfig/view.py:328
 msgid "None"
-msgstr "无"
+msgstr "没有"
 
 #: plconfig/view.py:265
 msgid "AutoPlay Playlist"
@@ -386,7 +386,7 @@ msgstr "强制通知频道"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "DJ 用户"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
@@ -448,7 +448,7 @@ msgstr "路径"
 
 #: plconfig/view.py:439
 msgid "Java"
-msgstr "Java"
+msgstr "爪哇岛"
 
 #: plconfig/view.py:443
 msgid "Lavaplayer"
@@ -492,5 +492,5 @@ msgstr "您无权与此选项进行互动"
 
 #: plconfig/view.py:558
 msgid "You are not authorized to interact with this"
-msgstr "您无权与这个交互功能"
+msgstr "您无权与此互动"
 

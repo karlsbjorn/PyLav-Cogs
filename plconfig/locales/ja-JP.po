@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ja\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: ja_JP\n"
 
 #: plconfig/cog.py:32
@@ -30,11 +30,11 @@ msgstr "PyLav のグローバル設定を変更する"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog と PyLav の依存関係のバージョンを表示する"
+msgstr "歯車とそのPyLav依存関係のバージョンを表示する"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "ライブラリ/Cog"
+msgstr "ライブラリ/コグ"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -87,7 +87,7 @@ msgstr "プレイリストの自動更新のスケジュールを取得します
 
 #: plconfig/cog.py:138
 msgid "PyLav Paths"
-msgstr "PyLav Paths"
+msgstr "パイラヴパス"
 
 #: plconfig/cog.py:140
 msgid "Get information about PyLav paths"
@@ -170,17 +170,17 @@ msgstr "PyLavの管理ノードは無効になっています"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "管理ノードの自動更新のオン/オフを切り替えます。\n\n"
-" [botname]を再起動した後に変更が適用されます。\n"
+msgstr "マネージドノードの自動更新のオン/オフを切り替えます。\n\n"
+"        再起動後に変更が適用されます [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLavの管理ノードの自動更新が有効になりました"
+msgstr "PyLavのマネージドノードの自動更新が有効になっています"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLavの管理ノードの自動更新は無効になっています"
+msgstr "PyLav のマネージドノードの自動更新が無効になっている"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -227,7 +227,14 @@ msgid "1. Go to Spotify developers and log in with your Spotify account.\n"
 "5. Accept the terms and conditions.\n"
 "6. Copy your client ID and your client secret into:\n"
 "`{prefix}set api spotify client_id <your_client_id_here> client_secret <your_client_secret_here>`"
-msgstr ""
+msgstr "1. Spotify開発者に移動し、Spotifyアカウントでログインします。\n"
+"(https://developer.spotify.com/dashboard/applications)\n"
+"2. 「アプリの作成」をクリックします。\n"
+"3. 提供されたフォームにアプリ名などを記入します。\n"
+"4.商用統合を開発しているかどうかを尋ねられたら、「いいえ」を選択します。\n"
+"5. 利用規約に同意します。\n"
+"6. クライアント ID とクライアント シークレットを次の場所にコピーします。\n"
+"`{prefix}API Spotify client_idを設定する <your_client_id_here> client_secret <your_client_secret_here>`"
 
 #: plconfig/cog.py:409
 #, docstring
@@ -294,7 +301,7 @@ msgstr "バンドルされた\n"
 #: plconfig/view.py:58 plconfig/view.py:124 plconfig/view.py:195
 #: plconfig/view.py:340 plconfig/view.py:475
 msgid "Value"
-msgstr "値"
+msgstr "価値"
 
 #: plconfig/view.py:73 plconfig/view.py:154 plconfig/view.py:258
 msgid "Volume"
@@ -310,15 +317,15 @@ msgstr "自動再生"
 
 #: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
 msgid "Shuffling"
-msgstr "Shuffling"
+msgstr "シャッフル"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "自動シャッフル"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
-msgstr "Auto Deafen"
+msgstr "自動聴覚障害者"
 
 #: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
 msgid "Auto Disconnect"
@@ -351,7 +358,7 @@ msgstr "表示が多すぎます ({count})"
 #: plconfig/view.py:248 plconfig/view.py:253 plconfig/view.py:316
 #: plconfig/view.py:322 plconfig/view.py:328
 msgid "None"
-msgstr "なし"
+msgstr "何一つ"
 
 #: plconfig/view.py:265
 msgid "AutoPlay Playlist"
@@ -379,11 +386,11 @@ msgstr "強制通知チャンネル"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "DJユーザー"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
-msgstr "DJ ロール"
+msgstr "DJの役割"
 
 #: plconfig/view.py:354
 msgid "Next Bundled\n"
@@ -425,7 +432,7 @@ msgstr "ラバルリンクフォルダ"
 
 #: plconfig/view.py:405
 msgid "Java Executable"
-msgstr "Java Executable"
+msgstr "Java 実行可能ファイル"
 
 #: plconfig/view.py:409
 msgid "Not Found"
@@ -441,11 +448,11 @@ msgstr "パス"
 
 #: plconfig/view.py:439
 msgid "Java"
-msgstr "Java"
+msgstr "ジャワ"
 
 #: plconfig/view.py:443
 msgid "Lavaplayer"
-msgstr "Lavaplayer"
+msgstr "ラバプレイヤー"
 
 #: plconfig/view.py:447
 msgid "Lavalink Branch"
@@ -485,5 +492,5 @@ msgstr "このオプションを操作する権限がありません。"
 
 #: plconfig/view.py:558
 msgid "You are not authorized to interact with this"
-msgstr "これとやり取りする権限がありません"
+msgstr "あなたはこれと対話する権限がありません"
 

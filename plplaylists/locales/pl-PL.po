@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-12 20:08+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-02-01 00:31+0000\n"
+"PO-Revision-Date: 2023-02-01 00:40\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: pl\n"
-"X-Crowdin-File: /plplaylists/locales/messages.pot\n"
-"X-Crowdin-File-ID: 666\n"
+"X-Crowdin-File: /cogs/plplaylists/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3319\n"
 "Language: pl_PL\n"
 
 #: plplaylists/cog.py:47
@@ -33,7 +33,7 @@ msgstr "Pokaż wersję Cog i jego zależności PyLav"
 
 #: plplaylists/cog.py:92
 msgid "Library/Cog"
-msgstr "Biblioteka/Cog"
+msgstr "Biblioteka/Trybik"
 
 #: plplaylists/cog.py:93
 msgid "Version"
@@ -148,13 +148,18 @@ msgstr "(**1**) - Zamknij menu.\n"
 "(**5**) - Pokaż utwory w bieżącej playliście.\n\n\n"
 
 #: plplaylists/cog.py:327
-msgid "**__Currently managing__**:\n"
+msgid "__**Currently managing**__:\n"
 "**Name**:{space}{space}{space}{playlist_name}\n"
 "**Scope**:{space}{space}{space}{scope}\n"
 "**Author**:{space}{space}{author}\n"
 "**Tracks**:{space}{space}{space}{tracks} tracks\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
-msgstr ""
+msgstr "__**Obecnie zarządzający**__:\n"
+"**Nazwa**:{space}{space}{space}{playlist_name}\n"
+"**Zakres**:{space}{space}{space}{scope}\n"
+"**Autor**:{space}{space}{author}\n"
+"**Utworów**:{space}{space}{space}{tracks} Utworów\n"
+"**URL**:{space}{space}{space}{space}{space}{url}\n"
 
 #: plplaylists/cog.py:345
 msgid "Let's manage: {playlist_name}"
@@ -246,7 +251,7 @@ msgstr "Pomyślnie zapisano następujące playlisty:\n"
 
 #: plplaylists/cog.py:774
 msgid "You must be in a voice channel to allow me to connect"
-msgstr "Musisz być w kanale głosowym, aby umożliwić mi połączenie"
+msgstr "Musisz mieć kanał głosowy, aby umożliwić mi połączenie"
 
 #: plplaylists/cog.py:782
 msgid "I don't have permission to connect or speak in {channel}"

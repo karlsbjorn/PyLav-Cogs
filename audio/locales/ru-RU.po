@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-23 21:08+0000\n"
-"PO-Revision-Date: 2023-01-23 21:08\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: /audio/locales/messages.pot\n"
-"X-Crowdin-File-ID: 544\n"
+"X-Crowdin-File: /cogs/audio/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3301\n"
 "Language: ru_RU\n"
 
 #: audio/cog.py:35
@@ -28,7 +28,10 @@ msgid "Notifies PyLav that a Player is having issues.\n\n"
 "        If enough (50%+ of currently playing players) report issues, PyLav will automatically\n"
 "        switch to a different node or restart the current node where possible.\n"
 "        "
-msgstr ""
+msgstr "Уведомляет PyLav о том, что у игрока возникли проблемы.\n\n"
+"        Если достаточное количество (50% + играющих в настоящее время игроков) сообщит о проблемах, PyLav автоматически\n"
+"        переключитесь на другой узел или перезапустите текущий узел, где это возможно.\n"
+"        "
 
 #: audio/config_commands.py:49
 msgid "This server already voted recently, please try again in 10 minutes"
@@ -45,7 +48,11 @@ msgid "Removes a vote for a Player being down.\n\n"
 "        switch to a different node or restart the current node where possible.\n\n"
 "        This command is only useful if you previously voted for a node to be down and it is now back up.\n"
 "        "
-msgstr ""
+msgstr "Удаляет голос за то, что Игрок не работает.\n\n"
+"        Если достаточное количество (50% + играющих в настоящее время игроков) сообщит о проблемах, PyLav автоматически\n"
+"        переключитесь на другой узел или перезапустите текущий узел, где это возможно.\n\n"
+"        Эта команда полезна только в том случае, если вы ранее голосовали за то, чтобы узел был отключен, и теперь он находится в резервном копировании.\n"
+"        "
 
 #: audio/config_commands.py:80
 msgid "There is no active votes for the current backend"
@@ -281,7 +288,7 @@ msgstr "Роли DJ"
 
 #: audio/config_commands.py:536 audio/config_commands.py:541
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "Пользователи DJ"
 
 #: audio/config_commands.py:549
 #, docstring
@@ -330,7 +337,7 @@ msgstr "Автоматическое воспроизведение отключ
 #: audio/config_commands.py:761
 #, docstring
 msgid "Set whether the bot should disconnect from the voice channel"
-msgstr "Установка отключения бота от голосового канала"
+msgstr "Установка того, должен ли бот отключаться от голосового канала"
 
 #: audio/config_commands.py:771
 #, docstring
@@ -342,18 +349,18 @@ msgid "Set whether the bot should disconnect from the voice channel when the que
 "            Accepts seconds, minutes, hours, days, weeks (if no unit is specified, the duration is assumed to be\n"
 "            given in seconds)\n"
 "        "
-msgstr "Установка отключения бота от голосового канала, когда очередь пуста.\n\n"
+msgstr "Укажите, должен ли бот отключаться от голосового канала, когда очередь пуста.\n\n"
 "        Аргументы:\n"
-"            - `<toggle>`: Должен ли бот отключиться от голосового канала, когда очередь пуста.\n"
-"            - `<duration>`: Как долго после пустой очереди при отключении игрока. По умолчанию 60\n"
-"            секунд.\n"
-"            Принимает секунды, минуты, часы, дни, недели (если единица не указана, предполагается, что продолжительность\n"
-"            указана в секундах)\n"
+"            - `<toggle>': Должен ли бот отключаться от голосового канала, когда очередь пуста.\n"
+"            - `<duration>': Как долго после того, как очередь пуста, игрок должен быть отключен. Значение по умолчанию — 60\n"
+"            товары второго сорта.\n"
+"            Принимает секунды, минуты, часы, дни, недели (если единица измерения не указана, предполагается, что продолжительность равна\n"
+"            дается в секундах)\n"
 "        "
 
 #: audio/config_commands.py:789
 msgid "Disconnect when the queue finished is globally enabled and players will be disconnected after {delta}"
-msgstr "Отключиться, когда очередь завершена глобально включена, и игроки будут отключены после {delta}"
+msgstr "Отключитесь, когда очередь будет глобально включена, и игроки будут отключены после {delta}"
 
 #: audio/config_commands.py:832
 #, docstring
@@ -365,41 +372,41 @@ msgid "Set whether the bot should disconnect from the voice channel when alone.\
 "            Accepts seconds, minutes, hours, days, weeks (if no unit is specified, the duration is assumed to be\n"
 "            given in seconds)\n"
 "        "
-msgstr "Укажите, должен ли бот отключиться от голосового канала, когда он один.\n\n"
+msgstr "Укажите, должен ли бот отключаться от голосового канала в одиночестве.\n\n"
 "        Аргументы:\n"
-"            - `<toggle>`: Должен ли бот отключиться от голосового канала, когда он обнаружит, что он только\n"
-"            .\n"
-"            - `<duration>`: На сколько дольше после обнаружения должен быть отключен игрок. По умолчанию 60 секунд.\n"
-"            Принимает секунды, минуты, часы, дни, недели (если единица не указана, предполагается, что продолжительность\n"
-"            указана в секундах)\n"
+"            - `<toggle>': Должен ли бот отключаться от голосового канала, когда он обнаруживает, что он\n"
+"            один.\n"
+"            - `<duration>': Как долго после обнаружения игрок должен быть отключен. Значение по умолчанию — 60 секунд.\n"
+"            Принимает секунды, минуты, часы, дни, недели (если единица измерения не указана, предполагается, что продолжительность равна\n"
+"            дается в секундах)\n"
 "        "
 
 #: audio/config_commands.py:851
 msgid "Disconnect when alone is globally enabled and players will be disconnected after {delta}"
-msgstr "Отключиться, когда один глобально включен и игроки будут отключены после {delta}"
+msgstr "Отключение, когда один глобально включен, и игроки будут отключены после {delta}"
 
 #: audio/config_commands.py:889
 #, docstring
 msgid "Sets the Auto-Play playlist"
-msgstr "Установить автовоспроизведение"
+msgstr "Задает плейлист автоматического воспроизведения"
 
 #: audio/config_commands.py:906
 msgid "Auto-Play playlist set to {playlist}"
-msgstr "Авто-воспроизведение изменено на {playlist}"
+msgstr "Для плейлиста автоматического воспроизведения установлено значение {playlist}"
 
 #: audio/config_commands.py:916
 #, docstring
 msgid "Set the channel locks"
-msgstr "Задать блокировку канала"
+msgstr "Установка блокировок каналов"
 
 #: audio/config_commands.py:922
 #, docstring
 msgid "Set the channel lock for commands"
-msgstr "Установить блокировку канала для команд"
+msgstr "Установка блокировки канала для команд"
 
 #: audio/config_commands.py:937
 msgid "I don't have permission to send message or send embed links or read messages in {channel}"
-msgstr "У меня нет разрешения на отправку сообщения или отправку встраиваемых ссылок или чтение сообщений в {channel}"
+msgstr "У меня нет разрешения отправлять сообщения, отправлять ссылки для встраивания или читать сообщения в {channel}"
 
 #: audio/config_commands.py:954
 msgid "I will only listen to commands in {channel}"
@@ -412,28 +419,28 @@ msgstr "Я буду слушать команды во всех каналах, 
 #: audio/config_commands.py:970
 #, docstring
 msgid "Set the channel lock for voice channels"
-msgstr "Установить блокировку канала для голосовых каналов"
+msgstr "Установка блокировки каналов для голосовых каналов"
 
 #: audio/config_commands.py:982 audio/hybrid_commands.py:107
 #: audio/player_commands.py:144
 msgid "I don't have permission to connect or speak in {channel}"
-msgstr "У меня нет разрешения на подключение или произношение в {channel}"
+msgstr "У меня нет разрешения на подключение или выступление в {channel}"
 
 #: audio/config_commands.py:1000
 msgid "I will only be allowed to join {channel}"
-msgstr "Я могу присоединиться только к {channel}"
+msgstr "Мне будет разрешено присоединиться только {channel}"
 
 #: audio/config_commands.py:1007
 msgid "I'm free to join any VC"
-msgstr "Я бесплатно присоединяюсь к любому VC"
+msgstr "Я могу присоединиться к любому VC"
 
 #: audio/context_menus.py:27 audio/context_menus.py:143
 msgid "I can't play songs in DMs"
-msgstr "Я не могу проигрывать песни в ЛС"
+msgstr "Я не могу воспроизводить песни в DM"
 
 #: audio/context_menus.py:38 audio/context_menus.py:154
 msgid "You need to be a DJ to play tracks"
-msgstr "Вы должны быть DJ для воспроизведения треков"
+msgstr "Вы должны быть диджеем, чтобы воспроизводить треки"
 
 #: audio/context_menus.py:55 audio/context_menus.py:169
 msgid "This command is not available in this channel. Please use {channel}"
@@ -441,55 +448,55 @@ msgstr "Эта команда не доступна на этом канале. 
 
 #: audio/context_menus.py:83
 msgid "I couldn't find any valid matches in the message"
-msgstr "В сообщении не найдено подходящих совпадений"
+msgstr "Не удалось найти в сообщении допустимых совпадений"
 
 #: audio/context_menus.py:94
 msgid "I found multiple valid matches in the message"
-msgstr "В сообщении было найдено несколько допустимых совпадений"
+msgstr "Я нашел несколько допустимых совпадений в сообщении"
 
 #: audio/context_menus.py:103
 msgid "I found a single valid match in the message"
-msgstr "Я нашел один действительный матч в сообщении"
+msgstr "Я нашел одно допустимое совпадение в сообщении"
 
 #: audio/context_menus.py:186
 msgid "I couldn't find any supported activity {user} is taking part in"
-msgstr "Я не смог найти ни одной поддерживаемой активности {user} принимает участие в"
+msgstr "Не удалось найти поддерживаемые действия {user} принимает участие в"
 
 #: audio/context_menus.py:218
 msgid "Couldn't map {user}'s Apple Music track to a valid query"
-msgstr "Не удалось сопоставить трек Apple Music {user}с допустимым запросом"
+msgstr "Не удалось нанести карту {user}Трек Apple Music на допустимый запрос"
 
 #: audio/context_menus.py:234
 msgid "Couldn't find any tracks matching {query}"
-msgstr "Не удалось найти треки, соответствующие {query}"
+msgstr "Не удалось найти совпадающие треки {query}"
 
 #: audio/context_menus.py:249
 msgid "Couldn't figure out what {user} is listening to"
-msgstr "Не удалось выяснить, что {user} слушает"
+msgstr "Не мог понять, что {user} слушает"
 
 #: audio/hybrid_commands.py:83
 msgid "You need to provide a query to play"
-msgstr "Вам нужно предоставить запрос для воспроизведения"
+msgstr "Вам нужно предоставить запрос для игры"
 
 #: audio/hybrid_commands.py:97 audio/player_commands.py:134
 msgid "You must be in a voice channel to allow me to connect"
-msgstr "Вы должны быть в голосовом канале, чтобы позволить мне подключиться"
+msgstr "Вы должны быть в голосовом канале, чтобы я мог подключиться"
 
 #: audio/hybrid_commands.py:154 audio/player_commands.py:225
 msgid "{track_count} tracks enqueued"
-msgstr "{track_count} треков добавлено в очередь"
+msgstr "{track_count} дорожки в очереди"
 
 #: audio/hybrid_commands.py:162 audio/player_commands.py:233
 msgid "{track} enqueued"
-msgstr "{track} добавлено в очередь"
+msgstr "{track} Очередь"
 
 #: audio/hybrid_commands.py:173 audio/player_commands.py:244
 msgid "No tracks were found for your query"
-msgstr "По вашему запросу треки не найдены"
+msgstr "Треки для вашего запроса не найдены"
 
 #: audio/hybrid_commands.py:236
 msgid "You need to be in a voice channel if you don't specify which channel I need to connect to"
-msgstr "Вам нужно быть в голосовом канале, если вы не укажете какой канал мне нужно подключаться"
+msgstr "Вы должны быть в голосовом канале, если вы не указали, к какому каналу мне нужно подключиться"
 
 #: audio/hybrid_commands.py:248
 msgid "I don't have permission to connect to that channel"
@@ -505,11 +512,11 @@ msgstr "У меня нет разрешения на подключение к {
 
 #: audio/hybrid_commands.py:268
 msgid "You don't have permission to connect to {channel}"
-msgstr "У вас нет разрешения на подключение к {channel}"
+msgstr "У вас нет разрешения на подключение {channel}"
 
 #: audio/hybrid_commands.py:285
 msgid "I'm forced to only join {channel}"
-msgstr "Я вынужден только присоединиться к {channel}"
+msgstr "Я вынужден только присоединяться {channel}"
 
 #: audio/hybrid_commands.py:293
 msgid "Connected to {channel}"
@@ -527,11 +534,11 @@ msgstr "Игрок не обнаружен"
 #: audio/hybrid_commands.py:320 audio/hybrid_commands.py:350
 #: audio/hybrid_commands.py:390
 msgid "Player is not currently playing anything"
-msgstr "В настоящее время игрок ничего не играет"
+msgstr "Игрок в настоящее время ничего не играет"
 
 #: audio/hybrid_commands.py:358
 msgid "Skipped - {track}"
-msgstr "Пропущено - {track}"
+msgstr "Пропущен- {track}"
 
 #: audio/hybrid_commands.py:397
 msgid "Player stopped"
@@ -547,11 +554,11 @@ msgstr "В очереди ничего нет"
 
 #: audio/hybrid_commands.py:485
 msgid "You are not allowed to shuffle the queue"
-msgstr "Вам не разрешено перемешивать очередь"
+msgstr "Вам не разрешается перетасовывать очередь"
 
 #: audio/hybrid_commands.py:493
 msgid "{queue_size} tracks shuffled"
-msgstr "Перемещено {queue_size} треков"
+msgstr "{queue_size} гусеницы перетасованы"
 
 #: audio/hybrid_commands.py:525
 msgid "Repeating the queue"
@@ -563,7 +570,7 @@ msgstr "Повторение отключено"
 
 #: audio/hybrid_commands.py:531
 msgid "Repeating {track}"
-msgstr "Повторение {track}"
+msgstr "Повторяющийся {track}"
 
 #: audio/hybrid_commands.py:534
 msgid "current track"
@@ -571,39 +578,39 @@ msgstr "текущий трек"
 
 #: audio/hybrid_commands.py:558
 msgid "Player already paused, did you mean to run `/resume`"
-msgstr "Игрок уже приостановлен, вы имели в виду запустить `/resume`"
+msgstr "Плеер уже сделал паузу, вы хотели запустить '/resume'"
 
 #: audio/hybrid_commands.py:560
 msgid "Player already paused, did you mean to run `{prefix}{command}`"
-msgstr "Игрок уже приостановился, вы имели в виду запустить `{prefix}{command}`"
+msgstr "Игрок уже сделал паузу, вы имели в виду бежать '{prefix}{command}`"
 
 #: audio/hybrid_commands.py:571
 msgid "Player paused"
-msgstr "Игрок приостановлен"
+msgstr "Проигрыватель поставлен на паузу"
 
 #: audio/hybrid_commands.py:593
 msgid "Player already resumed, did you mean to run `/pause`"
-msgstr "Игрок уже возобновлен, вы имели в виду запустить `/pause`"
+msgstr "Игрок уже возобновил работу, вы имели в виду запустить '/pause'"
 
 #: audio/hybrid_commands.py:595
 msgid "Player already resumed, did you mean to run `{prefix}{command}`"
-msgstr "Игрок уже возобновлен, вы имеете в виду запустить `{prefix}{command}`"
+msgstr "Игрок уже вернулся, вы хотели бежать '{prefix}{command}`"
 
 #: audio/hybrid_commands.py:606
 msgid "Player resumed"
-msgstr "Игрок возобновил"
+msgstr "Игрок возобновил работу"
 
 #: audio/hybrid_commands.py:650
 msgid "Volume cannot be higher than {max_volume}"
-msgstr "Том не может быть больше {max_volume}"
+msgstr "Объем не может быть выше {max_volume}"
 
 #: audio/hybrid_commands.py:659 audio/utility_commands.py:62
 msgid "Player volume set to {volume}%"
-msgstr "Громкость игрока изменена на {volume}%"
+msgstr "Громкость проигрывателя, установленная в значение {volume}%"
 
 #: audio/hybrid_commands.py:693
 msgid "Nothing playing"
-msgstr "Ничего не играет"
+msgstr "Ничего не проигрывается"
 
 #: audio/hybrid_commands.py:702 audio/hybrid_commands.py:711
 msgid "Unable to seek track"
@@ -611,19 +618,19 @@ msgstr "Не удается найти трек"
 
 #: audio/hybrid_commands.py:703
 msgid "Can't seek on a stream"
-msgstr "Не удается найти поток"
+msgstr "Не удается выполнить поиск в потоке"
 
 #: audio/hybrid_commands.py:720
 msgid "Cannot seek when the player is paused"
-msgstr "Не удается найти, когда игрок приостановлен"
+msgstr "Не удается выполнить поиск при приостановке проигрывателя"
 
 #: audio/hybrid_commands.py:733
 msgid "Moved {seconds}s to 00:00:00"
-msgstr "Перемещено {seconds}с к 00:00:00"
+msgstr "Двинутый {seconds}с до 00:00:00"
 
 #: audio/hybrid_commands.py:740
 msgid "Moved {seconds}s to {time}"
-msgstr "Перемещено {seconds}с в {time}"
+msgstr "Двинутый {seconds}s до {time}"
 
 #: audio/hybrid_commands.py:761
 msgid "Moved to {time}"
@@ -631,15 +638,15 @@ msgstr "Перемещено в {time}"
 
 #: audio/hybrid_commands.py:795
 msgid "No previous in player history"
-msgstr "В истории плеера нет"
+msgstr "Нет предыдущих в истории игроков"
 
 #: audio/hybrid_commands.py:803
 msgid "Playing previous track: {track}"
-msgstr "Проигрывать предыдущий трек: {track}"
+msgstr "Воспроизведение предыдущего трека: {track}"
 
 #: audio/player_commands.py:30
 msgid "Plays the specified track in the queue"
-msgstr "Проигрывает указанный трек в очереди"
+msgstr "Воспроизведение указанного трека в очереди"
 
 #: audio/player_commands.py:50 audio/player_commands.py:269
 msgid "Queue is empty"
@@ -647,7 +654,7 @@ msgstr "Очередь пуста"
 
 #: audio/player_commands.py:59 audio/player_commands.py:282
 msgid "Track index must be between 1 and {size}"
-msgstr "Индекс трека должен быть между 1 и {size}"
+msgstr "Индекс трека должен находиться в диапазоне от 1 до {size}"
 
 #: audio/player_commands.py:75 audio/player_commands.py:295
 msgid "There is no track in position {position}"
@@ -655,18 +662,18 @@ msgstr "Нет трека в позиции {position}"
 
 #: audio/player_commands.py:85
 msgid "{track} will play after {current} finishes ({eta})"
-msgstr "{track} будет играть после окончания {current} ({eta})"
+msgstr "{track} будет играть после {current} отделка ({eta})"
 
 #: audio/player_commands.py:103
 msgid "{track} will start now\n"
 "{current} has been skipped"
-msgstr "{track} начнется\n"
-"{current} пропущено"
+msgstr "{track} начнется сейчас\n"
+"{current} был пропущен"
 
 #: audio/player_commands.py:121
 #, docstring
 msgid "Enqueue a track at the top of the queue"
-msgstr "Добавлять трек в начало очереди"
+msgstr "Постановка трека в очередь в верхней части очереди"
 
 #: audio/player_commands.py:254
 #, docstring
@@ -675,17 +682,17 @@ msgid "\n"
 "        If you specify the `remove_duplicates` argument, all tracks that are the same as your URL or the index track will be removed.\n"
 "        "
 msgstr "\n"
-"        Удалить указанный трек из очереди.\n\n"
-"        Если вы укажете параметр `remove_duplicates`, все треки, совпадающие с вашим URL или индексирующим треком, будут удалены.\n"
+"        Удалите указанный трек из очереди.\n\n"
+"        Если указать аргумент 'remove_duplicates', все треки, совпадающие с URL-адресом или индексным треком, будут удалены.\n"
 "        "
 
 #: audio/player_commands.py:325
 msgid "{track} not found in queue"
-msgstr "{track} не найден в очереди"
+msgstr "{track} не найдено в очереди"
 
 #: audio/player_commands.py:335
 msgid "Removed {times} {entry_plural} of {track} from the queue"
-msgstr "Удалено {times} {entry_plural} {track} из очереди"
+msgstr "Удаленный {times} {entry_plural} из {track} из очереди"
 
 #: audio/player_commands.py:338
 msgid "entry"
@@ -698,11 +705,11 @@ msgstr "записи"
 #: audio/slash_commands.py:47
 #, docstring
 msgid "Search for a track then play the selected response"
-msgstr "Поиск трека и воспроизведение выбранного ответа"
+msgstr "Найдите трек, затем воспроизведите выбранный ответ"
 
 #: audio/slash_commands.py:53
 msgid "You haven't selected something to play"
-msgstr "Вы не выбрали что-нибудь для игры"
+msgstr "Вы не выбрали что-то для игры"
 
 #: audio/slash_commands.py:105
 msgid "Searching {service}"
@@ -710,7 +717,7 @@ msgstr "Поиск {service}"
 
 #: audio/slash_commands.py:121 audio/slash_commands.py:132
 msgid "No results found on {service}"
-msgstr "Ничего не найдено в {service}"
+msgstr "Результаты не найдены на {service}"
 
 #: audio/utility_commands.py:32
 msgid "Not connected to a voice channel"
@@ -718,9 +725,9 @@ msgstr "Не подключен к голосовому каналу"
 
 #: audio/utility_commands.py:43
 msgid "Volume limit reached, player volume set to {volume}%"
-msgstr "Достигнут лимит громкости, громкость игрока {volume}%"
+msgstr "Достигнут предел громкости, громкость плеера установлена на {volume}%"
 
 #: audio/utility_commands.py:54
 msgid "Minimum volume reached, player volume set to 0%"
-msgstr "Минимальная громкость игрока равна 0%"
+msgstr "Минимальный объем достигнут, громкость плеера установлена на 0%"
 

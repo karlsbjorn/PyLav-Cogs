@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: ru_RU\n"
 
 #: plconfig/cog.py:32
@@ -30,15 +30,15 @@ msgstr "Изменить глобальные настройки для PyLav"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Показать зависимости от версии Cog и PyLav"
+msgstr "Показать версию Cog и его зависимости PyLav"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "Библиотека/Ког"
+msgstr "Библиотека/Винтик"
 
 #: plconfig/cog.py:65
 msgid "Version"
-msgstr "Версии"
+msgstr "Версия"
 
 #: plconfig/cog.py:78
 #, docstring
@@ -47,7 +47,7 @@ msgstr "Показать значения конфигурации"
 
 #: plconfig/cog.py:85 plconfig/view.py:57
 msgid "PyLav Config"
-msgstr "PyLav Config"
+msgstr "Конфигурация PyLav"
 
 #: plconfig/cog.py:88
 msgid "Get information about the PyLav library settings"
@@ -170,17 +170,17 @@ msgstr "Управляемый узел PyLav'а отключен"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "Вкл/выкл автоматическое обновление управляемого узла.\n\n"
-"        Изменения будут применены после перезапуска [botname]\n"
+msgstr "Включите/выключите автоматическое обновление управляемого узла.\n\n"
+"        Изменения будут применены после перезапуска [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "Автоматические обновления управляемого узла PyLv включены"
+msgstr "Автоматическое обновление управляемого узла PyLav включено"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "Автоматические обновления управляемого узла PyLv отключены"
+msgstr "Автоматическое обновление управляемого узла PyLav отключено"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -265,12 +265,12 @@ msgstr "PyLav больше не изменит активности бота"
 #: plconfig/view.py:27 plconfig/view.py:69 plconfig/view.py:140
 #: plconfig/view.py:211 plconfig/view.py:430
 msgid "Enabled"
-msgstr "Включено"
+msgstr "Включен"
 
 #: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
 #: plconfig/view.py:212 plconfig/view.py:431
 msgid "Disabled"
-msgstr "Отключено"
+msgstr "Нетрудоспособный"
 
 #: plconfig/view.py:32
 msgid "Use Managed Node"
@@ -301,7 +301,7 @@ msgstr "Использовать комплект\n"
 #: plconfig/view.py:58 plconfig/view.py:124 plconfig/view.py:195
 #: plconfig/view.py:340 plconfig/view.py:475
 msgid "Value"
-msgstr "Значение"
+msgstr "Ценность"
 
 #: plconfig/view.py:73 plconfig/view.py:154 plconfig/view.py:258
 msgid "Volume"
@@ -317,15 +317,15 @@ msgstr "Автозапуск"
 
 #: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
 msgid "Shuffling"
-msgstr "Shuffling"
+msgstr "Шарканье"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "Автоматическая перетасовка"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
-msgstr "Auto Deafen"
+msgstr "Авто Глухой"
 
 #: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
 msgid "Auto Disconnect"
@@ -358,7 +358,7 @@ msgstr "Слишком много для показа ({count})"
 #: plconfig/view.py:248 plconfig/view.py:253 plconfig/view.py:316
 #: plconfig/view.py:322 plconfig/view.py:328
 msgid "None"
-msgstr "Нет"
+msgstr "Никакой"
 
 #: plconfig/view.py:265
 msgid "AutoPlay Playlist"
@@ -386,11 +386,11 @@ msgstr "Принудительный канал уведомлений"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "Пользователи DJ"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
-msgstr "Роли DJ"
+msgstr "Роли диджея"
 
 #: plconfig/view.py:354
 msgid "Next Bundled\n"
@@ -448,7 +448,7 @@ msgstr "Путь"
 
 #: plconfig/view.py:439
 msgid "Java"
-msgstr "Java"
+msgstr "Ява"
 
 #: plconfig/view.py:443
 msgid "Lavaplayer"
@@ -492,5 +492,5 @@ msgstr "Вы не авторизованы для взаимодействия �
 
 #: plconfig/view.py:558
 msgid "You are not authorized to interact with this"
-msgstr "Вы не авторизованы для взаимодействия с этим"
+msgstr "Вы не имеете права взаимодействовать с этим"
 

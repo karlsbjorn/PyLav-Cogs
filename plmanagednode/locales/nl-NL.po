@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: nl\n"
-"X-Crowdin-File: /plmanagednode/locales/messages.pot\n"
-"X-Crowdin-File-ID: 610\n"
+"X-Crowdin-File: /cogs/plmanagednode/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3323\n"
 "Language: nl_NL\n"
 
 #: plmanagednode/cog.py:34 plmanagednode/cog.py:46
@@ -25,7 +25,7 @@ msgstr "Configureer de beheerde Lavalink node gebruikt door PyLav"
 #: plmanagednode/cog.py:50
 #, docstring
 msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "Toon de versie van de Cog en de PyLav afhankelijkheden"
+msgstr "Toon de versie van de Cog en zijn PyLav-afhankelijkheden"
 
 #: plmanagednode/cog.py:66
 msgid "Library/Cog"
@@ -94,7 +94,12 @@ msgid "Set the managed Lavalink node maximum heap-size.\n\n"
 "        This value only represents the maximum amount of RAM allowed to be used at any given point, and does not mean\n"
 "        that the managed Lavalink node will always use this amount of RAM.\n"
 "        "
-msgstr ""
+msgstr "Stel de maximale heapgrootte van het beheerde Lavalink-knooppunt in.\n\n"
+"        Standaard is deze waarde 2G beschikbaar RAM in de hostmachine vertegenwoordigd door (65-1023M|1 +G) (256M,\n"
+"        256G bijvoorbeeld)\n\n"
+"        Deze waarde vertegenwoordigt alleen de maximale hoeveelheid RAM die op een bepaald punt mag worden gebruikt en betekent niet\n"
+"        dat het beheerde Lavalink-knooppunt altijd deze hoeveelheid RAM zal gebruiken.\n"
+"        "
 
 #: plmanagednode/cog.py:218
 msgid "Heap-size must be a valid measure of size, e.g. 256M, 256G"
@@ -208,11 +213,11 @@ msgstr "Ongeldige bron, {valid_list} zijn geldige bronnen"
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "enabled"
-msgstr "ingeschakeld"
+msgstr "Ingeschakeld"
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "disabled"
-msgstr "uitgeschakeld"
+msgstr "invalide"
 
 #: plmanagednode/cog.py:651
 msgid "Managed node's {source} source set to {state}."
@@ -461,7 +466,7 @@ msgstr "IP rotatie configuratie opgeslagen."
 
 #: plmanagednode/view.py:310
 msgid "Google Account Configurator"
-msgstr "Google Account Configurator"
+msgstr "Google-accountconfigurator"
 
 #: plmanagednode/view.py:313
 msgid "Email address"
@@ -473,7 +478,7 @@ msgstr "Uw Google account e-mail"
 
 #: plmanagednode/view.py:321
 msgid "password"
-msgstr "Wachtwoord"
+msgstr "wachtwoord"
 
 #: plmanagednode/view.py:324
 msgid "If you have 2FA you will need an app password"
@@ -493,7 +498,7 @@ msgstr "HTTP Proxy Configurator"
 
 #: plmanagednode/view.py:379
 msgid "Hostname"
-msgstr "Hostname"
+msgstr "Hostnaam"
 
 #: plmanagednode/view.py:382
 msgid "Hostname of the proxy, (ip or domain or localhost)"

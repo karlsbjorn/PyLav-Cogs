@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-01 21:53\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Lithuanian\n"
 "MIME-Version: 1.0\n"
@@ -10,17 +10,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && (n%100>19 || n%100<11) ? 0 : (n%10>=2 && n%10<=9) && (n%100>19 || n%100<11) ? 1 : n%1!=0 ? 2: 3);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: lt\n"
-"X-Crowdin-File: /plmigrator/locales/messages.pot\n"
-"X-Crowdin-File-ID: 632\n"
+"X-Crowdin-File: /cogs/plmigrator/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3299\n"
 "Language: lt_LT\n"
 
 #: plmigrator/cog.py:36
 #, docstring
 msgid "Copy Red's Audio settings over to PyLav"
-msgstr ""
+msgstr "Nukopijuokite \"Red\" garso nustatymus į \"PyLav\"."
 
 #: plmigrator/cog.py:49
 #, docstring
@@ -30,14 +30,20 @@ msgid "Migrate Audio settings to PyLav\n\n"
 "        i.e `[p]pylavmigrate 1`\n\n"
 "        Once you complete the migration unload this cog and uninstall it as you will not need it again.\n"
 "        "
-msgstr ""
+msgstr "Perkelkite garso nustatymus į PyLav\n\n"
+"        Atminkite, kad tai pakeis bet kokią konfigūraciją, jau esančią PyLav.\n\n"
+"        Jei esate tikri, kad norite tęsti, paleiskite šią komandą dar kartą, kai patvirtinimo argumentas nustatytas į 1\n"
+"        t.y. \"[p]pylavmigrate 1'\n\n"
+"        Kai baigsite perkėlimą, iškraukite šį krumpliaratį ir pašalinkite jį, nes jums jo nebereikės.\n"
+"        "
 
 #: plmigrator/cog.py:67
 msgid "Migration of Audio cog settings to PyLav complete. Restart the bot for it to take effect.\n"
 "{requester}"
-msgstr ""
+msgstr "Garso krumpliaračio nustatymų perkėlimas į PyLav baigtas. Iš naujo paleiskite robotą, kad jis įsigaliotų.\n"
+"{requester}"
 
 #: plmigrator/cog.py:159
 msgid "I don't have permission to access {folder}"
-msgstr ""
+msgstr "Neturiu prieigos leidimo {folder}"
 

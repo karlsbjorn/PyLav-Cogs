@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: fi\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: fi_FI\n"
 
 #: plconfig/cog.py:32
@@ -30,11 +30,11 @@ msgstr "Muuta yleisiä asetuksia PyLV:lle"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Näytä versio Cog ja sen PyLav riippuvuudet"
+msgstr "Näytä hammaspyörän versio ja sen PyLav-riippuvuudet"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "Kirjasto/Kokki"
+msgstr "Kirjasto/hammasratas"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -170,17 +170,17 @@ msgstr "PyLavin hallinnoitu palvelin on poistettu käytöstä"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "Vaihda hallitun palvelimen automaattiset päivitykset päälle/pois.\n\n"
-"        Muutokset otetaan käyttöön uudelleenkäynnistyksen [botname]jälkeen .\n"
+msgstr "Ota hallitun solmun automaattiset päivitykset käyttöön / poista ne käytöstä.\n\n"
+"        Muutokset otetaan käyttöön uudelleenkäynnistyksen jälkeen. [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLavin hallinnoidut palvelimen automaattiset päivitykset on otettu käyttöön"
+msgstr "PyLavin hallitut solmujen automaattiset päivitykset on otettu käyttöön"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLavin hallinnoidut palvelimen automaattiset päivitykset on poistettu käytöstä"
+msgstr "PyLavin hallitun solmun automaattiset päivitykset on poistettu käytöstä"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -270,7 +270,7 @@ msgstr "Käytössä"
 #: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
 #: plconfig/view.py:212 plconfig/view.py:431
 msgid "Disabled"
-msgstr "Pois Käytöstä"
+msgstr "Vammainen"
 
 #: plconfig/view.py:32
 msgid "Use Managed Node"
@@ -317,11 +317,11 @@ msgstr "AutoToisto"
 
 #: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
 msgid "Shuffling"
-msgstr "Shuffling"
+msgstr "Sekoittaminen"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "Automaattinen sekoitus"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
@@ -358,7 +358,7 @@ msgstr "Liian monta näytettävää ({count})"
 #: plconfig/view.py:248 plconfig/view.py:253 plconfig/view.py:316
 #: plconfig/view.py:322 plconfig/view.py:328
 msgid "None"
-msgstr "Ei Mitään"
+msgstr "Ei lainkaan"
 
 #: plconfig/view.py:265
 msgid "AutoPlay Playlist"
@@ -386,11 +386,11 @@ msgstr "Pakotettu Ilmoituskanava"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "DJ-käyttäjät"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
-msgstr "DJ Roolit"
+msgstr "DJ-roolit"
 
 #: plconfig/view.py:354
 msgid "Next Bundled\n"
@@ -448,15 +448,15 @@ msgstr "Polku"
 
 #: plconfig/view.py:439
 msgid "Java"
-msgstr "Java"
+msgstr "Jaava"
 
 #: plconfig/view.py:443
 msgid "Lavaplayer"
-msgstr "Lavaplayer"
+msgstr "Lava-soitin"
 
 #: plconfig/view.py:447
 msgid "Lavalink Branch"
-msgstr "Lavalink Branch"
+msgstr "Lavalink-haara"
 
 #: plconfig/view.py:451
 msgid "Lavalink Version"
@@ -464,7 +464,7 @@ msgstr "Lavalink Versio"
 
 #: plconfig/view.py:455
 msgid "Lavalink Build"
-msgstr "Lavalink Build"
+msgstr "Lavalink-rakennus"
 
 #: plconfig/view.py:458
 msgid "Build Time"
@@ -492,5 +492,5 @@ msgstr "Sinulla ei ole oikeutta olla vuorovaikutuksessa tämän vaihtoehdon kans
 
 #: plconfig/view.py:558
 msgid "You are not authorized to interact with this"
-msgstr "Sinulla ei ole oikeutta olla vuorovaikutuksessa tämän kanssa"
+msgstr "Sinulla ei ole valtuuksia olla vuorovaikutuksessa tämän kanssa"
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 17:14+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: nl\n"
-"X-Crowdin-File: /plnotifier/locales/messages.pot\n"
-"X-Crowdin-File-ID: 660\n"
+"X-Crowdin-File: /cogs/plnotifier/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3351\n"
 "Language: nl_NL\n"
 
 #: plnotifier/cog.py:84
@@ -30,7 +30,7 @@ msgstr "Configureer de PyLavNotifier cog"
 #: plnotifier/cog.py:231
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Toon de versie van de Cog en zijn PyLav afhankelijkheden"
+msgstr "Toon de versie van de Cog en zijn PyLav-afhankelijkheden"
 
 #: plnotifier/cog.py:247
 msgid "Library/Cog"
@@ -188,7 +188,7 @@ msgstr "[Node={node}] Spotify track: {track} is begonnen met spelen.\n"
 
 #: plnotifier/cog.py:593
 msgid "Apple Music Track Start Event"
-msgstr "Apple Music Track Start Event"
+msgstr "Apple Music Track Start-evenement"
 
 #: plnotifier/cog.py:594
 msgid "[Node={node}] Apple Music track: {track} has started playing.\n"
@@ -402,11 +402,11 @@ msgstr "{requester} {status} herhaalt de hele wachtrij"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "enabled"
-msgstr "ingeschakeld"
+msgstr "Ingeschakeld"
 
 #: plnotifier/cog.py:1674 plnotifier/cog.py:1685
 msgid "disabled"
-msgstr "uitgeschakeld"
+msgstr "invalide"
 
 #: plnotifier/cog.py:1683
 msgid "[Node={node}] {requester} {status} repeat for {track}"
@@ -490,7 +490,7 @@ msgstr "[Node={node}] {requester} heeft de spelers filters veranderd"
 
 #: plnotifier/cog.py:1852
 msgid "Node Connected Event"
-msgstr "Node Connected Event"
+msgstr "Gebeurtenis Verbonden knooppunt"
 
 #: plnotifier/cog.py:1853
 msgid "Node {name} has been connected"

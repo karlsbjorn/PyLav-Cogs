@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-12 20:08+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-02-01 00:31+0000\n"
+"PO-Revision-Date: 2023-02-01 00:40\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: de\n"
-"X-Crowdin-File: /plplaylists/locales/messages.pot\n"
-"X-Crowdin-File-ID: 666\n"
+"X-Crowdin-File: /cogs/plplaylists/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3319\n"
 "Language: de_DE\n"
 
 #: plplaylists/cog.py:47
@@ -33,7 +33,7 @@ msgstr "Zeige die Version des Cog und seine PyLav Abhängigkeiten"
 
 #: plplaylists/cog.py:92
 msgid "Library/Cog"
-msgstr "Bibliothek/Cog"
+msgstr "Bibliothek/Zahnrad"
 
 #: plplaylists/cog.py:93
 msgid "Version"
@@ -73,9 +73,9 @@ msgstr "Playlist erstellt"
 msgid "Name: `{name}`\n"
 "ID: `{id}`\n"
 "Tracks: `{track_count}`"
-msgstr "Name: `{name}`\n"
-"ID: `{id}`\n"
-"Tracks: `{track_count}`"
+msgstr "Name: '{name}`\n"
+"ID: '{id}`\n"
+"Tracks: '{track_count}`"
 
 #: plplaylists/cog.py:204
 msgid "You have no playlists"
@@ -148,17 +148,17 @@ msgstr "(**1**) - Menü schließen.\n"
 "(**5**) - Titel in der aktuellen Wiedergabeliste anzeigen.\n\n\n"
 
 #: plplaylists/cog.py:327
-msgid "**__Currently managing__**:\n"
+msgid "__**Currently managing**__:\n"
 "**Name**:{space}{space}{space}{playlist_name}\n"
 "**Scope**:{space}{space}{space}{scope}\n"
 "**Author**:{space}{space}{author}\n"
 "**Tracks**:{space}{space}{space}{tracks} tracks\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
-msgstr "**__Momentan managing__**:\n"
+msgstr "__**Derzeit verwalten**__:\n"
 "**Name**:{space}{space}{space}{playlist_name}\n"
-"**Scope**:{space}{space}{space}{scope}\n"
-"**Autor**:{space}{space}{author}\n"
-"**Tracks**:{space}{space}{space}{tracks} Tracks\n"
+"**Umfang**:{space}{space}{space}{scope}\n"
+"**Verfasser**:{space}{space}{author}\n"
+"**Fährten**:{space}{space}{space}{tracks} Fährten\n"
 "**URL**:{space}{space}{space}{space}{space}{url}\n"
 
 #: plplaylists/cog.py:345
@@ -251,11 +251,11 @@ msgstr "Die folgenden Wiedergabelisten wurden erfolgreich gespeichert:\n"
 
 #: plplaylists/cog.py:774
 msgid "You must be in a voice channel to allow me to connect"
-msgstr "Du musst in einem Sprachkanal sein, um mich zu verbinden"
+msgstr "Sie müssen sich in einem Sprachkanal befinden, damit ich eine Verbindung herstellen kann"
 
 #: plplaylists/cog.py:782
 msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Ich habe keine Berechtigung in {channel} zu verbinden oder zu sprechen"
+msgstr "Ich habe keine Berechtigung, mich zu verbinden oder zu sprechen {channel}"
 
 #: plplaylists/cog.py:812
 msgid "Playlist"

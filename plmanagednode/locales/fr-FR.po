@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-01 21:53+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:09\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: fr\n"
-"X-Crowdin-File: /plmanagednode/locales/messages.pot\n"
-"X-Crowdin-File-ID: 610\n"
+"X-Crowdin-File: /cogs/plmanagednode/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3323\n"
 "Language: fr_FR\n"
 
 #: plmanagednode/cog.py:34 plmanagednode/cog.py:46
@@ -25,11 +25,11 @@ msgstr "Configurer le nœud Lavalink géré utilisé par PyLav"
 #: plmanagednode/cog.py:50
 #, docstring
 msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "Afficher la version du Cog et ses dépendances PyLav"
+msgstr "Afficher la version du rouage et ses dépendances PyLav"
 
 #: plmanagednode/cog.py:66
 msgid "Library/Cog"
-msgstr "Bibliothèque/Cog"
+msgstr "Bibliothèque/Engrenage"
 
 #: plmanagednode/cog.py:67
 msgid "Version"
@@ -217,7 +217,7 @@ msgstr "Activé"
 
 #: plmanagednode/cog.py:648 plmanagednode/cog.py:684
 msgid "disabled"
-msgstr "désactivée"
+msgstr "handicapé"
 
 #: plmanagednode/cog.py:651
 msgid "Managed node's {source} source set to {state}."
@@ -498,7 +498,7 @@ msgstr "Configurateur de proxy HTTP"
 
 #: plmanagednode/view.py:379
 msgid "Hostname"
-msgstr "Hostname"
+msgstr "Nom d’hôte"
 
 #: plmanagednode/view.py:382
 msgid "Hostname of the proxy, (ip or domain or localhost)"

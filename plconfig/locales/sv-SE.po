@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: pylavcogs\n"
-"POT-Creation-Date: 2023-01-21 16:34+0000\n"
-"PO-Revision-Date: 2023-01-21 20:02\n"
+"Project-Id-Version: pylav\n"
+"POT-Creation-Date: 2023-01-31 23:26+0000\n"
+"PO-Revision-Date: 2023-02-01 00:10\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: redgettext 3.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: pylavcogs\n"
-"X-Crowdin-Project-ID: 535246\n"
+"X-Crowdin-Project: pylav\n"
+"X-Crowdin-Project-ID: 535244\n"
 "X-Crowdin-Language: sv-SE\n"
-"X-Crowdin-File: /plconfig/locales/messages.pot\n"
-"X-Crowdin-File-ID: 552\n"
+"X-Crowdin-File: /cogs/plconfig/locales/messages.pot\n"
+"X-Crowdin-File-ID: 3353\n"
 "Language: sv_SE\n"
 
 #: plconfig/cog.py:32
@@ -30,11 +30,11 @@ msgstr "Ändra globala inställningar för PyLav"
 #: plconfig/cog.py:48
 #, docstring
 msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Visa versionen av Cog och dess PyLav beroenden"
+msgstr "Visa versionen av kuggen och dess PyLav-beroenden"
 
 #: plconfig/cog.py:64
 msgid "Library/Cog"
-msgstr "Bibliotek/Kugga"
+msgstr "Bibliotek/kugge"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -47,7 +47,7 @@ msgstr "Visa konfigurationsvärden"
 
 #: plconfig/cog.py:85 plconfig/view.py:57
 msgid "PyLav Config"
-msgstr "PyLav Config"
+msgstr "PyLav-konfiguration"
 
 #: plconfig/cog.py:88
 msgid "Get information about the PyLav library settings"
@@ -170,17 +170,17 @@ msgstr "PyLavs hanterade nod har inaktiverats"
 msgid "Toggle the managed node auto updates on/off.\n\n"
 "        Changes will be applied after restarting [botname].\n"
 "        "
-msgstr "Växla den hanterade noden automatisk uppdateringar på/av.\n\n"
+msgstr "Slå på/av automatiska uppdateringar av den hanterade noden.\n\n"
 "        Ändringar kommer att tillämpas efter omstart [botname].\n"
 "        "
 
 #: plconfig/cog.py:300
 msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLavs hanterade noduppdateringar har aktiverats"
+msgstr "PyLavs automatiska uppdateringar av hanterade noder har aktiverats"
 
 #: plconfig/cog.py:308
 msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLavs hanterade noduppdateringar har inaktiverats"
+msgstr "PyLavs automatiska uppdateringar av hanterade noder har inaktiverats"
 
 #: plconfig/cog.py:316
 #, docstring
@@ -265,12 +265,12 @@ msgstr "PyLav kommer inte längre att ändra botens aktivitet"
 #: plconfig/view.py:27 plconfig/view.py:69 plconfig/view.py:140
 #: plconfig/view.py:211 plconfig/view.py:430
 msgid "Enabled"
-msgstr "Aktiverad"
+msgstr "Aktiverat"
 
 #: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
 #: plconfig/view.py:212 plconfig/view.py:431
 msgid "Disabled"
-msgstr "Inaktiverad"
+msgstr "Handikappad"
 
 #: plconfig/view.py:32
 msgid "Use Managed Node"
@@ -313,19 +313,19 @@ msgstr "Maximal volym"
 
 #: plconfig/view.py:77 plconfig/view.py:157 plconfig/view.py:261
 msgid "AutoPlay"
-msgstr "AutoPlay"
+msgstr "Spela upp automatiskt"
 
 #: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
 msgid "Shuffling"
-msgstr "Shuffling"
+msgstr "Blanda"
 
 #: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
 msgid "Auto Shuffle"
-msgstr "Auto Shuffle"
+msgstr "Automatisk blandning"
 
 #: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
 msgid "Auto Deafen"
-msgstr "Auto Deafen"
+msgstr "Automatisk döv"
 
 #: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
 msgid "Auto Disconnect"
@@ -386,11 +386,11 @@ msgstr "Tvingad aviseringskanal"
 
 #: plconfig/view.py:330
 msgid "DJ Users"
-msgstr "DJ Users"
+msgstr "DJ-användare"
 
 #: plconfig/view.py:331
 msgid "DJ Roles"
-msgstr "DJ roller"
+msgstr "DJ-roller"
 
 #: plconfig/view.py:354
 msgid "Next Bundled\n"
