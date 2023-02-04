@@ -8,7 +8,9 @@ from typing import TYPE_CHECKING
 import discord
 from redbot.core.i18n import Translator
 
+from pylav.constants.config import DEFAULT_SEARCH_SOURCE
 from pylav.extension.red.utils import rgetattr
+from pylav.extension.red.utils.decorators import is_dj_logic
 from pylav.helpers import emojis
 from pylav.helpers.singleton import synchronized_method_call_with_self_threading_lock
 from pylav.players.player import Player
@@ -280,6 +282,7 @@ class PersistentControllerView(discord.ui.View):
         self.channel = channel
         self.guild = channel.guild
         self._threading_lock = threading.Lock()
+        self.__show_help = False
 
         self.repeat_queue_button_on = ToggleRepeatQueueButton(
             style=discord.ButtonStyle.blurple,
@@ -369,6 +372,12 @@ class PersistentControllerView(discord.ui.View):
     def set_message(self, message: discord.Message):
         self.message = message
 
+    def enable_show_help(self) -> None:
+        self.__show_help = True
+
+    def disable_show_help(self) -> None:
+        self.__show_help = False
+
     @synchronized_method_call_with_self_threading_lock()
     async def prepare(self):
         player = self.cog.pylav.get_player(self.channel.guild.id)
@@ -441,7 +450,7 @@ class PersistentControllerView(discord.ui.View):
                     await self.channel.send(
                         embed=await self.cog.pylav.construct_embed(
                             messageable=self.channel,
-                            description=_("You must be in a voice channel to allow me to connect."),
+                            description=_("You must be in a voice channel, so I can connect to it."),
                         ),
                         delete_after=10,
                     )
@@ -457,21 +466,65 @@ class PersistentControllerView(discord.ui.View):
                     delete_after=10,
                 )
                 return
-            player = await self.cog.pylav.player_manager.create(channel=channel, self_deaf=True)
+            player = await self.cog.pylav.player_manager.create(channel=channel)
         return player
 
     async def get_now_playing_embed(self, forced: bool = False) -> discord.Embed:
         await asyncio.sleep(1)
         player = self.cog.pylav.get_player(self.guild.id)
         if player is None or player.current is None or forced:
+            if self.__show_help:
+                footer_text = _(
+                    "\n\nYou can search specific services by using the following prefixes:\n"
+                    "{deezer_service_variable_do_not_translate}  - Deezer\n"
+                    "{spotify_service_variable_do_not_translate}  - Spotify\n"
+                    "{apple_music_service_variable_do_not_translate}  - Apple Music\n"
+                    "{youtube_music_service_variable_do_not_translate} - YouTube Music\n"
+                    "{youtube_service_variable_do_not_translate}  - YouTube\n"
+                    "{soundcloud_service_variable_do_not_translate}  - SoundCloud\n"
+                    "{yandex_music_service_variable_do_not_translate}  - Yandex Music\n"
+                    "Example: {example_variable_do_not_translate}.\n\n"
+                    "If no prefix is used I will default to {fallback_service_variable_do_not_translate}\n"
+                ).format(
+                    fallback_service_variable_do_not_translate=f"`{DEFAULT_SEARCH_SOURCE}:`",
+                    deezer_service_variable_do_not_translate="'dzsearch:' ",
+                    spotify_service_variable_do_not_translate="'spsearch:' ",
+                    apple_music_service_variable_do_not_translate="'amsearch:' ",
+                    youtube_music_service_variable_do_not_translate="'ytmsearch:'",
+                    youtube_service_variable_do_not_translate="'ytsearch:' ",
+                    soundcloud_service_variable_do_not_translate="'scsearch:' ",
+                    yandex_music_service_variable_do_not_translate="'ymsearch:' ",
+                    example_variable_do_not_translate=f"'{DEFAULT_SEARCH_SOURCE}:Hello Adele'",
+                )
+            else:
+                footer_text = None
+
             return await self.cog.pylav.construct_embed(
                 description=_("I am not currently playing anything on this server."),
                 messageable=self.channel,
+                footer=footer_text,
             )
-        return await player.get_currently_playing_message(embed=True, messageable=self.channel)
+        return await player.get_currently_playing_message(
+            embed=True, messageable=self.channel, progress=False, show_help=self.__show_help
+        )
 
     @synchronized_method_call_with_self_threading_lock()
     async def update_view(self, forced: bool = False):
         await self.prepare()
         embed = await self.get_now_playing_embed(forced)
         await self.message.edit(view=self, embed=embed)
+
+    async def interaction_check(self, interaction: DISCORD_INTERACTION_TYPE, /) -> bool:
+        if not interaction.response.is_done():
+            await interaction.response.defer(ephemeral=True)
+
+        if not await is_dj_logic(interaction):
+            await interaction.send(
+                embed=await interaction.client.pylav.construct_embed(
+                    description=_("You need to be a disc jockey to interact with the controller in this server."),
+                    messageable=interaction,
+                ),
+                ephemeral=True,
+            )
+            return False
+        return True

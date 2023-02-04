@@ -2,23 +2,30 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
+from collections import defaultdict
+from datetime import timedelta
+from functools import partial
 from pathlib import Path
 from typing import Any, Literal
 
 import discord
 from redbot.core import Config, commands
 from redbot.core.i18n import Translator, cog_i18n
+from redbot.core.utils.antispam import AntiSpam
 from redbot.core.utils.chat_formatting import humanize_number
 
 from plcontroller.view import PersistentControllerView
+from pylav import logging
 from pylav.core.context import PyLavContext
+from pylav.events.queue import QueueEndEvent
 from pylav.events.track import TrackEndEvent, TrackExceptionEvent, TrackStartEvent
-from pylav.extension.red.utils.decorators import invoker_is_dj
 from pylav.players.player import Player
 from pylav.players.query.obj import Query
 from pylav.type_hints.bot import DISCORD_BOT_TYPE, DISCORD_COG_TYPE_MIXIN
 
 _ = Translator("PyLavController", Path(__file__))
+
+LOGGER = logging.getLogger("PyLav.cog.Controller")
 
 
 @cog_i18n(_)
@@ -33,10 +40,25 @@ class PyLavController(
         super().__init__(*args, **kwargs)
         self.bot = bot
         self._config = Config.get_conf(self, identifier=208903205982044161)
-        self._config.register_guild(channel=None, list_for_requests=False, persistent_view_message_id=None)
+        self._config.register_guild(
+            channel=None,
+            list_for_requests=False,
+            list_for_searches=False,
+            persistent_view_message_id=None,
+            enable_antispam=True,
+        )
         self._channel_cache: dict[int, int] = {}
+        self._list_for_search_cache: dict[int, bool] = {}
         self._list_for_command_cache: dict[int, bool] = {}
+        self._enable_antispam_cache: dict[int, bool] = {}
         self._view_cache: dict[int, PersistentControllerView] = {}
+        intervals = [
+            (timedelta(seconds=15), 1),
+            (timedelta(minutes=1), 3),
+            (timedelta(hours=1), 30),
+        ]
+
+        self.antispam: dict[int, dict[int, AntiSpam]] = defaultdict(lambda: defaultdict(partial(AntiSpam, intervals)))
 
     async def cog_unload(self) -> None:
         for view in self._view_cache.values():
@@ -52,13 +74,15 @@ class PyLavController(
             if channel_id := data["channel"]:
                 self._channel_cache[guild_id] = channel_id
             self._list_for_command_cache[guild_id] = data["list_for_requests"]
+            self._list_for_search_cache[guild_id] = data["list_for_searches"]
+            self._enable_antispam_cache[guild_id] = data["enable_antispam"]
             if data["persistent_view_message_id"]:
                 if channel := self.bot.get_channel(channel_id):
                     await self.prepare_channel(channel)
 
     @commands.group(name="plcontrollerset")
     @commands.guild_only()
-    @invoker_is_dj()
+    @commands.admin_or_permissions(manage_guild=True)
     async def command_plcontrollerset(self, context: PyLavContext):
         """Configure the PyLav Controller."""
 
@@ -150,6 +174,62 @@ class PyLavController(
             await context.send(
                 embed=await context.construct_embed(
                     description=_("From now on, I will ignore user requests in the controller channel."),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+
+    @command_plcontrollerset.command(name="acceptsearches", aliases=["as", "search"])
+    async def command_plcontrollerset_acceptsearches(self, context: PyLavContext):
+        """Toggle whether the controller should listen for searches."""
+        current = await self._config.guild(context.guild).list_for_searches()
+        await self._config.guild(context.guild).list_for_searches.set(not current)
+        self._list_for_search_cache[context.guild.id] = not current
+        channel_id = self._channel_cache[context.guild.id]
+        if channel := self.bot.get_channel(channel_id):
+            if not current:
+                self._view_cache[channel.id].enable_show_help()
+            else:
+                self._view_cache[channel.id].disable_show_help()
+
+        if not current:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_("From now on, I will accept user searches in the controller channel."),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+        else:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_("From now on, I will ignore user searches in the controller channel."),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+
+    @command_plcontrollerset.command(name="antispam", aliases=["as", "spam"])
+    async def command_plcontrollerset_antispam(self, context: PyLavContext):
+        """Toggle whether the controller enable the antispam check."""
+        current = await self._config.guild(context.guild).enable_antispam()
+        await self._config.guild(context.guild).enable_antispam.set(not current)
+        self._enable_antispam_cache[context.guild.id] = not current
+
+        if not current:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_("From now on, I will check user request against the antispam to avoid abuse."),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+        else:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_(
+                        "From now on, I will no longer check user request against the antispam to avoid abuse."
+                    ),
                     messageable=context,
                 ),
                 ephemeral=True,
@@ -325,11 +405,7 @@ class PyLavController(
             )
             return
         if not context.player.paused:
-            description = _(
-                "The player already resumed, did you mean to run {command_name_variable_do_not_translate}."
-            ).format(
-                command_name_variable_do_not_translate=f"`{'/' if context.interaction else context.clean_prefix}{self.command_pause.qualified_name}`",
-            )
+            description = _("The player already resumed")
             await context.send(
                 embed=await context.pylav.construct_embed(description=description, messageable=context),
                 ephemeral=True,
@@ -359,11 +435,7 @@ class PyLavController(
             )
             return
         if context.player.paused:
-            description = _(
-                "The player is already paused, did you mean to run {command_name_variable_do_not_translate}."
-            ).format(
-                command_name_variable_do_not_translate=f"`{'/' if context.interaction else context.clean_prefix}{self.command_resume.qualified_name}`",
-            )
+            description = _("The player is already paused.")
             await context.send(
                 embed=await context.pylav.construct_embed(description=description, messageable=context),
                 ephemeral=True,
@@ -450,10 +522,14 @@ class PyLavController(
                     cog=self, channel=channel, message=existing_view
                 )
                 await self._view_cache[channel.id].prepare()
+                if channel.guild.id in self._list_for_search_cache and self._list_for_search_cache[channel.guild.id]:
+                    self._view_cache[channel.id].enable_show_help()
                 self.bot.add_view(self._view_cache[channel.id], message_id=existing_view_id)
                 return
         self._view_cache[channel.id] = PersistentControllerView(cog=self, channel=channel)
         await self._view_cache[channel.id].prepare()
+        if channel.guild.id in self._list_for_search_cache and self._list_for_search_cache[channel.guild.id]:
+            self._view_cache[channel.id].enable_show_help()
         message = await self.send_channel_view(channel)
         await self._config.guild(channel.guild).persistent_view_message_id.set(message.id)
         self._view_cache[channel.id].set_message(message)
@@ -481,12 +557,20 @@ class PyLavController(
         if message.channel.id != self._channel_cache[guild.id]:
             return
 
+        channel = self.bot.get_channel(self._channel_cache[guild.id])
+        if channel is None:
+            return
+
+        if channel.id not in self._view_cache:
+            return
+
         if await self.bot.cog_disabled_in_guild(self, guild):
             return
 
-        player = self.pylav.get_player(message.guild)
+        player = await self._view_cache[channel.id].get_player()
         if player is None:
             return
+
         await self.process_potential_query(message, player)
 
     async def process_potential_query(self, message: discord.Message, player: Player):
@@ -496,19 +580,31 @@ class PyLavController(
             await message.delete(delay=1)
             return
 
-        query = await Query.from_string(message.clean_content, dont_search=True)
+        if message.guild.id in self._enable_antispam_cache and self._enable_antispam_cache[message.guild.id]:
+            if self.antispam[message.guild.id][message.author.id].spammy:
+                await message.delete(delay=1)
+                return
+            self.antispam[message.guild.id][message.author.id].stamp()
+
+        query = await Query.from_string(
+            message.clean_content, dont_search=not self._list_for_search_cache[message.guild.id]
+        )
         if query.invalid:
             await message.add_reaction("\N{CROSS MARK}")
             await message.delete(delay=5)
             return
-        if query.is_search:
+        if query.is_search and not self._list_for_search_cache[message.guild.id]:
             await message.add_reaction("\N{CROSS MARK}")
             await message.delete(delay=5)
             return
 
         await message.add_reaction("\N{WHITE HEAVY CHECK MARK}")
-        successful, count, failed = await self.pylav.get_all_tracks_for_queries(query, player=player)
+        successful, count, failed = await self.pylav.get_all_tracks_for_queries(
+            query, player=player, requester=message.author
+        )
         if successful:
+            if query.is_search:
+                successful = [successful[0]]
             await player.bulk_add(tracks_and_queries=successful, requester=message.author.id)
             if (not player.is_playing) and player.queue.size() > 0:
                 await player.next(requester=message.author)
@@ -530,6 +626,10 @@ class PyLavController(
 
     @commands.Cog.listener()
     async def on_pylav_track_start_event(self, event: TrackStartEvent) -> None:
+        await self.process_event(event)
+
+    @commands.Cog.listener()
+    async def on_pylav_queue_end_event(self, event: QueueEndEvent) -> None:
         await self.process_event(event)
 
     async def process_event(self, event: TrackStartEvent | TrackEndEvent | TrackExceptionEvent):
