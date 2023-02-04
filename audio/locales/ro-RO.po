@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-02 15:40\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "MIME-Version: 1.0\n"
@@ -22,660 +22,732 @@ msgstr ""
 msgid "A Media player using the PyLav library"
 msgstr "Un player media care folosește biblioteca PyLav"
 
-#: audio/config_commands.py:41
+#: audio/cog.py:49
+msgid "Play from Spotify or Apple Music"
+msgstr "Redarea din Spotify sau Apple Music"
+
+#: audio/cog.py:52
+msgid "Play from this message"
+msgstr "Redarea din acest mesaj"
+
+#: audio/config_commands.py:40
 #, docstring
 msgid "Notifies PyLav that a Player is having issues.\n\n"
-"        If enough (50%+ of currently playing players) report issues, PyLav will automatically\n"
+"        If enough (50% or more of currently playing players) report issues, PyLav will automatically\n"
 "        switch to a different node or restart the current node where possible.\n"
 "        "
-msgstr "Notifică PyLav că un jucător are probleme.\n\n"
-"        Dacă destui probleme (50%+ de a juca jucători în prezent) raportează problemele, PyLav va\n"
-"        comuta automat la un nod diferit sau va reporni modulul curent atunci când este posibil.\n"
+msgstr "Îl anunță pe Pylav că un jucător are probleme.\n\n"
+"        Dacă suficienți (50% sau mai mulți dintre jucătorii care joacă în prezent) raportează probleme, PyLav va raporta automat probleme\n"
+"        comutați la un alt nod sau reporniți nodul curent acolo unde este posibil.\n"
 "        "
 
-#: audio/config_commands.py:49
-msgid "This server already voted recently, please try again in 10 minutes"
-msgstr "Acest server a votat deja, vă rugăm să încercaţi din nou în 10 minute"
+#: audio/config_commands.py:48
+msgid "This server already voted recently. Please, try again in 10 minutes."
+msgstr "Acest server a votat deja recent. Vă rugăm să încercați din nou în 10 minute."
 
-#: audio/config_commands.py:60
-msgid "Thank you for your report"
-msgstr "Vă mulțumim pentru raport"
+#: audio/config_commands.py:59
+msgid "Thank you for your report."
+msgstr "Vă mulțumesc pentru raport."
 
-#: audio/config_commands.py:70
+#: audio/config_commands.py:69
 #, docstring
 msgid "Removes a vote for a Player being down.\n\n"
-"        If enough (50%+ of currently playing players) report issues, PyLav will automatically\n"
+"        If enough (50% or more of currently active players) report issues, PyLav will automatically\n"
 "        switch to a different node or restart the current node where possible.\n\n"
-"        This command is only useful if you previously voted for a node to be down and it is now back up.\n"
+"        This command is only valid if your server previously voted for a node to be down and is now back up.\n"
 "        "
-msgstr "Elimină un vot pentru un jucător care este în scădere.\n\n"
-"        Dacă destui probleme (50%+ de a juca jucători în prezent) raportează problemele, PyLav va\n"
-"        comuta automat la un nod diferit sau va reporni modulul curent atunci când este posibil.\n\n"
-"        Această comandă este utilă doar dacă ai votat anterior ca un nod să fie jos și acum este restabilită.\n"
+msgstr "Elimină un vot pentru un jucător fiind în jos.\n\n"
+"        Dacă suficienți (50% sau mai mulți dintre jucătorii activi în prezent) raportează probleme, PyLav va raporta automat\n"
+"        comutați la un alt nod sau reporniți nodul curent acolo unde este posibil.\n\n"
+"        Această comandă este valabilă numai dacă serverul a votat anterior pentru ca un nod să fie în jos și este acum o copie de rezervă.\n"
 "        "
 
-#: audio/config_commands.py:80
-msgid "There is no active votes for the current backend"
-msgstr "Nu există voturi active pentru backend-ul curent"
+#: audio/config_commands.py:79
+msgid "There are no active votes for the current audio node."
+msgstr "Nu există voturi active pentru nodul audio curent."
 
-#: audio/config_commands.py:90
-msgid "Removed your report"
-msgstr "Ați eliminat raportul"
+#: audio/config_commands.py:89
+msgid "I have removed your report."
+msgstr "V-am eliminat raportul."
 
-#: audio/config_commands.py:98
+#: audio/config_commands.py:97
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Arată versiunea Cog şi dependenţele lui PyLav"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Afișați versiunea Cog și PyLav"
+
+#: audio/config_commands.py:113
+msgid "Library / Cog"
+msgstr "Biblioteca / Cog"
 
 #: audio/config_commands.py:114
-msgid "Library/Cog"
-msgstr "Bibliotecă/Cog"
-
-#: audio/config_commands.py:115
 msgid "Version"
 msgstr "Versiune"
 
-#: audio/config_commands.py:129
+#: audio/config_commands.py:128
 #, docstring
-msgid "Global configuration options"
-msgstr "Opțiuni de configurare globale"
+msgid "Bot-wide settings."
+msgstr "Setări la nivel de bot."
 
-#: audio/config_commands.py:133
+#: audio/config_commands.py:132
 #, docstring
 msgid "Set the maximum volume a server can set"
 msgstr "Setaţi volumul maxim pe care un server îl poate seta"
 
-#: audio/config_commands.py:141 audio/config_commands.py:578
-#: audio/hybrid_commands.py:627
-msgid "Volume must be less than 1000"
-msgstr "Volumul trebuie să fie mai mic de 1000"
+#: audio/config_commands.py:140
+msgid "You have to specify a volume less than or equal to 1,000%."
+msgstr "Trebuie să specificați un volum mai mic sau egal cu 1.000%."
 
-#: audio/config_commands.py:149 audio/config_commands.py:586
-#: audio/hybrid_commands.py:635
-msgid "Volume must be greater than 0"
-msgstr "Volumul trebuie să fie mai mare decât 0"
+#: audio/config_commands.py:148 audio/config_commands.py:626
+msgid "The maximum volume must be greater than 0%."
+msgstr "Volumul maxim trebuie să fie mai mare de 0%."
 
-#: audio/config_commands.py:157 audio/config_commands.py:623
-msgid "Max volume set to {volume}%"
-msgstr "Volum maxim setat la {volume}%"
+#: audio/config_commands.py:156
+msgid "The maximum volume I will allow anyone in any server is now set to {volume_variable_do_not_translate}%"
+msgstr "Volumul maxim voi permite oricui în orice server este acum setat la {volume_variable_do_not_translate}%"
 
-#: audio/config_commands.py:165 audio/config_commands.py:631
+#: audio/config_commands.py:166 audio/config_commands.py:679
 #, docstring
-msgid "Set whether [botname] should deafen itself when playing"
-msgstr "Setează dacă [botname] ar trebui să se abată singur atunci când se joacă"
+msgid "Set whether I should deafen myself when playing."
+msgstr "Stabiliți dacă ar trebui să mă asurziți atunci când joc."
 
-#: audio/config_commands.py:174 audio/config_commands.py:657
-msgid "Deafen set to {deafen}"
-msgstr "Surfen setat la {deafen}"
+#: audio/config_commands.py:175
+msgid "From now on, I will deafen myself when joining a voice channel."
+msgstr "De acum înainte, mă voi asurzi când mă voi alătura unui canal de voce."
 
-#: audio/config_commands.py:174 audio/config_commands.py:193
-#: audio/config_commands.py:212 audio/config_commands.py:229
-#: audio/config_commands.py:273 audio/config_commands.py:314
-#: audio/config_commands.py:657 audio/config_commands.py:687
-#: audio/config_commands.py:719 audio/config_commands.py:753
-#: audio/config_commands.py:817 audio/config_commands.py:880
-msgid "Enabled"
-msgstr "Activat"
+#: audio/config_commands.py:177
+msgid "From now on, I will no longer deafen myself when joining a voice channel."
+msgstr "De acum înainte, nu mă voi mai asurzi când mă voi alătura unui canal de voce."
 
-#: audio/config_commands.py:174 audio/config_commands.py:193
-#: audio/config_commands.py:212 audio/config_commands.py:229
-#: audio/config_commands.py:273 audio/config_commands.py:314
-#: audio/config_commands.py:657 audio/config_commands.py:687
-#: audio/config_commands.py:719 audio/config_commands.py:753
-#: audio/config_commands.py:817 audio/config_commands.py:880
-msgid "Disabled"
-msgstr "Dezactivat"
-
-#: audio/config_commands.py:182
+#: audio/config_commands.py:185
 #, docstring
-msgid "Set whether the a server is allowed to enabled auto shuffle"
-msgstr "Setează dacă un server are permisiunea de a dezactiva comutarea automată"
+msgid "Set whether the server is allowed to enable auto shuffle."
+msgstr "Setați dacă serverul este permis să activeze amestecarea automată."
 
-#: audio/config_commands.py:192 audio/config_commands.py:686
-msgid "Auto-Shuffle set to {shuffle}"
-msgstr "Auto-Shuffle setat la {shuffle}"
+#: audio/config_commands.py:195
+msgid "From now on, I will auto shuffle my track queue when new songs are added."
+msgstr "De acum înainte, voi amesteca automat coada mea piesa atunci când melodii noi sunt adăugate."
 
-#: audio/config_commands.py:202 audio/config_commands.py:696
+#: audio/config_commands.py:197
+msgid "From now on, I will no longer auto shuffle my track queue when new songs are added."
+msgstr "De acum înainte, nu voi mai amesteca automat coada mea piesa atunci când sunt adăugate melodii noi."
+
+#: audio/config_commands.py:205 audio/config_commands.py:747
 #, docstring
-msgid "Set whether [botname] should allow users to shuffle the queue"
-msgstr "Setează dacă [botname] ar trebui să permită utilizatorilor să amestece coada de așteptare"
+msgid "Set whether I should allow users to shuffle the queue"
+msgstr "Setați dacă ar trebui să permit utilizatorilor să amestece coada"
 
-#: audio/config_commands.py:212 audio/config_commands.py:719
-msgid "Shuffle set to {shuffle}"
-msgstr "Amestecare setată la {shuffle}"
+#: audio/config_commands.py:215
+msgid "From now on, I will allow users to shuffle the queue."
+msgstr "De acum înainte, voi permite utilizatorilor să amestece coada."
 
-#: audio/config_commands.py:220
+#: audio/config_commands.py:217
+msgid "From now on, I will no longer allow users to shuffle the queue."
+msgstr "De acum înainte, nu voi mai permite utilizatorilor să amestece coada."
+
+#: audio/config_commands.py:225
 #, docstring
-msgid "Set whether [botname] should automatically play songs when the queue is empty"
-msgstr "Setează dacă [botname] ar trebui să redea automat melodiile când coada este goală"
+msgid "Set whether I should automatically play songs when the queue is empty."
+msgstr "Setați dacă ar trebui să redau automat melodii atunci când coada este goală."
 
-#: audio/config_commands.py:229 audio/config_commands.py:753
-msgid "Auto-Play set to {auto}"
-msgstr "Auto-Play setat la {auto}"
+#: audio/config_commands.py:234
+msgid "From now on, I will automatically play songs from the specified playlist when the queue is empty."
+msgstr "De acum înainte, voi reda automat melodii din lista de redare specificată atunci când coada este goală."
 
-#: audio/config_commands.py:237
+#: audio/config_commands.py:238
+msgid "From now on, I will no longer automatically play songs from the specified playlist when the queue is empty."
+msgstr "De acum înainte, nu voi mai reda automat melodii din lista de redare specificată atunci când coada este goală."
+
+#: audio/config_commands.py:248
 #, docstring
-msgid "Set whether [botname] should disconnect from the voice channel"
-msgstr "Setează dacă [botname] trebuie să se deconecteze de la canalul vocal"
+msgid "Set whether I should disconnect from the voice channel."
+msgstr "Setați dacă ar trebui să mă deconectez de la canalul de voce."
 
-#: audio/config_commands.py:247
+#: audio/config_commands.py:258
 #, docstring
-msgid "Set whether [botname] should disconnect from the voice channel when the queue is empty.\n\n"
+msgid "Set whether I should disconnect from the voice channel when the queue is empty.\n\n"
 "        Arguments:\n"
-"            - `<toggle>`: Whether [botname] should disconnect from the voice channel when the queue is empty.\n"
-"            - `<duration>`: How longer after the queue is empty should the player be disconnected. Default is 60 seconds.\n"
-"            Accepts second, minutes, hours, days, weeks (if no unit is specified, the duration is assumed to be given in seconds)\n"
+"            - `<toggle>`: Whether I should disconnect from the voice channel when the queue is empty.\n"
+"            - `<duration>`: How long after the queue is empty should the player be disconnected? The default is 60 seconds.\n"
+"            Accepts second, minutes, hours, days and weeks (if no unit is specified, the duration is assumed to be given in seconds)\n"
 "        "
-msgstr "Setează dacă [botname] trebuie să se deconecteze de la canalul vocal atunci când coada este goală.\n\n"
+msgstr "Setați dacă ar trebui să mă deconectez de la canalul de voce atunci când coada este goală.\n\n"
 "        Argumente:\n"
-"            - `<toggle>`: Dacă [botname] ar trebui să se deconecteze de la canalul vocal atunci când coada este goală.\n"
-"            - `<duration>`: Cât mai mult după ce coada este goală ar trebui ca jucătorul să fie deconectat. Implicit este de 60 de secunde.\n"
-"            Acceptă secunde, minute, ore, zile, săptămâni (dacă nu este specificată nicio unitate durata se presupune a fi dată în secunde\n"
+"            - `<toggle>\": Dacă ar trebui să mă deconectez de la canalul de voce atunci când coada este goală.\n"
+"            - `<duration>\": La cât timp după ce coada este goală, jucătorul ar trebui să fie deconectat? Valoarea implicită este de 60 de secunde.\n"
+"            Acceptă al doilea, minute, ore, zile și săptămâni (dacă nu este specificată nicio unitate, se presupune că durata este dată în secunde)\n"
 "        "
 
-#: audio/config_commands.py:267 audio/config_commands.py:307
-#: audio/config_commands.py:811 audio/config_commands.py:873
-msgid " and players will be disconnected after {duration}"
-msgstr " iar jucătorii vor fi deconectați după {duration}"
+#: audio/config_commands.py:278 audio/config_commands.py:869
+msgid "I will disconnect from the voice channel when the queue is empty after {time_to_dc_variable_do_not_translate}."
+msgstr "Mă voi deconecta de la canalul de voce atunci când coada este goală după {time_to_dc_variable_do_not_translate}."
 
-#: audio/config_commands.py:272 audio/config_commands.py:816
-msgid "Disconnect from voice channel when queue is empty set to {empty}{extras}"
-msgstr "Deconectare de la canalul vocal atunci când coada este goală la {empty}{extras}"
+#: audio/config_commands.py:282 audio/config_commands.py:873
+msgid "I will disconnect from the voice channel when the queue is empty after 60 seconds."
+msgstr "Mă voi deconecta de la canalul vocal atunci când coada este goală după 60 de secunde."
 
-#: audio/config_commands.py:288
+#: audio/config_commands.py:284 audio/config_commands.py:875
+msgid "I will no longer disconnect from the voice channel when the queue is empty."
+msgstr "Nu mă voi mai deconecta de la canalul de voce atunci când coada este goală."
+
+#: audio/config_commands.py:301
 #, docstring
-msgid "Set whether [botname] should disconnect from the voice channel when alone.\n\n"
+msgid "Set whether I should disconnect from the voice channel when alone.\n\n"
 "        Arguments:\n"
-"            - `<toggle>`: Whether [botname] should disconnect from the voice channel when it detects that it is alone.\n"
-"            - `<duration>`: How longer after detecting should the player be disconnected. Default is 60 seconds.\n"
-"            Accepts second, minutes, hours, days, weeks (if no unit is specified, the duration is assumed to be given in seconds)\n"
+"            - `<toggle>`: Whether I should disconnect from the voice channel when I detect that I am alone in a voice channel.\n"
+"            - `<duration>`: How longer after detecting should the player be disconnected? The default is 60 seconds.\n"
+"            Accepts second, minutes, hours, days and weeks.\n"
+"            If no unit is specified, the duration is assumed to be given in seconds.\n"
 "        "
-msgstr "Setează dacă [botname] trebuie să se deconecteze de la canalul de voce atunci când este singur.\n\n"
+msgstr "Setați dacă ar trebui să mă deconectez de la canalul de voce atunci când sunt singur.\n\n"
 "        Argumente:\n"
-"            - `<toggle>`: Dacă [botname] ar trebui să se deconecteze de la canalul vocal atunci când detectează că este singur.\n"
-"            - `<duration>`: Cât mai mult după detectarea jucătorului ar trebui deconectat. Implicit este de 60 de secunde.\n"
-"            Acceptă secunde, minute, ore, zile, săptămâni (dacă nu este specificată nicio unitate durata se presupune a fi dată în secunde\n"
+"            - `<toggle>\": Dacă ar trebui să mă deconectez de la canalul de voce atunci când detectez că sunt singur într-un canal de voce.\n"
+"            - `<duration>\": Cât timp după detectarea ar trebui să fie deconectat jucătorul? Valoarea implicită este de 60 de secunde.\n"
+"            Acceptă al doilea, minute, ore, zile și săptămâni.\n"
+"            Dacă nu este specificată nicio unitate, se presupune că durata este dată în câteva secunde.\n"
 "        "
 
-#: audio/config_commands.py:313 audio/config_commands.py:879
-msgid "Disconnect from voice channel when alone set to {empty}{extras}"
-msgstr "Deconectare de la canalul vocal când este setat doar la {empty}{extras}"
+#: audio/config_commands.py:322 audio/config_commands.py:939
+msgid "I will disconnect from the voice channel when alone after {time_to_dc_variable_do_not_translate}."
+msgstr "Mă voi deconecta de la canalul de voce atunci când singur după {time_to_dc_variable_do_not_translate}."
 
-#: audio/config_commands.py:325
+#: audio/config_commands.py:326 audio/config_commands.py:943
+msgid "I will disconnect from the voice channel when alone after 60 seconds."
+msgstr "Mă voi deconecta de la canalul de voce atunci când singur după 60 de secunde."
+
+#: audio/config_commands.py:328 audio/config_commands.py:945
+msgid "I will no longer disconnect from the voice channel when alone."
+msgstr "Nu mă voi mai deconecta de la canalul de voce atunci când sunt singur."
+
+#: audio/config_commands.py:342
 #, docstring
-msgid "Server configuration options"
-msgstr "Opțiuni de configurare server"
+msgid "Server-specific settings."
+msgstr "Setări specifice serverului."
 
-#: audio/config_commands.py:329
+#: audio/config_commands.py:346
 #, docstring
-msgid "Add, remove or show the DJ roles and users for the server"
-msgstr "Adaugă, elimină sau arată rolurile DJ și utilizatorii pentru server"
+msgid "Add, remove or show the disc jockey roles and users for this server."
+msgstr "Adăugați, eliminați sau afișați rolurile de disc jockey și utilizatorii pentru acest server."
 
-#: audio/config_commands.py:335
+#: audio/config_commands.py:352
 #, docstring
-msgid "Add DJ roles or users to this server"
-msgstr "Adaugă roluri sau utilizatori DJ la acest server"
+msgid "Add disc jockey roles or users to this server."
+msgstr "Adăugați roluri de disc jockey sau utilizatori la acest server."
 
-#: audio/config_commands.py:348
-msgid "Added {role} to the DJ roles"
-msgstr "{role} a fost adăugat la rolurile DJ"
+#: audio/config_commands.py:365 audio/config_commands.py:388
+msgid "I have added {role_list_variable_do_not_translate} to the disc jockey roles."
+msgstr "Am adăugat {role_list_variable_do_not_translate} la rolurile disc jockey."
 
-#: audio/config_commands.py:351
-msgid "Added {user} to the DJ users"
-msgstr "{user} a fost adăugat la utilizatorii DJ"
+#: audio/config_commands.py:370 audio/config_commands.py:394
+msgid "I have added {user_list_variable_do_not_translate} to the disc jockey users."
+msgstr "Am adăugat {user_list_variable_do_not_translate} pentru utilizatorii disc jockey."
 
-#: audio/config_commands.py:358
-msgid "Added {roles} to the DJ roles and {users} to the DJ users"
-msgstr "{roles} a fost adăugat la rolurile DJ și {users} la utilizatorii DJ"
+#: audio/config_commands.py:379
+msgid "I have added {role_list_variable_do_not_translate} to the disc jockey roles and {user_list_variable_do_not_translate} to the disc jockey users."
+msgstr "Am adăugat {role_list_variable_do_not_translate} la rolurile disc jockey și {user_list_variable_do_not_translate} pentru utilizatorii disc jockey."
 
-#: audio/config_commands.py:365
-msgid "Added {roles} to the DJ roles"
-msgstr "{roles} a fost adăugat la rolurile DJ"
-
-#: audio/config_commands.py:369
-msgid "Added {users} to the DJ users"
-msgstr "{users} a fost adăugat la utilizatorii DJ"
-
-#: audio/config_commands.py:384
+#: audio/config_commands.py:411
 #, docstring
-msgid "Remove DJ roles or users in this the server"
-msgstr "Elimină rolurile DJ sau utilizatorii din acest server"
+msgid "Remove disc jockey roles or users in this server."
+msgstr "Eliminați rolurile de disc jockey sau utilizatorii din acest server."
 
-#: audio/config_commands.py:416
-msgid "Removed {roles} from the DJ roles and {users} from the DJ users, as well as {ints} from both"
-msgstr "Ai eliminat {roles} din rolurile DJ și {users} de la utilizatorii DJ, precum și {ints} din ambele"
+#: audio/config_commands.py:443
+msgid "I have removed {role_list_variable_do_not_translate} from the disc jockey roles and {user_list_variable_do_not_translate} from the disc jockey users, as well as {number_list_variable_do_not_translate} from the disc jockey roles and users."
+msgstr "Am eliminat {role_list_variable_do_not_translate} de la rolurile disc jockey și {user_list_variable_do_not_translate} de la utilizatorii disc jockey, precum și {number_list_variable_do_not_translate} de la rolurile de disc jockey și utilizatori."
 
-#: audio/config_commands.py:424
-msgid "Removed {roles} from the DJ roles and {users} from the DJ users"
-msgstr "A eliminat {roles} din rolurile DJ și {users} de la utilizatorii DJ"
+#: audio/config_commands.py:451
+msgid "I have removed {role_list_variable_do_not_translate} from the disc jockey roles and {user_list_variable_do_not_translate} from the disc jockey users."
+msgstr "Am eliminat {role_list_variable_do_not_translate} de la rolurile disc jockey și {user_list_variable_do_not_translate} de la utilizatorii disc jockey."
 
-#: audio/config_commands.py:429
-msgid "Removed {roles} from the DJ roles"
-msgstr "{roles} a fost eliminat din rolurile DJ"
+#: audio/config_commands.py:459
+msgid "I have removed {role_list_variable_do_not_translate} from the disc jockey roles."
+msgstr "Am eliminat {role_list_variable_do_not_translate} de la rolurile de disc jockey."
 
-#: audio/config_commands.py:433
-msgid "Removed {users} from the DJ users"
-msgstr "Eliminat {users} de la utilizatorii DJ"
+#: audio/config_commands.py:465
+msgid "I have removed {user_list_variable_do_not_translate} from the disc jockey users."
+msgstr "Am eliminat {user_list_variable_do_not_translate} de la utilizatorii disc jockey."
 
-#: audio/config_commands.py:437
-msgid "Removed {ints} from the DJ roles and users"
-msgstr "{ints} a fost eliminat din rolurile și utilizatorii DJ"
+#: audio/config_commands.py:471
+msgid "I have removed {user_or_role_id_list_variable_do_not_translate} from the disc jockey roles and users."
+msgstr "Am eliminat {user_or_role_id_list_variable_do_not_translate} de la rolurile de disc jockey și utilizatori."
 
-#: audio/config_commands.py:452
-msgid "Removed `{id}` from the DJ roles and users"
-msgstr "S-a eliminat `{id}din rolurile DJ și utilizatorii"
+#: audio/config_commands.py:486
+msgid "I have Removed `{user_or_role_id_variable_do_not_translate}` from the disc jockey roles and users."
+msgstr "Am eliminat \"{user_or_role_id_variable_do_not_translate}' de la rolurile de disc jockey și utilizatori."
 
-#: audio/config_commands.py:454
-msgid "Removed {role} from the DJ roles"
-msgstr "{role} a fost eliminat din rolurile DJ"
+#: audio/config_commands.py:490
+msgid "I have removed {role_name_variable_do_not_translate} from the disc jockey roles."
+msgstr "Am eliminat {role_name_variable_do_not_translate} de la rolurile de disc jockey."
 
-#: audio/config_commands.py:457
-msgid "Removed {user} from the DJ users"
-msgstr "Eliminat {user} de la utilizatorii DJ"
+#: audio/config_commands.py:495
+msgid "I have removed {user_name_variable_do_not_translate} from the disc jockey users."
+msgstr "Am eliminat {user_name_variable_do_not_translate} de la utilizatorii disc jockey."
 
-#: audio/config_commands.py:463
+#: audio/config_commands.py:503
 #, docstring
-msgid "List the DJ roles and users for the server"
-msgstr "Listează rolurile DJ și utilizatorii pentru server"
+msgid "List the disc jockey roles and users for this server."
+msgstr "Lista rolurilor disc jockey și utilizatorii pentru acest server."
 
-#: audio/config_commands.py:514
-msgid "There are no DJ roles or users set in {server}"
-msgstr "Nu există roluri DJ sau utilizatori setați în {server}"
+#: audio/config_commands.py:554
+msgid "There are no disc jockey roles or disc jockey users set in this server."
+msgstr "Nu există roluri disc jockey sau disc jockey utilizatori stabilite în acest server."
 
-#: audio/config_commands.py:525 audio/config_commands.py:530
-msgid "DJ Roles"
-msgstr "Roluri DJ"
+#: audio/config_commands.py:565 audio/config_commands.py:570
+msgid "Disc Jockey Roles"
+msgstr "Disc Jockey Roluri"
 
-#: audio/config_commands.py:536 audio/config_commands.py:541
-msgid "DJ Users"
-msgstr "Utilizatori DJ"
+#: audio/config_commands.py:576 audio/config_commands.py:581
+msgid "Disc Jockey Users"
+msgstr "Disc Jockey Utilizatori"
 
-#: audio/config_commands.py:549
+#: audio/config_commands.py:589
 #, docstring
-msgid "Clear the DJ roles and users for the server"
-msgstr "Șterge rolurile DJ și utilizatorii pentru server"
+msgid "Clear the disc jockey roles and users for this server."
+msgstr "Goliți rolurile disc jockey și utilizatorii pentru acest server."
 
-#: audio/config_commands.py:561
-msgid "Cleared the DJ roles and users for {server}"
-msgstr "S-au eliminat rolurile DJ și utilizatorii pentru {server}"
+#: audio/config_commands.py:601
+msgid "I have removed all disc jockey roles and users from this server."
+msgstr "Am eliminat toate rolurile de disc jockey și utilizatorii de pe acest server."
 
-#: audio/config_commands.py:569
+#: audio/config_commands.py:609
 #, docstring
-msgid "Set the maximum volume a user can set"
-msgstr "Setaţi volumul maxim pe care un utilizator îl poate seta"
+msgid "Set the maximum volume a user can set."
+msgstr "Setați volumul maxim pe care îl poate seta un utilizator."
 
-#: audio/config_commands.py:595 audio/config_commands.py:611
-msgid "Volume must be between 0 and {volume}%"
-msgstr "Volumul trebuie să fie între 0 și {volume}%"
+#: audio/config_commands.py:618
+msgid "The maximum volume must be less than 1,000%."
+msgstr "Volumul maxim trebuie să fie mai mic de 1.000%."
 
-#: audio/config_commands.py:640
-msgid "My owner told me to always deafen myself"
-msgstr "Proprietarul meu mi-a spus să mă asigur mereu"
+#: audio/config_commands.py:635
+msgid "My owner has told me that server-specific volume must be between 0% and {volume_variable_do_not_translate}%."
+msgstr "Proprietarul meu mi-a spus că volumul specific serverului trebuie să fie între 0% și {volume_variable_do_not_translate}%."
 
-#: audio/config_commands.py:665
+#: audio/config_commands.py:655
+msgid "The maximum volume must be between 0% and {volume_variable_do_not_translate}%."
+msgstr "Volumul maxim trebuie să fie între 0% și {volume_variable_do_not_translate}%."
+
+#: audio/config_commands.py:669
+msgid "The maximum volume users can set in this server is now {volume_variable_do_not_translate}%."
+msgstr "Volumul maxim pe care utilizatorii îl pot seta în acest server este acum {volume_variable_do_not_translate}%."
+
+#: audio/config_commands.py:688
+msgid "My owner has requested that I always deafen myself when joining a voice channel."
+msgstr "Proprietarul meu mi-a cerut să mă asurzi mereu atunci când mă alătur unui canal de voce."
+
+#: audio/config_commands.py:705
+msgid "I will deafen myself when joining voice channels on this server."
+msgstr "Mă voi asurzi când mă voi alătura canalelor de voce de pe acest server."
+
+#: audio/config_commands.py:707
+msgid "I will no longer deafen myself when joining voice channels on this server."
+msgstr "Nu mă voi mai asurzi atunci când mă alătur canalelor de voce de pe acest server."
+
+#: audio/config_commands.py:715
 #, docstring
-msgid "Set whether [botname] should shuffle the queue after every new song added"
-msgstr "Setează dacă [botname] ar trebui să amestece coada de redare după adăugarea fiecărei melodii noi"
+msgid "Set whether I should shuffle the queue after adding every new song."
+msgstr "Setați dacă ar trebui să amestec coada după adăugarea fiecărei melodii noi."
 
-#: audio/config_commands.py:673
-msgid "Auto-Shuffle is globally disabled"
-msgstr "Auto-Shuffle este dezactivat global"
+#: audio/config_commands.py:723
+msgid "My owner has turned off the auto shuffle capability for all servers."
+msgstr "Proprietarul meu a dezactivat capacitatea de amestecare automată pentru toate serverele."
 
-#: audio/config_commands.py:706
-msgid "Shuffle is globally disabled"
-msgstr "Amestecare este dezactivată global"
+#: audio/config_commands.py:737
+msgid "Auto shuffle turned on for this server."
+msgstr "Amestecarea automată activată pentru acest server."
 
-#: audio/config_commands.py:727
+#: audio/config_commands.py:739
+msgid "Auto shuffle turned off for this server."
+msgstr "Amestecarea automată este dezactivată pentru acest server."
+
+#: audio/config_commands.py:757
+msgid "My owner has turned off the shuffle capability for all servers."
+msgstr "Proprietarul meu a dezactivat capacitatea de amestecare pentru toate serverele."
+
+#: audio/config_commands.py:770
+msgid "Shuffling turned on for this server."
+msgstr "Amestecarea este activată pentru acest server."
+
+#: audio/config_commands.py:772
+msgid "Shuffling turned off for this server."
+msgstr "Amestecarea s-a oprit pentru acest server."
+
+#: audio/config_commands.py:780
 #, docstring
-msgid "Set whether the bot should automatically play songs when the queue is empty"
-msgstr "Setează dacă bot-ul ar trebui să redea automat melodiile atunci când coada este goală"
+msgid "Set whether the bot should automatically play songs when the queue is empty."
+msgstr "Setați dacă botul ar trebui să redea automat melodii atunci când coada este goală."
 
-#: audio/config_commands.py:736
-msgid "Auto-Play is globally disabled"
-msgstr "Redarea automată este dezactivată global"
+#: audio/config_commands.py:789
+msgid "My owner has turned off the autoplay capability for all servers."
+msgstr "Proprietarul meu a dezactivat capacitatea de redare automată pentru toate serverele."
 
-#: audio/config_commands.py:761
+#: audio/config_commands.py:806
+msgid "From now on, I will automatically play songs when the queue is empty."
+msgstr "De acum înainte, voi reda automat melodii atunci când coada este goală."
+
+#: audio/config_commands.py:808
+msgid "From now on, I will no longer automatically play songs when the queue is empty."
+msgstr "De acum înainte, nu voi mai reda automat melodii atunci când coada este goală."
+
+#: audio/config_commands.py:816
 #, docstring
 msgid "Set whether the bot should disconnect from the voice channel"
 msgstr "Setează dacă bot-ul trebuie să se deconecteze de la canalul vocal"
 
-#: audio/config_commands.py:771
+#: audio/config_commands.py:826
 #, docstring
-msgid "Set whether the bot should disconnect from the voice channel when the queue is empty.\n\n"
+msgid "Set whether I should disconnect from the voice channel when the queue is empty.\n\n"
 "        Arguments:\n"
-"            - `<toggle>`: Whether the bot should disconnect from the voice channel when the queue is empty.\n"
-"            - `<duration>`: How longer after the queue is empty should the player be disconnected. Default is 60\n"
-"            seconds.\n"
-"            Accepts seconds, minutes, hours, days, weeks (if no unit is specified, the duration is assumed to be\n"
-"            given in seconds)\n"
+"            - `<toggle>`: I should disconnect from the voice channel when the queue is empty.\n"
+"            - `<duration>`: How long after the queue is empty should I disconnect?\n"
+"            The Default is 60 seconds.\n"
+"            Accept seconds, minutes, hours, days, and weeks.\n"
+"            If no unit is specified, the duration is assumed to be seconds.\n"
 "        "
-msgstr "Setează dacă bot-ul trebuie să se deconecteze de la canalul vocal atunci când coada este goală.\n\n"
+msgstr "Setați dacă ar trebui să mă deconectez de la canalul de voce atunci când coada este goală.\n\n"
 "        Argumente:\n"
-"            - `<toggle>`: Dacă bot-ul ar trebui să se deconecteze de la canalul vocal atunci când coada este goală.\n"
-"            - `<duration>`: Cât mai mult după ce coada de aşteptare este goală, jucătorul ar trebui deconectat. Implicit este de 60\n"
-"            secunde.\n"
-"            Acceptă secunde, minute, ore, zile, săptămâni (dacă nu este specificată nicio unitate), durata se presupune a fi\n"
-"            dată în secunde\n"
+"            - `<toggle>\": Ar trebui să mă deconectez de la canalul de voce atunci când coada este goală.\n"
+"            - `<duration>\": La cât timp după ce coada este goală ar trebui să mă deconectez?\n"
+"            Valoarea implicită este de 60 de secunde.\n"
+"            Acceptați secunde, minute, ore, zile și săptămâni.\n"
+"            Dacă nu este specificată nicio unitate, se presupune că durata este de secunde.\n"
 "        "
 
-#: audio/config_commands.py:789
-msgid "Disconnect when the queue finished is globally enabled and players will be disconnected after {delta}"
-msgstr "Deconectează când coada de așteptare s-a terminat global și jucătorii vor fi deconectați după {delta}"
+#: audio/config_commands.py:844
+msgid "My owner has told me to disconnect from the voice channel when the queue is empty after {time_to_dc_variable_do_not_translate}."
+msgstr "Proprietarul meu mi-a spus să mă deconectez de la canalul de voce atunci când coada este goală după {time_to_dc_variable_do_not_translate}."
 
-#: audio/config_commands.py:832
+#: audio/config_commands.py:893
 #, docstring
-msgid "Set whether the bot should disconnect from the voice channel when alone.\n\n"
+msgid "Set whether I should disconnect from the voice channel when alone.\n\n"
 "        Arguments:\n"
-"            - `<toggle>`: Whether the bot should disconnect from the voice channel when it detects that it is\n"
+"            - `<toggle>`: I should disconnect from the voice channel when it detects that it is\n"
 "            alone.\n"
-"            - `<duration>`: How longer after detecting should the player be disconnected. Default is 60 seconds.\n"
-"            Accepts seconds, minutes, hours, days, weeks (if no unit is specified, the duration is assumed to be\n"
-"            given in seconds)\n"
+"            - `<duration>`: How longer after detecting should I disconnect?\n"
+"            The Default is 60 seconds.\n"
+"            Accept seconds, minutes, hours, days, and weeks.\n"
+"            If no unit is specified, the duration is assumed to be seconds.\n"
 "        "
-msgstr "Setați dacă bot-ul trebuie să se deconecteze de la canalul vocal atunci când este singur.\n\n"
+msgstr "Setați dacă ar trebui să mă deconectez de la canalul de voce atunci când sunt singur.\n\n"
 "        Argumente:\n"
-"            - `<toggle>`: Dacă bot-ul ar trebui să se deconecteze de la canalul vocal atunci când detectează că este\n"
+"            - `<toggle>\": Ar trebui să mă deconectez de la canalul de voce atunci când detectează că este\n"
 "            singur.\n"
-"            - `<duration>`: Cât mai mult după detectarea jucătorului ar trebui deconectat. Implicit este de 60 de secunde.\n"
-"            Acceptă secunde, minute, ore, zile, săptămâni (dacă nu este specificată nicio unitate), durata se presupune a fi\n"
-"            dată în secunde\n"
+"            - `<duration>\": Cât timp după detectare ar trebui să mă deconectez?\n"
+"            Valoarea implicită este de 60 de secunde.\n"
+"            Acceptați secunde, minute, ore, zile și săptămâni.\n"
+"            Dacă nu este specificată nicio unitate, se presupune că durata este de secunde.\n"
 "        "
 
-#: audio/config_commands.py:851
-msgid "Disconnect when alone is globally enabled and players will be disconnected after {delta}"
-msgstr "Deconectează când este activat global și jucătorii vor fi deconectați după {delta}"
+#: audio/config_commands.py:913
+msgid "My owner has told me to disconnect from the voice channel when alone after {time_to_dc_variable_do_not_translate}."
+msgstr "Proprietarul meu mi-a spus să se deconecteze de la canalul de voce atunci când singur după {time_to_dc_variable_do_not_translate}."
 
-#: audio/config_commands.py:889
+#: audio/config_commands.py:957
 #, docstring
-msgid "Sets the Auto-Play playlist"
-msgstr "Setează lista de redare automată"
+msgid "Specify a playlist to be used for autoplay."
+msgstr "Specificați o listă de redare care să fie utilizată pentru redarea automată."
 
-#: audio/config_commands.py:906
-msgid "Auto-Play playlist set to {playlist}"
-msgstr "Redare automată setată la {playlist}"
+#: audio/config_commands.py:974
+msgid "From now on, I will use {playlist_name_variable_do_not_translate} to select songs for autoplay."
+msgstr "De acum înainte, voi folosi {playlist_name_variable_do_not_translate} pentru a selecta melodii pentru redare automată."
 
-#: audio/config_commands.py:916
+#: audio/config_commands.py:984
 #, docstring
-msgid "Set the channel locks"
-msgstr "Setaţi blocajele canalului"
+msgid "Restrict which channels where I can be used."
+msgstr "Restricționați canalele unde pot fi utilizate."
 
-#: audio/config_commands.py:922
+#: audio/config_commands.py:990
 #, docstring
-msgid "Set the channel lock for commands"
-msgstr "Setaţi blocarea canalului pentru comenzi"
+msgid "Restrict me only to accept PyLav commands executed from the specified channel."
+msgstr "Restricționați-mă doar pentru a accepta comenzile PyLav executate de pe canalul specificat."
 
-#: audio/config_commands.py:937
-msgid "I don't have permission to send message or send embed links or read messages in {channel}"
-msgstr "Nu am permisiunea de a trimite mesaje, de a trimite link-uri sau de a citi mesaje în {channel}"
+#: audio/config_commands.py:1005
+msgid "I do not have permission to send messages or send embed links or read messages in {channel_name_variable_do_not_translate}."
+msgstr "Nu am permisiunea de a trimite mesaje sau de a trimite linkuri încorporate sau de a citi mesaje în {channel_name_variable_do_not_translate}."
 
-#: audio/config_commands.py:954
-msgid "I will only listen to commands in {channel}"
-msgstr "Voi asculta doar comenzile în {channel}"
+#: audio/config_commands.py:1022
+msgid "I will only accept PyLav commands executed from {channel_name_variable_do_not_translate}."
+msgstr "Voi accepta doar comenzile PyLav executate de la {channel_name_variable_do_not_translate}."
 
-#: audio/config_commands.py:962
-msgid "I will listen to commands in all channels I can see"
-msgstr "Voi asculta comenzile în toate canalele pe care le pot vedea"
+#: audio/config_commands.py:1032
+msgid "I will accept PyLav commands executed in all channels I can see in the server."
+msgstr "Voi accepta comenzi pylav executate în toate canalele pe care le pot vedea în server."
 
-#: audio/config_commands.py:970
+#: audio/config_commands.py:1040
 #, docstring
-msgid "Set the channel lock for voice channels"
-msgstr "Setaţi blocarea canalului pentru canalele de voce"
+msgid "Restrict me only to join the specified voice channel."
+msgstr "Restricționați-mă doar pentru a mă alătura canalului de voce specificat."
 
-#: audio/config_commands.py:982 audio/hybrid_commands.py:107
-#: audio/player_commands.py:144
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Nu am permisiunea de a mă conecta sau de a vorbi în {channel}"
+#: audio/config_commands.py:1052 audio/hybrid_commands.py:108
+#: audio/player_commands.py:156
+msgid "I do not have permission to connect or speak in {channel_name_variable_do_not_translate}."
+msgstr "Nu am permisiunea de a mă conecta sau de a vorbi în {channel_name_variable_do_not_translate}."
 
-#: audio/config_commands.py:1000
-msgid "I will only be allowed to join {channel}"
-msgstr "Îmi va fi permis să mă alătur {channel}"
+#: audio/config_commands.py:1070
+msgid "I will only be allowed to join {channel_name_variable_do_not_translate}."
+msgstr "Mi se va permite doar să mă alătur {channel_name_variable_do_not_translate}."
 
-#: audio/config_commands.py:1007
-msgid "I'm free to join any VC"
-msgstr "Sunt liber să mă alătur oricărui VC"
+#: audio/config_commands.py:1080
+msgid "I am allowed to join any voice channel in the server."
+msgstr "Am voie să mă alătur oricărui canal de voce de pe server."
 
-#: audio/context_menus.py:27 audio/context_menus.py:143
-msgid "I can't play songs in DMs"
-msgstr "Nu pot cânta cântece în MD"
+#: audio/context_menus.py:27 audio/context_menus.py:133
+msgid "I can not play songs in direct messages. Sorry, try again on a server."
+msgstr "Nu pot reda melodii în mesaje directe. Ne pare rău, încercați din nou pe un server."
 
-#: audio/context_menus.py:38 audio/context_menus.py:154
-msgid "You need to be a DJ to play tracks"
-msgstr "Trebuie să fii un DJ pentru a reda melodii"
+#: audio/context_menus.py:38
+msgid "You need to be a disc jockey in this server to play tracks in this server."
+msgstr "Trebuie să fiți un disc jockey în acest server pentru a reda piese în acest server."
 
-#: audio/context_menus.py:55 audio/context_menus.py:169
-msgid "This command is not available in this channel. Please use {channel}"
-msgstr "Această comandă nu este disponibilă în acest canal. Te rugăm să folosești {channel}"
+#: audio/context_menus.py:55 audio/context_menus.py:159
+msgid "This command is unavailable in this channel. Please use {channel_name_variable_do_not_translate} instead."
+msgstr "Această comandă nu este disponibilă în acest canal. Vă rugăm să utilizați {channel_name_variable_do_not_translate} în loc de."
 
-#: audio/context_menus.py:83
-msgid "I couldn't find any valid matches in the message"
-msgstr "Nu am putut găsi nici un rezultat valid în mesaj"
+#: audio/context_menus.py:84
+msgid "I could not find any suitable matches in this message."
+msgstr "Nu am putut găsi potriviri potrivite în acest mesaj."
 
-#: audio/context_menus.py:94
-msgid "I found multiple valid matches in the message"
-msgstr "Am găsit mai multe potriviri valide în mesaj"
+#: audio/context_menus.py:86
+msgid "I found many suitable matches in this message."
+msgstr "Am găsit multe meciuri potrivite în acest mesaj."
 
-#: audio/context_menus.py:103
-msgid "I found a single valid match in the message"
-msgstr "Am găsit o singură potrivire validă în mesaj"
+#: audio/context_menus.py:88
+msgid "I found a single suitable match in this message."
+msgstr "Am găsit un singur meci potrivit în acest mesaj."
 
-#: audio/context_menus.py:186
-msgid "I couldn't find any supported activity {user} is taking part in"
-msgstr "Nu am putut găsi nicio activitate suportată {user} care să ia parte la"
+#: audio/context_menus.py:144
+msgid "You need to be a disc jockey to play tracks in this server."
+msgstr "Trebuie să fiți un disc jockey pentru a reda piese pe acest server."
 
-#: audio/context_menus.py:218
-msgid "Couldn't map {user}'s Apple Music track to a valid query"
-msgstr "Nu s-a putut cartografia piesa Apple Music a {user}la o interogare validă"
+#: audio/context_menus.py:178
+msgid "I could not find any supported activity in the activities {user_name_variable_do_not_translate} is partaking."
+msgstr "Nu am putut găsi nicio activitate sprijinită în activități {user_name_variable_do_not_translate} este partaking."
 
-#: audio/context_menus.py:234
-msgid "Couldn't find any tracks matching {query}"
-msgstr "Nu s-a putut găsi nicio piesă care să corespundă {query}"
+#: audio/context_menus.py:210
+msgid "I could not find a valid Apple Music track in the activity {user_name_variable_do_not_translate} is partaking in."
+msgstr "Nu am putut găsi o piesă Apple Music validă în activitate {user_name_variable_do_not_translate} este partaking inch"
 
-#: audio/context_menus.py:249
-msgid "Couldn't figure out what {user} is listening to"
-msgstr "Nu s-a putut da seama ce ascultă {user}"
+#: audio/context_menus.py:226
+msgid "I could not find any tracks matching {query_variable_do_not_translate}."
+msgstr "Nu am putut găsi nici o piesa de potrivire {query_variable_do_not_translate}."
+
+#: audio/context_menus.py:243
+msgid "I could not figure out what {user_name_variable_do_not_translate} is listening to."
+msgstr "Nu am putut da seama ce {user_name_variable_do_not_translate} este de a asculta."
 
 #: audio/hybrid_commands.py:83
-msgid "You need to provide a query to play"
-msgstr "Trebuie să furnizați o interogare pentru a juca"
+msgid "You need to give me a query to enqueue."
+msgstr "Trebuie să-mi dea o interogare pentru a enqueue."
 
-#: audio/hybrid_commands.py:97 audio/player_commands.py:134
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Trebuie să te afli într-un canal de voce pentru a-mi permite să mă conectez"
+#: audio/hybrid_commands.py:97
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "Trebuie să fie într-un canal de voce, așa că am putea conecta la ea."
 
-#: audio/hybrid_commands.py:154 audio/player_commands.py:225
-msgid "{track_count} tracks enqueued"
-msgstr "{track_count} piese puse în așteptare"
+#: audio/hybrid_commands.py:155
+msgid "{track_name_variable_do_not_translate} enqueued."
+msgstr "{track_name_variable_do_not_translate} enqueued."
 
-#: audio/hybrid_commands.py:162 audio/player_commands.py:233
-msgid "{track} enqueued"
-msgstr "{track} puse în așteptare"
+#: audio/hybrid_commands.py:160 audio/player_commands.py:258
+msgid "No tracks were found for your query."
+msgstr "Nu s-au găsit piste pentru interogarea dvs."
 
-#: audio/hybrid_commands.py:173 audio/player_commands.py:244
-msgid "No tracks were found for your query"
-msgstr "Nu au fost găsite melodii pentru interogarea dvs."
+#: audio/hybrid_commands.py:162
+msgid "{number_of_tracks_variable_do_not_translate} tracks enqueued."
+msgstr "{number_of_tracks_variable_do_not_translate} piese enqueued."
 
-#: audio/hybrid_commands.py:236
-msgid "You need to be in a voice channel if you don't specify which channel I need to connect to"
-msgstr "Trebuie să fiți într-un canal de voce dacă nu specificați la ce canal trebuie să mă conectez"
+#: audio/hybrid_commands.py:231
+msgid "You need to be in a voice channel if you do not specify which channel I should connect to."
+msgstr "Trebuie să fiți într-un canal de voce dacă nu specificați la ce canal ar trebui să mă conectez."
 
-#: audio/hybrid_commands.py:248
-msgid "I don't have permission to connect to that channel"
-msgstr "Nu am permisiunea de a mă conecta la acel canal"
+#: audio/hybrid_commands.py:243
+msgid "I do not have permission to connect to {channel_name_variable_do_not_translate}."
+msgstr "Nu am permisiunea de a mă conecta la {channel_name_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:252
-msgid "I don't have permission to speak in {channel}"
-msgstr "Nu am permisiunea de a vorbi în {channel}"
+#: audio/hybrid_commands.py:247
+msgid "I do not have permission to speak in {channel_name_variable_do_not_translate}."
+msgstr "Nu am permisiunea de a vorbi în {channel_name_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:255
-msgid "I don't have permission to connect to {channel}"
-msgstr "Nu am permisiunea de a mă conecta la {channel}"
+#: audio/hybrid_commands.py:265
+msgid "You do not have permission to connect to {channel_name_variable_do_not_translate}."
+msgstr "Nu aveți permisiunea de a vă conecta la {channel_name_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:268
-msgid "You don't have permission to connect to {channel}"
-msgstr "Nu ai permisiunea de a te conecta la {channel}"
+#: audio/hybrid_commands.py:282
+msgid "I have been told only to join {channel_name_variable_do_not_translate} on this server."
+msgstr "Mi s-a spus doar să mă alătur {channel_name_variable_do_not_translate} pe acest server."
 
-#: audio/hybrid_commands.py:285
-msgid "I'm forced to only join {channel}"
-msgstr "Sunt forțat doar să mă alătur {channel}"
+#: audio/hybrid_commands.py:292
+msgid "I have successfully connected to {channel_name_variable_do_not_translate}."
+msgstr "M-am conectat cu succes la {channel_name_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:293
-msgid "Connected to {channel}"
-msgstr "Conectat la {channel}"
+#: audio/hybrid_commands.py:318 audio/hybrid_commands.py:343
+#: audio/hybrid_commands.py:379 audio/hybrid_commands.py:410
+#: audio/hybrid_commands.py:443 audio/hybrid_commands.py:470
+#: audio/hybrid_commands.py:522 audio/hybrid_commands.py:561
+#: audio/hybrid_commands.py:599 audio/hybrid_commands.py:657
+#: audio/hybrid_commands.py:708 audio/hybrid_commands.py:717
+#: audio/hybrid_commands.py:826
+msgid "I am not currently playing anything on this server."
+msgstr "Eu nu sunt în prezent joc nimic pe acest server."
 
-#: audio/hybrid_commands.py:313 audio/hybrid_commands.py:343
-#: audio/hybrid_commands.py:383 audio/hybrid_commands.py:417
-#: audio/hybrid_commands.py:445 audio/hybrid_commands.py:470
-#: audio/hybrid_commands.py:518 audio/hybrid_commands.py:552
-#: audio/hybrid_commands.py:587 audio/hybrid_commands.py:642
-#: audio/hybrid_commands.py:686 audio/hybrid_commands.py:787
-msgid "No player detected"
-msgstr "Niciun jucător detectat"
+#: audio/hybrid_commands.py:351
+msgid "I have skipped {track_name_variable_do_not_translate} as requested."
+msgstr "Am sărit {track_name_variable_do_not_translate} după cum s-a solicitat."
 
-#: audio/hybrid_commands.py:320 audio/hybrid_commands.py:350
-#: audio/hybrid_commands.py:390
-msgid "Player is not currently playing anything"
-msgstr "Jucătorul nu redă nimic"
+#: audio/hybrid_commands.py:387
+msgid "I have stopped the playback and cleared the queue as requested."
+msgstr "Am oprit redarea și am șters coada așa cum am solicitat."
 
-#: audio/hybrid_commands.py:358
-msgid "Skipped - {track}"
-msgstr "Salt - {track}"
+#: audio/hybrid_commands.py:419
+msgid "I have disconnected from {channel_name_variable_do_not_translate} as requested."
+msgstr "M-am deconectat de la {channel_name_variable_do_not_translate} după cum s-a solicitat."
 
-#: audio/hybrid_commands.py:397
-msgid "Player stopped"
-msgstr "Jucător oprit"
+#: audio/hybrid_commands.py:478
+msgid "The server queue is currently empty."
+msgstr "Coada de server este în prezent goală."
 
-#: audio/hybrid_commands.py:425
-msgid "Disconnected from {channel}"
-msgstr "Deconectat de la {channel}"
+#: audio/hybrid_commands.py:486
+msgid "You are not allowed to shuffle the queue."
+msgstr "Nu aveți voie să amestecați coada."
 
-#: audio/hybrid_commands.py:477
-msgid "There is nothing in the queue"
-msgstr "Nu există nimic în coadă"
+#: audio/hybrid_commands.py:494
+msgid "{queue_size_variable_do_not_translate} tracks shuffled."
+msgstr "{queue_size_variable_do_not_translate} piese amestecate."
 
-#: audio/hybrid_commands.py:485
-msgid "You are not allowed to shuffle the queue"
-msgstr "Nu ai voie să amesteci coada de așteptare"
+#: audio/hybrid_commands.py:530
+msgid "From now on, I will now repeat the entire queue."
+msgstr "De acum înainte, voi repeta acum întreaga coadă."
 
-#: audio/hybrid_commands.py:493
-msgid "{queue_size} tracks shuffled"
-msgstr "{queue_size} piese amestecate"
+#: audio/hybrid_commands.py:533
+msgid "From now on, I will no longer repeat any tracks."
+msgstr "De acum înainte, nu voi mai repeta nicio piesă."
 
-#: audio/hybrid_commands.py:525
-msgid "Repeating the queue"
-msgstr "Se repetă coada"
+#: audio/hybrid_commands.py:537
+msgid "From now on, I will now repeat {track_name_variable_do_not_translate}."
+msgstr "De acum înainte, voi repeta acum {track_name_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:528
-msgid "Repeating disabled"
-msgstr "Repetare dezactivată"
+#: audio/hybrid_commands.py:543
+msgid "From now on, I will now repeat the current track."
+msgstr "De acum înainte, voi repeta acum piesa actuală."
 
-#: audio/hybrid_commands.py:531
-msgid "Repeating {track}"
-msgstr "Se repetă {track}"
+#: audio/hybrid_commands.py:567
+msgid "The player is already paused, did you mean to run {command_name_variable_do_not_translate}."
+msgstr "Jucătorul este deja întrerupt, ai vrut să ruleze {command_name_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:534
-msgid "current track"
-msgstr "piesa curentă"
+#: audio/hybrid_commands.py:581
+msgid "I have now paused the player as requested."
+msgstr "Acum am întrerupt jucătorul așa cum mi s-a cerut."
 
-#: audio/hybrid_commands.py:558
-msgid "Player already paused, did you mean to run `/resume`"
-msgstr "Jucător deja întrerupt, ai vrut să rulezi `/resume`"
+#: audio/hybrid_commands.py:605
+msgid "The player already resumed, did you mean to run {command_name_variable_do_not_translate}."
+msgstr "Jucătorul a fost deja reluat, ai vrut să alergi {command_name_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:560
-msgid "Player already paused, did you mean to run `{prefix}{command}`"
-msgstr "Jucător deja întrerupt, ai vrut să rulezi `{prefix}{command}`"
+#: audio/hybrid_commands.py:619
+msgid "I have now resumed the player as requested."
+msgstr "Acum am reluat jucătorul așa cum mi s-a cerut."
 
-#: audio/hybrid_commands.py:571
-msgid "Player paused"
-msgstr "Jucător întrerupt"
+#: audio/hybrid_commands.py:641
+msgid "I can not set the volume above 1,000%."
+msgstr "Nu pot seta volumul peste 1.000%."
 
-#: audio/hybrid_commands.py:593
-msgid "Player already resumed, did you mean to run `/pause`"
-msgstr "Jucător deja reluat, ai vrut să rulezi `/pause`"
+#: audio/hybrid_commands.py:649
+msgid "I can not set the volume lower than 0%"
+msgstr "Nu pot seta volumul mai mic de 0%"
 
-#: audio/hybrid_commands.py:595
-msgid "Player already resumed, did you mean to run `{prefix}{command}`"
-msgstr "Jucătorul a fost deja reluat, ai vrut să rulezi `{prefix}{command}`"
+#: audio/hybrid_commands.py:666
+msgid "I have been told to restrict the maximum volume to {max_volume_variable_do_not_translate}%."
+msgstr "Mi s-a spus să restricționez volumul maxim la {max_volume_variable_do_not_translate}%."
 
-#: audio/hybrid_commands.py:606
-msgid "Player resumed"
-msgstr "Jucător reluat"
+#: audio/hybrid_commands.py:677
+msgid "I have set the player volume to {volume_variable_do_not_translate}%."
+msgstr "Am setat volumul jucătorului la {volume_variable_do_not_translate}%."
 
-#: audio/hybrid_commands.py:650
-msgid "Volume cannot be higher than {max_volume}"
-msgstr "Volumul nu poate fi mai mare de {max_volume}"
-
-#: audio/hybrid_commands.py:659 audio/utility_commands.py:62
-msgid "Player volume set to {volume}%"
-msgstr "Volumul jucătorului este setat la {volume}%"
-
-#: audio/hybrid_commands.py:693
-msgid "Nothing playing"
-msgstr "Nimic de jucat"
-
-#: audio/hybrid_commands.py:702 audio/hybrid_commands.py:711
+#: audio/hybrid_commands.py:727 audio/hybrid_commands.py:736
+#: audio/hybrid_commands.py:749
 msgid "Unable to seek track"
 msgstr "Imposibil de căutat piesa"
 
-#: audio/hybrid_commands.py:703
-msgid "Can't seek on a stream"
-msgstr "Nu se poate căuta pe un stream"
+#: audio/hybrid_commands.py:728
+msgid "I can not seek this track as the server reports it is a live stream."
+msgstr "Nu pot căuta această pistă, deoarece serverul raportează că este un flux live."
 
-#: audio/hybrid_commands.py:720
-msgid "Cannot seek when the player is paused"
-msgstr "Nu se poate căuta când jucătorul este întrerupt"
+#: audio/hybrid_commands.py:737
+msgid "I can not seek this track as the server report that this track does not support seeking."
+msgstr "Eu nu pot căuta această pistă ca raport de server că această pistă nu acceptă căutarea."
 
-#: audio/hybrid_commands.py:733
-msgid "Moved {seconds}s to 00:00:00"
-msgstr "{seconds}s au mutat la 00:00:"
+#: audio/hybrid_commands.py:750
+msgid "I can not seek the current track while the player is paused."
+msgstr "Eu nu pot căuta piesa curentă în timp ce jucătorul este întrerupt."
 
-#: audio/hybrid_commands.py:740
-msgid "Moved {seconds}s to {time}"
-msgstr "Mutat {seconds}s la {time}"
+#: audio/hybrid_commands.py:778
+msgid "I have moved the current track forward {number_of_seconds_variable_do_not_translate} seconds to the end of the track."
+msgstr "Am mutat pista curentă înainte {number_of_seconds_variable_do_not_translate} secunde până la sfârșitul pistei."
 
-#: audio/hybrid_commands.py:761
-msgid "Moved to {time}"
-msgstr "Mutat în {time}"
+#: audio/hybrid_commands.py:782
+msgid "I have moved the current track forward {number_of_seconds} seconds to position {timestamp_variable_do_not_translate}."
+msgstr "Am mutat pista curentă înainte {number_of_seconds} secunde pentru a poziționa {timestamp_variable_do_not_translate}."
 
-#: audio/hybrid_commands.py:795
-msgid "No previous in player history"
-msgstr "Niciun jucător precedent în istoricul jucătorilor"
+#: audio/hybrid_commands.py:787
+msgid "I have moved the current track back {number_of_seconds_variable_do_not_translate} seconds to the beginning."
+msgstr "Am mutat piesa curentă înapoi {number_of_seconds_variable_do_not_translate} secunde până la început."
 
-#: audio/hybrid_commands.py:803
-msgid "Playing previous track: {track}"
-msgstr "Redare piesa anterioară: {track}"
+#: audio/hybrid_commands.py:791
+msgid "I have moved the current track back {number_of_seconds} seconds to position {timestamp_variable_do_not_translate}."
+msgstr "Am mutat piesa curentă înapoi {number_of_seconds} secunde pentru a poziționa {timestamp_variable_do_not_translate}."
+
+#: audio/hybrid_commands.py:797
+msgid "I have moved the current track to the beginning."
+msgstr "Am mutat piesa curentă la început."
+
+#: audio/hybrid_commands.py:835
+msgid "The history of tracks is currently empty."
+msgstr "Istoria pieselor este în prezent goală."
+
+#: audio/hybrid_commands.py:843
+msgid "Playing previous track: {track_name_variable_do_not_translate}."
+msgstr "Redarea piesei anterioare: {track_name_variable_do_not_translate}."
 
 #: audio/player_commands.py:30
-msgid "Plays the specified track in the queue"
-msgstr "Redă piesa specificată în coadă"
+msgid "Plays the specified track from the queue."
+msgstr "Redă pista specificată din coadă."
 
-#: audio/player_commands.py:50 audio/player_commands.py:269
-msgid "Queue is empty"
-msgstr "Coada este goală"
+#: audio/player_commands.py:50
+msgid "There are no songs in the queue."
+msgstr "Nu există melodii în coada de așteptare."
 
-#: audio/player_commands.py:59 audio/player_commands.py:282
-msgid "Track index must be between 1 and {size}"
-msgstr "Indexul piesei trebuie să fie între 1 și {size}"
+#: audio/player_commands.py:59
+msgid "Track index must be between 1 and {size_of_queue_variable_do_not_translate}"
+msgstr "Indicele de cale trebuie să fie între 1 și {size_of_queue_variable_do_not_translate}"
 
-#: audio/player_commands.py:75 audio/player_commands.py:295
-msgid "There is no track in position {position}"
-msgstr "Nu există nici o piesă în poziția {position}"
+#: audio/player_commands.py:77
+msgid "There are no tracks in position {queue_position_variable_do_not_translate}."
+msgstr "Nu există piste în poziție {queue_position_variable_do_not_translate}."
 
-#: audio/player_commands.py:85
-msgid "{track} will play after {current} finishes ({eta})"
-msgstr "{track} va reda după {current} finisări ({eta})"
+#: audio/player_commands.py:89
+msgid "{track_name_variable_do_not_translate} will play after {current_track_name_variable_do_not_translate} finishes ({estimated_time_variable_do_not_translate})."
+msgstr "{track_name_variable_do_not_translate} va juca după {current_track_name_variable_do_not_translate} finisaje ({estimated_time_variable_do_not_translate})."
 
-#: audio/player_commands.py:103
-msgid "{track} will start now\n"
-"{current} has been skipped"
-msgstr "{track} va începe acum\n"
-"{current} a fost omis"
+#: audio/player_commands.py:111
+msgid "{track_name_variable_do_not_translate} will start now\n"
+"{current_track_name_variable_do_not_translate} has been skipped."
+msgstr "{track_name_variable_do_not_translate} va începe acum\n"
+"{current_track_name_variable_do_not_translate} a fost omis."
 
-#: audio/player_commands.py:121
+#: audio/player_commands.py:133
 #, docstring
-msgid "Enqueue a track at the top of the queue"
-msgstr "Înregistrează o piesă în partea de sus a cozii"
+msgid "Enqueue a track at the top of the queue."
+msgstr "Enqueue o pistă în partea de sus a cozii."
 
-#: audio/player_commands.py:254
+#: audio/player_commands.py:146
+msgid "You must be in a voice channel to allow me to connect"
+msgstr "Trebuie să te afli într-un canal de voce pentru a-mi permite să mă conectez"
+
+#: audio/player_commands.py:237
+msgid "{number_of_tracks_variable_do_not_translate} tracks have been enqueued."
+msgstr "{number_of_tracks_variable_do_not_translate} piesele au fost enqueued."
+
+#: audio/player_commands.py:247
+msgid "{track_name_variable_do_not_translate} has been enqueued."
+msgstr "{track_name_variable_do_not_translate} a fost enqueued."
+
+#: audio/player_commands.py:268
 #, docstring
 msgid "\n"
 "        Remove the specified track from the queue.\n\n"
@@ -686,48 +758,64 @@ msgstr "\n"
 "        Dacă specificați argumentul `remove_duplicates`, toate melodiile care sunt la fel ca URL-ul sau indexul vor fi eliminate.\n"
 "        "
 
-#: audio/player_commands.py:325
-msgid "{track} not found in queue"
-msgstr "{track} nu a fost găsit în coadă"
+#: audio/player_commands.py:283
+msgid "Queue is empty."
+msgstr "Coada este goală."
 
-#: audio/player_commands.py:335
-msgid "Removed {times} {entry_plural} of {track} from the queue"
-msgstr "Eliminat {times} {entry_plural} din {track} din coada de așteptare"
+#: audio/player_commands.py:296
+msgid "Track index must be between 1 and {queue_size_variable_do_not_translate}."
+msgstr "Indicele de cale trebuie să fie între 1 și {queue_size_variable_do_not_translate}."
 
-#: audio/player_commands.py:338
-msgid "entry"
-msgstr "intrare"
+#: audio/player_commands.py:311
+msgid "There is no track in position {position_variable_do_not_translate}."
+msgstr "Nu există nici o pistă în poziție {position_variable_do_not_translate}."
 
-#: audio/player_commands.py:338
-msgid "entries"
-msgstr "intrări"
+#: audio/player_commands.py:343
+msgid "{track_name_variable_do_not_translate} not found in queue."
+msgstr "{track_name_variable_do_not_translate} nu se găsește la coadă."
 
-#: audio/slash_commands.py:47
+#: audio/player_commands.py:355
+msgid "No tracks were removed from the queue."
+msgstr "Nicio pistă nu a fost scoasă din coadă."
+
+#: audio/player_commands.py:363
+msgid "I have removed a single entry of {track_name_variable_do_not_translate} from the queue."
+msgstr "Am eliminat o singură intrare de {track_name_variable_do_not_translate} din coadă."
+
+#: audio/player_commands.py:373
+msgid "I have removed {number_of_entries_variable_do_not_translate} entries of {track_name_variable_do_not_translate} from the queue."
+msgstr "Am eliminat {number_of_entries_variable_do_not_translate} intrări de {track_name_variable_do_not_translate} din coadă."
+
+#: audio/slash_commands.py:48
 #, docstring
-msgid "Search for a track then play the selected response"
-msgstr "Caută o piesă și apoi redă răspunsul selectat"
+msgid "Search for a track then play the selected response."
+msgstr "Căutați o piesă, apoi redați răspunsul selectat."
 
-#: audio/slash_commands.py:53
-msgid "You haven't selected something to play"
-msgstr "Nu ai selectat ceva de jucat"
+#: audio/slash_commands.py:54
+msgid "You have not selected something to play."
+msgstr "Nu ai selectat ceva de jucat."
 
-#: audio/slash_commands.py:105
-msgid "Searching {service}"
-msgstr "Se caută {service}"
+#: audio/slash_commands.py:109
+msgid "Searching {service_name_variable_do_not_translate}"
+msgstr "Căutarea {service_name_variable_do_not_translate}"
 
-#: audio/slash_commands.py:121 audio/slash_commands.py:132
-msgid "No results found on {service}"
-msgstr "Nici un rezultat găsit pe {service}"
+#: audio/slash_commands.py:127 audio/slash_commands.py:140
+msgid "No results found on {service_name_variable_do_not_translate}"
+msgstr "Nu s-au găsit rezultate pe {service_name_variable_do_not_translate}"
 
 #: audio/utility_commands.py:32
-msgid "Not connected to a voice channel"
-msgstr "Nu este conectat la un canal de voce"
+msgid "I am not connected to a voice channel."
+msgstr "Nu sunt conectat la un canal de voce."
 
 #: audio/utility_commands.py:43
-msgid "Volume limit reached, player volume set to {volume}%"
-msgstr "S-a atins limita de volum, volumul jucătorului setat la {volume}%"
+msgid "Volume limit reached, player volume set to {volume_variable_do_not_translate}%"
+msgstr "Limita de volum atinsă, volumul jucătorului setat la {volume_variable_do_not_translate}%"
 
 #: audio/utility_commands.py:54
 msgid "Minimum volume reached, player volume set to 0%"
 msgstr "Volumul minim atins, volumul jucătorului setat la 0%"
+
+#: audio/utility_commands.py:62
+msgid "Player volume set to {volume_variable_do_not_translate}%"
+msgstr "Volumul jucătorului setat la {volume_variable_do_not_translate}%"
 

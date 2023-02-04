@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-02-01 00:31+0000\n"
-"PO-Revision-Date: 2023-02-01 00:40\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -17,33 +17,33 @@ msgstr ""
 "X-Crowdin-File-ID: 3319\n"
 "Language: th_TH\n"
 
-#: plplaylists/cog.py:47
+#: plplaylists/cog.py:45
 #, docstring
 msgid "PyLav playlist management commands"
 msgstr "คําสั่งการจัดการเพลย์ลิสต์ PyLav"
 
-#: plplaylists/cog.py:55
+#: plplaylists/cog.py:53
 msgid "Control PyLav playlists"
 msgstr "ควบคุมเพลย์ลิสต์ PyLav"
 
-#: plplaylists/cog.py:77
+#: plplaylists/cog.py:75
 #, docstring
-msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "แสดงเวอร์ชันของ Cog และการพึ่งพา PyLav"
+msgid "Show the version of the Cog and PyLav"
+msgstr "แสดงเวอร์ชันของ Cog และ PyLav"
 
-#: plplaylists/cog.py:92
-msgid "Library/Cog"
-msgstr "ห้องสมุด/ฟันเฟือง"
+#: plplaylists/cog.py:90
+msgid "Library / Cog"
+msgstr "ห้องสมุด / ฟันเฟือง"
 
-#: plplaylists/cog.py:93
+#: plplaylists/cog.py:91
 msgid "Version"
 msgstr "เวอร์ชัน"
 
-#: plplaylists/cog.py:130
-msgid "Let's create a playlist!"
-msgstr "มาสร้างเพลย์ลิสต์กันเถอะ!"
+#: plplaylists/cog.py:128
+msgid "Let us create a playlist!"
+msgstr "ให้เราสร้างเพลย์ลิสต์!"
 
-#: plplaylists/cog.py:131
+#: plplaylists/cog.py:129
 msgid "(**1**) - Apply changes to playlist.\n"
 "(**2**) - Cancel any changes made.\n"
 "(**3**) - Add a name to the playlist.\n"
@@ -57,53 +57,53 @@ msgstr "(**1**) - ใช้การเปลี่ยนแปลงกับ�
 "(**5**) - เพิ่มแทร็กทั้งหมดจากคิวไปยังเพลย์ลิสต์\n\n"
 "หากคุณต้องการให้ชื่อเพลย์ลิสต์เป็นเพลย์ลิสต์ดั้งเดิมเพียงแค่ตั้งค่า URL แต่ไม่มีชื่อ\n\n"
 
-#: plplaylists/cog.py:165
-msgid "Playlist not created"
-msgstr "ไม่ได้สร้างเพลย์ลิสต์"
+#: plplaylists/cog.py:163
+msgid "I did not create this playlist."
+msgstr "ฉันไม่ได้สร้างเพลย์ลิสต์นี้"
 
-#: plplaylists/cog.py:166
+#: plplaylists/cog.py:164
 msgid "No tracks were provided in time."
 msgstr "ไม่มีแทร็กให้ทันเวลา"
 
-#: plplaylists/cog.py:179
-msgid "Playlist created"
-msgstr "เพลย์ลิสต์ที่สร้างแล้ว"
+#: plplaylists/cog.py:177
+msgid "I have created a new playlist."
+msgstr "ฉันได้สร้างเพลย์ลิสต์ใหม่แล้ว"
 
-#: plplaylists/cog.py:180
-msgid "Name: `{name}`\n"
-"ID: `{id}`\n"
-"Tracks: `{track_count}`"
-msgstr "ชื่อ: '{name}`\n"
-"รหัส: '{id}`\n"
-"เพลง : '{track_count}`"
+#: plplaylists/cog.py:178
+msgid "Name: `{name_variable_do_not_translate}`\n"
+"Identifier: `{id_variable_do_not_translate}`\n"
+"Tracks: `{track_count_variable_do_not_translate}`"
+msgstr "ชื่อ: '{name_variable_do_not_translate}`\n"
+"ตัวระบุ: '{id_variable_do_not_translate}`\n"
+"เพลง : '{track_count_variable_do_not_translate}`"
 
-#: plplaylists/cog.py:204
+#: plplaylists/cog.py:206
 msgid "You have no playlists"
 msgstr "คุณไม่มีเพลย์ลิสต์"
 
-#: plplaylists/cog.py:246 plplaylists/cog.py:607
+#: plplaylists/cog.py:248 plplaylists/cog.py:637
 msgid "Nothing to save"
 msgstr "ไม่มีอะไรจะบันทึก"
 
-#: plplaylists/cog.py:247 plplaylists/cog.py:608
-msgid "There is nothing in the queue to save"
+#: plplaylists/cog.py:249 plplaylists/cog.py:638
+msgid "There is nothing in the queue to save."
 msgstr "ไม่มีอะไรในคิวที่จะบันทึก"
 
-#: plplaylists/cog.py:284 plplaylists/cog.py:545 plplaylists/cog.py:625
-msgid "{user}, playlist {playlist_name} cannot be managed by yourself"
-msgstr "{user}เพลย์ลิสต์ {playlist_name} ไม่สามารถจัดการได้ด้วยตัวเอง"
+#: plplaylists/cog.py:286 plplaylists/cog.py:569 plplaylists/cog.py:655
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} cannot be managed by yourself."
+msgstr "{user_variable_do_not_translate}เพลย์ลิสต์ {playlist_name_variable_do_not_translate} ไม่สามารถจัดการได้ด้วยตัวเอง"
 
-#: plplaylists/cog.py:293
-msgid "(**1**){space} - Apply changes to playlist.\n"
-"(**2**){space} - Cancel any changes made and close the menu.\n"
-"(**3**){space} - Delete this playlist.\n"
-"(**4**){space} - Remove all tracks from this playlist.\n"
-"(**5**){space} - Update the playlist with the latest tracks.\n"
+#: plplaylists/cog.py:298
+msgid "(**1**){space_variable_do_not_translate} - Apply changes to playlist.\n"
+"(**2**){space_variable_do_not_translate} - Cancel any changes made and close the menu.\n"
+"(**3**){space_variable_do_not_translate} - Delete this playlist.\n"
+"(**4**){space_variable_do_not_translate} - Remove all tracks from this playlist.\n"
+"(**5**){space_variable_do_not_translate} - Update the playlist with the latest tracks.\n"
 "Please note that this action will ignore any tracks added/removed via this menu.\n"
-"(**6**){space} - Change the name of the playlist.\n"
-"(**7**){space} - Link this playlist to an existing playlist/album.\n"
-"(**8**){space} - Add a query to this playlist.\n"
-"(**9**){space} - Remove a query from this playlist.\n"
+"(**6**){space_variable_do_not_translate} - Change the name of the playlist.\n"
+"(**7**){space_variable_do_not_translate} - Link this playlist to an existing playlist/album.\n"
+"(**8**){space_variable_do_not_translate} - Add a query to this playlist.\n"
+"(**9**){space_variable_do_not_translate} - Remove a query from this playlist.\n"
 "(**10**) - Download the playlist file.\n"
 "(**11**) - Add current playlist to the queue.\n"
 "(**12**) - Show tracks in current playlist.\n"
@@ -114,16 +114,16 @@ msgid "(**1**){space} - Apply changes to playlist.\n"
 "The clear button will always be run first before any other operations.\n"
 "The URL button will always run last - Linking a playlist via the URL will overwrite any tracks added or removed to this playlist.\n\n"
 "If you interact with a button multiple times other than the add/remove buttons only the last interaction will take effect.\n\n\n"
-msgstr "(**1**){space} - ใช้การเปลี่ยนแปลงกับเพลย์ลิสต์\n"
-"(**2**){space} - ยกเลิกการเปลี่ยนแปลงใด ๆ ที่ทําและปิดเมนู\n"
-"(**3**){space} - ลบเพลย์ลิสต์นี้\n"
-"(**4**){space} - ลบแทร็กทั้งหมดออกจากเพลย์ลิสต์นี้\n"
-"(**5**){space} - อัปเดตเพลย์ลิสต์ด้วยแทร็กล่าสุด\n"
+msgstr "(**1**){space_variable_do_not_translate} - ใช้การเปลี่ยนแปลงกับเพลย์ลิสต์\n"
+"(**2**){space_variable_do_not_translate} - ยกเลิกการเปลี่ยนแปลงใด ๆ ที่ทําและปิดเมนู\n"
+"(**3**){space_variable_do_not_translate} - ลบเพลย์ลิสต์นี้\n"
+"(**4**){space_variable_do_not_translate} - ลบแทร็กทั้งหมดออกจากเพลย์ลิสต์นี้\n"
+"(**5**){space_variable_do_not_translate} - อัปเดตเพลย์ลิสต์ด้วยแทร็กล่าสุด\n"
 "โปรดทราบว่าการดําเนินการนี้จะละเว้นแทร็กใดๆ ที่เพิ่ม/นําออกผ่านเมนูนี้\n"
-"(**6**){space} - เปลี่ยนชื่อของเพลย์ลิสต์\n"
-"(**7**){space} - เชื่อมโยงเพลย์ลิสต์นี้กับเพลย์ลิสต์/อัลบั้มที่มีอยู่\n"
-"(**8**){space} - เพิ่มแบบสอบถามลงในเพลย์ลิสต์นี้\n"
-"(**9**){space} - ลบแบบสอบถามออกจากเพลย์ลิสต์นี้\n"
+"(**6**){space_variable_do_not_translate} - เปลี่ยนชื่อของเพลย์ลิสต์\n"
+"(**7**){space_variable_do_not_translate} - เชื่อมโยงเพลย์ลิสต์นี้กับเพลย์ลิสต์/อัลบั้มที่มีอยู่\n"
+"(**8**){space_variable_do_not_translate} - เพิ่มแบบสอบถามลงในเพลย์ลิสต์นี้\n"
+"(**9**){space_variable_do_not_translate} - ลบแบบสอบถามออกจากเพลย์ลิสต์นี้\n"
 "(**10**) - ดาวน์โหลดไฟล์เพลย์ลิสต์\n"
 "(**11**) - เพิ่มเพลย์ลิสต์ปัจจุบันลงในคิว\n"
 "(**12**) - แสดงแทร็กในเพลย์ลิสต์ปัจจุบัน\n"
@@ -135,7 +135,7 @@ msgstr "(**1**){space} - ใช้การเปลี่ยนแปลงก�
 "ปุ่ม URL จะทํางานล่าสุดเสมอ - การลิงก์เพลย์ลิสต์ผ่าน URL จะเขียนทับแทร็กใดๆ ที่เพิ่มหรือนําออกไปยังเพลย์ลิสต์นี้\n\n"
 "หากคุณโต้ตอบกับปุ่มหลายครั้งนอกเหนือจากปุ่มเพิ่ม/ลบเฉพาะการโต้ตอบล่าสุดเท่านั้นที่จะมีผล\n\n\n"
 
-#: plplaylists/cog.py:319
+#: plplaylists/cog.py:324
 msgid "(**1**) - Close the menu.\n"
 "(**2**) - Update the playlist with the latest tracks.\n"
 "(**3**) - Download the playlist file.\n"
@@ -147,121 +147,133 @@ msgstr "(**1**) - ปิดเมนู\n"
 "(**4**) - เพิ่มเพลย์ลิสต์ปัจจุบันลงในคิว\n"
 "(**5**) - แสดงแทร็กในเพลย์ลิสต์ปัจจุบัน\n\n\n"
 
-#: plplaylists/cog.py:327
+#: plplaylists/cog.py:332
 msgid "__**Currently managing**__:\n"
-"**Name**:{space}{space}{space}{playlist_name}\n"
-"**Scope**:{space}{space}{space}{scope}\n"
-"**Author**:{space}{space}{author}\n"
-"**Tracks**:{space}{space}{space}{tracks} tracks\n"
-"**URL**:{space}{space}{space}{space}{space}{url}\n"
+"**Name**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{playlist_name_variable_do_not_translate}\n"
+"**Scope**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{scope_variable_do_not_translate}\n"
+"**Author**:{space_variable_do_not_translate}{space_variable_do_not_translate}{author_variable_do_not_translate}\n"
+"**Tracks**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{tracks_variable_do_not_translate} tracks\n"
+"**URL**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{url_variable_do_not_translate}\n"
 msgstr "__**กําลังจัดการ**__:\n"
-"**ชื่อ**:{space}{space}{space}{playlist_name}\n"
-"**ขอบเขต**:{space}{space}{space}{scope}\n"
-"**ผู้แต่ง**:{space}{space}{author}\n"
-"**แทร็ค**:{space}{space}{space}{tracks} แทร็ค\n"
-"**URL**:{space}{space}{space}{space}{space}{url}\n"
+"**ชื่อ**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{playlist_name_variable_do_not_translate}\n"
+"**ขอบเขต**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{scope_variable_do_not_translate}\n"
+"**ผู้แต่ง**:{space_variable_do_not_translate}{space_variable_do_not_translate}{author_variable_do_not_translate}\n"
+"**แทร็ค**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{tracks_variable_do_not_translate} แทร็ค\n"
+"**URL**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{url_variable_do_not_translate}\n"
 
-#: plplaylists/cog.py:345
-msgid "Let's manage: {playlist_name}"
-msgstr "มาจัดการกัน: {playlist_name}"
-
-#: plplaylists/cog.py:347
-msgid "Let's take a look at: {playlist_name}"
-msgstr "ลองมาดูที่: {playlist_name}"
+#: plplaylists/cog.py:350
+msgid "Let us manage: {playlist_name_variable_do_not_translate}."
+msgstr "ให้เราจัดการ: {playlist_name_variable_do_not_translate}."
 
 #: plplaylists/cog.py:354
+msgid "Let us take a look at: {playlist_name_variable_do_not_translate}."
+msgstr "ให้เราดูที่: {playlist_name_variable_do_not_translate}."
+
+#: plplaylists/cog.py:365
 msgid "N/A"
 msgstr "ไม่ระบุ"
 
-#: plplaylists/cog.py:386 plplaylists/cog.py:555
-msgid "Playlist deleted"
-msgstr "เพลย์ลิสต์ถูกลบแล้ว"
+#: plplaylists/cog.py:389
+msgid "I have deleted a playlist."
+msgstr "ฉันลบเพลย์ลิสต์แล้ว"
 
-#: plplaylists/cog.py:388 plplaylists/cog.py:557
-msgid "{user}, playlist {playlist_name} has been deleted"
-msgstr "{user}เพลย์ลิสต์ {playlist_name} ถูกลบไปแล้ว"
+#: plplaylists/cog.py:391 plplaylists/cog.py:584
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has been deleted."
+msgstr "{user_variable_do_not_translate}เพลย์ลิสต์ {playlist_name_variable_do_not_translate} ถูกลบไปแล้ว"
 
-#: plplaylists/cog.py:438
-msgid "Playlist **{playlist_name}** could not be updated with URL: <{url}>"
-msgstr "เพลย์ลิสต์**{playlist_name}** ไม่สามารถอัปเดตด้วย URL: <{url}>"
+#: plplaylists/cog.py:444
+msgid "Playlist {playlist_name_variable_do_not_translate} could not be updated with URL: {url_variable_do_not_translate}"
+msgstr "เพลย์ลิสต์ {playlist_name_variable_do_not_translate} ไม่สามารถปรับปรุงด้วย URL: {url_variable_do_not_translate}"
 
-#: plplaylists/cog.py:473
+#: plplaylists/cog.py:486
 msgid "\n"
-"{track_count} {track_plural} removed from the playlist"
+"1 track was removed from the playlist."
 msgstr "\n"
-"{track_count} {track_plural} นําออกจากเพลย์ลิสต์แล้ว"
+"1 แทร็กถูกลบออกจากเพลย์ลิสต์"
 
-#: plplaylists/cog.py:474 plplaylists/cog.py:478 plplaylists/cog.py:644
-msgid "track"
-msgstr "ลู่"
-
-#: plplaylists/cog.py:474 plplaylists/cog.py:478 plplaylists/cog.py:644
-msgid "tracks"
-msgstr "แทร็ค"
-
-#: plplaylists/cog.py:477 plplaylists/cog.py:643
+#: plplaylists/cog.py:488
 msgid "\n"
-"{track_count} {track_plural} added to the playlist"
+"{track_count_variable_do_not_translate} tracks were removed from the playlist."
 msgstr "\n"
-"{track_count} {track_plural} เพิ่มลงในเพลย์ลิสต์แล้ว"
+"{track_count_variable_do_not_translate} แทร็กถูกลบออกจากเพลย์ลิสต์"
 
-#: plplaylists/cog.py:483 plplaylists/cog.py:650
+#: plplaylists/cog.py:494 plplaylists/cog.py:678
+msgid "\n"
+"1 track was added to the playlist."
+msgstr "\n"
+"เพิ่ม 1 แทร็กลงในเพลย์ลิสต์"
+
+#: plplaylists/cog.py:496 plplaylists/cog.py:680
+msgid "\n"
+"{track_count_variable_do_not_translate} tracks were added to the playlist."
+msgstr "\n"
+"{track_count_variable_do_not_translate} แทร็กถูกเพิ่มลงในเพลย์ลิสต์"
+
+#: plplaylists/cog.py:502 plplaylists/cog.py:689
 msgid "Playlist updated"
 msgstr "อัปเดตเพลย์ลิสต์แล้ว"
 
-#: plplaylists/cog.py:484 plplaylists/cog.py:651
-msgid "{user}, playlist {playlist_name} has been updated.{extras}"
-msgstr "{user}เพลย์ลิสต์ {playlist_name} ได้รับการอัปเดตแล้ว{extras}"
+#: plplaylists/cog.py:503 plplaylists/cog.py:690
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has been updated.{extras_variable_do_not_translate}."
+msgstr "{user_variable_do_not_translate}เพลย์ลิสต์ {playlist_name_variable_do_not_translate} ได้รับการอัปเดตแล้ว{extras_variable_do_not_translate}."
 
-#: plplaylists/cog.py:496 plplaylists/cog.py:664
+#: plplaylists/cog.py:517 plplaylists/cog.py:705
 msgid "Playlist unchanged"
 msgstr "เพลย์ลิสต์ไม่เปลี่ยนแปลง"
 
-#: plplaylists/cog.py:497 plplaylists/cog.py:665
-msgid "{user}, playlist {playlist_name} has not been updated"
-msgstr "{user}เพลย์ลิสต์ {playlist_name} ยังไม่ได้รับการปรับปรุง"
+#: plplaylists/cog.py:518
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has not been updated."
+msgstr "{user_variable_do_not_translate}เพลย์ลิสต์ {playlist_name_variable_do_not_translate} ยังไม่ได้รับการปรับปรุง"
 
-#: plplaylists/cog.py:693
-msgid "You must either provide a URL or attach a playlist file to upload a playlist"
+#: plplaylists/cog.py:582
+msgid "Playlist deleted"
+msgstr "เพลย์ลิสต์ถูกลบแล้ว"
+
+#: plplaylists/cog.py:706
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has not been updated"
+msgstr "{user_variable_do_not_translate}เพลย์ลิสต์ {playlist_name_variable_do_not_translate} ยังไม่ได้รับการปรับปรุง"
+
+#: plplaylists/cog.py:737
+msgid "You must either provide a URL or attach a playlist file to upload a playlist."
 msgstr "คุณต้องระบุ URL หรือแนบไฟล์เพลย์ลิสต์เพื่ออัปโหลดเพลย์ลิสต์"
 
-#: plplaylists/cog.py:705
+#: plplaylists/cog.py:749
 msgid "No valid playlist file provided"
 msgstr "ไม่มีไฟล์เพลย์ลิสต์ที่ถูกต้อง"
 
-#: plplaylists/cog.py:714
-msgid "Multiple playlist files provided - Currently only 1 per message is allowed"
-msgstr "มีไฟล์เพลย์ลิสต์หลายไฟล์ - ปัจจุบันอนุญาตเพียง 1 ไฟล์ต่อข้อความเท่านั้น"
+#: plplaylists/cog.py:758
+msgid "Multiple playlist files are provided. Currently, only 1 per message is allowed."
+msgstr "มีไฟล์เพลย์ลิสต์หลายไฟล์ ขณะนี้อนุญาตให้ใช้ได้เพียง 1 ข้อความต่อข้อความเท่านั้น"
 
-#: plplaylists/cog.py:731
-msgid "Failed to save any of the requested playlists"
+#: plplaylists/cog.py:775
+msgid "Failed to save any of the requested playlists."
 msgstr "ไม่สามารถบันทึกเพลย์ลิสต์ที่ร้องขอได้"
 
-#: plplaylists/cog.py:740
+#: plplaylists/cog.py:784
 msgid "Failed to save the following playlists:\n"
-"{invalid_playlists}"
+"{invalid_playlists_variable_do_not_translate}."
 msgstr "ไม่สามารถบันทึกเพลย์ลิสต์ต่อไปนี้ได้:\n"
-"{invalid_playlists}"
+"{invalid_playlists_variable_do_not_translate}."
 
-#: plplaylists/cog.py:749
+#: plplaylists/cog.py:793
 msgid "Successfully saved the following playlists:\n"
-"{saved_playlists}"
+"{saved_playlists_variable_do_not_translate}."
 msgstr "บันทึกเพลย์ลิสต์ต่อไปนี้สําเร็จแล้ว:\n"
-"{saved_playlists}"
+"{saved_playlists_variable_do_not_translate}."
 
-#: plplaylists/cog.py:774
-msgid "You must be in a voice channel to allow me to connect"
+#: plplaylists/cog.py:818
+msgid "You must be in a voice channel to allow me to connect."
 msgstr "คุณต้องอยู่ในช่องเสียงเพื่อให้ฉันเชื่อมต่อได้"
 
-#: plplaylists/cog.py:782
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "ฉันไม่ได้รับอนุญาตให้เชื่อมต่อหรือพูดใน {channel}"
+#: plplaylists/cog.py:826
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "ฉันไม่ได้รับอนุญาตให้เชื่อมต่อหรือพูดใน {channel_variable_do_not_translate}."
 
-#: plplaylists/cog.py:812
+#: plplaylists/cog.py:856
 msgid "Playlist"
 msgstr "เพลย์ลิสต์"
 
-#: plplaylists/cog.py:817
-msgid "{track_count} tracks enqueued.{playlist_name}"
-msgstr "{track_count} แทร็กที่เข้าคิว{playlist_name}"
+#: plplaylists/cog.py:861
+msgid "{track_count_variable_do_not_translate} tracks enqueued.{playlist_name_variable_do_not_translate}."
+msgstr "{track_count_variable_do_not_translate} แทร็กที่เข้าคิว{playlist_name_variable_do_not_translate}."
 

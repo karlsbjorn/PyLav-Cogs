@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "Настроить ког настройки"
 
 #: pllocal/cog.py:117
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Показать версию Cog и его зависимости PyLav"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Показать версию Cog и PyLav"
 
 #: pllocal/cog.py:133
-msgid "Library/Cog"
-msgstr "Библиотека/Винтик"
+msgid "Library / Cog"
+msgstr "Библиотека / Винтик"
 
 #: pllocal/cog.py:134
 msgid "Version"
@@ -46,35 +46,35 @@ msgid "Update the track list for /local"
 msgstr "Обновить список треков для /local"
 
 #: pllocal/cog.py:158
-msgid "Local track list updated {number} currently present"
-msgstr "Локальный список треков обновлён {number}"
+msgid "I have updated my local track cache. There are now {number_variable_do_not_translate} tracks present."
+msgstr "Я обновил локальный кэш треков. Есть сейчас {number_variable_do_not_translate} треки присутствуют."
 
-#: pllocal/cog.py:183
+#: pllocal/cog.py:185
 #, docstring
 msgid "Play a local file or folder, supports partial searching"
 msgstr "Воспроизвести локальный файл или папку, поддерживает частичный поиск"
 
-#: pllocal/cog.py:191
-msgid "{query} is not a valid local file or folder"
-msgstr "{query} не является допустимым локальным файлом или папкой"
+#: pllocal/cog.py:193
+msgid "{user_input_query_variable_do_not_translate} is not a valid local file or folder."
+msgstr "{user_input_query_variable_do_not_translate} не является допустимым локальным файлом или папкой."
 
-#: pllocal/cog.py:207
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Вы должны быть в голосовом канале, чтобы я мог подключиться"
+#: pllocal/cog.py:211
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "Вы должны быть в голосовом канале, чтобы я мог подключиться к нему."
 
-#: pllocal/cog.py:220
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "У меня нет разрешения на подключение или выступление в {channel}"
+#: pllocal/cog.py:224
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "У меня нет разрешения на подключение или выступление в {channel_variable_do_not_translate}."
 
-#: pllocal/cog.py:245
-msgid "{track_count} tracks enqueued"
-msgstr "{track_count} дорожки в очереди"
+#: pllocal/cog.py:248
+msgid "No tracks were found for your query."
+msgstr "Треки для вашего запроса не найдены."
 
-#: pllocal/cog.py:253
-msgid "{track} enqueued"
-msgstr "{track} Очередь"
+#: pllocal/cog.py:250
+msgid "{track_name_variable_do_not_translate} enqueued."
+msgstr "{track_name_variable_do_not_translate} Очередь."
 
-#: pllocal/cog.py:263
-msgid "No tracks were found for your query"
-msgstr "Треки для вашего запроса не найдены"
+#: pllocal/cog.py:254
+msgid "I have enqueued {track_count_variable_do_not_translate} tracks."
+msgstr "Я поставился в очередь {track_count_variable_do_not_translate} Треков."
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:09\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "Configurer les paramètres de cog"
 
 #: pllocal/cog.py:117
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Afficher la version du Cog et ses dépendances PyLav"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Montrer la version du Cog et du PyLav"
 
 #: pllocal/cog.py:133
-msgid "Library/Cog"
-msgstr "Bibliothèque/Engrenage"
+msgid "Library / Cog"
+msgstr "Bibliothèque / Engrenage"
 
 #: pllocal/cog.py:134
 msgid "Version"
@@ -46,35 +46,35 @@ msgid "Update the track list for /local"
 msgstr "Mettre à jour la liste des pistes pour /local"
 
 #: pllocal/cog.py:158
-msgid "Local track list updated {number} currently present"
-msgstr "Liste de pistes locales mise à jour {number} actuellement présente"
+msgid "I have updated my local track cache. There are now {number_variable_do_not_translate} tracks present."
+msgstr "J’ai mis à jour mon cache de piste local. Il y a maintenant {number_variable_do_not_translate} pistes présentes."
 
-#: pllocal/cog.py:183
+#: pllocal/cog.py:185
 #, docstring
 msgid "Play a local file or folder, supports partial searching"
 msgstr "Jouer un fichier ou un dossier local, supporte la recherche partielle"
 
-#: pllocal/cog.py:191
-msgid "{query} is not a valid local file or folder"
-msgstr "{query} n'est pas un fichier ou un dossier local valide"
+#: pllocal/cog.py:193
+msgid "{user_input_query_variable_do_not_translate} is not a valid local file or folder."
+msgstr "{user_input_query_variable_do_not_translate} n’est pas un fichier ou un dossier local valide."
 
-#: pllocal/cog.py:207
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Vous devez être dans un canal vocal pour me permettre de me connecter"
+#: pllocal/cog.py:211
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "Vous devez être dans un canal vocal, pour que je puisse m’y connecter."
 
-#: pllocal/cog.py:220
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Je n’ai pas l’autorisation de me connecter ou de parler {channel}"
+#: pllocal/cog.py:224
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "Je n’ai pas la permission de me connecter ou de parler {channel_variable_do_not_translate}."
 
-#: pllocal/cog.py:245
-msgid "{track_count} tracks enqueued"
-msgstr "{track_count} Pistes mises en file d’attente"
+#: pllocal/cog.py:248
+msgid "No tracks were found for your query."
+msgstr "Aucune trace n’a été trouvée pour votre requête."
 
-#: pllocal/cog.py:253
-msgid "{track} enqueued"
-msgstr "{track} en file d’attente"
+#: pllocal/cog.py:250
+msgid "{track_name_variable_do_not_translate} enqueued."
+msgstr "{track_name_variable_do_not_translate} en file d’attente."
 
-#: pllocal/cog.py:263
-msgid "No tracks were found for your query"
-msgstr "Aucune trace n’a été trouvée pour votre requête"
+#: pllocal/cog.py:254
+msgid "I have enqueued {track_count_variable_do_not_translate} tracks."
+msgstr "J’ai mis en file d’attente {track_count_variable_do_not_translate} traces."
 

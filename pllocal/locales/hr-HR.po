@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-02 20:05\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "Konfiguriranje postavki zupčanika"
 
 #: pllocal/cog.py:117
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Prikaz verzije Zupčanika i njegovih PyLav ovisnosti"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Prikaz verzije Cog i PyLav"
 
 #: pllocal/cog.py:133
-msgid "Library/Cog"
-msgstr "Biblioteka/Zupčanik"
+msgid "Library / Cog"
+msgstr "Knjižnica / Zupčanik"
 
 #: pllocal/cog.py:134
 msgid "Version"
@@ -46,35 +46,35 @@ msgid "Update the track list for /local"
 msgstr "Ažuriranje popisa zapisa za /local"
 
 #: pllocal/cog.py:158
-msgid "Local track list updated {number} currently present"
-msgstr "Ažuriran lokalni popis zapisa {number} trenutno prisutan"
+msgid "I have updated my local track cache. There are now {number_variable_do_not_translate} tracks present."
+msgstr "Ažurirao sam lokalnu predmemoriju zapisa. Sada ih ima. {number_variable_do_not_translate} prisutne pjesme."
 
-#: pllocal/cog.py:183
+#: pllocal/cog.py:185
 #, docstring
 msgid "Play a local file or folder, supports partial searching"
 msgstr "Reproduciraj lokalnu datoteku ili mapu, podržava djelomično pretraživanje"
 
-#: pllocal/cog.py:191
-msgid "{query} is not a valid local file or folder"
-msgstr "{query} nije valjana lokalna datoteka ili mapa"
+#: pllocal/cog.py:193
+msgid "{user_input_query_variable_do_not_translate} is not a valid local file or folder."
+msgstr "{user_input_query_variable_do_not_translate} nije valjana lokalna datoteka ili mapa."
 
-#: pllocal/cog.py:207
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Morate biti u glasovnom kanalu da biste mi omogućili povezivanje"
+#: pllocal/cog.py:211
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "Morate biti u glasovnom kanalu, tako da se mogu povezati s njim."
 
-#: pllocal/cog.py:220
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Nemam dozvolu za povezivanje ili govor {channel}"
+#: pllocal/cog.py:224
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "Nemam dozvolu za povezivanje ili govor u programu {channel_variable_do_not_translate}."
 
-#: pllocal/cog.py:245
-msgid "{track_count} tracks enqueued"
-msgstr "{track_count} pjesme enqueued"
+#: pllocal/cog.py:248
+msgid "No tracks were found for your query."
+msgstr "Za vaš upit nisu pronađeni zapisi."
 
-#: pllocal/cog.py:253
-msgid "{track} enqueued"
-msgstr "{track} dodan u red čekanja"
+#: pllocal/cog.py:250
+msgid "{track_name_variable_do_not_translate} enqueued."
+msgstr "{track_name_variable_do_not_translate} enqueued."
 
-#: pllocal/cog.py:263
-msgid "No tracks were found for your query"
-msgstr "Nisu pronađeni zapisi za vaš upit"
+#: pllocal/cog.py:254
+msgid "I have enqueued {track_count_variable_do_not_translate} tracks."
+msgstr "Ja sam enqueued {track_count_variable_do_not_translate} Pjesme."
 

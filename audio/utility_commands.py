@@ -20,7 +20,7 @@ _ = Translator("PyLavPlayer", Path(__file__))
 @cog_i18n(_)
 class UtilityCommands(DISCORD_COG_TYPE_MIXIN):
     @always_hidden()
-    @commands.command(name="__volume_change_by", hidden=True)
+    @commands.command(name="__PyLavPlayer_volume_change_by", hidden=True)
     async def command_volume_change_by(self, context: PyLavContext, change_by: int):
         if isinstance(context, discord.Interaction):
             context = await self.bot.get_context(context)
@@ -29,7 +29,7 @@ class UtilityCommands(DISCORD_COG_TYPE_MIXIN):
         if not context.player:
             await context.send(
                 embed=await context.pylav.construct_embed(
-                    description=_("Not connected to a voice channel"), messageable=context
+                    description=_("I am not connected to a voice channel."), messageable=context
                 ),
                 ephemeral=True,
             )
@@ -40,9 +40,9 @@ class UtilityCommands(DISCORD_COG_TYPE_MIXIN):
             await context.player.set_volume(max_volume, requester=context.author)
             await context.send(
                 embed=await context.pylav.construct_embed(
-                    description=_("Volume limit reached, player volume set to {volume}%").format(
-                        volume=humanize_number(context.player.volume)
-                    ),
+                    description=_(
+                        "Volume limit reached, player volume set to {volume_variable_do_not_translate}%"
+                    ).format(volume_variable_do_not_translate=humanize_number(context.player.volume)),
                     messageable=context,
                 ),
                 ephemeral=True,
@@ -59,7 +59,10 @@ class UtilityCommands(DISCORD_COG_TYPE_MIXIN):
             await context.player.set_volume(new_vol, requester=context.author)
             await context.send(
                 embed=await context.pylav.construct_embed(
-                    description=_("Player volume set to {volume}%").format(volume=new_vol), messageable=context
+                    description=_("Player volume set to {volume_variable_do_not_translate}%").format(
+                        volume_variable_do_not_translate=new_vol
+                    ),
+                    messageable=context,
                 ),
                 ephemeral=True,
             )

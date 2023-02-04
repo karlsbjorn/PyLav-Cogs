@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-02-01 00:31+0000\n"
-"PO-Revision-Date: 2023-02-01 00:40\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Lithuanian\n"
 "MIME-Version: 1.0\n"
@@ -17,33 +17,33 @@ msgstr ""
 "X-Crowdin-File-ID: 3319\n"
 "Language: lt_LT\n"
 
-#: plplaylists/cog.py:47
+#: plplaylists/cog.py:45
 #, docstring
 msgid "PyLav playlist management commands"
 msgstr "PyLav grojaraščio valdymo komandos"
 
-#: plplaylists/cog.py:55
+#: plplaylists/cog.py:53
 msgid "Control PyLav playlists"
 msgstr "Valdykite PyLav grojaraščius"
 
-#: plplaylists/cog.py:77
+#: plplaylists/cog.py:75
 #, docstring
-msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "Rodyti krumpliaračio versiją ir tai yra PyLav priklausomybės"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Rodyti krumpliaračio ir PyLav versiją"
 
-#: plplaylists/cog.py:92
-msgid "Library/Cog"
+#: plplaylists/cog.py:90
+msgid "Library / Cog"
 msgstr "Biblioteka / krumpliaratis"
 
-#: plplaylists/cog.py:93
+#: plplaylists/cog.py:91
 msgid "Version"
 msgstr "Versija"
 
-#: plplaylists/cog.py:130
-msgid "Let's create a playlist!"
+#: plplaylists/cog.py:128
+msgid "Let us create a playlist!"
 msgstr "Sukurkime grojaraštį!"
 
-#: plplaylists/cog.py:131
+#: plplaylists/cog.py:129
 msgid "(**1**) - Apply changes to playlist.\n"
 "(**2**) - Cancel any changes made.\n"
 "(**3**) - Add a name to the playlist.\n"
@@ -57,53 +57,53 @@ msgstr "(**1**) - Taikyti pakeitimus grojaraščiui.\n"
 "(**5**) - Pridėkite visus takelius iš eilės į grojaraštį.\n\n"
 "Jei norite, kad grojaraščio pavadinimas būtų kaip originalus grojaraštis, tiesiog nustatykite URL, bet ne pavadinimą.\n\n"
 
-#: plplaylists/cog.py:165
-msgid "Playlist not created"
-msgstr "Grojaraštis nesukurtas"
+#: plplaylists/cog.py:163
+msgid "I did not create this playlist."
+msgstr "Aš nesukūriau šio grojaraščio."
 
-#: plplaylists/cog.py:166
+#: plplaylists/cog.py:164
 msgid "No tracks were provided in time."
 msgstr "Jokie takeliai nebuvo pateikti laiku."
 
-#: plplaylists/cog.py:179
-msgid "Playlist created"
-msgstr "Sukurtas grojaraštis"
+#: plplaylists/cog.py:177
+msgid "I have created a new playlist."
+msgstr "Sukūriau naują grojaraštį."
 
-#: plplaylists/cog.py:180
-msgid "Name: `{name}`\n"
-"ID: `{id}`\n"
-"Tracks: `{track_count}`"
-msgstr "Pavadinimas: \"{name}`\n"
-"ID: \"{id}`\n"
-"Takeliai: \"{track_count}`"
+#: plplaylists/cog.py:178
+msgid "Name: `{name_variable_do_not_translate}`\n"
+"Identifier: `{id_variable_do_not_translate}`\n"
+"Tracks: `{track_count_variable_do_not_translate}`"
+msgstr "Pavadinimas: \"{name_variable_do_not_translate}`\n"
+"Identifikatorius: \"{id_variable_do_not_translate}`\n"
+"Takeliai: \"{track_count_variable_do_not_translate}`"
 
-#: plplaylists/cog.py:204
+#: plplaylists/cog.py:206
 msgid "You have no playlists"
 msgstr "Neturite grojaraščių"
 
-#: plplaylists/cog.py:246 plplaylists/cog.py:607
+#: plplaylists/cog.py:248 plplaylists/cog.py:637
 msgid "Nothing to save"
 msgstr "Nėra ko taupyti"
 
-#: plplaylists/cog.py:247 plplaylists/cog.py:608
-msgid "There is nothing in the queue to save"
-msgstr "Eilėje nėra nieko, ką išsaugoti"
+#: plplaylists/cog.py:249 plplaylists/cog.py:638
+msgid "There is nothing in the queue to save."
+msgstr "Eilėje nėra nieko, ką išsaugoti."
 
-#: plplaylists/cog.py:284 plplaylists/cog.py:545 plplaylists/cog.py:625
-msgid "{user}, playlist {playlist_name} cannot be managed by yourself"
-msgstr "{user}grojaraštis {playlist_name} negali būti valdomas pats"
+#: plplaylists/cog.py:286 plplaylists/cog.py:569 plplaylists/cog.py:655
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} cannot be managed by yourself."
+msgstr "{user_variable_do_not_translate}grojaraštis {playlist_name_variable_do_not_translate} negali būti valdomas pats."
 
-#: plplaylists/cog.py:293
-msgid "(**1**){space} - Apply changes to playlist.\n"
-"(**2**){space} - Cancel any changes made and close the menu.\n"
-"(**3**){space} - Delete this playlist.\n"
-"(**4**){space} - Remove all tracks from this playlist.\n"
-"(**5**){space} - Update the playlist with the latest tracks.\n"
+#: plplaylists/cog.py:298
+msgid "(**1**){space_variable_do_not_translate} - Apply changes to playlist.\n"
+"(**2**){space_variable_do_not_translate} - Cancel any changes made and close the menu.\n"
+"(**3**){space_variable_do_not_translate} - Delete this playlist.\n"
+"(**4**){space_variable_do_not_translate} - Remove all tracks from this playlist.\n"
+"(**5**){space_variable_do_not_translate} - Update the playlist with the latest tracks.\n"
 "Please note that this action will ignore any tracks added/removed via this menu.\n"
-"(**6**){space} - Change the name of the playlist.\n"
-"(**7**){space} - Link this playlist to an existing playlist/album.\n"
-"(**8**){space} - Add a query to this playlist.\n"
-"(**9**){space} - Remove a query from this playlist.\n"
+"(**6**){space_variable_do_not_translate} - Change the name of the playlist.\n"
+"(**7**){space_variable_do_not_translate} - Link this playlist to an existing playlist/album.\n"
+"(**8**){space_variable_do_not_translate} - Add a query to this playlist.\n"
+"(**9**){space_variable_do_not_translate} - Remove a query from this playlist.\n"
 "(**10**) - Download the playlist file.\n"
 "(**11**) - Add current playlist to the queue.\n"
 "(**12**) - Show tracks in current playlist.\n"
@@ -114,16 +114,16 @@ msgid "(**1**){space} - Apply changes to playlist.\n"
 "The clear button will always be run first before any other operations.\n"
 "The URL button will always run last - Linking a playlist via the URL will overwrite any tracks added or removed to this playlist.\n\n"
 "If you interact with a button multiple times other than the add/remove buttons only the last interaction will take effect.\n\n\n"
-msgstr "(**1**){space} - Taikyti grojaraščio pakeitimus.\n"
-"(**2**){space} - Atšaukite visus atliktus pakeitimus ir uždarykite meniu.\n"
-"(**3**){space} - Ištrinkite šį grojaraštį.\n"
-"(**4**){space} - Pašalinkite visus takelius iš šio grojaraščio.\n"
-"(**5**){space} - Atnaujinkite grojaraštį naujausiais takeliais.\n"
+msgstr "(**1**){space_variable_do_not_translate} - Taikyti grojaraščio pakeitimus.\n"
+"(**2**){space_variable_do_not_translate} - Atšaukite visus atliktus pakeitimus ir uždarykite meniu.\n"
+"(**3**){space_variable_do_not_translate} - Ištrinkite šį grojaraštį.\n"
+"(**4**){space_variable_do_not_translate} - Pašalinkite visus takelius iš šio grojaraščio.\n"
+"(**5**){space_variable_do_not_translate} - Atnaujinkite grojaraštį naujausiais takeliais.\n"
 "Atminkite, kad atliekant šį veiksmą bus nepaisoma jokių takelių, pridėtų / pašalintų naudojant šį meniu.\n"
-"(**6**){space} - Pakeiskite grojaraščio pavadinimą.\n"
-"(**7**){space} - Susiekite šį grojaraštį su esamu grojaraščiu/albumu.\n"
-"(**8**){space} - Pridėkite užklausą prie šio grojaraščio.\n"
-"(**9**){space} - Pašalinkite užklausą iš šio grojaraščio.\n"
+"(**6**){space_variable_do_not_translate} - Pakeiskite grojaraščio pavadinimą.\n"
+"(**7**){space_variable_do_not_translate} - Susiekite šį grojaraštį su esamu grojaraščiu/albumu.\n"
+"(**8**){space_variable_do_not_translate} - Pridėkite užklausą prie šio grojaraščio.\n"
+"(**9**){space_variable_do_not_translate} - Pašalinkite užklausą iš šio grojaraščio.\n"
 "(**10**) - Atsisiųskite grojaraščio failą.\n"
 "(**11**) - Pridėkite dabartinį grojaraštį prie eilės.\n"
 "(**12**) - Rodyti takelius dabartiniame grojaraštyje.\n"
@@ -135,7 +135,7 @@ msgstr "(**1**){space} - Taikyti grojaraščio pakeitimus.\n"
 "URL mygtukas visada veiks paskutinis – susiejus grojaraštį per URL, bus perrašyti visi į šį grojaraštį įtraukti ar pašalinti takeliai.\n\n"
 "Jei sąveikaujate su mygtuku kelis kartus, išskyrus pridėjimo / pašalinimo mygtukus, įsigalios tik paskutinė sąveika.\n\n\n"
 
-#: plplaylists/cog.py:319
+#: plplaylists/cog.py:324
 msgid "(**1**) - Close the menu.\n"
 "(**2**) - Update the playlist with the latest tracks.\n"
 "(**3**) - Download the playlist file.\n"
@@ -147,121 +147,133 @@ msgstr "(**1**) - Uždarykite meniu.\n"
 "(**4**) - Į eilę įtraukite dabartinį grojaraštį.\n"
 "(**5**) - Rodyti takelius dabartiniame grojaraštyje.\n\n\n"
 
-#: plplaylists/cog.py:327
+#: plplaylists/cog.py:332
 msgid "__**Currently managing**__:\n"
-"**Name**:{space}{space}{space}{playlist_name}\n"
-"**Scope**:{space}{space}{space}{scope}\n"
-"**Author**:{space}{space}{author}\n"
-"**Tracks**:{space}{space}{space}{tracks} tracks\n"
-"**URL**:{space}{space}{space}{space}{space}{url}\n"
+"**Name**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{playlist_name_variable_do_not_translate}\n"
+"**Scope**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{scope_variable_do_not_translate}\n"
+"**Author**:{space_variable_do_not_translate}{space_variable_do_not_translate}{author_variable_do_not_translate}\n"
+"**Tracks**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{tracks_variable_do_not_translate} tracks\n"
+"**URL**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{url_variable_do_not_translate}\n"
 msgstr "__**Šiuo metu vadovauja**__:\n"
-"**Vardas, pavadinimas**:{space}{space}{space}{playlist_name}\n"
-"**Mastas**:{space}{space}{space}{scope}\n"
-"**Autorius**:{space}{space}{author}\n"
-"**Takelius**:{space}{space}{space}{tracks} Takelius\n"
-"**URL**:{space}{space}{space}{space}{space}{url}\n"
+"**Vardas, pavadinimas**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{playlist_name_variable_do_not_translate}\n"
+"**Mastas**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{scope_variable_do_not_translate}\n"
+"**Autorius**:{space_variable_do_not_translate}{space_variable_do_not_translate}{author_variable_do_not_translate}\n"
+"**Takelius**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{tracks_variable_do_not_translate} Takelius\n"
+"**URL**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{url_variable_do_not_translate}\n"
 
-#: plplaylists/cog.py:345
-msgid "Let's manage: {playlist_name}"
-msgstr "Valdykime: {playlist_name}"
-
-#: plplaylists/cog.py:347
-msgid "Let's take a look at: {playlist_name}"
-msgstr "Pažvelkime: {playlist_name}"
+#: plplaylists/cog.py:350
+msgid "Let us manage: {playlist_name_variable_do_not_translate}."
+msgstr "Valdykime: {playlist_name_variable_do_not_translate}."
 
 #: plplaylists/cog.py:354
+msgid "Let us take a look at: {playlist_name_variable_do_not_translate}."
+msgstr "Pažvelkime: {playlist_name_variable_do_not_translate}."
+
+#: plplaylists/cog.py:365
 msgid "N/A"
 msgstr "N/A"
 
-#: plplaylists/cog.py:386 plplaylists/cog.py:555
-msgid "Playlist deleted"
-msgstr "Grojaraštis ištrintas"
+#: plplaylists/cog.py:389
+msgid "I have deleted a playlist."
+msgstr "Ištryniau grojaraštį."
 
-#: plplaylists/cog.py:388 plplaylists/cog.py:557
-msgid "{user}, playlist {playlist_name} has been deleted"
-msgstr "{user}grojaraštis {playlist_name} išbraukta"
+#: plplaylists/cog.py:391 plplaylists/cog.py:584
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has been deleted."
+msgstr "{user_variable_do_not_translate}grojaraštis {playlist_name_variable_do_not_translate} buvo išbraukta."
 
-#: plplaylists/cog.py:438
-msgid "Playlist **{playlist_name}** could not be updated with URL: <{url}>"
-msgstr "Grojaraštis**{playlist_name}** nepavyko atnaujinti naudojant URL: <{url}>"
+#: plplaylists/cog.py:444
+msgid "Playlist {playlist_name_variable_do_not_translate} could not be updated with URL: {url_variable_do_not_translate}"
+msgstr "Grojaraštis {playlist_name_variable_do_not_translate} nepavyko atnaujinti naudojant URL: {url_variable_do_not_translate}"
 
-#: plplaylists/cog.py:473
+#: plplaylists/cog.py:486
 msgid "\n"
-"{track_count} {track_plural} removed from the playlist"
+"1 track was removed from the playlist."
 msgstr "\n"
-"{track_count} {track_plural} pašalintas iš grojaraščio"
+"1 takelis buvo pašalintas iš grojaraščio."
 
-#: plplaylists/cog.py:474 plplaylists/cog.py:478 plplaylists/cog.py:644
-msgid "track"
-msgstr "Sekti"
-
-#: plplaylists/cog.py:474 plplaylists/cog.py:478 plplaylists/cog.py:644
-msgid "tracks"
-msgstr "Takelius"
-
-#: plplaylists/cog.py:477 plplaylists/cog.py:643
+#: plplaylists/cog.py:488
 msgid "\n"
-"{track_count} {track_plural} added to the playlist"
+"{track_count_variable_do_not_translate} tracks were removed from the playlist."
 msgstr "\n"
-"{track_count} {track_plural} Pridėta prie grojaraščio"
+"{track_count_variable_do_not_translate} Takeliai buvo pašalinti iš grojaraščio."
 
-#: plplaylists/cog.py:483 plplaylists/cog.py:650
+#: plplaylists/cog.py:494 plplaylists/cog.py:678
+msgid "\n"
+"1 track was added to the playlist."
+msgstr "\n"
+"Į grojaraštį buvo įtrauktas 1 takelis."
+
+#: plplaylists/cog.py:496 plplaylists/cog.py:680
+msgid "\n"
+"{track_count_variable_do_not_translate} tracks were added to the playlist."
+msgstr "\n"
+"{track_count_variable_do_not_translate} Takeliai buvo įtraukti į grojaraštį."
+
+#: plplaylists/cog.py:502 plplaylists/cog.py:689
 msgid "Playlist updated"
 msgstr "Grojaraštis atnaujintas"
 
-#: plplaylists/cog.py:484 plplaylists/cog.py:651
-msgid "{user}, playlist {playlist_name} has been updated.{extras}"
-msgstr "{user}grojaraštis {playlist_name} buvo atnaujinta.{extras}"
+#: plplaylists/cog.py:503 plplaylists/cog.py:690
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has been updated.{extras_variable_do_not_translate}."
+msgstr "{user_variable_do_not_translate}grojaraštis {playlist_name_variable_do_not_translate} buvo atnaujinta.{extras_variable_do_not_translate}."
 
-#: plplaylists/cog.py:496 plplaylists/cog.py:664
+#: plplaylists/cog.py:517 plplaylists/cog.py:705
 msgid "Playlist unchanged"
 msgstr "Grojaraštis nepakitęs"
 
-#: plplaylists/cog.py:497 plplaylists/cog.py:665
-msgid "{user}, playlist {playlist_name} has not been updated"
-msgstr "{user}grojaraštis {playlist_name} nebuvo atnaujinta"
+#: plplaylists/cog.py:518
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has not been updated."
+msgstr "{user_variable_do_not_translate}grojaraštis {playlist_name_variable_do_not_translate} nebuvo atnaujinta."
 
-#: plplaylists/cog.py:693
-msgid "You must either provide a URL or attach a playlist file to upload a playlist"
-msgstr "Norėdami įkelti grojaraštį, turite pateikti URL arba pridėti grojaraščio failą"
+#: plplaylists/cog.py:582
+msgid "Playlist deleted"
+msgstr "Grojaraštis ištrintas"
 
-#: plplaylists/cog.py:705
+#: plplaylists/cog.py:706
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has not been updated"
+msgstr "{user_variable_do_not_translate}grojaraštis {playlist_name_variable_do_not_translate} nebuvo atnaujinta"
+
+#: plplaylists/cog.py:737
+msgid "You must either provide a URL or attach a playlist file to upload a playlist."
+msgstr "Norėdami įkelti grojaraštį, turite pateikti URL arba pridėti grojaraščio failą."
+
+#: plplaylists/cog.py:749
 msgid "No valid playlist file provided"
 msgstr "Nepateiktas galiojantis grojaraščio failas"
 
-#: plplaylists/cog.py:714
-msgid "Multiple playlist files provided - Currently only 1 per message is allowed"
-msgstr "Pateikti keli grojaraščio failai – šiuo metu leidžiamas tik 1 vienam pranešimui"
+#: plplaylists/cog.py:758
+msgid "Multiple playlist files are provided. Currently, only 1 per message is allowed."
+msgstr "Pateikiami keli grojaraščio failai. Šiuo metu leidžiamas tik 1 vienam pranešimui."
 
-#: plplaylists/cog.py:731
-msgid "Failed to save any of the requested playlists"
-msgstr "Nepavyko išsaugoti nė vieno iš prašomų grojaraščių"
+#: plplaylists/cog.py:775
+msgid "Failed to save any of the requested playlists."
+msgstr "Nepavyko išsaugoti nė vieno iš prašomų grojaraščių."
 
-#: plplaylists/cog.py:740
+#: plplaylists/cog.py:784
 msgid "Failed to save the following playlists:\n"
-"{invalid_playlists}"
+"{invalid_playlists_variable_do_not_translate}."
 msgstr "Nepavyko išsaugoti šių grojaraščių:\n"
-"{invalid_playlists}"
+"{invalid_playlists_variable_do_not_translate}."
 
-#: plplaylists/cog.py:749
+#: plplaylists/cog.py:793
 msgid "Successfully saved the following playlists:\n"
-"{saved_playlists}"
+"{saved_playlists_variable_do_not_translate}."
 msgstr "Sėkmingai išsaugoti šie grojaraščiai:\n"
-"{saved_playlists}"
+"{saved_playlists_variable_do_not_translate}."
 
-#: plplaylists/cog.py:774
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Turite būti balso kanale, kad galėčiau prisijungti"
+#: plplaylists/cog.py:818
+msgid "You must be in a voice channel to allow me to connect."
+msgstr "Turite būti balso kanale, kad galėčiau prisijungti."
 
-#: plplaylists/cog.py:782
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Neturiu leidimo prisijungti arba kalbėti {channel}"
+#: plplaylists/cog.py:826
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "Neturiu leidimo prisijungti ar kalbėti {channel_variable_do_not_translate}."
 
-#: plplaylists/cog.py:812
+#: plplaylists/cog.py:856
 msgid "Playlist"
 msgstr "Grojaraštis"
 
-#: plplaylists/cog.py:817
-msgid "{track_count} tracks enqueued.{playlist_name}"
-msgstr "{track_count} takeliai į eilę.{playlist_name}"
+#: plplaylists/cog.py:861
+msgid "{track_count_variable_do_not_translate} tracks enqueued.{playlist_name_variable_do_not_translate}."
+msgstr "{track_count_variable_do_not_translate} takeliai į eilę.{playlist_name_variable_do_not_translate}."
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgstr "Songtekst commando's voor PyLav"
 
 #: pllyrics/cog.py:49
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Toon de versie van de Cog en zijn PyLav-afhankelijkheden"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Toon de versie van de Cog en PyLav"
 
 #: pllyrics/cog.py:65
-msgid "Library/Cog"
-msgstr "Bibliotheek/Cog"
+msgid "Library / Cog"
+msgstr "Bibliotheek / Cog"
 
 #: pllyrics/cog.py:66
 msgid "Version"
@@ -45,88 +45,108 @@ msgstr "Stel de instellingen voor songteksten in"
 msgid "Toggle timed lyrics"
 msgstr "Toggle getimede songteksten"
 
-#: pllyrics/cog.py:93
-msgid "Timed lyrics are now {state}"
-msgstr "Getimede songteksten zijn nu {state}"
+#: pllyrics/cog.py:90
+msgid "I have now turned off timed lyrics in this server."
+msgstr "Ik heb nu getimede songteksten uitgeschakeld op deze server."
 
-#: pllyrics/cog.py:94 pllyrics/cog.py:117
-msgid "disabled"
-msgstr "uitgeschakeld"
+#: pllyrics/cog.py:92
+msgid "I have now turned on timed lyrics in this server. I will send the lyrics as the track progresses if I can find lyrics for the playing track."
+msgstr "Ik heb nu getimede songteksten ingeschakeld op deze server. Ik zal de songteksten verzenden naarmate het nummer vordert als ik songteksten voor het spelende nummer kan vinden."
 
-#: pllyrics/cog.py:96 pllyrics/cog.py:119
-msgid "enabled"
-msgstr "ingeschakeld"
-
-#: pllyrics/cog.py:108
+#: pllyrics/cog.py:106
 #, docstring
 msgid "Show full lyrics on track start timed lyrics"
 msgstr "Laat volledige songtekst zien bij het starten van getimede songteksten"
 
-#: pllyrics/cog.py:116
-msgid "Sending full lyrics on track start {state}"
-msgstr "Verzend volledige songtekst vanaf het begin {state}"
+#: pllyrics/cog.py:112
+msgid "I have now turned off full lyrics in this server."
+msgstr "Ik heb nu de volledige songtekst op deze server uitgeschakeld."
 
-#: pllyrics/cog.py:133
+#: pllyrics/cog.py:114
+msgid "I have now turned on full lyrics on this server. I will send a message with the full lyrics at the start of a song if I can find lyrics for the playing track."
+msgstr "Ik heb nu de volledige songtekst op deze server ingeschakeld. Ik zal een bericht sturen met de volledige songtekst aan het begin van een nummer als ik songteksten voor het spelende nummer kan vinden."
+
+#: pllyrics/cog.py:130
 #, docstring
 msgid "Set the lyrics channel"
 msgstr "Stel het songtekst kanaal in"
 
-#: pllyrics/cog.py:138
-msgid "Lyrics channel set to {channel}"
-msgstr "Songtekst kanaal ingesteld op {channel}"
+#: pllyrics/cog.py:135
+msgid "I have set the channel I will use to send lyrics to {channel_variable_do_not_translate}."
+msgstr "Ik heb het kanaal ingesteld dat ik zal gebruiken om songteksten naar {channel_variable_do_not_translate}."
 
-#: pllyrics/cog.py:147
-msgid "I will not send lyrics to any channel"
-msgstr "Ik zal geen songteksten sturen naar een kanaal"
+#: pllyrics/cog.py:146
+msgid "From now on, I will not send lyrics to any channel."
+msgstr "Vanaf nu zal ik geen teksten meer sturen naar een kanaal."
 
-#: pllyrics/cog.py:156
+#: pllyrics/cog.py:155
 #, docstring
 msgid "Show lyrics for current track if available"
 msgstr "Toon songteksten voor huidige track indien beschikbaar"
 
-#: pllyrics/cog.py:165
-msgid "Nothing is currently playing"
-msgstr "Er wordt momenteel niets afgespeeld"
+#: pllyrics/cog.py:164
+msgid "I am not currently playing anything on this server."
+msgstr "Ik speel momenteel niets op deze server."
 
-#: pllyrics/cog.py:204
-msgid "Error: {error}"
-msgstr "Fout: {error}"
+#: pllyrics/cog.py:203
+msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
+msgstr "Ik ben een fout tegengekomen tijdens het zoeken naar de songtekst voor dit nummer: {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:214
-msgid "API Error: {error}"
-msgstr "API fout: {error}"
+#: pllyrics/cog.py:215
+msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
+msgstr "De Flowery API, die ik gebruik om songteksten te vinden, heeft een fout geretourneerd tijdens het zoeken naar de songtekst voor dit nummer {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:224
+#: pllyrics/cog.py:227
 msgid "No lyrics found"
 msgstr "Geen songteksten gevonden"
 
-#: pllyrics/cog.py:241
-msgid "{extras}Lyrics for {title}{author} - Part {page}"
-msgstr "{extras}Songteksten voor {title}{author} - Deel {page}"
+#: pllyrics/cog.py:242
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "Ik heb de tekst gevonden voor {title_variable_do_not_translate} bij {author_variable_do_not_translate} -Deel {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:244 pllyrics/cog.py:259 pllyrics/cog.py:312
-msgid "(Guess) "
-msgstr "(Rach) "
+#: pllyrics/cog.py:246
+msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "Ik heb de tekst gevonden voor {title_variable_do_not_translate} -Deel {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:245 pllyrics/cog.py:260 pllyrics/cog.py:313
-msgid " by {name}"
-msgstr " door {name}"
+#: pllyrics/cog.py:252
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(Raad) Ik heb de tekst gevonden voor {title_variable_do_not_translate} bij {author_variable_do_not_translate} -Deel {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:250 pllyrics/cog.py:265 pllyrics/cog.py:322
-msgid "Lyrics provided by {provider}"
-msgstr "Songteksten geleverd door {provider}"
+#: pllyrics/cog.py:256
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(Raad) Ik heb de tekst gevonden voor {title_variable_do_not_translate} -Deel {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:257 pllyrics/cog.py:310
-msgid "{extras}Lyrics for {title}{author}"
-msgstr "{extras}Songteksten voor {title}{author}"
+#: pllyrics/cog.py:262
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "Ik heb de tekst gevonden voor {title_variable_do_not_translate} bij {author_variable_do_not_translate}."
 
-#: pllyrics/cog.py:316
-msgid "{lyrics}\n\n"
-"Position: {duration} until {until}"
-msgstr "{lyrics}\n\n"
-"Positie: {duration} tot {until}"
+#: pllyrics/cog.py:266
+msgid "I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "Ik heb de tekst gevonden voor {title_variable_do_not_translate}."
 
-#: pllyrics/cog.py:318
+#: pllyrics/cog.py:268
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "(Raad) Ik heb de tekst gevonden voor {title_variable_do_not_translate} bij {author_variable_do_not_translate}."
+
+#: pllyrics/cog.py:272
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "(Raad) Ik heb de tekst gevonden voor {title_variable_do_not_translate}."
+
+#: pllyrics/cog.py:289 pllyrics/cog.py:369
+msgid "Lyrics provided by {provider_variable_do_not_translate}."
+msgstr "Songteksten beschikbaar gesteld door {provider_variable_do_not_translate}."
+
+#: pllyrics/cog.py:306
+msgid "Lyrics provided by {provider_variable_do_not_translate}"
+msgstr "Songteksten beschikbaar gesteld door {provider_variable_do_not_translate}"
+
+#: pllyrics/cog.py:359
+msgid "{lyrics_variable_do_not_translate}\n\n"
+"Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
+msgstr "{lyrics_variable_do_not_translate}\n\n"
+"Positie: {duration_variable_do_not_translate} totdat {until_variable_do_not_translate}"
+
+#: pllyrics/cog.py:365
 msgid "Start"
 msgstr "Beginnen"
 

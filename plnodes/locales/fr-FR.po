@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:09\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -17,118 +17,118 @@ msgstr ""
 "X-Crowdin-File-ID: 3321\n"
 "Language: fr_FR\n"
 
-#: plnodes/cog.py:33
+#: plnodes/cog.py:32
 #, docstring
 msgid "Manage the nodes used by PyLav"
 msgstr "Gérer les nœuds utilisés par PyLav"
 
-#: plnodes/cog.py:44
+#: plnodes/cog.py:43
 #, docstring
 msgid "Configure PyLav Nodes"
 msgstr "Configurer les nœuds PyLav"
 
-#: plnodes/cog.py:48
+#: plnodes/cog.py:47
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Afficher la version du Cog et ses dépendances PyLav"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Montrer la version du Cog et du PyLav"
+
+#: plnodes/cog.py:63
+msgid "Library / Cog"
+msgstr "Bibliothèque / Engrenage"
 
 #: plnodes/cog.py:64
-msgid "Library/Cog"
-msgstr "Bibliothèque/Engrenage"
-
-#: plnodes/cog.py:65
 msgid "Version"
 msgstr "Version"
 
-#: plnodes/cog.py:78
+#: plnodes/cog.py:77
 #, docstring
 msgid "Add a node to PyLav"
 msgstr "Ajouter un noeud à PyLav"
 
-#: plnodes/cog.py:88
-msgid "Let's add a node to PyLav!"
-msgstr "Ajoutons un nœud à Pylave !"
+#: plnodes/cog.py:87
+msgid "Let us add a node to PyLav!"
+msgstr "Ajoutons un nœud à PyLav!"
 
-#: plnodes/cog.py:89
-msgid "(**1**){space} - Apply changes and add the node to PyLav.\n"
-"(**2**){space} - Cancel any changes made and close the menu.\n"
-"(**3**){space} - Toggle between search-only and search and playback modes.\n"
-"(**4**){space} - Toggle between SSL on and off.\n"
-"(**5**){space} - Add a name to the node.\n"
-"(**6**){space} - Add the host address of the node.\n"
-"(**7**){space} - Add the port the node uses.\n"
-"(**8**){space} - Set the password for the node.\n"
-"(**9**){space} - Set the connection timeout.\n"
+#: plnodes/cog.py:88
+msgid "(**1**){space_variable_do_not_translate} - Apply changes and add the node to PyLav.\n"
+"(**2**){space_variable_do_not_translate} - Cancel any changes made and close the menu.\n"
+"(**3**){space_variable_do_not_translate} - Toggle between search-only and search and playback modes.\n"
+"(**4**){space_variable_do_not_translate} - Toggle between SSL on and off.\n"
+"(**5**){space_variable_do_not_translate} - Add a name to the node.\n"
+"(**6**){space_variable_do_not_translate} - Add the host address of the node.\n"
+"(**7**){space_variable_do_not_translate} - Add the port the node uses.\n"
+"(**8**){space_variable_do_not_translate} - Set the password for the node.\n"
+"(**9**){space_variable_do_not_translate} - Set the connection timeout.\n"
 "(**10**) - Select which sources to disable for this node (Multiple can be selected).\n"
 "If you interact with a button multiple times, only the last interaction will take effect.\n\n\n"
-msgstr "(**1**){space} - Appliquer les modifications et ajouter le noeud à PyLav.\n"
-"(**2**){space} - Annuler toutes les modifications apportées et fermer le menu.\n"
-"(**3**){space} - Basculer entre les modes de recherche et de recherche et de lecture.\n"
-"(**4**){space} - Bascule entre SSL allumée et désactivée.\n"
-"(**5**){space} - Ajoute un nom au noeud.\n"
-"(**6**){space} - Ajoute l'adresse hôte du noeud.\n"
-"(**7**){space} - Ajoute le port que le noeud utilise.\n"
-"(**8**){space} - Définit le mot de passe pour le noeud.\n"
-"(**9**){space} - Définit le délai de connexion expiré.\n"
-"(**10**) - Sélectionnez les sources à désactiver pour ce noeud (Multiple peut être sélectionné).\n"
-"Si vous interagissez avec un bouton plusieurs fois, seule la dernière interaction prendra effet.\n\n\n"
+msgstr "(**1**){space_variable_do_not_translate} - Appliquer les modifications et ajouter le nœud à PyLav.\n"
+"(**2**){space_variable_do_not_translate} - Annulez toutes les modifications apportées et fermez le menu.\n"
+"(**3**){space_variable_do_not_translate} - Basculez entre les modes de recherche uniquement et de recherche et de lecture.\n"
+"(**4**){space_variable_do_not_translate} - Basculez entre SSL activé et désactivé.\n"
+"(**5**){space_variable_do_not_translate} - Ajouter un nom au nœud.\n"
+"(**6**){space_variable_do_not_translate} - Ajouter l’adresse hôte du nœud.\n"
+"(**7**){space_variable_do_not_translate} - Ajoutez le port utilisé par le nœud.\n"
+"(**8**){space_variable_do_not_translate} - Définissez le mot de passe du nœud.\n"
+"(**9**){space_variable_do_not_translate} - Définissez le délai d’expiration de la connexion.\n"
+"(**10**) - Sélectionnez les sources à désactiver pour ce nœud (plusieurs peuvent être sélectionnées).\n"
+"Si vous interagissez plusieurs fois avec un bouton, seule la dernière interaction prendra effet.\n\n\n"
 
-#: plnodes/cog.py:137
-msgid "Added node {name} with the following settings:\n"
-"Host: {host}\n"
-"Port: {port}\n"
-"Password: {password}\n"
-"Resume Timeout: {resume_timeout}\n"
-"Search Only: {search_only}\n"
-"SSL: {ssl}\n"
-"Disabled Sources: {disabled_sources}\n"
-msgstr "Ajout du noeud {name} avec les paramètres suivants :\n"
-"Hôte : {host}\n"
-"Port : {port}\n"
-"Mot de passe : {password}\n"
-"Délai de reprise : {resume_timeout}\n"
-"Recherche uniquement : {search_only}\n"
-"SSL : {ssl}\n"
-"Sources désactivées : {disabled_sources}\n"
+#: plnodes/cog.py:134
+msgid "I have added the {name_variable_do_not_translate} node with the following settings:\n"
+"Host: {host_variable_do_not_translate}\n"
+"Port: {port_variable_do_not_translate}\n"
+"Password: {password_variable_do_not_translate}\n"
+"Resume Timeout: {resume_timeout_variable_do_not_translate}\n"
+"Search Only: {search_only_variable_do_not_translate}\n"
+"SSL: {ssl_variable_do_not_translate}\n"
+"Disabled Sources: {disabled_sources_variable_do_not_translate}\n"
+msgstr "J’ai ajouté le {name_variable_do_not_translate} nœud avec les paramètres suivants :\n"
+"Hôte: {host_variable_do_not_translate}\n"
+"Port: {port_variable_do_not_translate}\n"
+"Mot de passe: {password_variable_do_not_translate}\n"
+"Délai d’expiration de la reprise : {resume_timeout_variable_do_not_translate}\n"
+"Recherche uniquement : {search_only_variable_do_not_translate}\n"
+"SSL : {ssl_variable_do_not_translate}\n"
+"Sources désactivées : {disabled_sources_variable_do_not_translate}\n"
 
-#: plnodes/cog.py:168 plnodes/cog.py:175
-msgid "Unable to add this node"
-msgstr "Impossible d'ajouter ce noeud"
+#: plnodes/cog.py:165 plnodes/cog.py:172
+msgid "I am unable to add this node"
+msgstr "Je ne parviens pas à ajouter ce nœud"
 
-#: plnodes/cog.py:181
+#: plnodes/cog.py:178
 #, docstring
 msgid "Remove a node from a PyLav instance"
 msgstr "Supprimer un noeud d'une instance PyLav"
 
-#: plnodes/cog.py:193
-msgid "{name} is managed by PyLav and cannot be removed"
-msgstr "{name} est géré par PyLav et ne peut pas être supprimé"
+#: plnodes/cog.py:190
+msgid "{name_variable_do_not_translate} is managed by PyLav and cannot be removed."
+msgstr "{name_variable_do_not_translate} est géré par PyLav et ne peut pas être supprimé."
 
-#: plnodes/cog.py:208
-msgid "Removed node {name}.\n\n"
-"{data}"
-msgstr "Noeud {name}supprimé.\n\n"
-"{data}"
+#: plnodes/cog.py:207
+msgid "I have removed the {name_variable_do_not_translate} node.\n\n"
+"{data_variable_do_not_translate}"
+msgstr "J’ai supprimé le {name_variable_do_not_translate} noeud.\n\n"
+"{data_variable_do_not_translate}"
 
-#: plnodes/cog.py:216
-msgid "Removed node {name}, a DM was sent to you with the node details in case you wish to re-add it"
-msgstr "Le noeud {name}a été supprimé, un DM vous a été envoyé avec les détails du noeud si vous souhaitez le ré-ajouter"
+#: plnodes/cog.py:220
+msgid "I have removed the {name_variable_do_not_translate} node. A direct message was sent to you with the node details in case you wish to re-add it."
+msgstr "J’ai supprimé le {name_variable_do_not_translate} noeud. Un message direct vous a été envoyé avec les détails du nœud au cas où vous souhaiteriez le rajouter."
 
-#: plnodes/cog.py:226
+#: plnodes/cog.py:230
 #, docstring
 msgid "Manage all nodes in a PyLav instance"
 msgstr "Gérer tous les nœuds dans une instance PyLav"
 
-#: plnodes/cog.py:238
-msgid "Let's manage some nodes!"
-msgstr "Nous allons gérer quelques nœuds !"
+#: plnodes/cog.py:242
+msgid "Let us manage some nodes!"
+msgstr "Laissez-nous gérer quelques nœuds!"
 
-#: plnodes/cog.py:239
-msgid "(**1**){space} - Cancel any changes made and close the menu.\n"
-"(**6**){space} - Show sources enabled for this node.\n"
-"(**7**){space} - Apply changes and add the node to PyLav.\n"
-"(**8**){space} - Toggle between search-only and search and playback modes.\n"
-"(**9**){space} - Toggle between SSL on and off.\n"
+#: plnodes/cog.py:243
+msgid "(**1**){space_variable_do_not_translate} - Cancel any changes made and close the menu.\n"
+"(**6**){space_variable_do_not_translate} - Show sources enabled for this node.\n"
+"(**7**){space_variable_do_not_translate} - Apply changes and add the node to PyLav.\n"
+"(**8**){space_variable_do_not_translate} - Toggle between search-only and search and playback modes.\n"
+"(**9**){space_variable_do_not_translate} - Toggle between SSL on and off.\n"
 "(**10**) - Add a name to the node.\n"
 "(**11**) - Add the host address of the node.\n"
 "(**12**) - Add the port the node uses.\n"
@@ -137,52 +137,52 @@ msgid "(**1**){space} - Cancel any changes made and close the menu.\n"
 "(**15**) - Remove this node.\n"
 "(**16**) - Select which sources to disable for this node (Multiple can be selected).\n"
 "If you interact with a button multiple times, only the last interaction will take effect.\n\n\n"
-msgstr "(**1**){space} - Annuler toutes les modifications apportées et fermer le menu.\n"
-"(**6**){space} - Afficher les sources activées pour ce noeud.\n"
-"(**7**){space} - applique les modifications et ajoute le noeud à PyLav.\n"
-"(**8**){space} - Bascule entre les modes de recherche et de recherche et de lecture.\n"
-"(**9**){space} - Bascule entre SSL sur et désactivé.\n"
-"(**10**) - Ajoute un nom au noeud.\n"
-"(**11**) - Ajoute l'adresse hôte du noeud.\n"
-"(**12**) - Ajoute le port utilisé par le nœud.\n"
-"(**13**) - Définit le mot de passe pour le nœud.\n"
-"(**14**) - Définit le délai de connexion.\n"
-"(**15**) - Supprime ce noeud.\n"
-"(**16**) - Sélectionnez les sources à désactiver pour ce noeud (Multiple peut être sélectionné).\n"
-"Si vous interagissez avec un bouton plusieurs fois, seule la dernière interaction prendra effet.\n\n\n"
+msgstr "(**1**){space_variable_do_not_translate} - Annulez toutes les modifications apportées et fermez le menu.\n"
+"(**6**){space_variable_do_not_translate} - Afficher les sources activées pour ce nœud.\n"
+"(**7**){space_variable_do_not_translate} - Appliquer les modifications et ajouter le nœud à PyLav.\n"
+"(**8**){space_variable_do_not_translate} - Basculez entre les modes de recherche uniquement et de recherche et de lecture.\n"
+"(**9**){space_variable_do_not_translate} - Basculez entre SSL activé et désactivé.\n"
+"(**10**) - Ajoutez un nom au nœud.\n"
+"(**11**) - Ajoutez l’adresse hôte du nœud.\n"
+"(**12**) - Ajoutez le port utilisé par le nœud.\n"
+"(**13**) - Définissez le mot de passe du nœud.\n"
+"(**14**) - Définissez le délai d’expiration de la connexion.\n"
+"(**15**) - Supprimer ce nœud.\n"
+"(**16**) - Sélectionnez les sources à désactiver pour ce nœud (plusieurs peuvent être sélectionnées).\n"
+"Si vous interagissez plusieurs fois avec un bouton, seule la dernière interaction prendra effet.\n\n\n"
 
-#: plnodes/cog.py:268
-msgid "{name} is managed by PyLav and cannot be modified with this command"
-msgstr "{name} est géré par PyLav et ne peut pas être modifié avec cette commande"
+#: plnodes/cog.py:272
+msgid "{name_variable_do_not_translate} is managed by PyLav, and I can not modify it."
+msgstr "{name_variable_do_not_translate} est géré par PyLav, et je ne peux pas le modifier."
 
-#: plnodes/cog.py:280
-msgid "Removed node {name}"
-msgstr "Noeud supprimé {name}"
+#: plnodes/cog.py:284
+msgid "I have removed the {name_variable_do_not_translate} node."
+msgstr "J’ai supprimé le {name_variable_do_not_translate} noeud."
 
-#: plnodes/cog.py:316
-msgid "Changed node {name} to the following settings:\n"
-"Host: {host}\n"
-"Port: {port}\n"
-"Password: {password}\n"
-"Resume Timeout: {resume_timeout}\n"
-"Search Only: {search_only}\n"
-"SSL: {ssl}\n"
-"Disabled Sources: {disabled_sources}\n"
-msgstr "Noeud {name} modifié par les paramètres suivants :\n"
-"Hôte : {host}\n"
-"Port : {port}\n"
-"Mot de passe : {password}\n"
-"Délai de reprise : {resume_timeout}\n"
-"Recherche uniquement : {search_only}\n"
-"SSL : {ssl}\n"
-"Sources désactivées : {disabled_sources}\n"
+#: plnodes/cog.py:322
+msgid "I have changed the {name_variable_do_not_translate} node to the following settings:\n"
+"Host: {host_variable_do_not_translate}\n"
+"Port: {port_variable_do_not_translate}\n"
+"Password: {password_variable_do_not_translate}\n"
+"Resume Timeout: {resume_timeout_variable_do_not_translate}\n"
+"Search Only: {search_only_variable_do_not_translate}\n"
+"SSL: {ssl_variable_do_not_translate}\n"
+"Disabled Sources: {disabled_sources_variable_do_not_translate}\n"
+msgstr "J’ai modifié le {name_variable_do_not_translate} nœud aux paramètres suivants :\n"
+"Hôte: {host_variable_do_not_translate}\n"
+"Port: {port_variable_do_not_translate}\n"
+"Mot de passe: {password_variable_do_not_translate}\n"
+"Délai d’expiration de la reprise : {resume_timeout_variable_do_not_translate}\n"
+"Recherche uniquement : {search_only_variable_do_not_translate}\n"
+"SSL : {ssl_variable_do_not_translate}\n"
+"Sources désactivées : {disabled_sources_variable_do_not_translate}\n"
 
-#: plnodes/cog.py:343
+#: plnodes/cog.py:349
 #, docstring
 msgid "List all nodes used by PyLav"
 msgstr "Lister tous les nœuds utilisés par PyLav"
 
-#: plnodes/cog.py:353
-msgid "No nodes added to PyLav"
-msgstr "Aucun noeud ajouté à PyLav"
+#: plnodes/cog.py:359
+msgid "No nodes were added to PyLav."
+msgstr "Aucun nœud n’a été ajouté à PyLav."
 

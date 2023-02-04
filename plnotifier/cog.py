@@ -154,6 +154,7 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             player_auto_disconnected=dict(enabled=True, mention=True),
             player_auto_disconnected_empty_queue=dict(enabled=True, mention=True),
             webhook_url=None,
+            webhook_channel_id=None,
         )
         self._message_queue: dict[
             discord.TextChannel | discord.VoiceChannel | discord.Thread, list[discord.Embed]
@@ -218,7 +219,9 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
 
         LOGGER.trace("Sending up to last 10 embeds to %s channels", len(dispatch_mapping))
 
-        await asyncio.gather(*[send(embeds=embeds) for send, embeds in dispatch_mapping.items()])
+        await asyncio.gather(
+            *[send(embeds=embeds) for send, embeds in dispatch_mapping.items()], return_exceptions=True
+        )
 
     @commands.guildowner_or_permissions(manage_guild=True)
     @commands.guild_only()
@@ -228,7 +231,7 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
 
     @command_plnotify.command(name="version")
     async def command_plnotify_version(self, context: PyLavContext) -> None:
-        """Show the version of the Cog and its PyLav dependencies"""
+        """Show the version of the Cog and PyLav"""
         if isinstance(context, discord.Interaction):
             context = await self.bot.get_context(context)
         if context.interaction and not context.interaction.response.is_done():
@@ -244,7 +247,7 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
                     tabulate(
                         data,
                         headers=(
-                            EightBitANSI.paint_yellow(_("Library/Cog"), bold=True, underline=True),
+                            EightBitANSI.paint_yellow(_("Library / Cog"), bold=True, underline=True),
                             EightBitANSI.paint_yellow(_("Version"), bold=True, underline=True),
                         ),
                         tablefmt="fancy_grid",
@@ -269,9 +272,9 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             if not channel.permissions_for(context.guild.me).manage_webhooks:
                 await context.send(
                     embed=await self.pylav.construct_embed(
-                        description=_("I do not have permission to manage webhooks in {channel}").format(
-                            channel=channel.mention
-                        ),
+                        description=_(
+                            "I do not have permission to manage webhooks in {channel_variable_do_not_translate}."
+                        ).format(channel_variable_do_not_translate=channel.mention),
                         messageable=context,
                     ),
                     ephemeral=True,
@@ -283,9 +286,9 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             ):
                 await context.send(
                     embed=await self.pylav.construct_embed(
-                        description=_("I do not have permission to create a thread in {channel}").format(
-                            channel=channel.mention
-                        ),
+                        description=_(
+                            "I do not have permission to create a thread in {channel_variable_do_not_translate}."
+                        ).format(channel_variable_do_not_translate=channel.mention),
                         messageable=context,
                     ),
                     ephemeral=True,
@@ -293,7 +296,9 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
                 return
             webhook = await channel.create_webhook(
                 name=_("PyLavNotifier"),
-                reason=_("PyLav Notifier - Requested by {author}").format(author=context.author),
+                reason=_("PyLav Notifier - Requested by {author_variable_do_not_translate}.").format(
+                    author_variable_do_not_translate=context.author
+                ),
             )
             existing_thread = None
             if isinstance(channel, discord.VoiceChannel):
@@ -304,43 +309,64 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
                         existing_thread = thread
             if not existing_thread:
                 message = await channel.send(
-                    _("This thread will be used by PyLav to post notifications about the player")
+                    _("This thread will be used by PyLav to post notifications about the player.")
                 )
                 existing_thread = await channel.create_thread(
                     invitable=False,
                     name=_("PyLavNotifier"),
                     message=message,
                     auto_archive_duration=10080,
-                    reason=_("PyLav Notifier - Requested by {author}").format(author=context.author),
-                )
-            if old_url := await self._config.webhook_url():
-                with contextlib.suppress(discord.HTTPException):
-                    await discord.Webhook.from_url(url=old_url, session=self._session).delete()
-
-            await self._config.webhook_url.set(webhook.url)
-            self._webhook_cache[context.guild.id] = webhook
-            channel = existing_thread
-        else:
-            if not channel.parent.permissions_for(context.guild.me).manage_webhooks:
-                await context.send(
-                    embed=await self.pylav.construct_embed(
-                        description=_("I do not have permission to manage webhooks in {channel}").format(
-                            channel=channel.parent.mention
-                        ),
-                        messageable=context,
+                    reason=_("PyLav Notifier - Requested by {author_variable_do_not_translate}.").format(
+                        author_variable_do_not_translate=context.author
                     ),
-                    ephemeral=True,
                 )
-                return
-            webhook = await channel.parent.create_webhook(
-                name=_("PyLavNotifier"),
-                reason=_("PyLav Notifier - Requested by {author}").format(author=context.author),
-            )
-            await self._config.webhook_url.set(webhook.url)
+            channel = existing_thread
+            if old_url := await self._config.guild(context.guild).webhook_url():
+                with contextlib.suppress(discord.HTTPException):
+                    await discord.Webhook.from_url(url=old_url, session=self._session).delete(
+                        reason=_("A new webhook was being created.")
+                    )
+
+            await self._config.guild(context.guild).webhook_url.set(webhook.url)
+            await self._config.guild(context.guild).webhook_channel_id.set(channel.id)
             self._webhook_cache[context.guild.id] = webhook
+        else:
+            existing_webhook_url = await self._config.guild(context.guild).webhook_url()
+            existing_webhook_channel_id = await self._config.guild(context.guild).webhook_channel_id()
+            webhook = (
+                discord.Webhook.from_url(url=existing_webhook_url, session=self._session)
+                if channel.id == existing_webhook_channel_id
+                else None
+            )
+            if not webhook:
+                if not channel.parent.permissions_for(context.guild.me).manage_webhooks:
+                    await context.send(
+                        embed=await self.pylav.construct_embed(
+                            description=_(
+                                "I do not have permission to manage webhooks in {channel_variable_do_not_translate}."
+                            ).format(channel_variable_do_not_translate=channel.parent.mention),
+                            messageable=context,
+                        ),
+                        ephemeral=True,
+                    )
+                    return
+                webhook_channel = channel.parent
+                webhook = await webhook_channel.create_webhook(
+                    name=_("PyLavNotifier"),
+                    reason=_("PyLav Notifier - Requested by {author_variable_do_not_translate}.").format(
+                        author_variable_do_not_translate=context.author
+                    ),
+                )
+                if existing_webhook_url:
+                    with contextlib.suppress(discord.HTTPException):
+                        await discord.Webhook.from_url(url=existing_webhook_url, session=self._session).delete(
+                            reason=_("A new webhook was being created.")
+                        )
+                await self._config.guild(context.guild).webhook_url.set(webhook.url)
+                await self._config.guild(context.guild).webhook_channel_id.set(webhook_channel.id)
+        self._webhook_cache[context.guild.id] = webhook
         if context.player:
             config = context.player.config
-            context.channel = channel
         else:
             config = self.pylav.player_config_manager.get_config(context.guild.id)
         await config.update_notify_channel_id(channel.id if channel else 0)
@@ -348,7 +374,9 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self._config.notify_channel_id.set(channel.id)
         await context.send(
             embed=await context.pylav.construct_embed(
-                description=_("PyLavNotifier channel set to {channel}").format(channel=channel.mention),
+                description=_("PyLavNotifier channel set to {channel_variable_do_not_translate}.").format(
+                    channel_variable_do_not_translate=channel.mention
+                ),
                 messageable=context,
             ),
             ephemeral=True,
@@ -375,8 +403,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         if event not in possible_events:
             await context.send(
                 embed=await context.pylav.construct_embed(
-                    description=_("Invalid event, possible events are:\n\n{events}").format(
-                        events=humanize_list(sorted(list(map(inline, possible_events)), key=str.lower))
+                    description=_("Invalid event, possible events are:\n\n{events_variable_do_not_translate}.").format(
+                        events_variable_do_not_translate=humanize_list(
+                            sorted(list(map(inline, possible_events)), key=str.lower)
+                        )
                     ),
                     messageable=context,
                 ),
@@ -392,10 +422,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
 
         await context.send(
             embed=await context.pylav.construct_embed(
-                description=_("Event {event} set to {toggle}{extras}").format(
-                    event=inline(event),
-                    toggle=_("notify") if toggle else _("do not notify"),
-                    extras=_(" with mentions") if use_mention and toggle else _(" without mentions") if toggle else "",
+                description=_(
+                    "Event {event_variable_do_not_translate} set to {toggle_variable_do_not_translate}{extras_variable_do_not_translate}."
+                ).format(
+                    event_variable_do_not_translate=inline(event),
+                    toggle_variable_do_not_translate=_("notify") if toggle else _("do not notify"),
+                    extras_variable_do_not_translate=_(" with mentions")
+                    if use_mention and toggle
+                    else _(" without mentions")
+                    if toggle
+                    else "",
                 ),
                 messageable=context,
             ),
@@ -412,10 +448,12 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Track Stuck Event"),
-                description=_("[Node={node}] {track} is stuck for {threshold} seconds, skipping").format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    threshold=event.threshold // 1000,
-                    node=event.node.name,
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {track_variable_do_not_translate} is stuck for {threshold_variable_do_not_translate} seconds, skipping."
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    threshold_variable_do_not_translate=event.threshold // 1000,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -438,10 +476,12 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Track Exception Event"),
-                description=_("[Node={node}] There was an error while playing {track}:\n{exception}").format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    exception=event.exception,
-                    node=event.node.name,
+                description=_(
+                    "[Node={node_variable_do_not_translate}] There was an error while playing {track_variable_do_not_translate}:\n{exception_variable_do_not_translate}"
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    exception_variable_do_not_translate=event.exception,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -460,22 +500,47 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         notify, mention = data["enabled"], data["mention"]
         if not notify:
             return
-        if event.reason == "FINISHED":
-            reason = _("the player reached the end of the tracks runtime")
-        elif event.reason == "REPLACED":
-            reason = _("a new track started playing")
-        elif event.reason == "LOAD_FAILED":
-            reason = _("it failed to start")
-        elif event.reason == "STOPPED":
-            reason = _("because the player was stopped")
-        else:  # CLEANUP
-            reason = _("the node told it to stop")
+        match event.reason:
+            case "FINISHED":
+                message = _(
+                    "[Node={node_variable_do_not_translate}] {track_variable_do_not_translate} has finished playing because the player reached the end of the tracks runtime."
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    node_variable_do_not_translate=event.node.name,
+                )
+            case "REPLACED":
+                message = _(
+                    "[Node={node_variable_do_not_translate}] {track_variable_do_not_translate} has finished playing because a new track started playing."
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    node_variable_do_not_translate=event.node.name,
+                )
+            case "LOAD_FAILED":
+                message = _(
+                    "[Node={node_variable_do_not_translate}] {track_variable_do_not_translate} has finished playing because it failed to start."
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    node_variable_do_not_translate=event.node.name,
+                )
+            case "STOPPED":
+                message = _(
+                    "[Node={node_variable_do_not_translate}] {track_variable_do_not_translate} has finished playing becausethe player was stopped."
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    node_variable_do_not_translate=event.node.name,
+                )
+            case __:
+                message = _(
+                    "[Node={node_variable_do_not_translate}] {track_variable_do_not_translate} has finished playing becausethe node told it to stop."
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    node_variable_do_not_translate=event.node.name,
+                )
+
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Track End Event"),
-                description=_("[Node={node}] {track} has finished playing because {reason}").format(
-                    track=await event.track.get_track_display_name(with_url=True), reason=reason, node=event.node.name
-                ),
+                description=message,
                 messageable=channel,
             )
         )
@@ -502,9 +567,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("YouTube Music Track Start Event"),
                 description=_(
-                    "[Node={node}] YouTube Music track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] YouTube Music track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -532,9 +599,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Deezer Track Start Event"),
                 description=_(
-                    "[Node={node}] Deezer track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] Deezer track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -562,9 +631,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Spotify Track Start Event"),
                 description=_(
-                    "[Node={node}] Spotify track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] Spotify track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -592,9 +663,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Apple Music Track Start Event"),
                 description=_(
-                    "[Node={node}] Apple Music track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] Apple Music track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -622,9 +695,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Local Track Start Event"),
                 description=_(
-                    "[Node={node}] Local track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] Local track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -652,9 +727,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("HTTP Track Start Event"),
                 description=_(
-                    "[Node={node}] HTTP track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] HTTP track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -682,9 +759,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Text-To-Speech Track Start Event"),
                 description=_(
-                    "[Node={node}] Text-To-Speech track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] Text-To-Speech track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}."
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -712,9 +791,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("YouTube Track Start Event"),
                 description=_(
-                    "[Node={node}] YouTube track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] YouTube track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}."
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True), requester=user, node=event.node.name
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -740,14 +821,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    node=event.node.name,
-                    source=await event.track.query_source(),
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -773,14 +856,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    node=event.node.name,
-                    source=await event.track.query_source(),
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -806,14 +891,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    node=event.node.name,
-                    source=await event.track.query_source(),
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -839,14 +926,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -872,14 +961,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    source_variable_do_not_translate=await event.track.query_source(),
+                    node_variable_do_not_translate=event.node.name,
                 ),
                 messageable=channel,
             )
@@ -905,14 +996,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -938,14 +1031,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -971,14 +1066,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -1004,14 +1101,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -1037,14 +1136,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -1070,14 +1171,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -1103,14 +1206,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -1136,14 +1241,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -1169,14 +1276,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             user = event.track.requester or self.bot.user
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
-                title=_("{source} Track Start Event").format(source=await event.track.query_source()),
+                title=_("{source_variable_do_not_translate} Track Start Event").format(
+                    source_variable_do_not_translate=await event.track.query_source()
+                ),
                 description=_(
-                    "[Node={node}] {source} track: {track} has started playing.\nRequested by: {requester}"
+                    "[Node={node_variable_do_not_translate}] {source_variable_do_not_translate} track: {track_variable_do_not_translate} has started playing.\nRequested by: {requester_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    source=await event.track.query_source(),
-                    node=event.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.node.name,
+                    source_variable_do_not_translate=await event.track.query_source(),
                 ),
                 messageable=channel,
             )
@@ -1203,10 +1312,12 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Track Skipped Event"),
-                description=_("[Node={node}] {track} has been skipped.\nRequested by {requester}").format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    node=event.player.node.name,
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {track_variable_do_not_translate} has been skipped.\nRequested by {requester_variable_do_not_translate}"
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1234,14 +1345,14 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Track Seek Event"),
                 description=_(
-                    "[Node={node}] {requester} requested that {track} "
-                    "is sought from position {fro} to position {after}"
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} requested that {track_variable_do_not_translate} "
+                    "is sought from position {from_variable_do_not_translate} to position {after_variable_do_not_translate}"
                 ).format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    fro=format_time_dd_hh_mm_ss(event.before),
-                    after=format_time_dd_hh_mm_ss(event.after),
-                    requester=user,
-                    node=event.player.node.name,
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    from_variable_do_not_translate=format_time_dd_hh_mm_ss(event.before),
+                    after_variable_do_not_translate=format_time_dd_hh_mm_ss(event.after),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1268,10 +1379,12 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Track Previous Requested Event"),
-                description=_("[Node={node}] {requester} requested that the previous track {track} be played").format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    node=event.player.node.name,
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} requested that the previous track {track_variable_do_not_translate} be played"
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1298,12 +1411,16 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Tracks Requested Event"),
-                description=_("[Node={node}] {requester} added {track_count}  to the queue").format(
-                    track_count=_("{count} track").format(count=count)
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} added {track_count_variable_do_not_translate} to the queue."
+                ).format(
+                    track_count_variable_do_not_translate=_("{count_variable_do_not_translate} track").format(
+                        count_variable_do_not_translate=count
+                    )
                     if (count := len(event.tracks)) > 1
                     else await event.tracks[0].get_track_display_name(with_url=True),
-                    requester=user,
-                    node=event.player.node.name,
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1325,8 +1442,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Track AutoPlay Event"),
-                description=_("[Node={node}] Auto-playing {track}").format(
-                    track=await event.track.get_track_display_name(with_url=True), node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] Auto playing {track_variable_do_not_translate}."
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1353,10 +1473,12 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Track Resumed Event"),
-                description=_("[Node={node}] {requester} resumed {track}").format(
-                    track=await event.track.get_track_display_name(with_url=True),
-                    requester=user,
-                    node=event.player.node.name,
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} resumed {track_variable_do_not_translate}"
+                ).format(
+                    track_variable_do_not_translate=await event.track.get_track_display_name(with_url=True),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1383,8 +1505,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Queue Shuffled Event"),
-                description=_("[Node={node}] {requester} shuffled the queue").format(
-                    requester=user, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} shuffled the queue"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
                 ),
                 messageable=channel,
             )
@@ -1406,9 +1530,9 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Queue End Event"),
-                description=_("[Node={node}] All tracks in the queue have been played").format(
-                    node=event.player.node.name
-                ),
+                description=_(
+                    "[Node={node_variable_do_not_translate}] All tracks in the queue have been played"
+                ).format(node_variable_do_not_translate=event.player.node.name),
                 messageable=channel,
             )
         )
@@ -1434,8 +1558,12 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Tracks Removed Event"),
-                description=_("[Node={node}] {requester} removed {track_count} tracks from the queue").format(
-                    track_count=len(event.tracks), requester=user, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} removed {track_count_variable_do_not_translate} tracks from the queue"
+                ).format(
+                    track_count_variable_do_not_translate=len(event.tracks),
+                    requester_variable_do_not_translate=user,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1462,8 +1590,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Player Paused Event"),
-                description=_("[Node={node}] {requester} paused the player").format(
-                    requester=user, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} paused the player"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
                 ),
                 messageable=channel,
             )
@@ -1490,8 +1620,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Player Stopped Event"),
-                description=_("[Node={node}] {requester} stopped the player").format(
-                    requester=user, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} stopped the player"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
                 ),
                 messageable=channel,
             )
@@ -1518,8 +1650,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Player Resumed Event"),
-                description=_("[Node={node}] {requester} resumed the player").format(
-                    requester=user, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} resumed the player"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
                 ),
                 messageable=channel,
             )
@@ -1546,8 +1680,13 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Player Moved Event"),
-                description=_("[Node={node}] {requester} moved the player from {before} to {after}").format(
-                    requester=user, before=event.before, after=event.after, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} moved the player from {before_variable_do_not_translate} to {after_variable_do_not_translate}"
+                ).format(
+                    requester_variable_do_not_translate=user,
+                    before_variable_do_not_translate=event.before,
+                    after_variable_do_not_translate=event.after,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1574,8 +1713,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Player Disconnected Event"),
-                description=_("[Node={node}] {requester} disconnected the player").format(
-                    requester=user, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} disconnected the player"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
                 ),
                 messageable=channel,
             )
@@ -1630,8 +1771,13 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Player Volume Changed Event"),
-                description=_("[Node={node}] {requester} changed the player's volume from {before} to {after}").format(
-                    requester=user, before=event.before, after=event.after, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} changed the player volume from {before_variable_do_not_translate} to {afte_variable_do_not_translater}."
+                ).format(
+                    requester_variable_do_not_translate=user,
+                    before_variable_do_not_translate=event.before,
+                    after_variable_do_not_translate=event.after,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1660,8 +1806,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             self._message_queue[channel].append(
                 await self.pylav.construct_embed(
                     title=_("Player Repeat Event"),
-                    description=_("[Node={node}] {requester} disabled repeat").format(
-                        requester=user, node=event.player.node.name
+                    description=_(
+                        "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} disabled repeat"
+                    ).format(
+                        requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
                     ),
                     messageable=channel,
                 )
@@ -1670,8 +1818,11 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             self._message_queue[channel].append(
                 await self.pylav.construct_embed(
                     title=_("Player Repeat Event"),
-                    description=_("{requester} {status} repeat of the whole queue").format(
-                        requester=user, status=_("enabled") if event.queue_after else _("disabled")
+                    description=_(
+                        "{requester_variable_do_not_translate} {status_variable_do_not_translate} repeat of the whole queue"
+                    ).format(
+                        requester_variable_do_not_translate=user,
+                        status_variable_do_not_translate=_("enabled") if event.queue_after else _("disabled"),
                     ),
                     messageable=channel,
                 )
@@ -1680,11 +1831,15 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             self._message_queue[channel].append(
                 await self.pylav.construct_embed(
                     title=_("Player Repeat Event"),
-                    description=_("[Node={node}] {requester} {status} repeat for {track}").format(
-                        requester=user,
-                        status=_("enabled") if event.current_after else _("disabled"),
-                        track=await event.player.current.get_track_display_name(with_url=True),
-                        node=event.player.node.name,
+                    description=_(
+                        "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} {status_variable_do_not_translate} repeat for {track_variable_do_not_translate}"
+                    ).format(
+                        requester_variable_do_not_translate=user,
+                        status_variable_do_not_translate=_("enabled") if event.current_after else _("disabled"),
+                        track_variable_do_not_translate=await event.player.current.get_track_display_name(
+                            with_url=True
+                        ),
+                        node_variable_do_not_translate=event.player.node.name,
                     ),
                     messageable=channel,
                 )
@@ -1711,8 +1866,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Player Restored Event"),
-                description=_("[Node={node}] {requester} restored the player").format(
-                    requester=user, node=event.player.node.name
+                description=_(
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} restored the player"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
                 ),
                 messageable=channel,
             )
@@ -1753,11 +1910,13 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Sponsor Segment Skipped Event"),
-                description=_("[Node={node}] Sponsorblock: Skipped {category} running from {start}s to {to}s").format(
-                    category=explanation,
-                    start=int(segment.start) // 1000,
-                    to=int(segment.end) // 1000,
-                    node=event.player.node.name,
+                description=_(
+                    "[Node={node_variable_do_not_translate}] Sponsorblock: Skipped {category_variable_do_not_translate} running from {start_variable_do_not_translate}s to {to_variable_do_not_translate}s"
+                ).format(
+                    category_variable_do_not_translate=explanation,
+                    start_variable_do_not_translate=int(segment.start) // 1000,
+                    to_variable_do_not_translate=int(segment.end) // 1000,
+                    node_variable_do_not_translate=event.player.node.name,
                 ),
                 messageable=channel,
             )
@@ -1829,8 +1988,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
                     data=box(tabulate(data, headers="keys", tablefmt="fancy_grid"), lang="ansi") if data else _("None"),
                     translation2=discord.utils.escape_markdown(_("Currently Applied")),
                     translation1=discord.utils.escape_markdown(
-                        _("[Node={node}] {requester} changed the player filters").format(
-                            requester=user, node=event.node.name
+                        _(
+                            "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} changed the player filters"
+                        ).format(
+                            requester_variable_do_not_translate=user, node_variable_do_not_translate=event.node.name
                         )
                     ),
                 ),
@@ -1850,7 +2011,9 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
                 self._message_queue[notify_channel].append(
                     await self.pylav.construct_embed(
                         title=_("Node Connected Event"),
-                        description=_("Node {name} has been connected").format(name=inline(event.node.name)),
+                        description=_("Node {name_variable_do_not_translate} has been connected").format(
+                            name_variable_do_not_translate=inline(event.node.name)
+                        ),
                         messageable=notify_channel,
                     )
                 )
@@ -1867,8 +2030,12 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
                 self._message_queue[notify_channel].append(
                     await self.pylav.construct_embed(
                         title=_("Node Disconnected Event"),
-                        description=_("Node {name} has been disconnected with code {code} and reason: {reason}").format(
-                            name=inline(event.node.name), code=event.code, reason=event.reason
+                        description=_(
+                            "Node {name_variable_do_not_translate} has been disconnected with code {code_variable_do_not_translate} and reason: {reason_variable_do_not_translate}"
+                        ).format(
+                            name_variable_do_not_translate=inline(event.node.name),
+                            code_variable_do_not_translate=event.code,
+                            reason_variable_do_not_translate=event.reason,
                         ),
                         messageable=notify_channel,
                     )
@@ -1890,8 +2057,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
         self._message_queue[channel].append(
             await self.pylav.construct_embed(
                 title=_("Node Changed Event"),
-                description=_("The node which the player is connected to changed from {fro} to {to}").format(
-                    fro=event.old_node.name, to=event.new_node.name
+                description=_(
+                    "The node which the player is connected to changed from {from_variable_do_not_translate} to {to_variable_do_not_translate}"
+                ).format(
+                    from_variable_do_not_translate=event.old_node.name, to_variable_do_not_translate=event.new_node.name
                 ),
                 messageable=channel,
             )
@@ -1914,9 +2083,13 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("WebSocket Closed Event"),
                 description=_(
-                    "[Node={node}] The Lavalink websocket connection to Discord closed with"
-                    " code {code} and reason {reason}"
-                ).format(code=event.code, reason=event.reason, node=event.node.name),
+                    "[Node={node_variable_do_not_translate}] The Lavalink websocket connection to Discord closed with"
+                    " code {code_variable_do_not_translate} and reason {reason_variable_do_not_translate}"
+                ).format(
+                    code_variable_do_not_translate=event.code,
+                    reason_variable_do_not_translate=event.reason,
+                    node_variable_do_not_translate=event.node.name,
+                ),
                 messageable=channel,
             )
         )
@@ -1943,8 +2116,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Player Paused Event"),
                 description=_(
-                    "[Node={node}] {requester} automatically paused the player due to configured values"
-                ).format(requester=user, node=event.player.node.name),
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} automatically paused the player due to configured values"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
+                ),
                 messageable=channel,
             )
         )
@@ -1971,8 +2146,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Player Resumed Event"),
                 description=_(
-                    "[Node={node}] {requester} automatically resumed the player due to configured values"
-                ).format(requester=user, node=event.player.node.name),
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} automatically resumed the player due to configured values"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
+                ),
                 messageable=channel,
             )
         )
@@ -1999,8 +2176,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Auto Player Disconnected Event"),
                 description=_(
-                    "[Node={node}] {requester} automatically disconnected the player as there is no one listening"
-                ).format(requester=user, node=event.player.node.name),
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} automatically disconnected the player as there is no one listening"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
+                ),
                 messageable=channel,
             )
         )
@@ -2029,8 +2208,10 @@ class PyLavNotifier(DISCORD_COG_TYPE_MIXIN):
             await self.pylav.construct_embed(
                 title=_("Auto Player Disconnected Event"),
                 description=_(
-                    "[Node={node}] {requester} automatically disconnected the player as the queue is empty"
-                ).format(requester=user, node=event.player.node.name),
+                    "[Node={node_variable_do_not_translate}] {requester_variable_do_not_translate} automatically disconnected the player as the queue is empty"
+                ).format(
+                    requester_variable_do_not_translate=user, node_variable_do_not_translate=event.player.node.name
+                ),
                 messageable=channel,
             )
         )

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "Ρύθμιση ρυθμίσεων cog"
 
 #: pllocal/cog.py:117
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Εμφάνιση της έκδοσης του Cog και των εξαρτήσεών του PyLav"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Δείξτε την έκδοση του Γραναζιού και του PyLav"
 
 #: pllocal/cog.py:133
-msgid "Library/Cog"
-msgstr "Βιβλιοθήκη/Γρανάζι"
+msgid "Library / Cog"
+msgstr "Βιβλιοθήκη / Γρανάζι"
 
 #: pllocal/cog.py:134
 msgid "Version"
@@ -46,35 +46,35 @@ msgid "Update the track list for /local"
 msgstr "Ενημέρωση της λίστας κομματιών για /local"
 
 #: pllocal/cog.py:158
-msgid "Local track list updated {number} currently present"
-msgstr "Η τοπική λίστα κομματιών ενημερώθηκε {number} αυτή τη στιγμή"
+msgid "I have updated my local track cache. There are now {number_variable_do_not_translate} tracks present."
+msgstr "Έχω ενημερώσει την τοπική προσωρινή μνήμη κομματιών. Υπάρχουν τώρα {number_variable_do_not_translate} κομμάτια που υπάρχουν."
 
-#: pllocal/cog.py:183
+#: pllocal/cog.py:185
 #, docstring
 msgid "Play a local file or folder, supports partial searching"
 msgstr "Αναπαραγωγή τοπικού αρχείου ή φακέλου, υποστηρίζει μερική αναζήτηση"
 
-#: pllocal/cog.py:191
-msgid "{query} is not a valid local file or folder"
-msgstr "{query} δεν είναι ένα έγκυρο τοπικό αρχείο ή φάκελος"
+#: pllocal/cog.py:193
+msgid "{user_input_query_variable_do_not_translate} is not a valid local file or folder."
+msgstr "{user_input_query_variable_do_not_translate} δεν είναι έγκυρο τοπικό αρχείο ή φάκελος."
 
-#: pllocal/cog.py:207
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Πρέπει να βρίσκεστε σε ένα κανάλι φωνής για να μου επιτρέψετε να συνδεθώ"
+#: pllocal/cog.py:211
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "Πρέπει να βρίσκεστε σε ένα κανάλι φωνής, ώστε να μπορώ να συνδεθώ σε αυτό."
 
-#: pllocal/cog.py:220
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Δεν έχω δικαίωμα σύνδεσης ή ομιλίας {channel}"
+#: pllocal/cog.py:224
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "Δεν έχω δικαίωμα σύνδεσης ή ομιλίας {channel_variable_do_not_translate}."
 
-#: pllocal/cog.py:245
-msgid "{track_count} tracks enqueued"
-msgstr "{track_count} κομμάτια με ουρά"
+#: pllocal/cog.py:248
+msgid "No tracks were found for your query."
+msgstr "Δεν βρέθηκαν κομμάτια για το ερώτημά σας."
 
-#: pllocal/cog.py:253
-msgid "{track} enqueued"
-msgstr "{track} στην ουρά"
+#: pllocal/cog.py:250
+msgid "{track_name_variable_do_not_translate} enqueued."
+msgstr "{track_name_variable_do_not_translate} στην ουρά."
 
-#: pllocal/cog.py:263
-msgid "No tracks were found for your query"
-msgstr "Δεν βρέθηκαν κομμάτια για το ερώτημά σας"
+#: pllocal/cog.py:254
+msgid "I have enqueued {track_count_variable_do_not_translate} tracks."
+msgstr "Έχω εντάξει στην ουρά {track_count_variable_do_not_translate} Κομμάτια."
 

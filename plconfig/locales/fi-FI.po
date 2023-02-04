@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "Muuta yleisiä asetuksia PyLV:lle"
 
 #: plconfig/cog.py:48
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Näytä hammaspyörän versio ja sen PyLav-riippuvuudet"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Näytä Cogin ja PyLavin versio"
 
 #: plconfig/cog.py:64
-msgid "Library/Cog"
-msgstr "Kirjasto/hammasratas"
+msgid "Library / Cog"
+msgstr "Kirjasto / Cog"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -42,48 +42,48 @@ msgstr "Versio"
 
 #: plconfig/cog.py:78
 #, docstring
-msgid "Show the config values"
-msgstr "Näytä config arvot"
+msgid "Show the setting values"
+msgstr "Näytä asetusarvot"
 
 #: plconfig/cog.py:85 plconfig/view.py:57
-msgid "PyLav Config"
-msgstr "PyLav Config"
+msgid "PyLav Settings"
+msgstr "PyLav-asetukset"
 
 #: plconfig/cog.py:88
-msgid "Get information about the PyLav library settings"
-msgstr "Hanki tietoa PyLav kirjaston asetuksista"
+msgid "Get information about the PyLav library settings."
+msgstr "Lue tietoja PyLav-kirjaston asetuksista."
 
-#: plconfig/cog.py:92 plconfig/view.py:123
-msgid "Global Player Config"
-msgstr "Globaalin Pelaajan Asetukset"
+#: plconfig/cog.py:92 plconfig/view.py:162
+msgid "Global Settings"
+msgstr "Yleiset asetukset"
 
 #: plconfig/cog.py:95
-msgid "Get information about bot owner configured settings for the players"
-msgstr "Hanki tietoa botti omistajan asetetuista asetuksista pelaajille"
+msgid "Get information about bot owner configured settings for the players."
+msgstr "Hanki tietoja botin omistajan määrittämistä asetuksista pelaajille."
 
-#: plconfig/cog.py:103 plconfig/view.py:194
-msgid "Context Player Config"
-msgstr "Kontekstisoittimen Asetukset"
+#: plconfig/cog.py:103
+msgid "Contextual Settings"
+msgstr "Kontekstuaaliset asetukset"
 
 #: plconfig/cog.py:107
-msgid "Get information about contextual settings for the player, accounting for the global settings"
-msgstr "Hanki tietoa soittimen kontekstuaalisista asetuksista ja huomioi yleiset asetukset"
+msgid "Get information about contextual settings for the player, accounting for the global settings."
+msgstr "Hanki tietoja soittimen tilannekohtaisista asetuksista, jotka ottavat huomioon yleiset asetukset."
 
-#: plconfig/cog.py:114 plconfig/view.py:339
-msgid "Server Player Config"
-msgstr "Palvelinsoittimen Asetukset"
+#: plconfig/cog.py:114
+msgid "Server Settings"
+msgstr "Palvelimen asetukset"
 
 #: plconfig/cog.py:118
-msgid "Get information about server configured settings for the player"
-msgstr "Hanki tietoa palvelimen asetetuista asetuksista pelaajalle"
+msgid "Get information about the server configured settings for the player."
+msgstr "Hanki tietoja soittimen palvelimen määrittämistä asetuksista."
 
-#: plconfig/cog.py:126 plconfig/view.py:378
+#: plconfig/cog.py:126 plconfig/view.py:499
 msgid "Playlist Tasks"
 msgstr "Soittolistan Tehtävät"
 
 #: plconfig/cog.py:129
-msgid "Get information about the playlist auto update schedule"
-msgstr "Saat tietoa soittolistan automaattisesta päivityksen aikataulusta"
+msgid "Get information about the playlist auto update schedule."
+msgstr "Hanki tietoja soittolistan automaattisen päivityksen aikataulusta."
 
 #: plconfig/cog.py:138
 msgid "PyLav Paths"
@@ -93,9 +93,9 @@ msgstr "Pylav Polut"
 msgid "Get information about PyLav paths"
 msgstr "Hanki tietoa PyLavin poluista"
 
-#: plconfig/cog.py:147 plconfig/view.py:474
-msgid "Managed Node Config"
-msgstr "Hallitun Solmun Asetukset"
+#: plconfig/cog.py:147 plconfig/view.py:595
+msgid "Managed Node Settings"
+msgstr "Hallittujen solmujen asetukset"
 
 #: plconfig/cog.py:150
 msgid "Get information about the Managed PyLav Lavalink node"
@@ -103,172 +103,172 @@ msgstr "Hanki tietoa manipuloidusta PyLav Lavalink solmukohdasta"
 
 #: plconfig/cog.py:160
 #, docstring
-msgid "Checks if a user or role is considered a DJ"
-msgstr "Tarkistaa onko käyttäjä tai rooli pidetään DJ"
+msgid "Checks if a user or role is considered a disc jockey"
+msgstr "Tarkistaa, pidetäänkö käyttäjää tai roolia levyjockeyna"
 
 #: plconfig/cog.py:171
-msgid "{role} is a DJ role"
-msgstr "{role} on DJ-rooli"
+msgid "{role_name_variable_do_not_translate} is a disc jockey role."
+msgstr "{role_name_variable_do_not_translate} on levyjockey-rooli."
 
-#: plconfig/cog.py:173
-msgid "{role} is not a DJ role"
-msgstr "{role} ei ole DJ rooli"
+#: plconfig/cog.py:175
+msgid "{role_name_variable_do_not_translate} is not a disc jockey role."
+msgstr "{role_name_variable_do_not_translate} ei ole levyjockey-rooli."
 
-#: plconfig/cog.py:178
-msgid "{user} is a DJ"
-msgstr "{user} on DJ"
+#: plconfig/cog.py:182
+msgid "{user_name_variable_do_not_translate} is a disc jockey."
+msgstr "{user_name_variable_do_not_translate} on levyjockey."
 
-#: plconfig/cog.py:180
-msgid "{user} is not a DJ"
-msgstr "{user} ei ole DJ"
+#: plconfig/cog.py:186
+msgid "{user_name_variable_do_not_translate} is not a disc jockey."
+msgstr "{user_name_variable_do_not_translate} ei ole levyjockey."
 
-#: plconfig/cog.py:193
+#: plconfig/cog.py:201
 #, docstring
 msgid "Set the local tracks folder for PyLav.\n\n"
-"        Changes will be applied after restarting the [botname].\n"
+"        Changes will be applied after I restart.\n"
 "        "
-msgstr "Set the local tracks folder for PyLav.\n\n"
-"        Changes will be applied after uudelleenkäynnistämisen jälkeen [botname].\n"
+msgstr "Aseta paikallinen kappalekansio PyLaville.\n\n"
+"        Muutokset otetaan käyttöön uudelleenkäynnistyksen jälkeen.\n"
 "        "
 
-#: plconfig/cog.py:205
-msgid "{folder} is not a folder"
-msgstr "{folder} ei ole kansio"
+#: plconfig/cog.py:213
+msgid "{folder_path_variable_do_not_translate} is not a folder."
+msgstr "{folder_path_variable_do_not_translate} ei ole kansio."
 
-#: plconfig/cog.py:219
-msgid "{folder} does not exist, run the command again with the create argument set to 1 to automatically create this folder"
-msgstr "{folder} ei ole olemassa, suorita komento uudelleen luomalla parametri arvoksi 1 luodaksesi tämän kansion automaattisesti"
+#: plconfig/cog.py:229
+msgid "{folder_path_variable_do_not_translate} does not exist, rerun the command with the create argument set to {command_variable_do_not_translate} to create this folder automatically."
+msgstr "{folder_path_variable_do_not_translate} ei ole olemassa, suorita komento uudelleen siten, että luo-argumentti on asetettu arvoon {command_variable_do_not_translate} luodaksesi tämän kansion automaattisesti."
 
-#: plconfig/cog.py:237
-msgid "PyLav's local tracks folder has been set to {folder}"
-msgstr "PyLavin paikalliset kappaleet -kansio on asetettu {folder}"
+#: plconfig/cog.py:246
+msgid "PyLav local tracks folder has been set to {folder_path_variable_do_not_translate}."
+msgstr "PyLavin paikallinen kappalekansio on asetettu arvoon {folder_path_variable_do_not_translate}."
 
-#: plconfig/cog.py:248
+#: plconfig/cog.py:261
 #, docstring
 msgid "Change the managed node configuration"
 msgstr "Muuta hallittuja palvelimen asetuksia"
 
-#: plconfig/cog.py:252
+#: plconfig/cog.py:265
 #, docstring
 msgid "Toggle the managed node on/off.\n\n"
-"        Changes will be applied after restarting the [botname].\n"
+"        Changes will be applied after I restart.\n"
 "        "
-msgstr "Vaihda hallittu solmu päälle/pois.\n\n"
-"        Muutokset otetaan käyttöön [botname]uudelleenkäynnistyksen jälkeen.\n"
+msgstr "Ota hallittu solmu käyttöön / poista se käytöstä.\n\n"
+"        Muutokset otetaan käyttöön uudelleenkäynnistyksen jälkeen.\n"
 "        "
 
-#: plconfig/cog.py:268
-msgid "PyLav's managed node has been enabled"
-msgstr "PyLavin hallinnoitu palvelin on otettu käyttöön"
+#: plconfig/cog.py:281
+msgid "I have turned on my managed Lavalink node."
+msgstr "Olen ottanut käyttöön hallitun Lavalink-solmuni."
 
-#: plconfig/cog.py:276
-msgid "PyLav's managed node has been disabled"
-msgstr "PyLavin hallinnoitu palvelin on poistettu käytöstä"
+#: plconfig/cog.py:289
+msgid "I have turned off my managed Lavalink node."
+msgstr "Olen poistanut hallitun Lavalink-solmun käytöstä."
 
-#: plconfig/cog.py:284
+#: plconfig/cog.py:297
 #, docstring
 msgid "Toggle the managed node auto updates on/off.\n\n"
-"        Changes will be applied after restarting [botname].\n"
+"        Changes will be applied after I restart.\n"
 "        "
 msgstr "Ota hallitun solmun automaattiset päivitykset käyttöön / poista ne käytöstä.\n\n"
-"        Muutokset otetaan käyttöön uudelleenkäynnistyksen jälkeen. [botname].\n"
+"        Muutokset otetaan käyttöön uudelleenkäynnistyksen jälkeen.\n"
 "        "
 
-#: plconfig/cog.py:300
-msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLavin hallitut solmujen automaattiset päivitykset on otettu käyttöön"
+#: plconfig/cog.py:313
+msgid "I have turned on the self-update functionality of my managed node."
+msgstr "Olen ottanut käyttöön hallitun solmun itsepäivitystoiminnon."
 
-#: plconfig/cog.py:308
-msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLavin hallitun solmun automaattiset päivitykset on poistettu käytöstä"
+#: plconfig/cog.py:321
+msgid "I have turned off the self-update functionality of my managed node."
+msgstr "Olen poistanut hallitun solmun itsepäivitystoiminnon käytöstä."
 
-#: plconfig/cog.py:316
+#: plconfig/cog.py:329
 #, docstring
 msgid "Change the bundled external nodes state"
 msgstr "Muuta niputettujen ulkoisten solmujen tilaa"
 
-#: plconfig/cog.py:320
+#: plconfig/cog.py:333
 #, docstring
 msgid "Toggle the managed external draper.wtf nodes on/off"
 msgstr "Valitse hallittu ulkoinen draper.wtf solmut päälle/pois"
 
-#: plconfig/cog.py:340
-msgid "PyLav's managed pylav external node has been enabled"
-msgstr "PyLavin hallinnoitu pylavin ulkoinen solmu on otettu käyttöön"
+#: plconfig/cog.py:353
+msgid "I have turned on the PyLav external Lavalink nodes."
+msgstr "Olen ottanut käyttöön PyLavin ulkoiset Lavalink-solmut."
 
-#: plconfig/cog.py:350
-msgid "PyLav's managed pylav external node has been disabled"
-msgstr "PyLavin hallinnoitu ulkoinen pylav-solmu on poistettu käytöstä"
+#: plconfig/cog.py:363
+msgid "I have turned off the PyLav external Lavalink nodes."
+msgstr "Olen sammuttanut PyLavin ulkoiset Lavalink-solmut."
 
-#: plconfig/cog.py:358
+#: plconfig/cog.py:371
 #, docstring
 msgid "Toggle the managed external lava.link node on/off"
 msgstr "Vaihda hallittu ulkoinen lava.link solmu päälle/pois"
 
-#: plconfig/cog.py:370
-msgid "PyLav's managed lava.link external node has been disabled"
-msgstr "PyLavin hallinnoitu lava.link ulkoinen solmu on poistettu käytöstä"
+#: plconfig/cog.py:383
+msgid "I have turned on the lava.link external Lavalink node."
+msgstr "Olen kytkenyt lava.link ulkoisen Lavalink-solmun päälle."
 
-#: plconfig/cog.py:378
-msgid "PyLav's managed lava.link has been permanently removed"
-msgstr "PyLavin hallinnoitu lava.link on poistettu pysyvästi"
+#: plconfig/cog.py:391
+msgid "The PyLav managed lava.link external Lavalink node has been permanently removed."
+msgstr "PyLavin hallinnoima ulkoinen Lavalink lava.link solmu on poistettu pysyvästi."
 
-#: plconfig/cog.py:387
+#: plconfig/cog.py:400
 #, docstring
 msgid "Instructions on how to set the Spotify API Tokens"
 msgstr "Ohjeet Spotify API -tunnisteiden asettamiseen"
 
-#: plconfig/cog.py:388
+#: plconfig/cog.py:401
 msgid "1. Go to Spotify developers and log in with your Spotify account.\n"
-"(https://developer.spotify.com/dashboard/applications)\n"
-"2. Click \"Create An App\".\n"
-"3. Fill out the form provided with your app name, etc.\n"
+"{spotify_url_variable_do_not_translate}\n"
+"2. Click on \"Create An App\".\n"
+"3. Fill out the form provided with your application name, etc.\n"
 "4. When asked if you're developing commercial integration select \"No\".\n"
 "5. Accept the terms and conditions.\n"
-"6. Copy your client ID and your client secret into:\n"
-"`{prefix}set api spotify client_id <your_client_id_here> client_secret <your_client_secret_here>`"
-msgstr "1. Mene Spotifyn kehittäjiin ja kirjaudu sisään Spotify-tililläsi.\n"
-"(https://developer.spotify. om/dashboard/applications)\n"
+"6. Execute the following command replacing {argument_1_variable_do_not_translate} with your client identifier and {argument_2_variable_do_not_translate} with your client secret:\n"
+"  `{command_name_variable_do_not_translate}`"
+msgstr "1. Siirry Spotify-kehittäjille ja kirjaudu sisään Spotify-tililläsi.\n"
+"{spotify_url_variable_do_not_translate}\n"
 "2. Napsauta \"Luo sovellus\".\n"
-"3. Täytä sovelluksen nimi, jne.\n"
-"4. Kun kysyttiin, kehitkö kaupallista integraatiota, valitse \"Ei\".\n"
-"5. Hyväksy ehdot ja ehdot.\n"
-"6. Kopioi asiakastunnuksesi ja asiakkaan salaisuus:\n"
-"`{prefix}aseta api spotify client_id <your_client_id_here> client_secret <your_client_secret_here>`"
+"3. Täytä lomake, jossa on hakemuksesi nimi jne.\n"
+"4. Kun sinulta kysytään, kehitätkö kaupallista integraatiota, valitse \"Ei\".\n"
+"5. Hyväksy käyttöehdot.\n"
+"6. Suorita seuraava komento korvaamalla {argument_1_variable_do_not_translate} asiakastunnisteellasi ja {argument_2_variable_do_not_translate} asiakassalaisuutesi kanssa:\n"
+"  `{command_name_variable_do_not_translate}`"
 
-#: plconfig/cog.py:409
+#: plconfig/cog.py:428
 #, docstring
 msgid "Manage active players"
 msgstr "Hallinnoi aktiivisia pelaajia"
 
-#: plconfig/cog.py:418
-msgid "No active player in {name}"
-msgstr "Ei aktiivista pelaajaa {name}"
+#: plconfig/cog.py:437
+msgid "I am not currently playing anything in {server_name_variable_do_not_translate}."
+msgstr "En pelaa tällä hetkellä mitään {server_name_variable_do_not_translate}."
 
-#: plconfig/cog.py:427
-msgid "No connected players"
-msgstr "Ei yhdistettyjä pelaajia"
+#: plconfig/cog.py:448
+msgid "I am not connected to any voice channel at the moment."
+msgstr "En ole tällä hetkellä yhteydessä mihinkään äänikanavaan."
 
-#: plconfig/cog.py:444
+#: plconfig/cog.py:465
 #, docstring
-msgid "Toggle whether or not to change [botname]'s activity"
-msgstr "Valitse vaihdetaanko [botname]toimintaa vai ei"
+msgid "Toggle whether or not I should update my Discord activity when playing tracks."
+msgstr "Vaihda, pitäisikö minun päivittää Discord-toimintani kappaleita toistettaessa."
 
-#: plconfig/cog.py:455
-msgid "PyLav will change bot activity"
-msgstr "PyLav muuttaa bottien toimintaa"
+#: plconfig/cog.py:476
+msgid "From now on, I will update my activity to reflect the tracks I am playing."
+msgstr "Tästä lähtien päivitän toimintani vastaamaan soittamiani kappaleita."
 
-#: plconfig/cog.py:464
-msgid "PyLav will no longer change the bot activity"
-msgstr "PyLav ei enää muuta bottien toimintaa"
+#: plconfig/cog.py:485
+msgid "From now on, I will no longer update my activity to reflect the tracks I am playing."
+msgstr "Tästä lähtien en enää päivitä toimintaani vastaamaan soittamiani kappaleita."
 
-#: plconfig/view.py:27 plconfig/view.py:69 plconfig/view.py:140
-#: plconfig/view.py:211 plconfig/view.py:430
+#: plconfig/view.py:27 plconfig/view.py:68 plconfig/view.py:179
+#: plconfig/view.py:289 plconfig/view.py:551
 msgid "Enabled"
 msgstr "Käytössä"
 
-#: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
-#: plconfig/view.py:212 plconfig/view.py:431
+#: plconfig/view.py:28 plconfig/view.py:69 plconfig/view.py:180
+#: plconfig/view.py:290 plconfig/view.py:552
 msgid "Disabled"
 msgstr "Vammainen"
 
@@ -298,199 +298,235 @@ msgid "Use Bundled\n"
 msgstr "Käytä yhdistettyjä\n"
 "lava.link solmuja"
 
-#: plconfig/view.py:58 plconfig/view.py:124 plconfig/view.py:195
-#: plconfig/view.py:340 plconfig/view.py:475
+#: plconfig/view.py:58 plconfig/view.py:163 plconfig/view.py:273
+#: plconfig/view.py:461 plconfig/view.py:596
 msgid "Value"
 msgstr "Arvo"
 
-#: plconfig/view.py:73 plconfig/view.py:154 plconfig/view.py:258
+#: plconfig/view.py:72 plconfig/view.py:253 plconfig/view.py:400
 msgid "Volume"
 msgstr "Tilavuus"
 
-#: plconfig/view.py:75 plconfig/view.py:155 plconfig/view.py:259
+#: plconfig/view.py:78 plconfig/view.py:98 plconfig/view.py:118
+#: plconfig/view.py:196 plconfig/view.py:216 plconfig/view.py:236
+#: plconfig/view.py:343 plconfig/view.py:363 plconfig/view.py:383
+msgid "{enabled_variable_do_not_translate}\n"
+"0 seconds"
+msgstr "{enabled_variable_do_not_translate}\n"
+"0 sekuntia"
+
+#: plconfig/view.py:82 plconfig/view.py:102 plconfig/view.py:122
+#: plconfig/view.py:200 plconfig/view.py:220 plconfig/view.py:240
+#: plconfig/view.py:347 plconfig/view.py:367 plconfig/view.py:387
+msgid "{enabled_variable_do_not_translate}\n"
+"1 second"
+msgstr "{enabled_variable_do_not_translate}\n"
+"1 sekunti"
+
+#: plconfig/view.py:86 plconfig/view.py:106 plconfig/view.py:126
+#: plconfig/view.py:204 plconfig/view.py:224 plconfig/view.py:244
+#: plconfig/view.py:351 plconfig/view.py:371 plconfig/view.py:391
+msgid "{enabled_variable_do_not_translate}\n"
+"{setting_timer_variable_do_not_translate} seconds"
+msgstr "{enabled_variable_do_not_translate}\n"
+"{setting_timer_variable_do_not_translate} Sekuntia"
+
+#: plconfig/view.py:135 plconfig/view.py:254 plconfig/view.py:401
 msgid "Maximum Volume"
 msgstr "Suurin Äänenvoimakkuus"
 
-#: plconfig/view.py:77 plconfig/view.py:157 plconfig/view.py:261
+#: plconfig/view.py:137 plconfig/view.py:256 plconfig/view.py:403
 msgid "AutoPlay"
 msgstr "AutoToisto"
 
-#: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
+#: plconfig/view.py:141 plconfig/view.py:259 plconfig/view.py:419
 msgid "Shuffling"
 msgstr "Sekoittaminen"
 
-#: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
+#: plconfig/view.py:145 plconfig/view.py:260 plconfig/view.py:423
 msgid "Auto Shuffle"
 msgstr "Automaattinen sekoitus"
 
-#: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
+#: plconfig/view.py:149 plconfig/view.py:261 plconfig/view.py:427
 msgid "Auto Deafen"
 msgstr "Auto Deafen"
 
-#: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
+#: plconfig/view.py:152
 msgid "Auto Disconnect"
 msgstr "Katkaise Automaattisesti"
 
-#: plconfig/view.py:95 plconfig/view.py:103 plconfig/view.py:111
-#: plconfig/view.py:166 plconfig/view.py:174 plconfig/view.py:182
-#: plconfig/view.py:291 plconfig/view.py:299 plconfig/view.py:307
-msgid "{enabled}\n"
-"{timer} seconds"
-msgstr "{enabled}\n"
-"{timer} sekuntia"
-
-#: plconfig/view.py:101 plconfig/view.py:172 plconfig/view.py:297
+#: plconfig/view.py:153 plconfig/view.py:263 plconfig/view.py:431
 msgid "Auto Alone Pause"
 msgstr "Automaattinen Yksinäinen Tauko"
 
-#: plconfig/view.py:109 plconfig/view.py:180 plconfig/view.py:305
+#: plconfig/view.py:154 plconfig/view.py:264 plconfig/view.py:432
 msgid "Auto Alone Disconnect"
 msgstr "Automaattinen Yksinäinen Katkaise"
 
-#: plconfig/view.py:137 plconfig/view.py:208
+#: plconfig/view.py:176
+msgid "You need to be on a server to show this page."
+msgstr "Sinun on oltava palvelimella, jotta voit näyttää tämän sivun."
+
+#: plconfig/view.py:262 plconfig/view.py:430
+msgid "Auto Empty Disconnect"
+msgstr "Automaattinen tyhjennysyhteys katkaisu"
+
+#: plconfig/view.py:272
+msgid "Context Player Settings"
+msgstr "Kontekstisoittimen asetukset"
+
+#: plconfig/view.py:286
 msgid "You need to be in a server to be able to show this page."
 msgstr "Sinun täytyy olla palvelimella, jotta voit näyttää tämän sivun."
 
-#: plconfig/view.py:229 plconfig/view.py:245
-msgid "Too many to show ({count})"
-msgstr "Liian monta näytettävää ({count})"
+#: plconfig/view.py:307
+msgid "Too many entries to show ({number_of_users_variable_do_not_translate})"
+msgstr "Liian monta merkintää näytettäväksi ({number_of_users_variable_do_not_translate})"
 
-#: plconfig/view.py:248 plconfig/view.py:253 plconfig/view.py:316
-#: plconfig/view.py:322 plconfig/view.py:328
+#: plconfig/view.py:325
+msgid "Too many entries to show ({number_of_roles_variable_do_not_translate})"
+msgstr "Liian monta merkintää näytettäväksi ({number_of_roles_variable_do_not_translate})"
+
+#: plconfig/view.py:330 plconfig/view.py:335 plconfig/view.py:437
+#: plconfig/view.py:443 plconfig/view.py:449
 msgid "None"
 msgstr "Ei lainkaan"
 
-#: plconfig/view.py:265
+#: plconfig/view.py:407
 msgid "AutoPlay Playlist"
 msgstr "Automaattinen Soittolista"
 
-#: plconfig/view.py:269
+#: plconfig/view.py:411
 msgid "Loop track"
 msgstr "Silmukan raita"
 
-#: plconfig/view.py:273
+#: plconfig/view.py:415
 msgid "Loop Queue"
 msgstr "Silmukka Jono"
 
-#: plconfig/view.py:313
+#: plconfig/view.py:434
 msgid "Forced Voice Channel"
 msgstr "Pakotettu Äänikanava"
 
-#: plconfig/view.py:319
+#: plconfig/view.py:440
 msgid "Forced Command Channel"
 msgstr "Pakotettu Komentokanava"
 
-#: plconfig/view.py:325
+#: plconfig/view.py:446
 msgid "Forced Notification Channel"
 msgstr "Pakotettu Ilmoituskanava"
 
-#: plconfig/view.py:330
-msgid "DJ Users"
-msgstr "DJ-käyttäjät"
+#: plconfig/view.py:451
+msgid "Disc Jockey Users"
+msgstr "Disc Jockey -käyttäjät"
 
-#: plconfig/view.py:331
-msgid "DJ Roles"
-msgstr "DJ-roolit"
+#: plconfig/view.py:452
+msgid "Disc Jockey Roles"
+msgstr "Disc Jockey -roolit"
 
-#: plconfig/view.py:354
+#: plconfig/view.py:460
+msgid "Server Player Settings"
+msgstr "Server Player -asetukset"
+
+#: plconfig/view.py:475
 msgid "Next Bundled\n"
 "Playlist Update"
 msgstr "Seuraava yhdistetty\n"
 "Soittolistan päivitys"
 
-#: plconfig/view.py:360
+#: plconfig/view.py:481
 msgid "Next Bundled External\n"
 "Playlist Update"
 msgstr "Seuraava yhdistetty ulkoinen\n"
 "soittolistan päivitys"
 
-#: plconfig/view.py:366
+#: plconfig/view.py:487
 msgid "Next External\n"
 "Playlist Update"
 msgstr "Seuraava ulkoinen\n"
 "soittolistan päivitys"
 
-#: plconfig/view.py:379
+#: plconfig/view.py:500
 msgid "Date and Time (UTC)"
 msgstr "Päivämäärä ja kellonaika (UTC)"
 
-#: plconfig/view.py:392
-msgid "You need to be the bot owner to be able to show this page."
-msgstr "Sinun täytyy olla botin omistaja, jotta voit näyttää tämän sivun."
+#: plconfig/view.py:513
+msgid "Due to sensitive information, I can only show the contents of this page to my owner."
+msgstr "Arkaluontoisten tietojen vuoksi voin näyttää tämän sivun sisällön vain omistajalleni."
 
-#: plconfig/view.py:398
-msgid "Config Folder"
-msgstr "Määritä Kansio"
+#: plconfig/view.py:519
+msgid "Settings Folder"
+msgstr "Asetukset-kansio"
 
-#: plconfig/view.py:400
+#: plconfig/view.py:521
 msgid "Local Tracks"
 msgstr "Paikalliset Kappaleet"
 
-#: plconfig/view.py:403
+#: plconfig/view.py:524
 msgid "Lavalink Folder"
 msgstr "Lavalink Kansio"
 
-#: plconfig/view.py:405
+#: plconfig/view.py:526
 msgid "Java Executable"
 msgstr "Java-Suoritustiedosto"
 
-#: plconfig/view.py:409
+#: plconfig/view.py:530
 msgid "Not Found"
 msgstr "Ei Löytynyt"
 
-#: plconfig/view.py:419
+#: plconfig/view.py:540
 msgid "Paths"
 msgstr "Polut"
 
-#: plconfig/view.py:420
+#: plconfig/view.py:541
 msgid "Path"
 msgstr "Polku"
 
-#: plconfig/view.py:439
+#: plconfig/view.py:560
 msgid "Java"
 msgstr "Jaava"
 
-#: plconfig/view.py:443
+#: plconfig/view.py:564
 msgid "Lavaplayer"
 msgstr "Lava-soitin"
 
-#: plconfig/view.py:447
+#: plconfig/view.py:568
 msgid "Lavalink Branch"
 msgstr "Lavalink-haara"
 
-#: plconfig/view.py:451
+#: plconfig/view.py:572
 msgid "Lavalink Version"
 msgstr "Lavalink Versio"
 
-#: plconfig/view.py:455
+#: plconfig/view.py:576
 msgid "Lavalink Build"
 msgstr "Lavalink-rakennus"
 
-#: plconfig/view.py:458
+#: plconfig/view.py:579
 msgid "Build Time"
 msgstr "Koontiaika"
 
-#: plconfig/view.py:460
+#: plconfig/view.py:581
 msgid "Commit"
 msgstr "Toimita"
 
-#: plconfig/view.py:464
+#: plconfig/view.py:585
 msgid "Auto Update"
 msgstr "Automaattinen Päivitys"
 
-#: plconfig/view.py:502
+#: plconfig/view.py:623
 msgid "Select an option from the dropdown menu below."
 msgstr "Valitse vaihtoehto alla olevasta pudotusvalikosta."
 
-#: plconfig/view.py:518
+#: plconfig/view.py:638
 msgid "Pick an option to view"
 msgstr "Valitse näytettävä vaihtoehto"
 
-#: plconfig/view.py:528
-msgid "You are not authorized to interact with this option"
-msgstr "Sinulla ei ole oikeutta olla vuorovaikutuksessa tämän vaihtoehdon kanssa"
+#: plconfig/view.py:648
+msgid "You are not authorized to interact with this option."
+msgstr "Sinulla ei ole valtuuksia käyttää tätä vaihtoehtoa."
 
-#: plconfig/view.py:558
-msgid "You are not authorized to interact with this"
-msgstr "Sinulla ei ole valtuuksia olla vuorovaikutuksessa tämän kanssa"
+#: plconfig/view.py:678
+msgid "You are not authorized to interact with this."
+msgstr "Sinulla ei ole valtuuksia olla vuorovaikutuksessa tämän kanssa."
 

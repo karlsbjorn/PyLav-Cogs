@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgstr "PyLav 歌词命令"
 
 #: pllyrics/cog.py:49
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "显示齿轮的版本及其 PyLav 依赖项"
+msgid "Show the version of the Cog and PyLav"
+msgstr "显示齿轮和 PyLav 的版本"
 
 #: pllyrics/cog.py:65
-msgid "Library/Cog"
-msgstr "库/齿轮"
+msgid "Library / Cog"
+msgstr "图书馆/齿轮"
 
 #: pllyrics/cog.py:66
 msgid "Version"
@@ -45,88 +45,108 @@ msgstr "设置歌词设置"
 msgid "Toggle timed lyrics"
 msgstr "切换定时歌词"
 
-#: pllyrics/cog.py:93
-msgid "Timed lyrics are now {state}"
-msgstr "已定时的歌词现在是 {state}"
+#: pllyrics/cog.py:90
+msgid "I have now turned off timed lyrics in this server."
+msgstr "我现在已经关闭了此服务器中的定时歌词。"
 
-#: pllyrics/cog.py:94 pllyrics/cog.py:117
-msgid "disabled"
-msgstr "已禁用"
+#: pllyrics/cog.py:92
+msgid "I have now turned on timed lyrics in this server. I will send the lyrics as the track progresses if I can find lyrics for the playing track."
+msgstr "我现在已经在这个服务器中打开了定时歌词。如果我能找到播放曲目的歌词，我会随着曲目的进行发送歌词。"
 
-#: pllyrics/cog.py:96 pllyrics/cog.py:119
-msgid "enabled"
-msgstr "已启用"
-
-#: pllyrics/cog.py:108
+#: pllyrics/cog.py:106
 #, docstring
 msgid "Show full lyrics on track start timed lyrics"
 msgstr "在歌曲开始时显示完整歌词"
 
-#: pllyrics/cog.py:116
-msgid "Sending full lyrics on track start {state}"
-msgstr "正在歌曲开始时发送完整歌词 {state}"
+#: pllyrics/cog.py:112
+msgid "I have now turned off full lyrics in this server."
+msgstr "我现在已经关闭了这个服务器中的完整歌词。"
 
-#: pllyrics/cog.py:133
+#: pllyrics/cog.py:114
+msgid "I have now turned on full lyrics on this server. I will send a message with the full lyrics at the start of a song if I can find lyrics for the playing track."
+msgstr "我现在已经在这个服务器上打开了完整的歌词。如果我能找到播放曲目的歌词，我将在歌曲开头发送一条包含完整歌词的消息。"
+
+#: pllyrics/cog.py:130
 #, docstring
 msgid "Set the lyrics channel"
 msgstr "设置歌词频道"
 
-#: pllyrics/cog.py:138
-msgid "Lyrics channel set to {channel}"
-msgstr "歌词频道已设置为 {channel}"
+#: pllyrics/cog.py:135
+msgid "I have set the channel I will use to send lyrics to {channel_variable_do_not_translate}."
+msgstr "我已经设置了将用于发送歌词的频道 {channel_variable_do_not_translate}."
 
-#: pllyrics/cog.py:147
-msgid "I will not send lyrics to any channel"
-msgstr "我不会向任何频道发送歌词"
+#: pllyrics/cog.py:146
+msgid "From now on, I will not send lyrics to any channel."
+msgstr "从现在开始，我不会向任何频道发送歌词。"
 
-#: pllyrics/cog.py:156
+#: pllyrics/cog.py:155
 #, docstring
 msgid "Show lyrics for current track if available"
 msgstr "显示当前曲目的歌词（如果可用的话）"
 
-#: pllyrics/cog.py:165
-msgid "Nothing is currently playing"
-msgstr "没有正在播放的"
+#: pllyrics/cog.py:164
+msgid "I am not currently playing anything on this server."
+msgstr "我目前没有在此服务器上播放任何内容。"
 
-#: pllyrics/cog.py:204
-msgid "Error: {error}"
-msgstr "错误: {error}"
+#: pllyrics/cog.py:203
+msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
+msgstr "我在查找这首歌的歌词时遇到了一个错误： {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:214
-msgid "API Error: {error}"
-msgstr "API 错误: {error}"
+#: pllyrics/cog.py:215
+msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
+msgstr "我用来查找歌词的 Flowery API 在查找这首歌的歌词时返回了一个错误 {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:224
+#: pllyrics/cog.py:227
 msgid "No lyrics found"
 msgstr "没有找到歌词"
 
-#: pllyrics/cog.py:241
-msgid "{extras}Lyrics for {title}{author} - Part {page}"
-msgstr "{extras}的 {title}歌词{author} - 部分 {page}"
+#: pllyrics/cog.py:242
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "我找到了歌词 {title_variable_do_not_translate} 由 {author_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:244 pllyrics/cog.py:259 pllyrics/cog.py:312
-msgid "(Guess) "
-msgstr "(猜) "
+#: pllyrics/cog.py:246
+msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "我找到了歌词 {title_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:245 pllyrics/cog.py:260 pllyrics/cog.py:313
-msgid " by {name}"
-msgstr " 由 {name}"
+#: pllyrics/cog.py:252
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "（猜测）我找到了歌词 {title_variable_do_not_translate} 由 {author_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:250 pllyrics/cog.py:265 pllyrics/cog.py:322
-msgid "Lyrics provided by {provider}"
-msgstr "{provider} 提供的歌词"
+#: pllyrics/cog.py:256
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "（猜测）我找到了歌词 {title_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:257 pllyrics/cog.py:310
-msgid "{extras}Lyrics for {title}{author}"
-msgstr "{extras}的 {title}歌词{author}"
+#: pllyrics/cog.py:262
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "我找到了歌词 {title_variable_do_not_translate} 由 {author_variable_do_not_translate}."
 
-#: pllyrics/cog.py:316
-msgid "{lyrics}\n\n"
-"Position: {duration} until {until}"
-msgstr "{lyrics}\n\n"
-"位置: {duration} 至 {until}"
+#: pllyrics/cog.py:266
+msgid "I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "我找到了歌词 {title_variable_do_not_translate}."
 
-#: pllyrics/cog.py:318
+#: pllyrics/cog.py:268
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "（猜测）我找到了歌词 {title_variable_do_not_translate} 由 {author_variable_do_not_translate}."
+
+#: pllyrics/cog.py:272
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "（猜测）我找到了歌词 {title_variable_do_not_translate}."
+
+#: pllyrics/cog.py:289 pllyrics/cog.py:369
+msgid "Lyrics provided by {provider_variable_do_not_translate}."
+msgstr "歌词由 {provider_variable_do_not_translate}."
+
+#: pllyrics/cog.py:306
+msgid "Lyrics provided by {provider_variable_do_not_translate}"
+msgstr "歌词由 {provider_variable_do_not_translate}"
+
+#: pllyrics/cog.py:359
+msgid "{lyrics_variable_do_not_translate}\n\n"
+"Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
+msgstr "{lyrics_variable_do_not_translate}\n\n"
+"位置： {duration_variable_do_not_translate} 直到 {until_variable_do_not_translate}"
+
+#: pllyrics/cog.py:365
 msgid "Start"
 msgstr "开始"
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-02 15:41\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "Dişli çark ayarlarını yapılandırma"
 
 #: pllocal/cog.py:117
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog sürümünü ve PyLav bağımlılıklarını gösterme"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Cog ve PyLav'ın versiyonunu göster"
 
 #: pllocal/cog.py:133
-msgid "Library/Cog"
-msgstr "Kütüphane/Dişli Çark"
+msgid "Library / Cog"
+msgstr "Kütüphane / Dişli"
 
 #: pllocal/cog.py:134
 msgid "Version"
@@ -46,35 +46,35 @@ msgid "Update the track list for /local"
 msgstr "/local için parça listesini güncelleme"
 
 #: pllocal/cog.py:158
-msgid "Local track list updated {number} currently present"
-msgstr "Yerel parça listesi güncellendi {number} şu anda mevcut"
+msgid "I have updated my local track cache. There are now {number_variable_do_not_translate} tracks present."
+msgstr "Yerel parça önbelleğimi güncelledim. Şimdi var {number_variable_do_not_translate} mevcut izler."
 
-#: pllocal/cog.py:183
+#: pllocal/cog.py:185
 #, docstring
 msgid "Play a local file or folder, supports partial searching"
 msgstr "Yerel bir dosya veya klasörü oynatın, kısmi aramayı destekler"
 
-#: pllocal/cog.py:191
-msgid "{query} is not a valid local file or folder"
-msgstr "{query} geçerli bir yerel dosya veya klasör değil"
+#: pllocal/cog.py:193
+msgid "{user_input_query_variable_do_not_translate} is not a valid local file or folder."
+msgstr "{user_input_query_variable_do_not_translate} geçerli bir yerel dosya veya klasör değil."
 
-#: pllocal/cog.py:207
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Bağlanmama izin vermek için bir ses kanalında olmalısın"
+#: pllocal/cog.py:211
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "Bir ses kanalında olmalısın, böylece ona bağlanabilirim."
 
-#: pllocal/cog.py:220
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Bağlanma veya konuşma iznim yok {channel}"
+#: pllocal/cog.py:224
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "Bağlanma veya konuşma iznim yok {channel_variable_do_not_translate}."
 
-#: pllocal/cog.py:245
-msgid "{track_count} tracks enqueued"
-msgstr "{track_count} kuyruğa alınmış parçalar"
+#: pllocal/cog.py:248
+msgid "No tracks were found for your query."
+msgstr "Sorgunuz için hiçbir parça bulunamadı."
 
-#: pllocal/cog.py:253
-msgid "{track} enqueued"
-msgstr "{track} Enqueued"
+#: pllocal/cog.py:250
+msgid "{track_name_variable_do_not_translate} enqueued."
+msgstr "{track_name_variable_do_not_translate} Enqueued."
 
-#: pllocal/cog.py:263
-msgid "No tracks were found for your query"
-msgstr "Sorgunuz için hiçbir parça bulunamadı"
+#: pllocal/cog.py:254
+msgid "I have enqueued {track_count_variable_do_not_translate} tracks."
+msgstr "Sıraya aldım {track_count_variable_do_not_translate} Parça."
 

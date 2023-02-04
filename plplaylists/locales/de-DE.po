@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-02-01 00:31+0000\n"
-"PO-Revision-Date: 2023-02-01 00:40\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -17,33 +17,33 @@ msgstr ""
 "X-Crowdin-File-ID: 3319\n"
 "Language: de_DE\n"
 
-#: plplaylists/cog.py:47
+#: plplaylists/cog.py:45
 #, docstring
 msgid "PyLav playlist management commands"
 msgstr "PyLav Playlist-Verwaltungsbefehle"
 
-#: plplaylists/cog.py:55
+#: plplaylists/cog.py:53
 msgid "Control PyLav playlists"
 msgstr "PyLav Playlists steuern"
 
-#: plplaylists/cog.py:77
+#: plplaylists/cog.py:75
 #, docstring
-msgid "Show the version of the Cog and it's PyLav dependencies"
-msgstr "Zeige die Version des Cog und seine PyLav Abhängigkeiten"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Zeigen Sie die Version von Cog und PyLav"
 
-#: plplaylists/cog.py:92
-msgid "Library/Cog"
-msgstr "Bibliothek/Zahnrad"
+#: plplaylists/cog.py:90
+msgid "Library / Cog"
+msgstr "Bibliothek / Zahnrad"
 
-#: plplaylists/cog.py:93
+#: plplaylists/cog.py:91
 msgid "Version"
 msgstr "Version"
 
-#: plplaylists/cog.py:130
-msgid "Let's create a playlist!"
-msgstr "Lass uns eine Playlist erstellen!"
+#: plplaylists/cog.py:128
+msgid "Let us create a playlist!"
+msgstr "Lassen Sie uns eine Playlist erstellen!"
 
-#: plplaylists/cog.py:131
+#: plplaylists/cog.py:129
 msgid "(**1**) - Apply changes to playlist.\n"
 "(**2**) - Cancel any changes made.\n"
 "(**3**) - Add a name to the playlist.\n"
@@ -57,53 +57,53 @@ msgstr "(**1**) - Änderungen auf die Wiedergabeliste übernehmen.\n"
 "(**5**) - Füge alle Tracks aus der Warteschlange zur Playlist hinzu.\n\n"
 "Wenn der Name der Wiedergabeliste als originale Wiedergabeliste sein soll, dann setzen Sie einfach die URL, aber keinen Namen.\n\n"
 
-#: plplaylists/cog.py:165
-msgid "Playlist not created"
-msgstr "Wiedergabeliste nicht erstellt"
+#: plplaylists/cog.py:163
+msgid "I did not create this playlist."
+msgstr "Ich habe diese Wiedergabeliste nicht erstellt."
 
-#: plplaylists/cog.py:166
+#: plplaylists/cog.py:164
 msgid "No tracks were provided in time."
 msgstr "Es wurden keine Tracks rechtzeitig bereitgestellt."
 
-#: plplaylists/cog.py:179
-msgid "Playlist created"
-msgstr "Playlist erstellt"
+#: plplaylists/cog.py:177
+msgid "I have created a new playlist."
+msgstr "Ich habe eine neue Playlist erstellt."
 
-#: plplaylists/cog.py:180
-msgid "Name: `{name}`\n"
-"ID: `{id}`\n"
-"Tracks: `{track_count}`"
-msgstr "Name: '{name}`\n"
-"ID: '{id}`\n"
-"Tracks: '{track_count}`"
+#: plplaylists/cog.py:178
+msgid "Name: `{name_variable_do_not_translate}`\n"
+"Identifier: `{id_variable_do_not_translate}`\n"
+"Tracks: `{track_count_variable_do_not_translate}`"
+msgstr "Name: '{name_variable_do_not_translate}`\n"
+"Kennung: '{id_variable_do_not_translate}`\n"
+"Tracks: '{track_count_variable_do_not_translate}`"
 
-#: plplaylists/cog.py:204
+#: plplaylists/cog.py:206
 msgid "You have no playlists"
 msgstr "Du hast keine Wiedergabelisten"
 
-#: plplaylists/cog.py:246 plplaylists/cog.py:607
+#: plplaylists/cog.py:248 plplaylists/cog.py:637
 msgid "Nothing to save"
 msgstr "Nichts zu speichern"
 
-#: plplaylists/cog.py:247 plplaylists/cog.py:608
-msgid "There is nothing in the queue to save"
-msgstr "Es gibt nichts in der Warteschlange zu speichern"
+#: plplaylists/cog.py:249 plplaylists/cog.py:638
+msgid "There is nothing in the queue to save."
+msgstr "In der Warteschlange gibt es nichts zu speichern."
 
-#: plplaylists/cog.py:284 plplaylists/cog.py:545 plplaylists/cog.py:625
-msgid "{user}, playlist {playlist_name} cannot be managed by yourself"
-msgstr "{user}, Playlist {playlist_name} kann nicht von dir selbst verwaltet werden"
+#: plplaylists/cog.py:286 plplaylists/cog.py:569 plplaylists/cog.py:655
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} cannot be managed by yourself."
+msgstr "{user_variable_do_not_translate}Wiedergabeliste {playlist_name_variable_do_not_translate} kann nicht von Ihnen selbst verwaltet werden."
 
-#: plplaylists/cog.py:293
-msgid "(**1**){space} - Apply changes to playlist.\n"
-"(**2**){space} - Cancel any changes made and close the menu.\n"
-"(**3**){space} - Delete this playlist.\n"
-"(**4**){space} - Remove all tracks from this playlist.\n"
-"(**5**){space} - Update the playlist with the latest tracks.\n"
+#: plplaylists/cog.py:298
+msgid "(**1**){space_variable_do_not_translate} - Apply changes to playlist.\n"
+"(**2**){space_variable_do_not_translate} - Cancel any changes made and close the menu.\n"
+"(**3**){space_variable_do_not_translate} - Delete this playlist.\n"
+"(**4**){space_variable_do_not_translate} - Remove all tracks from this playlist.\n"
+"(**5**){space_variable_do_not_translate} - Update the playlist with the latest tracks.\n"
 "Please note that this action will ignore any tracks added/removed via this menu.\n"
-"(**6**){space} - Change the name of the playlist.\n"
-"(**7**){space} - Link this playlist to an existing playlist/album.\n"
-"(**8**){space} - Add a query to this playlist.\n"
-"(**9**){space} - Remove a query from this playlist.\n"
+"(**6**){space_variable_do_not_translate} - Change the name of the playlist.\n"
+"(**7**){space_variable_do_not_translate} - Link this playlist to an existing playlist/album.\n"
+"(**8**){space_variable_do_not_translate} - Add a query to this playlist.\n"
+"(**9**){space_variable_do_not_translate} - Remove a query from this playlist.\n"
 "(**10**) - Download the playlist file.\n"
 "(**11**) - Add current playlist to the queue.\n"
 "(**12**) - Show tracks in current playlist.\n"
@@ -114,28 +114,28 @@ msgid "(**1**){space} - Apply changes to playlist.\n"
 "The clear button will always be run first before any other operations.\n"
 "The URL button will always run last - Linking a playlist via the URL will overwrite any tracks added or removed to this playlist.\n\n"
 "If you interact with a button multiple times other than the add/remove buttons only the last interaction will take effect.\n\n\n"
-msgstr "(**1**){space} - Änderungen auf die Wiedergabeliste übernehmen.\n"
-"(**2**){space} - Änderungen abbrechen und das Menü schließen.\n"
-"(**3**){space} - Lösche diese Wiedergabeliste.\n"
-"(**4**){space} - Entferne alle Titel von dieser Wiedergabeliste.\n"
-"(**5**){space} - Aktualisiere die Wiedergabeliste mit den neuesten Tracks.\n"
-"Bitte beachten Sie, dass diese Aktion alle Tracks ignoriert, die über dieses Menü hinzugefügt oder entfernt wurden.\n"
-"(**6**){space} - Ändere den Namen der Wiedergabeliste.\n"
-"(**7**){space} - Verknüpfen Sie diese Wiedergabeliste mit einer existierenden Wiedergabeliste.\n"
-"(**8**){space} - Fügen Sie eine Abfrage zu dieser Wiedergabeliste hinzu.\n"
-"(**9**){space} - Entferne eine Abfrage aus dieser Wiedergabeliste.\n"
-"(**10**) - Laden Sie die Playlist-Datei herunter.\n"
-"(**11**) - Fügen Sie die aktuelle Playlist zur Warteschlange hinzu.\n"
-"(**12**) - Tracks in der aktuellen Wiedergabeliste anzeigen.\n"
-"(**13**) - Füge Tracks aus der Warteschlange zu dieser Wiedergabeliste hinzu.\n"
-"(**14**) - Entferne doppelte Einträge in der Wiedergabeliste.\n\n"
-"Die Tasten zum Hinzufügen/Entfernen von Tracks können mehrfach verwendet werden, um mehrere Tracks und Wiedergabelisten gleichzeitig hinzuzufügen/zu entfernen.\n\n"
-"Eine Abfrage ist alles abspielbar, was durch den Play-Befehl abgespielt werden kann. Jede Abfrage kann von den Hinzufügen/Entfernen Buttons\n\n"
-"verwendet werden. Der Löschen-Button wird immer zuerst ausgeführt, bevor andere Operationen ausgeführt werden.\n"
-"Der URL-Button wird immer zuletzt ausgeführt - Das Verknüpfen einer Wiedergabeliste über die URL wird alle zu dieser Wiedergabeliste hinzugefügten oder entfernten Titel überschreiben.\n\n"
-"Wenn Sie mit einem Button mehrmals außer den Hinzufügen/Entfernen Tasten interagieren, wird nur die letzte Interaktion wirksam.\n\n\n"
+msgstr "(**1**){space_variable_do_not_translate} - Wenden Sie Änderungen an der Wiedergabeliste an.\n"
+"(**2**){space_variable_do_not_translate} - Stornieren Sie alle vorgenommenen Änderungen und schließen Sie das Menü.\n"
+"(**3**){space_variable_do_not_translate} - Löschen Sie diese Wiedergabeliste.\n"
+"(**4**){space_variable_do_not_translate} - Entfernen Sie alle Titel aus dieser Wiedergabeliste.\n"
+"(**5**){space_variable_do_not_translate} - Aktualisieren Sie die Wiedergabeliste mit den neuesten Titeln.\n"
+"Bitte beachten Sie, dass diese Aktion alle Titel ignoriert, die über dieses Menü hinzugefügt/entfernt wurden.\n"
+"(**6**){space_variable_do_not_translate} - Ändern Sie den Namen der Wiedergabeliste.\n"
+"(**7**){space_variable_do_not_translate} - Verknüpfen Sie diese Wiedergabeliste mit einer vorhandenen Wiedergabeliste/einem bestehenden Album.\n"
+"(**8**){space_variable_do_not_translate} - Fügen Sie dieser Wiedergabeliste eine Abfrage hinzu.\n"
+"(**9**){space_variable_do_not_translate} - Entfernen Sie eine Abfrage aus dieser Wiedergabeliste.\n"
+"(**10**) - Laden Sie die Wiedergabelistendatei herunter.\n"
+"(**11**) - Aktuelle Wiedergabeliste zur Warteschlange hinzufügen.\n"
+"(**12**) - Titel in der aktuellen Wiedergabeliste anzeigen.\n"
+"(**13**) - Fügen Sie dieser Wiedergabeliste Titel aus der Warteschlange hinzu.\n"
+"(**14**) - Entfernen Sie doppelte Einträge in der Wiedergabeliste.\n\n"
+"Die Schaltflächen zum Hinzufügen/Entfernen von Titeln können mehrmals verwendet werden, um mehrere Titel und Wiedergabelisten gleichzeitig hinzuzufügen / zu entfernen.\n\n"
+"Eine Abfrage ist alles, was mit dem Play-Befehl abgespielt werden kann - jede Abfrage kann von den Schaltflächen zum Hinzufügen / Entfernen verwendet werden\n\n"
+"Die Schaltfläche \"Löschen\" wird immer zuerst vor allen anderen Operationen ausgeführt.\n"
+"Die URL-Schaltfläche wird immer zuletzt ausgeführt - Wenn Sie eine Wiedergabeliste über die URL verknüpfen, werden alle Titel überschrieben, die zu dieser Wiedergabeliste hinzugefügt oder entfernt wurden.\n\n"
+"Wenn Sie mit einer Schaltfläche mehrmals außer den Schaltflächen zum Hinzufügen/Entfernen interagieren, wird nur die letzte Interaktion wirksam.\n\n\n"
 
-#: plplaylists/cog.py:319
+#: plplaylists/cog.py:324
 msgid "(**1**) - Close the menu.\n"
 "(**2**) - Update the playlist with the latest tracks.\n"
 "(**3**) - Download the playlist file.\n"
@@ -147,121 +147,133 @@ msgstr "(**1**) - Menü schließen.\n"
 "(**4**) - Aktuelle Wiedergabeliste zur Warteschlange hinzufügen.\n"
 "(**5**) - Titel in der aktuellen Wiedergabeliste anzeigen.\n\n\n"
 
-#: plplaylists/cog.py:327
+#: plplaylists/cog.py:332
 msgid "__**Currently managing**__:\n"
-"**Name**:{space}{space}{space}{playlist_name}\n"
-"**Scope**:{space}{space}{space}{scope}\n"
-"**Author**:{space}{space}{author}\n"
-"**Tracks**:{space}{space}{space}{tracks} tracks\n"
-"**URL**:{space}{space}{space}{space}{space}{url}\n"
+"**Name**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{playlist_name_variable_do_not_translate}\n"
+"**Scope**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{scope_variable_do_not_translate}\n"
+"**Author**:{space_variable_do_not_translate}{space_variable_do_not_translate}{author_variable_do_not_translate}\n"
+"**Tracks**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{tracks_variable_do_not_translate} tracks\n"
+"**URL**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{url_variable_do_not_translate}\n"
 msgstr "__**Derzeit verwalten**__:\n"
-"**Name**:{space}{space}{space}{playlist_name}\n"
-"**Umfang**:{space}{space}{space}{scope}\n"
-"**Verfasser**:{space}{space}{author}\n"
-"**Fährten**:{space}{space}{space}{tracks} Fährten\n"
-"**URL**:{space}{space}{space}{space}{space}{url}\n"
+"**Name**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{playlist_name_variable_do_not_translate}\n"
+"**Umfang**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{scope_variable_do_not_translate}\n"
+"**Verfasser**:{space_variable_do_not_translate}{space_variable_do_not_translate}{author_variable_do_not_translate}\n"
+"**Fährten**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{tracks_variable_do_not_translate} Fährten\n"
+"**URL**:{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{space_variable_do_not_translate}{url_variable_do_not_translate}\n"
 
-#: plplaylists/cog.py:345
-msgid "Let's manage: {playlist_name}"
-msgstr "Lass uns verwalten: {playlist_name}"
-
-#: plplaylists/cog.py:347
-msgid "Let's take a look at: {playlist_name}"
-msgstr "Werfen wir einen Blick auf: {playlist_name}"
+#: plplaylists/cog.py:350
+msgid "Let us manage: {playlist_name_variable_do_not_translate}."
+msgstr "Lassen Sie uns verwalten: {playlist_name_variable_do_not_translate}."
 
 #: plplaylists/cog.py:354
+msgid "Let us take a look at: {playlist_name_variable_do_not_translate}."
+msgstr "Werfen wir einen Blick auf: {playlist_name_variable_do_not_translate}."
+
+#: plplaylists/cog.py:365
 msgid "N/A"
 msgstr "N/A"
 
-#: plplaylists/cog.py:386 plplaylists/cog.py:555
-msgid "Playlist deleted"
-msgstr "Playlist gelöscht"
+#: plplaylists/cog.py:389
+msgid "I have deleted a playlist."
+msgstr "Ich habe eine Wiedergabeliste gelöscht."
 
-#: plplaylists/cog.py:388 plplaylists/cog.py:557
-msgid "{user}, playlist {playlist_name} has been deleted"
-msgstr "{user}, Playlist {playlist_name} wurde gelöscht"
+#: plplaylists/cog.py:391 plplaylists/cog.py:584
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has been deleted."
+msgstr "{user_variable_do_not_translate}Wiedergabeliste {playlist_name_variable_do_not_translate} wurde gelöscht."
 
-#: plplaylists/cog.py:438
-msgid "Playlist **{playlist_name}** could not be updated with URL: <{url}>"
-msgstr "Playlist **{playlist_name}** konnte nicht mit URL aktualisiert werden: <{url}>"
+#: plplaylists/cog.py:444
+msgid "Playlist {playlist_name_variable_do_not_translate} could not be updated with URL: {url_variable_do_not_translate}"
+msgstr "Wiedergabeliste {playlist_name_variable_do_not_translate} konnte nicht mit URL aktualisiert werden: {url_variable_do_not_translate}"
 
-#: plplaylists/cog.py:473
+#: plplaylists/cog.py:486
 msgid "\n"
-"{track_count} {track_plural} removed from the playlist"
+"1 track was removed from the playlist."
 msgstr "\n"
-"{track_count} {track_plural} von der Playlist entfernt"
+"1 Titel wurde aus der Wiedergabeliste entfernt."
 
-#: plplaylists/cog.py:474 plplaylists/cog.py:478 plplaylists/cog.py:644
-msgid "track"
-msgstr "spur"
-
-#: plplaylists/cog.py:474 plplaylists/cog.py:478 plplaylists/cog.py:644
-msgid "tracks"
-msgstr "spuren"
-
-#: plplaylists/cog.py:477 plplaylists/cog.py:643
+#: plplaylists/cog.py:488
 msgid "\n"
-"{track_count} {track_plural} added to the playlist"
+"{track_count_variable_do_not_translate} tracks were removed from the playlist."
 msgstr "\n"
-"{track_count} {track_plural} zur Playlist hinzugefügt"
+"{track_count_variable_do_not_translate} Titel wurden aus der Wiedergabeliste entfernt."
 
-#: plplaylists/cog.py:483 plplaylists/cog.py:650
+#: plplaylists/cog.py:494 plplaylists/cog.py:678
+msgid "\n"
+"1 track was added to the playlist."
+msgstr "\n"
+"1 Titel wurde zur Playlist hinzugefügt."
+
+#: plplaylists/cog.py:496 plplaylists/cog.py:680
+msgid "\n"
+"{track_count_variable_do_not_translate} tracks were added to the playlist."
+msgstr "\n"
+"{track_count_variable_do_not_translate} Titel wurden der Playlist hinzugefügt."
+
+#: plplaylists/cog.py:502 plplaylists/cog.py:689
 msgid "Playlist updated"
 msgstr "Playlist aktualisiert"
 
-#: plplaylists/cog.py:484 plplaylists/cog.py:651
-msgid "{user}, playlist {playlist_name} has been updated.{extras}"
-msgstr "{user}, Playlist {playlist_name} wurde aktualisiert.{extras}"
+#: plplaylists/cog.py:503 plplaylists/cog.py:690
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has been updated.{extras_variable_do_not_translate}."
+msgstr "{user_variable_do_not_translate}Wiedergabeliste {playlist_name_variable_do_not_translate} wurde aktualisiert.{extras_variable_do_not_translate}."
 
-#: plplaylists/cog.py:496 plplaylists/cog.py:664
+#: plplaylists/cog.py:517 plplaylists/cog.py:705
 msgid "Playlist unchanged"
 msgstr "Wiedergabeliste unverändert"
 
-#: plplaylists/cog.py:497 plplaylists/cog.py:665
-msgid "{user}, playlist {playlist_name} has not been updated"
-msgstr "{user}, Playlist {playlist_name} wurde nicht aktualisiert"
+#: plplaylists/cog.py:518
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has not been updated."
+msgstr "{user_variable_do_not_translate}Wiedergabeliste {playlist_name_variable_do_not_translate} wurde nicht aktualisiert."
 
-#: plplaylists/cog.py:693
-msgid "You must either provide a URL or attach a playlist file to upload a playlist"
-msgstr "Du musst entweder eine URL angeben oder eine Playlist-Datei anhängen, um eine Playlist hochzuladen"
+#: plplaylists/cog.py:582
+msgid "Playlist deleted"
+msgstr "Playlist gelöscht"
 
-#: plplaylists/cog.py:705
+#: plplaylists/cog.py:706
+msgid "{user_variable_do_not_translate}, playlist {playlist_name_variable_do_not_translate} has not been updated"
+msgstr "{user_variable_do_not_translate}Wiedergabeliste {playlist_name_variable_do_not_translate} wurde nicht aktualisiert"
+
+#: plplaylists/cog.py:737
+msgid "You must either provide a URL or attach a playlist file to upload a playlist."
+msgstr "Sie müssen entweder eine URL angeben oder eine Wiedergabelistendatei anhängen, um eine Wiedergabeliste hochzuladen."
+
+#: plplaylists/cog.py:749
 msgid "No valid playlist file provided"
 msgstr "Keine gültige Playlist-Datei angegeben"
 
-#: plplaylists/cog.py:714
-msgid "Multiple playlist files provided - Currently only 1 per message is allowed"
-msgstr "Mehrere Playlist-Dateien zur Verfügung gestellt - Derzeit ist nur 1 pro Nachricht erlaubt"
+#: plplaylists/cog.py:758
+msgid "Multiple playlist files are provided. Currently, only 1 per message is allowed."
+msgstr "Es werden mehrere Wiedergabelistendateien bereitgestellt. Derzeit ist nur 1 pro Nachricht zulässig."
 
-#: plplaylists/cog.py:731
-msgid "Failed to save any of the requested playlists"
-msgstr "Fehler beim Speichern der angeforderten Wiedergabelisten"
+#: plplaylists/cog.py:775
+msgid "Failed to save any of the requested playlists."
+msgstr "Die angeforderten Wiedergabelisten konnten nicht gespeichert werden."
 
-#: plplaylists/cog.py:740
+#: plplaylists/cog.py:784
 msgid "Failed to save the following playlists:\n"
-"{invalid_playlists}"
-msgstr "Speichern der folgenden Wiedergabelisten fehlgeschlagen:\n"
-"{invalid_playlists}"
+"{invalid_playlists_variable_do_not_translate}."
+msgstr "Die folgenden Wiedergabelisten konnten nicht gespeichert werden:\n"
+"{invalid_playlists_variable_do_not_translate}."
 
-#: plplaylists/cog.py:749
+#: plplaylists/cog.py:793
 msgid "Successfully saved the following playlists:\n"
-"{saved_playlists}"
+"{saved_playlists_variable_do_not_translate}."
 msgstr "Die folgenden Wiedergabelisten wurden erfolgreich gespeichert:\n"
-"{saved_playlists}"
+"{saved_playlists_variable_do_not_translate}."
 
-#: plplaylists/cog.py:774
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Sie müssen sich in einem Sprachkanal befinden, damit ich eine Verbindung herstellen kann"
+#: plplaylists/cog.py:818
+msgid "You must be in a voice channel to allow me to connect."
+msgstr "Sie müssen sich in einem Sprachkanal befinden, damit ich eine Verbindung herstellen kann."
 
-#: plplaylists/cog.py:782
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Ich habe keine Berechtigung, mich zu verbinden oder zu sprechen {channel}"
+#: plplaylists/cog.py:826
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "Ich habe keine Berechtigung, mich zu verbinden oder zu sprechen {channel_variable_do_not_translate}."
 
-#: plplaylists/cog.py:812
+#: plplaylists/cog.py:856
 msgid "Playlist"
 msgstr "Wiedergabeliste"
 
-#: plplaylists/cog.py:817
-msgid "{track_count} tracks enqueued.{playlist_name}"
-msgstr "{track_count} Tracks in der Warteschlange.{playlist_name}"
+#: plplaylists/cog.py:861
+msgid "{track_count_variable_do_not_translate} tracks enqueued.{playlist_name_variable_do_not_translate}."
+msgstr "{track_count_variable_do_not_translate} Tracks in der Warteschlange.{playlist_name_variable_do_not_translate}."
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgstr "Dalszöveg parancsok a PyLav számára"
 
 #: pllyrics/cog.py:49
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "A fogaskerekű verziójának és PyLav-függőségeinek megjelenítése"
+msgid "Show the version of the Cog and PyLav"
+msgstr "A Cog és a PyLav verziójának megjelenítése"
 
 #: pllyrics/cog.py:65
-msgid "Library/Cog"
-msgstr "Könyvtár/fogaskerék"
+msgid "Library / Cog"
+msgstr "Könyvtár / Fogaskerekű"
 
 #: pllyrics/cog.py:66
 msgid "Version"
@@ -45,88 +45,108 @@ msgstr "A dalszöveg beállításainak megadása"
 msgid "Toggle timed lyrics"
 msgstr "Időzített dalszövegek váltása"
 
-#: pllyrics/cog.py:93
-msgid "Timed lyrics are now {state}"
-msgstr "Az időzített dalszövegek most már {state}"
+#: pllyrics/cog.py:90
+msgid "I have now turned off timed lyrics in this server."
+msgstr "Most kikapcsoltam az időzített dalszövegeket ezen a szerveren."
 
-#: pllyrics/cog.py:94 pllyrics/cog.py:117
-msgid "disabled"
-msgstr "fogyatékos"
+#: pllyrics/cog.py:92
+msgid "I have now turned on timed lyrics in this server. I will send the lyrics as the track progresses if I can find lyrics for the playing track."
+msgstr "Most bekapcsoltam az időzített dalszövegeket ezen a szerveren. A dalszöveget a szám előrehaladtával küldöm el, ha találok dalszöveget a lejátszott számhoz."
 
-#: pllyrics/cog.py:96 pllyrics/cog.py:119
-msgid "enabled"
-msgstr "Engedélyezve"
-
-#: pllyrics/cog.py:108
+#: pllyrics/cog.py:106
 #, docstring
 msgid "Show full lyrics on track start timed lyrics"
 msgstr "Teljes dalszöveg megjelenítése a pálya kezdési időzített dalszövegein"
 
-#: pllyrics/cog.py:116
-msgid "Sending full lyrics on track start {state}"
-msgstr "Teljes dalszöveg küldése a pálya elején {state}"
+#: pllyrics/cog.py:112
+msgid "I have now turned off full lyrics in this server."
+msgstr "Most kikapcsoltam a teljes dalszöveget ezen a szerveren."
 
-#: pllyrics/cog.py:133
+#: pllyrics/cog.py:114
+msgid "I have now turned on full lyrics on this server. I will send a message with the full lyrics at the start of a song if I can find lyrics for the playing track."
+msgstr "Most bekapcsoltam a teljes dalszöveget ezen a szerveren. A dal elején küldök egy üzenetet a teljes szöveggel, ha találok szöveget a lejátszott számhoz."
+
+#: pllyrics/cog.py:130
 #, docstring
 msgid "Set the lyrics channel"
 msgstr "A dalszövegcsatorna beállítása"
 
-#: pllyrics/cog.py:138
-msgid "Lyrics channel set to {channel}"
-msgstr "A dalszövegcsatorna beállítása {channel}"
+#: pllyrics/cog.py:135
+msgid "I have set the channel I will use to send lyrics to {channel_variable_do_not_translate}."
+msgstr "Beállítottam azt a csatornát, amelyre dalszövegeket fogok küldeni {channel_variable_do_not_translate}."
 
-#: pllyrics/cog.py:147
-msgid "I will not send lyrics to any channel"
-msgstr "Nem küldök dalszöveget egyetlen csatornára sem"
+#: pllyrics/cog.py:146
+msgid "From now on, I will not send lyrics to any channel."
+msgstr "Mostantól nem küldök dalszövegeket egyetlen csatornára sem."
 
-#: pllyrics/cog.py:156
+#: pllyrics/cog.py:155
 #, docstring
 msgid "Show lyrics for current track if available"
 msgstr "Az aktuális szám dalszövegeinek megjelenítése, ha rendelkezésre állnak"
 
-#: pllyrics/cog.py:165
-msgid "Nothing is currently playing"
-msgstr "Jelenleg semmi sem játszik le"
+#: pllyrics/cog.py:164
+msgid "I am not currently playing anything on this server."
+msgstr "Jelenleg nem játszom semmit ezen a szerveren."
 
-#: pllyrics/cog.py:204
-msgid "Error: {error}"
-msgstr "Hiba: {error}"
+#: pllyrics/cog.py:203
+msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
+msgstr "Hibába ütköztem, miközben a dal szövegét kerestem: {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:214
-msgid "API Error: {error}"
-msgstr "API-hiba: {error}"
+#: pllyrics/cog.py:215
+msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
+msgstr "A Flowery API, amelyet a dalszövegek keresésére használok, hibát adott vissza, miközben a dal szövegét kereste {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:224
+#: pllyrics/cog.py:227
 msgid "No lyrics found"
 msgstr "Nem található dalszöveg"
 
-#: pllyrics/cog.py:241
-msgid "{extras}Lyrics for {title}{author} - Part {page}"
-msgstr "{extras}Dalszövegek {title}{author} -Rész {page}"
+#: pllyrics/cog.py:242
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "Megtaláltam a dalszöveget {title_variable_do_not_translate} mellett {author_variable_do_not_translate} -Rész {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:244 pllyrics/cog.py:259 pllyrics/cog.py:312
-msgid "(Guess) "
-msgstr "(Találd ki) "
+#: pllyrics/cog.py:246
+msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "Megtaláltam a dalszöveget {title_variable_do_not_translate} -Rész {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:245 pllyrics/cog.py:260 pllyrics/cog.py:313
-msgid " by {name}"
-msgstr " mellett {name}"
+#: pllyrics/cog.py:252
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(Találd ki) Megtaláltam a dalszöveget {title_variable_do_not_translate} mellett {author_variable_do_not_translate} -Rész {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:250 pllyrics/cog.py:265 pllyrics/cog.py:322
-msgid "Lyrics provided by {provider}"
-msgstr "A dalszövegeket a következő készítette: {provider}"
+#: pllyrics/cog.py:256
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(Találd ki) Megtaláltam a dalszöveget {title_variable_do_not_translate} -Rész {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:257 pllyrics/cog.py:310
-msgid "{extras}Lyrics for {title}{author}"
-msgstr "{extras}Dalszövegek {title}{author}"
+#: pllyrics/cog.py:262
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "Megtaláltam a dalszöveget {title_variable_do_not_translate} mellett {author_variable_do_not_translate}."
 
-#: pllyrics/cog.py:316
-msgid "{lyrics}\n\n"
-"Position: {duration} until {until}"
-msgstr "{lyrics}\n\n"
-"Pozíció: {duration} amíg {until}"
+#: pllyrics/cog.py:266
+msgid "I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "Megtaláltam a dalszöveget {title_variable_do_not_translate}."
 
-#: pllyrics/cog.py:318
+#: pllyrics/cog.py:268
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "(Találd ki) Megtaláltam a dalszöveget {title_variable_do_not_translate} mellett {author_variable_do_not_translate}."
+
+#: pllyrics/cog.py:272
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "(Találd ki) Megtaláltam a dalszöveget {title_variable_do_not_translate}."
+
+#: pllyrics/cog.py:289 pllyrics/cog.py:369
+msgid "Lyrics provided by {provider_variable_do_not_translate}."
+msgstr "A dalszövegeket a következő készítette: {provider_variable_do_not_translate}."
+
+#: pllyrics/cog.py:306
+msgid "Lyrics provided by {provider_variable_do_not_translate}"
+msgstr "A dalszövegeket a következő készítette: {provider_variable_do_not_translate}"
+
+#: pllyrics/cog.py:359
+msgid "{lyrics_variable_do_not_translate}\n\n"
+"Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
+msgstr "{lyrics_variable_do_not_translate}\n\n"
+"Pozíció: {duration_variable_do_not_translate} amíg {until_variable_do_not_translate}"
+
+#: pllyrics/cog.py:365
 msgid "Start"
 msgstr "Elkezd"
 

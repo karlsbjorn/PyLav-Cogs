@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-02 15:38\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgstr "PyLav के लिए उपयोगिता आदेश"
 
 #: plutils/cog.py:72
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog का संस्करण और इसकी PyLav निर्भरता दिखाएँ"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Cog और PyLav का संस्करण दिखाएँ"
 
 #: plutils/cog.py:88
-msgid "Library/Cog"
-msgstr "पुस्तकालय/कॉग"
+msgid "Library / Cog"
+msgstr "पुस्तकालय /"
 
 #: plutils/cog.py:89
 msgid "Version"
@@ -54,90 +54,90 @@ msgstr "विशिष्ट चीजों के बारे में ज�
 msgid "Get the base64 of the current track"
 msgstr "वर्तमान ट्रैक का आधार 64 प्राप्त करें"
 
-#: plutils/cog.py:145 plutils/cog.py:177 plutils/cog.py:209 plutils/cog.py:240
-#: plutils/cog.py:273
-msgid "Not connected to a voice channel"
-msgstr "किसी ध्वनि चैनल से कनेक्ट नहीं"
+#: plutils/cog.py:145 plutils/cog.py:179 plutils/cog.py:213 plutils/cog.py:246
+#: plutils/cog.py:281
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "आपको एक वॉयस चैनल में होना चाहिए, इसलिए मैं इससे जुड़ सकता हूं।"
 
-#: plutils/cog.py:153 plutils/cog.py:185 plutils/cog.py:217 plutils/cog.py:248
-msgid "Nothing playing"
-msgstr "कुछ भी नहीं खेल रहा है"
+#: plutils/cog.py:154 plutils/cog.py:188 plutils/cog.py:222 plutils/cog.py:255
+msgid "I am not currently playing anything on this server."
+msgstr "मैं वर्तमान में इस सर्वर पर कुछ भी नहीं खेल रहा हूं।"
 
-#: plutils/cog.py:168
+#: plutils/cog.py:170
 #, docstring
 msgid "Get the author of the current track"
 msgstr "वर्तमान ट्रैक के लेखक प्राप्त करें"
 
-#: plutils/cog.py:200
+#: plutils/cog.py:204
 #, docstring
 msgid "Get the title of the current track"
 msgstr "वर्तमान ट्रैक का शीर्षक प्राप्त करें"
 
-#: plutils/cog.py:232
+#: plutils/cog.py:238
 #, docstring
 msgid "Get the source of the current track"
 msgstr "वर्तमान ट्रैक का स्रोत प्राप्त करें"
 
-#: plutils/cog.py:264
+#: plutils/cog.py:272
 #, docstring
 msgid "Get the API of the current track"
 msgstr "वर्तमान ट्रैक का API प्राप्त करें"
 
-#: plutils/cog.py:284 plutils/cog.py:293
-msgid "Unable to get player info"
-msgstr "खिलाड़ी जानकारी प्राप्त करने में असमर्थ"
+#: plutils/cog.py:292 plutils/cog.py:301
+msgid "Unable to get player info."
+msgstr "खिलाड़ी की जानकारी प्राप्त करने में असमर्थ."
 
-#: plutils/cog.py:309
+#: plutils/cog.py:317
 #, docstring
-msgid "Decode a track's base64 string into a JSON object"
-msgstr "ट्रैक के बेस64 स्ट्रिंग को JSON ऑब्जेक्ट में डिकोड करें"
+msgid "Decode the track base64 string into a JSON object"
+msgstr "ट्रैक बेस 64 स्ट्रिंग को JSON ऑब्जेक्ट में डिकोड करें"
 
-#: plutils/cog.py:318
-msgid "Invalid base64 string"
-msgstr "अमान्य आधार 64 स्ट्रिंग"
+#: plutils/cog.py:326
+msgid "Invalid base64 string."
+msgstr "अमान्य आधार 64 स्ट्रिंग."
 
-#: plutils/cog.py:334
+#: plutils/cog.py:342
 #, docstring
 msgid "Manage the query cache"
 msgstr "क्वेरी कैश प्रबंधित करें"
 
-#: plutils/cog.py:338
+#: plutils/cog.py:346
 #, docstring
 msgid "Clear the query cache"
 msgstr "क्वेरी कैश साफ़ करें"
 
-#: plutils/cog.py:345 plutils/cog.py:374 plutils/cog.py:387
-msgid "Query cache cleared"
-msgstr "क्वेरी कैश साफ़ हो गया"
+#: plutils/cog.py:353 plutils/cog.py:382 plutils/cog.py:395
+msgid "Query cache cleared."
+msgstr "क्वेरी कैश साफ़ हो गया."
 
-#: plutils/cog.py:351
+#: plutils/cog.py:359
 #, docstring
 msgid "Clear the query cache older than a number of days"
 msgstr "कई दिनों से अधिक पुरानी क्वेरी कैश साफ़ करें"
 
-#: plutils/cog.py:359
-msgid "Days must be less than 31"
-msgstr "दिन 31 से कम होना चाहिए"
-
 #: plutils/cog.py:367
-msgid "Days must be greater than 1"
-msgstr "दिन 1 से अधिक होना चाहिए"
+msgid "Days must be less than 31."
+msgstr "दिन 31 से कम होना चाहिए।"
 
-#: plutils/cog.py:380
+#: plutils/cog.py:375
+msgid "Days must be greater than 1."
+msgstr "दिन 1 से अधिक होना चाहिए।"
+
+#: plutils/cog.py:388
 #, docstring
 msgid "Clear the query cache for a query"
 msgstr "क्वेरी के लिए क्वेरी कैश साफ़ करें"
 
-#: plutils/cog.py:393
+#: plutils/cog.py:401
 #, docstring
 msgid "Get the size of the query cache"
 msgstr "क्वेरी कैश का आकार प्राप्त करें"
 
-#: plutils/cog.py:400
-msgid "Query cache size: `{size}`"
-msgstr "क्वेरी कैश आकार: '{size}`"
+#: plutils/cog.py:408
+msgid "Query cache size: `{size_variable_do_not_translate}`."
+msgstr "क्वेरी कैश आकार: '{size_variable_do_not_translate}`."
 
-#: plutils/cog.py:411
+#: plutils/cog.py:419
 #, docstring
 msgid "Start memory tracing\n\n"
 "        `[p]plutils trace 0` turns off tracing\n"
@@ -150,19 +150,19 @@ msgstr "स्मृति अनुरेखण प्रारंभ करे
 "        `[p]'प्लुटिल ट्रेस' ट्रेसिंग की वर्तमान स्थिति को दर्शाता है\n"
 "        "
 
-#: plutils/cog.py:425
-msgid "Stopped memory tracing"
-msgstr "मेमोरी ट्रेसिंग रोक दी गई"
+#: plutils/cog.py:433
+msgid "I have stopped memory tracing"
+msgstr "मैंने मेमोरी ट्रेसिंग बंद कर दी है"
 
-#: plutils/cog.py:434
-msgid "Started memory tracing"
-msgstr "स्मृति अनुरेखण प्रारंभ किया"
+#: plutils/cog.py:442
+msgid "I have started memory tracing."
+msgstr "मैंने मेमोरी ट्रेसिंग शुरू कर दी है।"
 
-#: plutils/cog.py:443
-msgid "You need to start tracing first"
-msgstr "आपको पहले ट्रेसिंग शुरू करने की आवश्यकता है"
+#: plutils/cog.py:451
+msgid "You need to start tracing first."
+msgstr "आपको पहले ट्रेसिंग शुरू करने की आवश्यकता है।"
 
-#: plutils/cog.py:455
+#: plutils/cog.py:463
 #, docstring
 msgid "Set the logger level\n\n"
 "        Levels are the following:\n"
@@ -185,7 +185,7 @@ msgstr "लॉगर स्तर सेट करें\n\n"
 "        6: ट्रेस\n"
 "        "
 
-#: plutils/cog.py:486
-msgid "Logger level set to `{level}`"
-msgstr "लॉगर स्तर पर सेट करें '{level}`"
+#: plutils/cog.py:494
+msgid "Logger level set to `{level_variable_do_not_translate}`."
+msgstr "लॉगर स्तर पर सेट करें '{level_variable_do_not_translate}`."
 

@@ -65,7 +65,4 @@ class PyLavPlayer(
         requester: Literal["discord_deleted_user", "owner", "user", "user_strict"],
         user_id: int,
     ) -> None:
-        """
-        Method for finding users data inside the cog and deleting it.
-        """
         await self._config.user_from_id(user_id).clear()

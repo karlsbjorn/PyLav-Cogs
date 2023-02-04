@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-02 15:38\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
@@ -17,118 +17,118 @@ msgstr ""
 "X-Crowdin-File-ID: 3321\n"
 "Language: hi_IN\n"
 
-#: plnodes/cog.py:33
+#: plnodes/cog.py:32
 #, docstring
 msgid "Manage the nodes used by PyLav"
 msgstr "PyLav द्वारा उपयोग किए जाने वाले नोड्स प्रबंधित करें"
 
-#: plnodes/cog.py:44
+#: plnodes/cog.py:43
 #, docstring
 msgid "Configure PyLav Nodes"
 msgstr "PyLav नोड्स कॉन्फ़िगर करें"
 
-#: plnodes/cog.py:48
+#: plnodes/cog.py:47
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog का संस्करण और इसकी PyLav निर्भरता दिखाएँ"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Cog और PyLav का संस्करण दिखाएँ"
+
+#: plnodes/cog.py:63
+msgid "Library / Cog"
+msgstr "पुस्तकालय /"
 
 #: plnodes/cog.py:64
-msgid "Library/Cog"
-msgstr "पुस्तकालय/कॉग"
-
-#: plnodes/cog.py:65
 msgid "Version"
 msgstr "संस्करण"
 
-#: plnodes/cog.py:78
+#: plnodes/cog.py:77
 #, docstring
 msgid "Add a node to PyLav"
 msgstr "PyLav में नोड जोड़ें"
 
-#: plnodes/cog.py:88
-msgid "Let's add a node to PyLav!"
-msgstr "चलो PyLav में एक नोड जोड़ें!"
+#: plnodes/cog.py:87
+msgid "Let us add a node to PyLav!"
+msgstr "आइए हम PyLav में एक नोड जोड़ें!"
 
-#: plnodes/cog.py:89
-msgid "(**1**){space} - Apply changes and add the node to PyLav.\n"
-"(**2**){space} - Cancel any changes made and close the menu.\n"
-"(**3**){space} - Toggle between search-only and search and playback modes.\n"
-"(**4**){space} - Toggle between SSL on and off.\n"
-"(**5**){space} - Add a name to the node.\n"
-"(**6**){space} - Add the host address of the node.\n"
-"(**7**){space} - Add the port the node uses.\n"
-"(**8**){space} - Set the password for the node.\n"
-"(**9**){space} - Set the connection timeout.\n"
+#: plnodes/cog.py:88
+msgid "(**1**){space_variable_do_not_translate} - Apply changes and add the node to PyLav.\n"
+"(**2**){space_variable_do_not_translate} - Cancel any changes made and close the menu.\n"
+"(**3**){space_variable_do_not_translate} - Toggle between search-only and search and playback modes.\n"
+"(**4**){space_variable_do_not_translate} - Toggle between SSL on and off.\n"
+"(**5**){space_variable_do_not_translate} - Add a name to the node.\n"
+"(**6**){space_variable_do_not_translate} - Add the host address of the node.\n"
+"(**7**){space_variable_do_not_translate} - Add the port the node uses.\n"
+"(**8**){space_variable_do_not_translate} - Set the password for the node.\n"
+"(**9**){space_variable_do_not_translate} - Set the connection timeout.\n"
 "(**10**) - Select which sources to disable for this node (Multiple can be selected).\n"
 "If you interact with a button multiple times, only the last interaction will take effect.\n\n\n"
-msgstr "(**1**){space} - परिवर्तन लागू करें और नोड को PyLav में जोड़ें।\n"
-"(**2**){space} - किए गए किसी भी बदलाव को रद्द करें और मेनू बंद करें।\n"
-"(**3**){space} - खोज-केवल और खोज और प्लेबैक मोड के बीच टॉगल।\n"
-"(**4**){space} - एसएसएल ऑन और ऑफ के बीच टॉगल।\n"
-"(**5**){space} - नोड में एक नाम जोड़ें।\n"
-"(**6**){space} - नोड का होस्ट पता जोड़ें।\n"
-"(**7**){space} - नोड का उपयोग करने वाले पोर्ट को जोड़ें।\n"
-"(**8**){space} - नोड के लिए पासवर्ड सेट करें।\n"
-"(**9**){space} - कनेक्शन टाइमआउट सेट करें।\n"
+msgstr "(**1**){space_variable_do_not_translate} - परिवर्तन लागू करें और नोड को PyLav में जोड़ें।\n"
+"(**2**){space_variable_do_not_translate} - किए गए किसी भी बदलाव को रद्द करें और मेनू बंद करें।\n"
+"(**3**){space_variable_do_not_translate} - खोज-केवल और खोज और प्लेबैक मोड के बीच टॉगल।\n"
+"(**4**){space_variable_do_not_translate} - एसएसएल ऑन और ऑफ के बीच टॉगल।\n"
+"(**5**){space_variable_do_not_translate} - नोड में एक नाम जोड़ें।\n"
+"(**6**){space_variable_do_not_translate} - नोड का होस्ट पता जोड़ें।\n"
+"(**7**){space_variable_do_not_translate} - नोड का उपयोग करने वाले पोर्ट को जोड़ें।\n"
+"(**8**){space_variable_do_not_translate} - नोड के लिए पासवर्ड सेट करें।\n"
+"(**9**){space_variable_do_not_translate} - कनेक्शन टाइमआउट सेट करें।\n"
 "(**10**) - चयन करें कि इस नोड के लिए किन स्रोतों को अक्षम करना है (एकाधिक का चयन किया जा सकता है)।\n"
 "यदि आप एक बटन के साथ कई बार इंटरैक्ट करते हैं, तो केवल अंतिम इंटरैक्शन प्रभावी होगा।\n\n\n"
 
-#: plnodes/cog.py:137
-msgid "Added node {name} with the following settings:\n"
-"Host: {host}\n"
-"Port: {port}\n"
-"Password: {password}\n"
-"Resume Timeout: {resume_timeout}\n"
-"Search Only: {search_only}\n"
-"SSL: {ssl}\n"
-"Disabled Sources: {disabled_sources}\n"
-msgstr "जोड़ा गया नोड {name} निम्न सेटिंग्स के साथ:\n"
-"मेज़बान: {host}\n"
-"बंदरगाह: {port}\n"
-"पासवर्ड: {password}\n"
-"टाइमआउट को फिर से शुरू करें: {resume_timeout}\n"
-"केवल खोजें: {search_only}\n"
-"SSL: {ssl}\n"
-"अक्षम स्रोत: {disabled_sources}\n"
+#: plnodes/cog.py:134
+msgid "I have added the {name_variable_do_not_translate} node with the following settings:\n"
+"Host: {host_variable_do_not_translate}\n"
+"Port: {port_variable_do_not_translate}\n"
+"Password: {password_variable_do_not_translate}\n"
+"Resume Timeout: {resume_timeout_variable_do_not_translate}\n"
+"Search Only: {search_only_variable_do_not_translate}\n"
+"SSL: {ssl_variable_do_not_translate}\n"
+"Disabled Sources: {disabled_sources_variable_do_not_translate}\n"
+msgstr "मैंने जोड़ा है {name_variable_do_not_translate} नोड निम्न सेटिंग्स के साथ:\n"
+"मेज़बान: {host_variable_do_not_translate}\n"
+"बंदरगाह: {port_variable_do_not_translate}\n"
+"पासवर्ड: {password_variable_do_not_translate}\n"
+"टाइमआउट को फिर से शुरू करें: {resume_timeout_variable_do_not_translate}\n"
+"केवल खोजें: {search_only_variable_do_not_translate}\n"
+"SSL: {ssl_variable_do_not_translate}\n"
+"अक्षम स्रोत: {disabled_sources_variable_do_not_translate}\n"
 
-#: plnodes/cog.py:168 plnodes/cog.py:175
-msgid "Unable to add this node"
-msgstr "यह नोड जोड़ने में असमर्थ"
+#: plnodes/cog.py:165 plnodes/cog.py:172
+msgid "I am unable to add this node"
+msgstr "मैं इस नोड को जोड़ने में असमर्थ हूँ"
 
-#: plnodes/cog.py:181
+#: plnodes/cog.py:178
 #, docstring
 msgid "Remove a node from a PyLav instance"
 msgstr "PyLav इंस्टेंस से नोड निकालें"
 
-#: plnodes/cog.py:193
-msgid "{name} is managed by PyLav and cannot be removed"
-msgstr "{name} PyLav द्वारा प्रबंधित किया जाता है और हटाया नहीं जा सकता"
+#: plnodes/cog.py:190
+msgid "{name_variable_do_not_translate} is managed by PyLav and cannot be removed."
+msgstr "{name_variable_do_not_translate} PyLav द्वारा प्रबंधित किया जाता है और हटाया नहीं जा सकता है।"
 
-#: plnodes/cog.py:208
-msgid "Removed node {name}.\n\n"
-"{data}"
-msgstr "हटाया गया नोड {name}.\n\n"
-"{data}"
+#: plnodes/cog.py:207
+msgid "I have removed the {name_variable_do_not_translate} node.\n\n"
+"{data_variable_do_not_translate}"
+msgstr "मैंने हटा दिया है {name_variable_do_not_translate} गांठ।\n\n"
+"{data_variable_do_not_translate}"
 
-#: plnodes/cog.py:216
-msgid "Removed node {name}, a DM was sent to you with the node details in case you wish to re-add it"
-msgstr "हटाया गया नोड {name}यदि आप इसे फिर से जोड़ना चाहते हैं तो नोड विवरण के साथ एक डीएम आपको भेजा गया था"
+#: plnodes/cog.py:220
+msgid "I have removed the {name_variable_do_not_translate} node. A direct message was sent to you with the node details in case you wish to re-add it."
+msgstr "मैंने हटा दिया है {name_variable_do_not_translate} गांठ। यदि आप इसे फिर से जोड़ना चाहते हैं तो नोड विवरण के साथ आपको एक सीधा संदेश भेजा गया था।"
 
-#: plnodes/cog.py:226
+#: plnodes/cog.py:230
 #, docstring
 msgid "Manage all nodes in a PyLav instance"
 msgstr "PyLav इंस्टेंस में सभी नोड्स प्रबंधित करें"
 
-#: plnodes/cog.py:238
-msgid "Let's manage some nodes!"
-msgstr "चलो कुछ नोड्स का प्रबंधन करते हैं!"
+#: plnodes/cog.py:242
+msgid "Let us manage some nodes!"
+msgstr "आइए हम कुछ नोड्स का प्रबंधन करें!"
 
-#: plnodes/cog.py:239
-msgid "(**1**){space} - Cancel any changes made and close the menu.\n"
-"(**6**){space} - Show sources enabled for this node.\n"
-"(**7**){space} - Apply changes and add the node to PyLav.\n"
-"(**8**){space} - Toggle between search-only and search and playback modes.\n"
-"(**9**){space} - Toggle between SSL on and off.\n"
+#: plnodes/cog.py:243
+msgid "(**1**){space_variable_do_not_translate} - Cancel any changes made and close the menu.\n"
+"(**6**){space_variable_do_not_translate} - Show sources enabled for this node.\n"
+"(**7**){space_variable_do_not_translate} - Apply changes and add the node to PyLav.\n"
+"(**8**){space_variable_do_not_translate} - Toggle between search-only and search and playback modes.\n"
+"(**9**){space_variable_do_not_translate} - Toggle between SSL on and off.\n"
 "(**10**) - Add a name to the node.\n"
 "(**11**) - Add the host address of the node.\n"
 "(**12**) - Add the port the node uses.\n"
@@ -137,11 +137,11 @@ msgid "(**1**){space} - Cancel any changes made and close the menu.\n"
 "(**15**) - Remove this node.\n"
 "(**16**) - Select which sources to disable for this node (Multiple can be selected).\n"
 "If you interact with a button multiple times, only the last interaction will take effect.\n\n\n"
-msgstr "(**1**){space} - किए गए किसी भी बदलाव को रद्द करें और मेनू बंद करें।\n"
-"(**6**){space} - इस नोड के लिए सक्षम स्रोत दिखाएँ।\n"
-"(**7**){space} - परिवर्तन लागू करें और नोड को PyLav में जोड़ें।\n"
-"(**8**){space} - खोज-केवल और खोज और प्लेबैक मोड के बीच टॉगल।\n"
-"(**9**){space} - एसएसएल ऑन और ऑफ के बीच टॉगल।\n"
+msgstr "(**1**){space_variable_do_not_translate} - किए गए किसी भी बदलाव को रद्द करें और मेनू बंद करें।\n"
+"(**6**){space_variable_do_not_translate} - इस नोड के लिए सक्षम स्रोत दिखाएँ।\n"
+"(**7**){space_variable_do_not_translate} - परिवर्तन लागू करें और नोड को PyLav में जोड़ें।\n"
+"(**8**){space_variable_do_not_translate} - खोज-केवल और खोज और प्लेबैक मोड के बीच टॉगल।\n"
+"(**9**){space_variable_do_not_translate} - एसएसएल ऑन और ऑफ के बीच टॉगल।\n"
 "(**10**) - नोड में एक नाम जोड़ें।\n"
 "(**11**) - नोड का होस्ट पता जोड़ें।\n"
 "(**12**) - नोड द्वारा उपयोग किए जाने वाले पोर्ट को जोड़ें।\n"
@@ -151,38 +151,38 @@ msgstr "(**1**){space} - किए गए किसी भी बदलाव �
 "(**16**) - चयन करें कि इस नोड के लिए किन स्रोतों को अक्षम करना है (एकाधिक का चयन किया जा सकता है)।\n"
 "यदि आप एक बटन के साथ कई बार इंटरैक्ट करते हैं, तो केवल अंतिम इंटरैक्शन प्रभावी होगा।\n\n\n"
 
-#: plnodes/cog.py:268
-msgid "{name} is managed by PyLav and cannot be modified with this command"
-msgstr "{name} PyLav द्वारा प्रबंधित किया जाता है और इस आदेश के साथ संशोधित नहीं किया जा सकता"
+#: plnodes/cog.py:272
+msgid "{name_variable_do_not_translate} is managed by PyLav, and I can not modify it."
+msgstr "{name_variable_do_not_translate} PyLav द्वारा प्रबंधित किया जाता है, और मैं इसे संशोधित नहीं कर सकता।"
 
-#: plnodes/cog.py:280
-msgid "Removed node {name}"
-msgstr "हटाया गया नोड {name}"
+#: plnodes/cog.py:284
+msgid "I have removed the {name_variable_do_not_translate} node."
+msgstr "मैंने हटा दिया है {name_variable_do_not_translate} गांठ।"
 
-#: plnodes/cog.py:316
-msgid "Changed node {name} to the following settings:\n"
-"Host: {host}\n"
-"Port: {port}\n"
-"Password: {password}\n"
-"Resume Timeout: {resume_timeout}\n"
-"Search Only: {search_only}\n"
-"SSL: {ssl}\n"
-"Disabled Sources: {disabled_sources}\n"
-msgstr "परिवर्तित नोड {name} निम्न सेटिंग्स के लिए:\n"
-"मेज़बान: {host}\n"
-"बंदरगाह: {port}\n"
-"पासवर्ड: {password}\n"
-"टाइमआउट को फिर से शुरू करें: {resume_timeout}\n"
-"केवल खोजें: {search_only}\n"
-"SSL: {ssl}\n"
-"अक्षम स्रोत: {disabled_sources}\n"
+#: plnodes/cog.py:322
+msgid "I have changed the {name_variable_do_not_translate} node to the following settings:\n"
+"Host: {host_variable_do_not_translate}\n"
+"Port: {port_variable_do_not_translate}\n"
+"Password: {password_variable_do_not_translate}\n"
+"Resume Timeout: {resume_timeout_variable_do_not_translate}\n"
+"Search Only: {search_only_variable_do_not_translate}\n"
+"SSL: {ssl_variable_do_not_translate}\n"
+"Disabled Sources: {disabled_sources_variable_do_not_translate}\n"
+msgstr "मैंने बदल दिया है {name_variable_do_not_translate} नोड निम्न सेटिंग्स के लिए:\n"
+"मेज़बान: {host_variable_do_not_translate}\n"
+"बंदरगाह: {port_variable_do_not_translate}\n"
+"पासवर्ड: {password_variable_do_not_translate}\n"
+"टाइमआउट को फिर से शुरू करें: {resume_timeout_variable_do_not_translate}\n"
+"केवल खोजें: {search_only_variable_do_not_translate}\n"
+"SSL: {ssl_variable_do_not_translate}\n"
+"अक्षम स्रोत: {disabled_sources_variable_do_not_translate}\n"
 
-#: plnodes/cog.py:343
+#: plnodes/cog.py:349
 #, docstring
 msgid "List all nodes used by PyLav"
 msgstr "PyLav द्वारा उपयोग किए जाने वाले सभी नोड्स को सूचीबद्ध करें"
 
-#: plnodes/cog.py:353
-msgid "No nodes added to PyLav"
-msgstr "PyLav में कोई नोड्स नहीं जोड़ा गया"
+#: plnodes/cog.py:359
+msgid "No nodes were added to PyLav."
+msgstr "PyLav में कोई नोड्स नहीं जोड़ा गया था।"
 

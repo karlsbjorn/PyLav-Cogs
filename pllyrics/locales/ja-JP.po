@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgstr "PyLav の歌詞コマンド"
 
 #: pllyrics/cog.py:49
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "歯車とそのPyLav依存関係のバージョンを表示する"
+msgid "Show the version of the Cog and PyLav"
+msgstr "コグとパイラヴのバージョンを表示する"
 
 #: pllyrics/cog.py:65
-msgid "Library/Cog"
-msgstr "ライブラリ/コグ"
+msgid "Library / Cog"
+msgstr "図書館 / コグ"
 
 #: pllyrics/cog.py:66
 msgid "Version"
@@ -45,88 +45,108 @@ msgstr "歌詞の設定をする"
 msgid "Toggle timed lyrics"
 msgstr "タイミング付き歌詞の切り替え"
 
-#: pllyrics/cog.py:93
-msgid "Timed lyrics are now {state}"
-msgstr "タイミングされた歌詞は {state} です"
+#: pllyrics/cog.py:90
+msgid "I have now turned off timed lyrics in this server."
+msgstr "私は今、このサーバーで時限歌詞をオフにしました。"
 
-#: pllyrics/cog.py:94 pllyrics/cog.py:117
-msgid "disabled"
-msgstr "無効"
+#: pllyrics/cog.py:92
+msgid "I have now turned on timed lyrics in this server. I will send the lyrics as the track progresses if I can find lyrics for the playing track."
+msgstr "私は今、このサーバーで時限歌詞をオンにしました。再生中のトラックの歌詞が見つかったら、トラックが進むにつれて歌詞を送信します。"
 
-#: pllyrics/cog.py:96 pllyrics/cog.py:119
-msgid "enabled"
-msgstr "有効"
-
-#: pllyrics/cog.py:108
+#: pllyrics/cog.py:106
 #, docstring
 msgid "Show full lyrics on track start timed lyrics"
 msgstr "トラック開始時刻の歌詞に全歌詞を表示する"
 
-#: pllyrics/cog.py:116
-msgid "Sending full lyrics on track start {state}"
-msgstr "トラック開始時に歌詞を送信しています {state}"
+#: pllyrics/cog.py:112
+msgid "I have now turned off full lyrics in this server."
+msgstr "私は今、このサーバーの完全な歌詞をオフにしました。"
 
-#: pllyrics/cog.py:133
+#: pllyrics/cog.py:114
+msgid "I have now turned on full lyrics on this server. I will send a message with the full lyrics at the start of a song if I can find lyrics for the playing track."
+msgstr "私は今、このサーバーで完全な歌詞をオンにしました。再生中のトラックの歌詞が見つかったら、曲の冒頭に完全な歌詞を含むメッセージを送信します。"
+
+#: pllyrics/cog.py:130
 #, docstring
 msgid "Set the lyrics channel"
 msgstr "歌詞チャンネルを設定"
 
-#: pllyrics/cog.py:138
-msgid "Lyrics channel set to {channel}"
-msgstr "歌詞チャンネルを {channel} に設定しました"
+#: pllyrics/cog.py:135
+msgid "I have set the channel I will use to send lyrics to {channel_variable_do_not_translate}."
+msgstr "歌詞の送信先に使用するチャンネルを設定しました {channel_variable_do_not_translate}."
 
-#: pllyrics/cog.py:147
-msgid "I will not send lyrics to any channel"
-msgstr "どのチャンネルにも歌詞を送信しません"
+#: pllyrics/cog.py:146
+msgid "From now on, I will not send lyrics to any channel."
+msgstr "今後は、どのチャンネルにも歌詞を送信しません。"
 
-#: pllyrics/cog.py:156
+#: pllyrics/cog.py:155
 #, docstring
 msgid "Show lyrics for current track if available"
 msgstr "利用可能な場合は現在の曲の歌詞を表示する"
 
-#: pllyrics/cog.py:165
-msgid "Nothing is currently playing"
-msgstr "現在再生されているものはありません"
+#: pllyrics/cog.py:164
+msgid "I am not currently playing anything on this server."
+msgstr "私は現在、このサーバーで何もプレイしていません。"
 
-#: pllyrics/cog.py:204
-msgid "Error: {error}"
-msgstr "エラー: {error}"
+#: pllyrics/cog.py:203
+msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
+msgstr "この曲の歌詞を探しているときにエラーが発生しました。 {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:214
-msgid "API Error: {error}"
-msgstr "API エラー: {error}"
+#: pllyrics/cog.py:215
+msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
+msgstr "歌詞を見つけるために使用するFlowery APIは、この曲の歌詞を探しているときにエラーを返しました {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:224
+#: pllyrics/cog.py:227
 msgid "No lyrics found"
 msgstr "歌詞が見つかりません"
 
-#: pllyrics/cog.py:241
-msgid "{extras}Lyrics for {title}{author} - Part {page}"
-msgstr "{extras}の {title}{author} の歌詞 - パート {page}"
+#: pllyrics/cog.py:242
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "私はの歌詞を見つけました {title_variable_do_not_translate} によって {author_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:244 pllyrics/cog.py:259 pllyrics/cog.py:312
-msgid "(Guess) "
-msgstr "(推測) "
+#: pllyrics/cog.py:246
+msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "私はの歌詞を見つけました {title_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:245 pllyrics/cog.py:260 pllyrics/cog.py:313
-msgid " by {name}"
-msgstr " によって {name}"
+#: pllyrics/cog.py:252
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(推測)私はの歌詞を見つけました {title_variable_do_not_translate} によって {author_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:250 pllyrics/cog.py:265 pllyrics/cog.py:322
-msgid "Lyrics provided by {provider}"
-msgstr "{provider} が提供する歌詞"
+#: pllyrics/cog.py:256
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(推測)私はの歌詞を見つけました {title_variable_do_not_translate} -部分 {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:257 pllyrics/cog.py:310
-msgid "{extras}Lyrics for {title}{author}"
-msgstr "{extras}の {title}{author} の歌詞"
+#: pllyrics/cog.py:262
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "私はの歌詞を見つけました {title_variable_do_not_translate} によって {author_variable_do_not_translate}."
 
-#: pllyrics/cog.py:316
-msgid "{lyrics}\n\n"
-"Position: {duration} until {until}"
-msgstr "{lyrics}\n\n"
-"ポジション: {duration} まで {until}"
+#: pllyrics/cog.py:266
+msgid "I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "私はの歌詞を見つけました {title_variable_do_not_translate}."
 
-#: pllyrics/cog.py:318
+#: pllyrics/cog.py:268
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "(推測)私はの歌詞を見つけました {title_variable_do_not_translate} によって {author_variable_do_not_translate}."
+
+#: pllyrics/cog.py:272
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "(推測)私はの歌詞を見つけました {title_variable_do_not_translate}."
+
+#: pllyrics/cog.py:289 pllyrics/cog.py:369
+msgid "Lyrics provided by {provider_variable_do_not_translate}."
+msgstr "歌詞提供 {provider_variable_do_not_translate}."
+
+#: pllyrics/cog.py:306
+msgid "Lyrics provided by {provider_variable_do_not_translate}"
+msgstr "歌詞提供 {provider_variable_do_not_translate}"
+
+#: pllyrics/cog.py:359
+msgid "{lyrics_variable_do_not_translate}\n\n"
+"Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
+msgstr "{lyrics_variable_do_not_translate}\n\n"
+"立場： {duration_variable_do_not_translate} 迄 {until_variable_do_not_translate}"
+
+#: pllyrics/cog.py:365
 msgid "Start"
 msgstr "開始"
 

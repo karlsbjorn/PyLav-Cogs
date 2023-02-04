@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgstr "Lyrics kommandoer til PyLav"
 
 #: pllyrics/cog.py:49
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Vis versionen af tandhjulet og dets PyLav-afhængigheder"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Vis versionen af Cog og PyLav"
 
 #: pllyrics/cog.py:65
-msgid "Library/Cog"
-msgstr "Bibliotek/tandhjul"
+msgid "Library / Cog"
+msgstr "Bibliotek / Cog"
 
 #: pllyrics/cog.py:66
 msgid "Version"
@@ -45,88 +45,108 @@ msgstr "Indstil sangtekstindstillingerne"
 msgid "Toggle timed lyrics"
 msgstr "Slå timet sangtekst til/fra"
 
-#: pllyrics/cog.py:93
-msgid "Timed lyrics are now {state}"
-msgstr "Tidede sangtekster er nu {state}"
+#: pllyrics/cog.py:90
+msgid "I have now turned off timed lyrics in this server."
+msgstr "Jeg har nu slået timede tekster fra på denne server."
 
-#: pllyrics/cog.py:94 pllyrics/cog.py:117
-msgid "disabled"
-msgstr "deaktiveret"
+#: pllyrics/cog.py:92
+msgid "I have now turned on timed lyrics in this server. I will send the lyrics as the track progresses if I can find lyrics for the playing track."
+msgstr "Jeg har nu tændt for tidsindstillede tekster på denne server. Jeg sender teksterne, efterhånden som nummeret skrider frem, hvis jeg kan finde tekster til afspilningssporet."
 
-#: pllyrics/cog.py:96 pllyrics/cog.py:119
-msgid "enabled"
-msgstr "aktiveret"
-
-#: pllyrics/cog.py:108
+#: pllyrics/cog.py:106
 #, docstring
 msgid "Show full lyrics on track start timed lyrics"
 msgstr "Vis fuld sangtekst ved start af spor"
 
-#: pllyrics/cog.py:116
-msgid "Sending full lyrics on track start {state}"
-msgstr "Sender fulde sangtekster ved start af spor {state}"
+#: pllyrics/cog.py:112
+msgid "I have now turned off full lyrics in this server."
+msgstr "Jeg har nu slået fulde tekster fra på denne server."
 
-#: pllyrics/cog.py:133
+#: pllyrics/cog.py:114
+msgid "I have now turned on full lyrics on this server. I will send a message with the full lyrics at the start of a song if I can find lyrics for the playing track."
+msgstr "Jeg har nu tændt for fulde tekster på denne server. Jeg sender en besked med den fulde tekst i starten af en sang, hvis jeg kan finde tekst til afspilningssporet."
+
+#: pllyrics/cog.py:130
 #, docstring
 msgid "Set the lyrics channel"
 msgstr "Indstil sangtekstkanalen"
 
-#: pllyrics/cog.py:138
-msgid "Lyrics channel set to {channel}"
-msgstr "Sangtekstkanal sat til {channel}"
+#: pllyrics/cog.py:135
+msgid "I have set the channel I will use to send lyrics to {channel_variable_do_not_translate}."
+msgstr "Jeg har indstillet den kanal, jeg vil bruge til at sende tekster til {channel_variable_do_not_translate}."
 
-#: pllyrics/cog.py:147
-msgid "I will not send lyrics to any channel"
-msgstr "Jeg vil ikke sende sangtekster til nogen kanal"
+#: pllyrics/cog.py:146
+msgid "From now on, I will not send lyrics to any channel."
+msgstr "Fra nu af vil jeg ikke sende tekster til nogen kanal."
 
-#: pllyrics/cog.py:156
+#: pllyrics/cog.py:155
 #, docstring
 msgid "Show lyrics for current track if available"
 msgstr "Vis sangtekster for nuværende spor hvis tilgængeligt"
 
-#: pllyrics/cog.py:165
-msgid "Nothing is currently playing"
-msgstr "Intet spiller i øjeblikket"
+#: pllyrics/cog.py:164
+msgid "I am not currently playing anything on this server."
+msgstr "Jeg spiller i øjeblikket ikke noget på denne server."
 
-#: pllyrics/cog.py:204
-msgid "Error: {error}"
-msgstr "Fejl: {error}"
+#: pllyrics/cog.py:203
+msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
+msgstr "Jeg er stødt på en fejl, mens jeg ledte efter teksten til denne sang: {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:214
-msgid "API Error: {error}"
-msgstr "API fejl: {error}"
+#: pllyrics/cog.py:215
+msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
+msgstr "Flowery API, som jeg bruger til at finde tekster, har returneret en fejl, mens jeg ledte efter teksten til denne sang {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:224
+#: pllyrics/cog.py:227
 msgid "No lyrics found"
 msgstr "Ingen sangtekster fundet"
 
-#: pllyrics/cog.py:241
-msgid "{extras}Lyrics for {title}{author} - Part {page}"
-msgstr "{extras}Sangtekster til {title}{author} - Del {page}"
+#: pllyrics/cog.py:242
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "Jeg har fundet teksterne til {title_variable_do_not_translate} ved {author_variable_do_not_translate} -Del {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:244 pllyrics/cog.py:259 pllyrics/cog.py:312
-msgid "(Guess) "
-msgstr "(Gæt) "
+#: pllyrics/cog.py:246
+msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "Jeg har fundet teksterne til {title_variable_do_not_translate} -Del {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:245 pllyrics/cog.py:260 pllyrics/cog.py:313
-msgid " by {name}"
-msgstr " af {name}"
+#: pllyrics/cog.py:252
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(Gæt) Jeg har fundet teksterne til {title_variable_do_not_translate} ved {author_variable_do_not_translate} -Del {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:250 pllyrics/cog.py:265 pllyrics/cog.py:322
-msgid "Lyrics provided by {provider}"
-msgstr "Sangtekster leveret af {provider}"
+#: pllyrics/cog.py:256
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+msgstr "(Gæt) Jeg har fundet teksterne til {title_variable_do_not_translate} -Del {page_variable_do_not_translate}."
 
-#: pllyrics/cog.py:257 pllyrics/cog.py:310
-msgid "{extras}Lyrics for {title}{author}"
-msgstr "{extras}Sangtekster til {title}{author}"
+#: pllyrics/cog.py:262
+msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "Jeg har fundet teksterne til {title_variable_do_not_translate} ved {author_variable_do_not_translate}."
 
-#: pllyrics/cog.py:316
-msgid "{lyrics}\n\n"
-"Position: {duration} until {until}"
-msgstr "{lyrics}\n\n"
-"Position: {duration} indtil {until}"
+#: pllyrics/cog.py:266
+msgid "I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "Jeg har fundet teksterne til {title_variable_do_not_translate}."
 
-#: pllyrics/cog.py:318
+#: pllyrics/cog.py:268
+msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+msgstr "(Gæt) Jeg har fundet teksterne til {title_variable_do_not_translate} ved {author_variable_do_not_translate}."
+
+#: pllyrics/cog.py:272
+msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
+msgstr "(Gæt) Jeg har fundet teksterne til {title_variable_do_not_translate}."
+
+#: pllyrics/cog.py:289 pllyrics/cog.py:369
+msgid "Lyrics provided by {provider_variable_do_not_translate}."
+msgstr "Tekster leveret af {provider_variable_do_not_translate}."
+
+#: pllyrics/cog.py:306
+msgid "Lyrics provided by {provider_variable_do_not_translate}"
+msgstr "Tekster leveret af {provider_variable_do_not_translate}"
+
+#: pllyrics/cog.py:359
+msgid "{lyrics_variable_do_not_translate}\n\n"
+"Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
+msgstr "{lyrics_variable_do_not_translate}\n\n"
+"Position: {duration_variable_do_not_translate} indtil {until_variable_do_not_translate}"
+
+#: pllyrics/cog.py:365
 msgid "Start"
 msgstr "Begynde"
 

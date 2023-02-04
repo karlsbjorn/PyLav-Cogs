@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-02 15:38\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "PyLav के लिए वैश्विक सेटिंग्स �
 
 #: plconfig/cog.py:48
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Cog का संस्करण और इसकी PyLav निर्भरता दिखाएँ"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Cog और PyLav का संस्करण दिखाएँ"
 
 #: plconfig/cog.py:64
-msgid "Library/Cog"
-msgstr "पुस्तकालय/कॉग"
+msgid "Library / Cog"
+msgstr "पुस्तकालय /"
 
 #: plconfig/cog.py:65
 msgid "Version"
@@ -42,48 +42,48 @@ msgstr "संस्करण"
 
 #: plconfig/cog.py:78
 #, docstring
-msgid "Show the config values"
-msgstr "कॉन्फ़िगरेशन मान दिखाएँ"
+msgid "Show the setting values"
+msgstr "सेटिंग मान दिखाएँ"
 
 #: plconfig/cog.py:85 plconfig/view.py:57
-msgid "PyLav Config"
-msgstr "PyLav Config"
+msgid "PyLav Settings"
+msgstr "PyLav सेटिंग्स"
 
 #: plconfig/cog.py:88
-msgid "Get information about the PyLav library settings"
-msgstr "PyLav लायब्रेरी सेटिंग्स के बारे में जानकारी प्राप्त करें"
+msgid "Get information about the PyLav library settings."
+msgstr "PyLav लायब्रेरी सेटिंग्स के बारे में जानकारी प्राप्त करें।"
 
-#: plconfig/cog.py:92 plconfig/view.py:123
-msgid "Global Player Config"
-msgstr "ग्लोबल प्लेयर कॉन्फिग"
+#: plconfig/cog.py:92 plconfig/view.py:162
+msgid "Global Settings"
+msgstr "वैश्विक सेटिंग्स"
 
 #: plconfig/cog.py:95
-msgid "Get information about bot owner configured settings for the players"
-msgstr "खिलाड़ियों के लिए बॉट स्वामी कॉन्फ़िगर की गई सेटिंग्स के बारे में जानकारी प्राप्त करें"
+msgid "Get information about bot owner configured settings for the players."
+msgstr "खिलाड़ियों के लिए बॉट स्वामी कॉन्फ़िगर की गई सेटिंग्स के बारे में जानकारी प्राप्त करें।"
 
-#: plconfig/cog.py:103 plconfig/view.py:194
-msgid "Context Player Config"
-msgstr "संदर्भ प्लेयर कॉन्फ़िगरेशन"
+#: plconfig/cog.py:103
+msgid "Contextual Settings"
+msgstr "प्रासंगिक सेटिंग्स"
 
 #: plconfig/cog.py:107
-msgid "Get information about contextual settings for the player, accounting for the global settings"
-msgstr "वैश्विक सेटिंग्स के लिए लेखांकन, प्लेयर के लिए प्रासंगिक सेटिंग्स के बारे में जानकारी प्राप्त करें"
+msgid "Get information about contextual settings for the player, accounting for the global settings."
+msgstr "वैश्विक सेटिंग्स के लिए लेखांकन, प्लेयर के लिए प्रासंगिक सेटिंग्स के बारे में जानकारी प्राप्त करें।"
 
-#: plconfig/cog.py:114 plconfig/view.py:339
-msgid "Server Player Config"
-msgstr "सर्वर प्लेयर कॉन्फ़िगरेशन"
+#: plconfig/cog.py:114
+msgid "Server Settings"
+msgstr "सर्वर सेटिंग्स"
 
 #: plconfig/cog.py:118
-msgid "Get information about server configured settings for the player"
-msgstr "प्लेयर के लिए कॉन्फ़िगर की गई सर्वर सेटिंग्स के बारे में जानकारी प्राप्त करें"
+msgid "Get information about the server configured settings for the player."
+msgstr "प्लेयर के लिए कॉन्फ़िगर की गई सर्वर सेटिंग्स के बारे में जानकारी प्राप्त करें।"
 
-#: plconfig/cog.py:126 plconfig/view.py:378
+#: plconfig/cog.py:126 plconfig/view.py:499
 msgid "Playlist Tasks"
 msgstr "प्लेलिस्ट कार्य"
 
 #: plconfig/cog.py:129
-msgid "Get information about the playlist auto update schedule"
-msgstr "प्लेलिस्ट ऑटो अपडेट शेड्यूल के बारे में जानकारी प्राप्त करें"
+msgid "Get information about the playlist auto update schedule."
+msgstr "प्लेलिस्ट ऑटो अपडेट शेड्यूल के बारे में जानकारी प्राप्त करें।"
 
 #: plconfig/cog.py:138
 msgid "PyLav Paths"
@@ -93,9 +93,9 @@ msgstr "PyLav Paths"
 msgid "Get information about PyLav paths"
 msgstr "PyLav पथों के बारे में जानकारी प्राप्त करें"
 
-#: plconfig/cog.py:147 plconfig/view.py:474
-msgid "Managed Node Config"
-msgstr "प्रबंधित नोड कॉन्फ़िगरेशन"
+#: plconfig/cog.py:147 plconfig/view.py:595
+msgid "Managed Node Settings"
+msgstr "प्रबंधित नोड सेटिंग्स"
 
 #: plconfig/cog.py:150
 msgid "Get information about the Managed PyLav Lavalink node"
@@ -103,172 +103,172 @@ msgstr "प्रबंधित PyLav Lavalink नोड के बारे �
 
 #: plconfig/cog.py:160
 #, docstring
-msgid "Checks if a user or role is considered a DJ"
-msgstr "जांचकरता है कि क्या किसी उपयोगकर्ता या भूमिका को डीजे माना जाता है"
+msgid "Checks if a user or role is considered a disc jockey"
+msgstr "जाँचकरता है कि क्या किसी उपयोगकर्ता या भूमिका को डिस्क जॉकी माना जाता है"
 
 #: plconfig/cog.py:171
-msgid "{role} is a DJ role"
-msgstr "{role} एक डीजे भूमिका है"
+msgid "{role_name_variable_do_not_translate} is a disc jockey role."
+msgstr "{role_name_variable_do_not_translate} एक डिस्क जॉकी की भूमिका है।"
 
-#: plconfig/cog.py:173
-msgid "{role} is not a DJ role"
-msgstr "{role} एक डीजे भूमिका नहीं है"
+#: plconfig/cog.py:175
+msgid "{role_name_variable_do_not_translate} is not a disc jockey role."
+msgstr "{role_name_variable_do_not_translate} डिस्क जॉकी की भूमिका नहीं है।"
 
-#: plconfig/cog.py:178
-msgid "{user} is a DJ"
-msgstr "{user} एक डीजे है"
+#: plconfig/cog.py:182
+msgid "{user_name_variable_do_not_translate} is a disc jockey."
+msgstr "{user_name_variable_do_not_translate} एक डिस्क जॉकी है।"
 
-#: plconfig/cog.py:180
-msgid "{user} is not a DJ"
-msgstr "{user} डीजे नहीं है"
+#: plconfig/cog.py:186
+msgid "{user_name_variable_do_not_translate} is not a disc jockey."
+msgstr "{user_name_variable_do_not_translate} डिस्क जॉकी नहीं है।"
 
-#: plconfig/cog.py:193
+#: plconfig/cog.py:201
 #, docstring
 msgid "Set the local tracks folder for PyLav.\n\n"
-"        Changes will be applied after restarting the [botname].\n"
+"        Changes will be applied after I restart.\n"
 "        "
 msgstr "PyLav के लिए स्थानीय ट्रैक फ़ोल्डर सेट करें।\n\n"
-"        परिवर्तन पुनरारंभ करने के बाद लागू किया जाएगा [botname].\n"
+"        मेरे पुनरारंभ करने के बाद परिवर्तन लागू किए जाएंगे।\n"
 "        "
 
-#: plconfig/cog.py:205
-msgid "{folder} is not a folder"
-msgstr "{folder} फ़ोल्डर नहीं है"
+#: plconfig/cog.py:213
+msgid "{folder_path_variable_do_not_translate} is not a folder."
+msgstr "{folder_path_variable_do_not_translate} फ़ोल्डर नहीं है."
 
-#: plconfig/cog.py:219
-msgid "{folder} does not exist, run the command again with the create argument set to 1 to automatically create this folder"
-msgstr "{folder} मौजूद नहीं है, इस फ़ोल्डर को स्वचालित रूप से बनाने के लिए 1 पर बनाएँ तर्क सेट के साथ कमांड को फिर से चलाएँ"
+#: plconfig/cog.py:229
+msgid "{folder_path_variable_do_not_translate} does not exist, rerun the command with the create argument set to {command_variable_do_not_translate} to create this folder automatically."
+msgstr "{folder_path_variable_do_not_translate} मौजूद नहीं है, कमांड को बनाने के लिए सेट के साथ पुन: चलाएँ {command_variable_do_not_translate} इस फ़ोल्डर को स्वचालित रूप से बनाने के लिए।"
 
-#: plconfig/cog.py:237
-msgid "PyLav's local tracks folder has been set to {folder}"
-msgstr "PyLav के स्थानीय ट्रैक फ़ोल्डर को इस पर सेट किया गया है {folder}"
+#: plconfig/cog.py:246
+msgid "PyLav local tracks folder has been set to {folder_path_variable_do_not_translate}."
+msgstr "PyLav स्थानीय ट्रैक फ़ोल्डर पर सेट किया गया है {folder_path_variable_do_not_translate}."
 
-#: plconfig/cog.py:248
+#: plconfig/cog.py:261
 #, docstring
 msgid "Change the managed node configuration"
 msgstr "प्रबंधित नोड कॉन्फ़िगरेशन परिवर्तित करें"
 
-#: plconfig/cog.py:252
+#: plconfig/cog.py:265
 #, docstring
 msgid "Toggle the managed node on/off.\n\n"
-"        Changes will be applied after restarting the [botname].\n"
+"        Changes will be applied after I restart.\n"
 "        "
 msgstr "प्रबंधित नोड को चालू/बंद करें.\n\n"
-"        परिवर्तन पुनरारंभ करने के बाद लागू किया जाएगा [botname].\n"
+"        मेरे पुनरारंभ करने के बाद परिवर्तन लागू किए जाएंगे।\n"
 "        "
 
-#: plconfig/cog.py:268
-msgid "PyLav's managed node has been enabled"
-msgstr "PyLav का प्रबंधित नोड सक्षम किया गया है"
+#: plconfig/cog.py:281
+msgid "I have turned on my managed Lavalink node."
+msgstr "मैंने अपने प्रबंधित लावालिंक नोड को चालू कर दिया है।"
 
-#: plconfig/cog.py:276
-msgid "PyLav's managed node has been disabled"
-msgstr "PyLav का प्रबंधित नोड अक्षम कर दिया गया है"
+#: plconfig/cog.py:289
+msgid "I have turned off my managed Lavalink node."
+msgstr "मैंने अपने प्रबंधित लावालिंक नोड को बंद कर दिया है।"
 
-#: plconfig/cog.py:284
+#: plconfig/cog.py:297
 #, docstring
 msgid "Toggle the managed node auto updates on/off.\n\n"
-"        Changes will be applied after restarting [botname].\n"
+"        Changes will be applied after I restart.\n"
 "        "
 msgstr "प्रबंधित नोड ऑटो अपडेट चालू /बंद करें।\n\n"
-"        पुनरारंभ करने के बाद परिवर्तन लागू किए जाएंगे [botname].\n"
+"        मेरे पुनरारंभ करने के बाद परिवर्तन लागू किए जाएंगे।\n"
 "        "
 
-#: plconfig/cog.py:300
-msgid "PyLav's managed node auto updates have been enabled"
-msgstr "PyLav के प्रबंधित नोड ऑटो अद्यतन सक्षम किए गए हैं"
+#: plconfig/cog.py:313
+msgid "I have turned on the self-update functionality of my managed node."
+msgstr "मैंने अपने प्रबंधित नोड की स्व-अद्यतन कार्यक्षमता चालू कर दी है।"
 
-#: plconfig/cog.py:308
-msgid "PyLav's managed node auto updates have been disabled"
-msgstr "PyLav के प्रबंधित नोड ऑटो अपडेट अक्षम कर दिए गए हैं"
+#: plconfig/cog.py:321
+msgid "I have turned off the self-update functionality of my managed node."
+msgstr "मैंने अपने प्रबंधित नोड की स्व-अद्यतन कार्यक्षमता बंद कर दी है।"
 
-#: plconfig/cog.py:316
+#: plconfig/cog.py:329
 #, docstring
 msgid "Change the bundled external nodes state"
 msgstr "बंडल किए गए बाहरी नोड्स स्थिति बदलें"
 
-#: plconfig/cog.py:320
+#: plconfig/cog.py:333
 #, docstring
 msgid "Toggle the managed external draper.wtf nodes on/off"
 msgstr "प्रबंधित बाहरी draper.wtf नोड्स को चालू/बंद करें"
 
-#: plconfig/cog.py:340
-msgid "PyLav's managed pylav external node has been enabled"
-msgstr "PyLav के प्रबंधित पाइलाव बाहरी नोड को सक्षम किया गया है"
+#: plconfig/cog.py:353
+msgid "I have turned on the PyLav external Lavalink nodes."
+msgstr "मैंने PyLav बाहरी Lavalink नोड्स को चालू कर दिया है।"
 
-#: plconfig/cog.py:350
-msgid "PyLav's managed pylav external node has been disabled"
-msgstr "PyLav के प्रबंधित pylav बाहरी नोड को अक्षम कर दिया गया है"
+#: plconfig/cog.py:363
+msgid "I have turned off the PyLav external Lavalink nodes."
+msgstr "मैंने PyLav बाहरी Lavalink नोड्स को बंद कर दिया है।"
 
-#: plconfig/cog.py:358
+#: plconfig/cog.py:371
 #, docstring
 msgid "Toggle the managed external lava.link node on/off"
 msgstr "प्रबंधित बाहरी lava.link नोड को चालू/बंद करें"
 
-#: plconfig/cog.py:370
-msgid "PyLav's managed lava.link external node has been disabled"
-msgstr "PyLav का प्रबंधित lava.link बाहरी नोड अक्षम कर दिया गया है"
+#: plconfig/cog.py:383
+msgid "I have turned on the lava.link external Lavalink node."
+msgstr "मैंने बाहरी लावालिंक नोड lava.link चालू किया है।"
 
-#: plconfig/cog.py:378
-msgid "PyLav's managed lava.link has been permanently removed"
-msgstr "PyLav के प्रबंधित lava.link को स्थायी रूप से हटा दिया गया है"
+#: plconfig/cog.py:391
+msgid "The PyLav managed lava.link external Lavalink node has been permanently removed."
+msgstr "बाहरी लावालिंक नोड lava.link प्रबंधित PyLav को स्थायी रूप से हटा दिया गया है।"
 
-#: plconfig/cog.py:387
+#: plconfig/cog.py:400
 #, docstring
 msgid "Instructions on how to set the Spotify API Tokens"
 msgstr "Spotify API टोकन सेट करने के तरीके पर निर्देश"
 
-#: plconfig/cog.py:388
+#: plconfig/cog.py:401
 msgid "1. Go to Spotify developers and log in with your Spotify account.\n"
-"(https://developer.spotify.com/dashboard/applications)\n"
-"2. Click \"Create An App\".\n"
-"3. Fill out the form provided with your app name, etc.\n"
+"{spotify_url_variable_do_not_translate}\n"
+"2. Click on \"Create An App\".\n"
+"3. Fill out the form provided with your application name, etc.\n"
 "4. When asked if you're developing commercial integration select \"No\".\n"
 "5. Accept the terms and conditions.\n"
-"6. Copy your client ID and your client secret into:\n"
-"`{prefix}set api spotify client_id <your_client_id_here> client_secret <your_client_secret_here>`"
+"6. Execute the following command replacing {argument_1_variable_do_not_translate} with your client identifier and {argument_2_variable_do_not_translate} with your client secret:\n"
+"  `{command_name_variable_do_not_translate}`"
 msgstr "1. Spotify डेवलपर्स पर जाएं और अपने Spotify खाते के साथ लॉग इन करें।\n"
-"(https://developer.spotify.com/dashboard/applications)\n"
+"{spotify_url_variable_do_not_translate}\n"
 "2. \"एक ऐप बनाएं\" पर क्लिक करें।\n"
-"3. अपने ऐप के नाम आदि के साथ दिए गए फॉर्म को भरें।\n"
+"3. अपने आवेदन नाम आदि के साथ दिए गए फॉर्म को भरें।\n"
 "4. जब पूछा गया कि क्या आप वाणिज्यिक एकीकरण विकसित कर रहे हैं तो \"नहीं\" चुनें।\n"
 "5. नियमों और शर्तों को स्वीकार करें।\n"
-"6. अपने क्लाइंट आईडी और अपने क्लाइंट सीक्रेट को कॉपी करें:\n"
-"`{prefix}client_id को स्पॉटिफाई करें <your_client_id_here> client_secret <your_client_secret_here>`"
+"6. प्रतिस्थापित निम्न आदेश निष्पादित करें {argument_1_variable_do_not_translate} अपने ग्राहक पहचानकर्ता के साथ और {argument_2_variable_do_not_translate} अपने ग्राहक के रहस्य के साथ:\n"
+"  `{command_name_variable_do_not_translate}`"
 
-#: plconfig/cog.py:409
+#: plconfig/cog.py:428
 #, docstring
 msgid "Manage active players"
 msgstr "सक्रिय खिलाड़ियों का प्रबंधन करें"
 
-#: plconfig/cog.py:418
-msgid "No active player in {name}"
-msgstr "कोई सक्रिय खिलाड़ी नहीं {name}"
+#: plconfig/cog.py:437
+msgid "I am not currently playing anything in {server_name_variable_do_not_translate}."
+msgstr "मैं वर्तमान में कुछ भी नहीं खेल रहा हूं। {server_name_variable_do_not_translate}."
 
-#: plconfig/cog.py:427
-msgid "No connected players"
-msgstr "कोई कनेक्टेड खिलाड़ी नहीं"
+#: plconfig/cog.py:448
+msgid "I am not connected to any voice channel at the moment."
+msgstr "मैं इस समय किसी वॉयस चैनल से जुड़ा नहीं हूं।"
 
-#: plconfig/cog.py:444
+#: plconfig/cog.py:465
 #, docstring
-msgid "Toggle whether or not to change [botname]'s activity"
-msgstr "टॉगल करें कि बदलना है या नहीं [botname]गतिविधि"
+msgid "Toggle whether or not I should update my Discord activity when playing tracks."
+msgstr "ट्रैक खेलते समय मुझे अपनी डिस्कॉर्ड गतिविधि को अपडेट करना चाहिए या नहीं, यह टॉगल करें।"
 
-#: plconfig/cog.py:455
-msgid "PyLav will change bot activity"
-msgstr "PyLav बॉट गतिविधि बदल देगा"
+#: plconfig/cog.py:476
+msgid "From now on, I will update my activity to reflect the tracks I am playing."
+msgstr "अब से, मैं अपनी गतिविधि को अपडेट करूंगा ताकि मैं उन ट्रैकों को प्रतिबिंबित कर सकूं जो मैं खेल रहा हूं।"
 
-#: plconfig/cog.py:464
-msgid "PyLav will no longer change the bot activity"
-msgstr "PyLav अब बॉट गतिविधि नहीं बदलेगा"
+#: plconfig/cog.py:485
+msgid "From now on, I will no longer update my activity to reflect the tracks I am playing."
+msgstr "अब से, मैं अब अपनी गतिविधि को अपडेट नहीं करूंगा ताकि मैं उन पटरियों को प्रतिबिंबित कर सकूं जो मैं खेल रहा हूं।"
 
-#: plconfig/view.py:27 plconfig/view.py:69 plconfig/view.py:140
-#: plconfig/view.py:211 plconfig/view.py:430
+#: plconfig/view.py:27 plconfig/view.py:68 plconfig/view.py:179
+#: plconfig/view.py:289 plconfig/view.py:551
 msgid "Enabled"
 msgstr "सक्षम"
 
-#: plconfig/view.py:28 plconfig/view.py:70 plconfig/view.py:141
-#: plconfig/view.py:212 plconfig/view.py:431
+#: plconfig/view.py:28 plconfig/view.py:69 plconfig/view.py:180
+#: plconfig/view.py:290 plconfig/view.py:552
 msgid "Disabled"
 msgstr "विकलांग"
 
@@ -298,199 +298,235 @@ msgid "Use Bundled\n"
 msgstr "बंडल का उपयोग करें\n"
 "lava.link नोड्स"
 
-#: plconfig/view.py:58 plconfig/view.py:124 plconfig/view.py:195
-#: plconfig/view.py:340 plconfig/view.py:475
+#: plconfig/view.py:58 plconfig/view.py:163 plconfig/view.py:273
+#: plconfig/view.py:461 plconfig/view.py:596
 msgid "Value"
 msgstr "मूल्य"
 
-#: plconfig/view.py:73 plconfig/view.py:154 plconfig/view.py:258
+#: plconfig/view.py:72 plconfig/view.py:253 plconfig/view.py:400
 msgid "Volume"
 msgstr "आयतन"
 
-#: plconfig/view.py:75 plconfig/view.py:155 plconfig/view.py:259
+#: plconfig/view.py:78 plconfig/view.py:98 plconfig/view.py:118
+#: plconfig/view.py:196 plconfig/view.py:216 plconfig/view.py:236
+#: plconfig/view.py:343 plconfig/view.py:363 plconfig/view.py:383
+msgid "{enabled_variable_do_not_translate}\n"
+"0 seconds"
+msgstr "{enabled_variable_do_not_translate}\n"
+"0 सेकंड"
+
+#: plconfig/view.py:82 plconfig/view.py:102 plconfig/view.py:122
+#: plconfig/view.py:200 plconfig/view.py:220 plconfig/view.py:240
+#: plconfig/view.py:347 plconfig/view.py:367 plconfig/view.py:387
+msgid "{enabled_variable_do_not_translate}\n"
+"1 second"
+msgstr "{enabled_variable_do_not_translate}\n"
+"1 सेकंड"
+
+#: plconfig/view.py:86 plconfig/view.py:106 plconfig/view.py:126
+#: plconfig/view.py:204 plconfig/view.py:224 plconfig/view.py:244
+#: plconfig/view.py:351 plconfig/view.py:371 plconfig/view.py:391
+msgid "{enabled_variable_do_not_translate}\n"
+"{setting_timer_variable_do_not_translate} seconds"
+msgstr "{enabled_variable_do_not_translate}\n"
+"{setting_timer_variable_do_not_translate} सेकंड"
+
+#: plconfig/view.py:135 plconfig/view.py:254 plconfig/view.py:401
 msgid "Maximum Volume"
 msgstr "अधिकतम मात्रा"
 
-#: plconfig/view.py:77 plconfig/view.py:157 plconfig/view.py:261
+#: plconfig/view.py:137 plconfig/view.py:256 plconfig/view.py:403
 msgid "AutoPlay"
 msgstr "AutoPlay"
 
-#: plconfig/view.py:81 plconfig/view.py:160 plconfig/view.py:277
+#: plconfig/view.py:141 plconfig/view.py:259 plconfig/view.py:419
 msgid "Shuffling"
 msgstr "फेरबदल"
 
-#: plconfig/view.py:85 plconfig/view.py:161 plconfig/view.py:281
+#: plconfig/view.py:145 plconfig/view.py:260 plconfig/view.py:423
 msgid "Auto Shuffle"
 msgstr "ऑटो फेरबदल"
 
-#: plconfig/view.py:89 plconfig/view.py:162 plconfig/view.py:285
+#: plconfig/view.py:149 plconfig/view.py:261 plconfig/view.py:427
 msgid "Auto Deafen"
 msgstr "Auto Deafen"
 
-#: plconfig/view.py:93 plconfig/view.py:164 plconfig/view.py:289
+#: plconfig/view.py:152
 msgid "Auto Disconnect"
 msgstr "ऑटो डिस्कनेक्ट"
 
-#: plconfig/view.py:95 plconfig/view.py:103 plconfig/view.py:111
-#: plconfig/view.py:166 plconfig/view.py:174 plconfig/view.py:182
-#: plconfig/view.py:291 plconfig/view.py:299 plconfig/view.py:307
-msgid "{enabled}\n"
-"{timer} seconds"
-msgstr "{enabled}\n"
-"{timer} सेकंड"
-
-#: plconfig/view.py:101 plconfig/view.py:172 plconfig/view.py:297
+#: plconfig/view.py:153 plconfig/view.py:263 plconfig/view.py:431
 msgid "Auto Alone Pause"
 msgstr "ऑटो अकेले ठहराव"
 
-#: plconfig/view.py:109 plconfig/view.py:180 plconfig/view.py:305
+#: plconfig/view.py:154 plconfig/view.py:264 plconfig/view.py:432
 msgid "Auto Alone Disconnect"
 msgstr "ऑटो अलोन डिस्कनेक्ट"
 
-#: plconfig/view.py:137 plconfig/view.py:208
+#: plconfig/view.py:176
+msgid "You need to be on a server to show this page."
+msgstr "इस पृष्ठ को दिखाने के लिए आपको सर्वर पर होना आवश्यक है."
+
+#: plconfig/view.py:262 plconfig/view.py:430
+msgid "Auto Empty Disconnect"
+msgstr "ऑटो खाली डिस्कनेक्ट"
+
+#: plconfig/view.py:272
+msgid "Context Player Settings"
+msgstr "संदर्भ प्लेयर सेटिंग्स"
+
+#: plconfig/view.py:286
 msgid "You need to be in a server to be able to show this page."
 msgstr "इस पृष्ठ को दिखाने में सक्षम होने के लिए आपको सर्वर में होना चाहिए।"
 
-#: plconfig/view.py:229 plconfig/view.py:245
-msgid "Too many to show ({count})"
-msgstr "दिखाने के लिए बहुत सारे ({count})"
+#: plconfig/view.py:307
+msgid "Too many entries to show ({number_of_users_variable_do_not_translate})"
+msgstr "दिखाने के लिए बहुत सारी प्रविष्टियां ({number_of_users_variable_do_not_translate})"
 
-#: plconfig/view.py:248 plconfig/view.py:253 plconfig/view.py:316
-#: plconfig/view.py:322 plconfig/view.py:328
+#: plconfig/view.py:325
+msgid "Too many entries to show ({number_of_roles_variable_do_not_translate})"
+msgstr "दिखाने के लिए बहुत सारी प्रविष्टियां ({number_of_roles_variable_do_not_translate})"
+
+#: plconfig/view.py:330 plconfig/view.py:335 plconfig/view.py:437
+#: plconfig/view.py:443 plconfig/view.py:449
 msgid "None"
 msgstr "कोई नहीं"
 
-#: plconfig/view.py:265
+#: plconfig/view.py:407
 msgid "AutoPlay Playlist"
 msgstr "AutoPlay Playlist"
 
-#: plconfig/view.py:269
+#: plconfig/view.py:411
 msgid "Loop track"
 msgstr "लूप ट्रैक"
 
-#: plconfig/view.py:273
+#: plconfig/view.py:415
 msgid "Loop Queue"
 msgstr "लूप कतार"
 
-#: plconfig/view.py:313
+#: plconfig/view.py:434
 msgid "Forced Voice Channel"
 msgstr "मजबूर वॉयस चैनल"
 
-#: plconfig/view.py:319
+#: plconfig/view.py:440
 msgid "Forced Command Channel"
 msgstr "मजबूर कमांड चैनल"
 
-#: plconfig/view.py:325
+#: plconfig/view.py:446
 msgid "Forced Notification Channel"
 msgstr "मजबूर अधिसूचना चैनल"
 
-#: plconfig/view.py:330
-msgid "DJ Users"
-msgstr "डीजे उपयोगकर्ता"
+#: plconfig/view.py:451
+msgid "Disc Jockey Users"
+msgstr "डिस्क जॉकी उपयोगकर्ता"
 
-#: plconfig/view.py:331
-msgid "DJ Roles"
-msgstr "डीजे की भूमिकाएं"
+#: plconfig/view.py:452
+msgid "Disc Jockey Roles"
+msgstr "डिस्क जॉकी की भूमिकाएँ"
 
-#: plconfig/view.py:354
+#: plconfig/view.py:460
+msgid "Server Player Settings"
+msgstr "सर्वर प्लेयर सेटिंग्स"
+
+#: plconfig/view.py:475
 msgid "Next Bundled\n"
 "Playlist Update"
 msgstr "अगला बंडल\n"
 "प्लेलिस्ट अपडेट"
 
-#: plconfig/view.py:360
+#: plconfig/view.py:481
 msgid "Next Bundled External\n"
 "Playlist Update"
 msgstr "अगला बंडल बाहरी\n"
 "प्लेलिस्ट अपडेट"
 
-#: plconfig/view.py:366
+#: plconfig/view.py:487
 msgid "Next External\n"
 "Playlist Update"
 msgstr "अगला बाहरी\n"
 "प्लेलिस्ट अपडेट"
 
-#: plconfig/view.py:379
+#: plconfig/view.py:500
 msgid "Date and Time (UTC)"
 msgstr "दिनांक और समय (UTC)"
 
-#: plconfig/view.py:392
-msgid "You need to be the bot owner to be able to show this page."
-msgstr "इस पृष्ठ को दिखाने में सक्षम होने के लिए आपको बॉट का स्वामी होना चाहिए।"
+#: plconfig/view.py:513
+msgid "Due to sensitive information, I can only show the contents of this page to my owner."
+msgstr "संवेदनशील जानकारी के कारण, मैं केवल अपने स्वामी को इस पृष्ठ की सामग्री दिखा सकता हूं।"
 
-#: plconfig/view.py:398
-msgid "Config Folder"
-msgstr "कॉन्फ़िगरेशन फ़ोल्डर"
+#: plconfig/view.py:519
+msgid "Settings Folder"
+msgstr "सेटिंग्स फ़ोल्डर"
 
-#: plconfig/view.py:400
+#: plconfig/view.py:521
 msgid "Local Tracks"
 msgstr "स्थानीय ट्रैक"
 
-#: plconfig/view.py:403
+#: plconfig/view.py:524
 msgid "Lavalink Folder"
 msgstr "Lavalink फ़ोल्डर"
 
-#: plconfig/view.py:405
+#: plconfig/view.py:526
 msgid "Java Executable"
 msgstr "जावा निष्पादन योग्य"
 
-#: plconfig/view.py:409
+#: plconfig/view.py:530
 msgid "Not Found"
 msgstr "नहीं मिला"
 
-#: plconfig/view.py:419
+#: plconfig/view.py:540
 msgid "Paths"
 msgstr "पथ"
 
-#: plconfig/view.py:420
+#: plconfig/view.py:541
 msgid "Path"
 msgstr "पथ"
 
-#: plconfig/view.py:439
+#: plconfig/view.py:560
 msgid "Java"
 msgstr "जावा"
 
-#: plconfig/view.py:443
+#: plconfig/view.py:564
 msgid "Lavaplayer"
 msgstr "Lavaplayer"
 
-#: plconfig/view.py:447
+#: plconfig/view.py:568
 msgid "Lavalink Branch"
 msgstr "लावालिंक शाखा"
 
-#: plconfig/view.py:451
+#: plconfig/view.py:572
 msgid "Lavalink Version"
 msgstr "Lavalink संस्करण"
 
-#: plconfig/view.py:455
+#: plconfig/view.py:576
 msgid "Lavalink Build"
 msgstr "Lavalink बिल्ड"
 
-#: plconfig/view.py:458
+#: plconfig/view.py:579
 msgid "Build Time"
 msgstr "समय का निर्माण"
 
-#: plconfig/view.py:460
+#: plconfig/view.py:581
 msgid "Commit"
 msgstr "करना"
 
-#: plconfig/view.py:464
+#: plconfig/view.py:585
 msgid "Auto Update"
 msgstr "स्वत: अद्यतन"
 
-#: plconfig/view.py:502
+#: plconfig/view.py:623
 msgid "Select an option from the dropdown menu below."
 msgstr "नीचे ड्रॉपडाउन मेनू से एक विकल्प का चयन करें।"
 
-#: plconfig/view.py:518
+#: plconfig/view.py:638
 msgid "Pick an option to view"
 msgstr "देखने के लिए एक विकल्प चुनें"
 
-#: plconfig/view.py:528
-msgid "You are not authorized to interact with this option"
-msgstr "आप इस विकल्प के साथ सहभागिता करने के लिए अधिकृत नहीं हैं"
+#: plconfig/view.py:648
+msgid "You are not authorized to interact with this option."
+msgstr "आप इस विकल्प के साथ सहभागिता करने के लिए अधिकृत नहीं हैं."
 
-#: plconfig/view.py:558
-msgid "You are not authorized to interact with this"
-msgstr "आप इसके साथ बातचीत करने के लिए अधिकृत नहीं हैं"
+#: plconfig/view.py:678
+msgid "You are not authorized to interact with this."
+msgstr "आप इसके साथ बातचीत करने के लिए अधिकृत नहीं हैं।"
 

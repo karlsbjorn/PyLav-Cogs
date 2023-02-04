@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 21:03\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -29,12 +29,12 @@ msgstr "Mengonfigurasi pengaturan roda gigi"
 
 #: pllocal/cog.py:117
 #, docstring
-msgid "Show the version of the Cog and its PyLav dependencies"
-msgstr "Memperlihatkan versi Cog dan dependensi PyLav-nya"
+msgid "Show the version of the Cog and PyLav"
+msgstr "Tampilkan versi Cog dan PyLav"
 
 #: pllocal/cog.py:133
-msgid "Library/Cog"
-msgstr "Perpustakaan/Cog"
+msgid "Library / Cog"
+msgstr "Perpustakaan / Cog"
 
 #: pllocal/cog.py:134
 msgid "Version"
@@ -46,35 +46,35 @@ msgid "Update the track list for /local"
 msgstr "Memperbarui daftar lagu untuk /local"
 
 #: pllocal/cog.py:158
-msgid "Local track list updated {number} currently present"
-msgstr "Daftar lagu lokal diperbarui {number} saat ini hadir"
+msgid "I have updated my local track cache. There are now {number_variable_do_not_translate} tracks present."
+msgstr "Saya telah memperbarui cache trek lokal saya. Sekarang ada {number_variable_do_not_translate} trek hadir."
 
-#: pllocal/cog.py:183
+#: pllocal/cog.py:185
 #, docstring
 msgid "Play a local file or folder, supports partial searching"
 msgstr "Putar file atau folder lokal, mendukung pencarian parsial"
 
-#: pllocal/cog.py:191
-msgid "{query} is not a valid local file or folder"
-msgstr "{query} bukan file atau folder lokal yang valid"
+#: pllocal/cog.py:193
+msgid "{user_input_query_variable_do_not_translate} is not a valid local file or folder."
+msgstr "{user_input_query_variable_do_not_translate} bukan file atau folder lokal yang valid."
 
-#: pllocal/cog.py:207
-msgid "You must be in a voice channel to allow me to connect"
-msgstr "Anda harus berada di saluran suara untuk memungkinkan saya terhubung"
+#: pllocal/cog.py:211
+msgid "You must be in a voice channel, so I can connect to it."
+msgstr "Anda harus berada di saluran suara, jadi saya bisa terhubung dengannya."
 
-#: pllocal/cog.py:220
-msgid "I don't have permission to connect or speak in {channel}"
-msgstr "Saya tidak memiliki izin untuk terhubung atau berbicara di {channel}"
+#: pllocal/cog.py:224
+msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
+msgstr "Saya tidak memiliki izin untuk terhubung atau berbicara di {channel_variable_do_not_translate}."
 
-#: pllocal/cog.py:245
-msgid "{track_count} tracks enqueued"
-msgstr "{track_count} trek diantrekan"
+#: pllocal/cog.py:248
+msgid "No tracks were found for your query."
+msgstr "Tidak ada trek yang ditemukan untuk kueri Anda."
 
-#: pllocal/cog.py:253
-msgid "{track} enqueued"
-msgstr "{track} Antrean"
+#: pllocal/cog.py:250
+msgid "{track_name_variable_do_not_translate} enqueued."
+msgstr "{track_name_variable_do_not_translate} mengantri."
 
-#: pllocal/cog.py:263
-msgid "No tracks were found for your query"
-msgstr "Tidak ada trek yang ditemukan untuk kueri Anda"
+#: pllocal/cog.py:254
+msgid "I have enqueued {track_count_variable_do_not_translate} tracks."
+msgstr "Saya telah mengantri {track_count_variable_do_not_translate} Trek."
 

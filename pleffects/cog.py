@@ -52,7 +52,7 @@ class PyLavEffects(DISCORD_COG_TYPE_MIXIN):
 
     @command_fxset.command(name="version")
     async def command_fxset_version(self, context: PyLavContext) -> None:
-        """Show the version of the Cog and its PyLav dependencies"""
+        """Show the version of the Cog and PyLav"""
         if isinstance(context, discord.Interaction):
             context = await self.bot.get_context(context)
         if context.interaction and not context.interaction.response.is_done():
@@ -68,7 +68,7 @@ class PyLavEffects(DISCORD_COG_TYPE_MIXIN):
                     tabulate(
                         data,
                         headers=(
-                            EightBitANSI.paint_yellow(_("Library/Cog"), bold=True, underline=True),
+                            EightBitANSI.paint_yellow(_("Library / Cog"), bold=True, underline=True),
                             EightBitANSI.paint_yellow(_("Version"), bold=True, underline=True),
                         ),
                         tablefmt="fancy_grid",
@@ -1031,7 +1031,9 @@ class PyLavEffects(DISCORD_COG_TYPE_MIXIN):
         await context.send(
             embed=await self.pylav.construct_embed(
                 messageable=context,
-                description=_("Preset has been set to {name}").format(name=equalizer.name),
+                description=_("Preset has been set to {name_variable_do_not_translate}").format(
+                    name_variable_do_not_translate=equalizer.name
+                ),
             ),
             ephemeral=True,
         )

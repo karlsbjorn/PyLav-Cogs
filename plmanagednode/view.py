@@ -3,7 +3,6 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-import asyncstdlib
 import discord
 import netaddr
 from netaddr import IPAddress, IPNetwork
@@ -35,12 +34,12 @@ class ConfigureIPRotationView(discord.ui.View):
 
     async def interaction_check(self, interaction: DISCORD_INTERACTION_TYPE) -> bool:
         if not await self.bot.is_owner(interaction.user):
-            await interaction.response.send_message(_("You are not authorized to interact with this"), ephemeral=True)
+            await interaction.response.send_message(_("You are not authorized to interact with this."), ephemeral=True)
             return False
         return True
 
     @discord.ui.button(
-        label=shorten_string(max_length=100, string=_("Configure IP Rotation")),
+        label=shorten_string(max_length=100, string=_("Configure IP Rotation.")),
         style=discord.ButtonStyle.grey,
     )
     async def add_ip_block(self, interaction: DISCORD_INTERACTION_TYPE, button: discord.ui.Button):
@@ -62,12 +61,12 @@ class ConfigureGoogleAccountView(discord.ui.View):
 
     async def interaction_check(self, interaction: DISCORD_INTERACTION_TYPE) -> bool:
         if not await self.bot.is_owner(interaction.user):
-            await interaction.response.send_message(_("You are not authorized to interact with this"), ephemeral=True)
+            await interaction.response.send_message(_("You are not authorized to interact with this."), ephemeral=True)
             return False
         return True
 
     @discord.ui.button(
-        label=shorten_string(max_length=100, string=_("Link Google Account")),
+        label=shorten_string(max_length=100, string=_("Link Google Account.")),
         style=discord.ButtonStyle.grey,
     )
     async def link_account(self, interaction: DISCORD_INTERACTION_TYPE, button: discord.ui.Button):
@@ -95,12 +94,12 @@ class ConfigureHTTPProxyView(discord.ui.View):
 
     async def interaction_check(self, interaction: DISCORD_INTERACTION_TYPE) -> bool:
         if not await self.bot.is_owner(interaction.user):
-            await interaction.response.send_message(_("You are not authorized to interact with this"), ephemeral=True)
+            await interaction.response.send_message(_("You are not authorized to interact with this."), ephemeral=True)
             return False
         return True
 
     @discord.ui.button(
-        label=shorten_string(max_length=100, string=_("Configure HTTP Proxy")),
+        label=shorten_string(max_length=100, string=_("Configure HTTP Proxy.")),
         style=discord.ButtonStyle.grey,
     )
     async def configure_proxy(self, interaction: DISCORD_INTERACTION_TYPE, button: discord.ui.Button):
@@ -122,10 +121,10 @@ class ConfigureIPRotationModal(discord.ui.Modal):
         self.cog = cog
         self.prefix = prefix
 
-        super().__init__(title=shorten_string(max_length=100, string=_("IP Rotation Configurator")))
+        super().__init__(title=shorten_string(max_length=100, string=_("IP Rotation Configurator.")))
 
         self.ip_blocks = discord.ui.TextInput(
-            label=shorten_string(max_length=100, string=_("IP Blocks")),
+            label=shorten_string(max_length=100, string=_("IP Blocks.")),
             style=discord.TextStyle.long,
             required=True,
             placeholder=shorten_string(
@@ -134,7 +133,7 @@ class ConfigureIPRotationModal(discord.ui.Modal):
         )
 
         self.strategy = discord.ui.TextInput(
-            label=shorten_string(max_length=100, string=_("Rotation strategy")),
+            label=shorten_string(max_length=100, string=_("Rotation strategy.")),
             style=discord.TextStyle.long,
             required=True,
             placeholder="RotateOnBan | LoadBalance | NanoSwitch | RotatingNanoSwitch",
@@ -143,7 +142,7 @@ class ConfigureIPRotationModal(discord.ui.Modal):
         )
 
         self.retry_limit = discord.ui.TextInput(
-            label=shorten_string(max_length=100, string=_("Retry limit")),
+            label=shorten_string(max_length=100, string=_("Retry limit.")),
             style=discord.TextStyle.short,
             required=False,
             placeholder=shorten_string(max_length=100, string=_("-1 = default, 0 = infinity, >0 = number of retries")),
@@ -151,14 +150,14 @@ class ConfigureIPRotationModal(discord.ui.Modal):
             max_length=3,
         )
         self.excluded_ips = discord.ui.TextInput(
-            label=shorten_string(max_length=100, string=_("IPs to exclude")),
+            label=shorten_string(max_length=100, string=_("IPs to exclude.")),
             required=False,
             style=discord.TextStyle.short,
             placeholder=shorten_string(max_length=100, string=_("Comma separated list of IP to exclude from rotation")),
         )
 
         self.search_trigger = discord.ui.TextInput(
-            label=shorten_string(max_length=100, string=_("Search trigger rotation")),
+            label=shorten_string(max_length=100, string=_("Search trigger rotation.")),
             style=discord.TextStyle.short,
             required=False,
             placeholder=shorten_string(max_length=100, string=_("0 or 1 (0 = disabled, 1 = enabled)")),
@@ -176,20 +175,20 @@ class ConfigureIPRotationModal(discord.ui.Modal):
             interaction.user
         ):  # Prevent non-bot owners from somehow acquiring and saving the modal.
             return await interaction.response.send_message(
-                _("You are not authorized to interact with this"), ephemeral=True
+                _("You are not authorized to interact with this."), ephemeral=True
             )
         await interaction.response.defer(ephemeral=True)
 
         send_method = interaction.followup.send
         if self.ip_blocks.value:
             try:
-                ip_blocks = await asyncstdlib.list(
-                    asyncstdlib.map(str, asyncstdlib.map(IPNetwork, set(self.ip_blocks.value.split(","))))
-                )
+                ip_blocks = list(map(str, map(IPNetwork, set(self.ip_blocks.value.split(",")))))
             except netaddr.core.AddrFormatError as exc:
                 return await send_method(
                     embed=await self.bot.pylav.construct_embed(
-                        description=_("Invalid IP block - {error}").format(exc),
+                        description=_(
+                            "The IP block you have provided is not valid; {error_variable_do_not_translate}."
+                        ).format(error_variable_do_not_translate=exc),
                         messageable=interaction,
                     ),
                     ephemeral=True,
@@ -199,10 +198,9 @@ class ConfigureIPRotationModal(discord.ui.Modal):
             ip_blocks = []
 
         if not ip_blocks:
-
             return await send_method(
                 embed=await self.bot.pylav.construct_embed(
-                    description=_("No IP blocks were provided"),
+                    description=_("No IP blocks were provided."),
                     messageable=interaction,
                 ),
                 ephemeral=True,
@@ -210,14 +208,13 @@ class ConfigureIPRotationModal(discord.ui.Modal):
             )
         if self.ip_blocks.value:
             try:
-                excluded_ips = await asyncstdlib.list(
-                    asyncstdlib.map(str, asyncstdlib.map(IPAddress, set(self.ip_blocks.value.split(","))))
-                )
+                excluded_ips = list(map(str, map(IPAddress, set(self.ip_blocks.value.split(",")))))
             except netaddr.core.AddrFormatError as exc:
-
                 return await send_method(
                     embed=await self.bot.pylav.construct_embed(
-                        description=_("Invalid IP address - {error}").format(exc),
+                        description=_(
+                            "The IP address you have provided is not valid; {error_variable_do_not_translate}"
+                        ).format(error_variable_do_not_translate=exc),
                         messageable=interaction,
                     ),
                     ephemeral=True,
@@ -236,9 +233,9 @@ class ConfigureIPRotationModal(discord.ui.Modal):
         if strategy not in stategy_mapping:
             return await send_method(
                 embed=await self.bot.pylav.construct_embed(
-                    description=_("Invalid strategy, must be one of: {options}").format(
-                        options=humanize_list(list(stategy_mapping.values()))
-                    ),
+                    description=_(
+                        "The strategy you provided is invalid. You must be one of: {options_variable_do_not_translate}."
+                    ).format(options_variable_do_not_translate=humanize_list(list(stategy_mapping.values()))),
                     messageable=interaction,
                 ),
                 ephemeral=True,
@@ -252,7 +249,7 @@ class ConfigureIPRotationModal(discord.ui.Modal):
         except ValueError:
             return await send_method(
                 embed=await self.bot.pylav.construct_embed(
-                    description=_("Invalid retry limit, must be a number greater than or equals to -1"),
+                    description=_("The retry limit must be a number greater than or equal to -1."),
                     messageable=interaction,
                 ),
                 ephemeral=True,
@@ -267,7 +264,7 @@ class ConfigureIPRotationModal(discord.ui.Modal):
         except ValueError:
             return await send_method(
                 embed=await self.bot.pylav.construct_embed(
-                    description=_("Invalid search trigger, must be 0 or 1"),
+                    description=_("The search trigger must be 0 or 1."),
                     messageable=interaction,
                 ),
                 ephemeral=True,
@@ -286,7 +283,7 @@ class ConfigureIPRotationModal(discord.ui.Modal):
         await config.update_yaml(yaml_data)
         return await send_method(
             embed=await self.bot.pylav.construct_embed(
-                description=_("IP rotation configuration saved.").format(prefix=self.prefix),
+                description=_("IP rotation settings saved."),
                 messageable=interaction,
             ),
             ephemeral=True,
@@ -321,7 +318,9 @@ class ConfigureGoogleAccountModal(discord.ui.Modal):
             label=shorten_string(max_length=100, string=_("password")),
             style=discord.TextStyle.short,
             required=True,
-            placeholder=shorten_string(max_length=100, string=_("If you have 2FA you will need an app password")),
+            placeholder=shorten_string(
+                max_length=100, string=_("If you have 2FA you will need an application password")
+            ),
             min_length=8,
             max_length=100,
         )
@@ -379,7 +378,7 @@ class ConfigureHTTPProxyModal(discord.ui.Modal):
             label=shorten_string(max_length=100, string=_("Hostname")),
             style=discord.TextStyle.short,
             required=True,
-            placeholder=shorten_string(max_length=100, string=_("Hostname of the proxy, (ip or domain or localhost)")),
+            placeholder=shorten_string(max_length=100, string=_("Hostname of the proxy, (IP or domain or localhost)")),
         )
 
         self.port = discord.ui.TextInput(
@@ -397,7 +396,9 @@ class ConfigureHTTPProxyModal(discord.ui.Modal):
             required=False,
             placeholder=shorten_string(
                 max_length=100,
-                string=_("Optional user for basic authentication fields, leave blank if you don't use basic auth"),
+                string=_(
+                    "Optional user for basic authentication fields. Leave blank if you do not use basic authentication"
+                ),
             ),
         )
         self.password = discord.ui.TextInput(
@@ -406,7 +407,9 @@ class ConfigureHTTPProxyModal(discord.ui.Modal):
             required=False,
             placeholder=shorten_string(
                 max_length=100,
-                string=_("Optional password for basic authentication fields, leave blank if you don't use basic auth"),
+                string=_(
+                    "Optional password for basic authentication fields. Leave blank if you do not use basic authentication."
+                ),
             ),
         )
         self.add_item(self.host)
@@ -430,7 +433,7 @@ class ConfigureHTTPProxyModal(discord.ui.Modal):
         except ValueError:
             return await send_method(
                 embed=await self.bot.pylav.construct_embed(
-                    description=_("Invalid port, must be a number between 0 and 65536"),
+                    description=_("The port provided is not valid. It must be between 0 and 65536."),
                     messageable=interaction,
                 ),
                 ephemeral=True,
@@ -447,7 +450,7 @@ class ConfigureHTTPProxyModal(discord.ui.Modal):
         await config.update_yaml(yaml_data)
         return await send_method(
             embed=await self.bot.pylav.construct_embed(
-                description=_("HTTP proxy configuration saved.").format(prefix=self.prefix),
+                description=_("HTTP proxy settings saved."),
                 messageable=interaction,
             ),
             ephemeral=True,

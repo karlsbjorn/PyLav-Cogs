@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-01-31 23:26+0000\n"
-"PO-Revision-Date: 2023-02-01 00:10\n"
+"POT-Creation-Date: 2023-02-03 20:16+0000\n"
+"PO-Revision-Date: 2023-02-03 20:20\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "MIME-Version: 1.0\n"
@@ -17,33 +17,33 @@ msgstr ""
 "X-Crowdin-File-ID: 3299\n"
 "Language: pt_BR\n"
 
-#: plmigrator/cog.py:36
+#: plmigrator/cog.py:35
 #, docstring
-msgid "Copy Red's Audio settings over to PyLav"
-msgstr "Copiar configurações de áudio do Vermelho para PyLav"
+msgid "Copy the Red Audio settings over to PyLav"
+msgstr "Copie as configurações de áudio vermelho para o PyLav"
 
-#: plmigrator/cog.py:49
+#: plmigrator/cog.py:48
 #, docstring
 msgid "Migrate Audio settings to PyLav\n\n"
-"        Please note that this will replace any config already in PyLav.\n\n"
+"        Please note that this will replace any settings already in PyLav.\n\n"
 "        If you are sure you want to proceed please run this command again with the confirm argument set to 1\n"
 "        i.e `[p]pylavmigrate 1`\n\n"
 "        Once you complete the migration unload this cog and uninstall it as you will not need it again.\n"
 "        "
-msgstr "Migre as configurações de áudio para PyLav\n\n"
-"        Por favor, note que isto irá substituir qualquer configuração já no PyLav.\n\n"
-"        Se você tem certeza de que deseja continuar, por favor, execute esse comando novamente com o argumento de confirmação definido para 1\n"
-"        i. `[p]pylavmigre 1`\n\n"
-"        Quando você completar a migração descarregar este cog e desinstalá-lo, pois você não precisará dele novamente.\n"
+msgstr "Migrar configurações de áudio para o PyLav\n\n"
+"        Por favor, note que isso substituirá quaisquer configurações já no PyLav.\n\n"
+"        Se você tiver certeza de que deseja prosseguir, execute este comando novamente com o argumento de confirmação definido como 1\n"
+"        ou seja, »[p]pylavmigrate 1'\n\n"
+"        Depois de concluir a migração, descarregue essa engrenagem e desinstale-a, pois você não precisará dela novamente.\n"
 "        "
 
-#: plmigrator/cog.py:67
+#: plmigrator/cog.py:66
 msgid "Migration of Audio cog settings to PyLav complete. Restart the bot for it to take effect.\n"
-"{requester}"
-msgstr "Migração das configurações de áudio para PyLav completa. Reinicie o bot para que ele tenha efeito.\n"
-"{requester}"
+"{requester_variable_do_not_translate}."
+msgstr "Migração das configurações de engrenagem de áudio para o PyLav concluída. Reinicie o bot para que ele entre em vigor.\n"
+"{requester_variable_do_not_translate}."
 
-#: plmigrator/cog.py:159
-msgid "I don't have permission to access {folder}"
-msgstr "Não tenho permissão para acessar {folder}"
+#: plmigrator/cog.py:158
+msgid "I do not have permission to access {folder_variable_do_not_translate}."
+msgstr "Não tenho permissão para acessar {folder_variable_do_not_translate}."
 

@@ -54,7 +54,7 @@ class EmbedGenerator:
                 tabulate(
                     data,
                     headers=(
-                        EightBitANSI.paint_yellow(_("PyLav Config"), underline=True, bold=True),
+                        EightBitANSI.paint_yellow(_("PyLav Settings"), underline=True, bold=True),
                         EightBitANSI.paint_yellow(_("Value"), underline=True, bold=True),
                     ),
                     tablefmt="fancy_grid",
@@ -65,12 +65,72 @@ class EmbedGenerator:
         )
 
     async def generate_global_player_config_embed(self) -> discord.Embed:
-
         enabled = EightBitANSI.paint_green(_("Enabled"), bold=True, italic=True)
         disabled = EightBitANSI.paint_red(_("Disabled"), bold=True, italic=True)
         global_config = await self.cog.pylav.player_config_manager.get_global_config().fetch_all()
 
         (EightBitANSI.paint_white(_("Volume")), EightBitANSI.paint_cyan(global_config["volume"]))
+
+        auto_empty_dc_message = disabled
+        if global_config["empty_queue_dc"].enabled:
+            match global_config["empty_queue_dc"].time:
+                case 0:
+                    auto_empty_dc_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_empty_dc_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_empty_dc_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=global_config["empty_queue_dc"].time,
+                    )
+            auto_empty_dc_message = EightBitANSI.paint_green(auto_empty_dc_message)
+
+        auto_alone_dc_message = disabled
+        if global_config["alone_dc"].enabled:
+            match global_config["alone_dc"].time:
+                case 0:
+                    auto_alone_dc_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_alone_dc_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_alone_dc_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=global_config["alone_dc"].time,
+                    )
+            auto_alone_dc_message = EightBitANSI.paint_green(auto_alone_dc_message)
+
+        auto_alone_pause_message = disabled
+        if global_config["alone_pause"].enabled:
+            match global_config["alone_pause"].time:
+                case 0:
+                    auto_alone_pause_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_alone_pause_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_alone_pause_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=global_config["alone_pause"].time,
+                    )
+            auto_alone_pause_message = EightBitANSI.paint_green(auto_alone_pause_message)
+
         data = [
             (EightBitANSI.paint_white(_("Maximum Volume")), EightBitANSI.paint_cyan(global_config["max_volume"])),
             (
@@ -89,30 +149,9 @@ class EmbedGenerator:
                 EightBitANSI.paint_white(_("Auto Deafen")),
                 enabled if global_config["self_deaf"] else disabled,
             ),
-            (
-                EightBitANSI.paint_white(_("Auto Disconnect")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=global_config["empty_queue_dc"].time)
-                )
-                if global_config["empty_queue_dc"].enabled
-                else disabled,
-            ),
-            (
-                EightBitANSI.paint_white(_("Auto Alone Pause")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=global_config["alone_pause"].time)
-                )
-                if global_config["alone_pause"].enabled
-                else disabled,
-            ),
-            (
-                EightBitANSI.paint_white(_("Auto Alone Disconnect")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=global_config["alone_dc"].time)
-                )
-                if global_config["alone_dc"].enabled
-                else disabled,
-            ),
+            (EightBitANSI.paint_white(_("Auto Disconnect")), auto_empty_dc_message),
+            (EightBitANSI.paint_white(_("Auto Alone Pause")), auto_alone_pause_message),
+            (EightBitANSI.paint_white(_("Auto Alone Disconnect")), auto_alone_dc_message),
         ]
 
         return await self.cog.pylav.construct_embed(
@@ -120,7 +159,7 @@ class EmbedGenerator:
                 tabulate(
                     data,
                     headers=(
-                        EightBitANSI.paint_yellow(_("Global Player Config"), underline=True, bold=True),
+                        EightBitANSI.paint_yellow(_("Global Settings"), underline=True, bold=True),
                         EightBitANSI.paint_yellow(_("Value"), underline=True, bold=True),
                     ),
                     tablefmt="fancy_grid",
@@ -134,7 +173,7 @@ class EmbedGenerator:
         if not self.context.guild:
             return await self.cog.pylav.construct_embed(
                 messageable=self.context,
-                description=_("You need to be in a server to be able to show this page."),
+                description=_("You need to be on a server to show this page."),
             )
 
         enabled = EightBitANSI.paint_green(_("Enabled"), bold=True, italic=True)
@@ -150,6 +189,66 @@ class EmbedGenerator:
         ac_self_deaf = await self.cog.pylav.player_config_manager.get_self_deaf(self.context.guild.id)
         ac_auto_play = await self.cog.pylav.player_config_manager.get_auto_play(self.context.guild.id)
 
+        auto_empty_dc_message = disabled
+        if ac_empty_queue_dc.enabled:
+            match ac_alone_pause.time:
+                case 0:
+                    auto_empty_dc_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_empty_dc_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_empty_dc_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=ac_empty_queue_dc.time,
+                    )
+            auto_empty_dc_message = EightBitANSI.paint_green(auto_empty_dc_message)
+
+        auto_alone_dc_message = disabled
+        if ac_alone_dc.enabled:
+            match ac_alone_pause.time:
+                case 0:
+                    auto_alone_dc_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_alone_dc_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_alone_dc_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=ac_alone_dc.time,
+                    )
+            auto_alone_dc_message = EightBitANSI.paint_green(auto_alone_dc_message)
+
+        auto_alone_pause_message = disabled
+        if ac_alone_pause.enabled:
+            match ac_alone_pause.time:
+                case 0:
+                    auto_alone_pause_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_alone_pause_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_alone_pause_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=ac_alone_pause.time,
+                    )
+            auto_alone_pause_message = EightBitANSI.paint_green(auto_alone_pause_message)
+
         data = [
             (EightBitANSI.paint_white(_("Volume")), EightBitANSI.paint_cyan(ac_volume)),
             (EightBitANSI.paint_white(_("Maximum Volume")), EightBitANSI.paint_cyan(ac_max_volume)),
@@ -160,30 +259,9 @@ class EmbedGenerator:
             (EightBitANSI.paint_white(_("Shuffling")), enabled if ac_shuffle else disabled),
             (EightBitANSI.paint_white(_("Auto Shuffle")), enabled if ac_auto_shuffle else disabled),
             (EightBitANSI.paint_white(_("Auto Deafen")), enabled if ac_self_deaf else disabled),
-            (
-                EightBitANSI.paint_white(_("Auto Disconnect")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=ac_empty_queue_dc.time)
-                )
-                if ac_empty_queue_dc.enabled
-                else disabled,
-            ),
-            (
-                EightBitANSI.paint_white(_("Auto Alone Pause")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=ac_alone_pause.time)
-                )
-                if ac_alone_pause.enabled
-                else disabled,
-            ),
-            (
-                EightBitANSI.paint_white(_("Auto Alone Disconnect")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=ac_alone_dc.time)
-                )
-                if ac_alone_dc.enabled
-                else disabled,
-            ),
+            (EightBitANSI.paint_white(_("Auto Empty Disconnect")), auto_empty_dc_message),
+            (EightBitANSI.paint_white(_("Auto Alone Pause")), auto_alone_pause_message),
+            (EightBitANSI.paint_white(_("Auto Alone Disconnect")), auto_alone_dc_message),
         ]
 
         return await self.cog.pylav.construct_embed(
@@ -191,7 +269,7 @@ class EmbedGenerator:
                 tabulate(
                     data,
                     headers=(
-                        EightBitANSI.paint_yellow(_("Context Player Config"), underline=True, bold=True),
+                        EightBitANSI.paint_yellow(_("Context Player Settings"), underline=True, bold=True),
                         EightBitANSI.paint_yellow(_("Value"), underline=True, bold=True),
                     ),
                     tablefmt="fancy_grid",
@@ -226,7 +304,9 @@ class EmbedGenerator:
                 ]
             )
             if len(config["dj_users"]) <= 5
-            else _("Too many to show ({count})").format(count=len(config["dj_users"]))
+            else _("Too many entries to show ({number_of_users_variable_do_not_translate})").format(
+                number_of_users_variable_do_not_translate=len(config["dj_users"])
+            )
         )
 
         dj_role_str = (
@@ -242,7 +322,9 @@ class EmbedGenerator:
                 ]
             )
             if len(config["dj_roles"]) <= 5
-            else _("Too many to show ({count})").format(count=len(config["dj_roles"]))
+            else _("Too many entries to show ({number_of_roles_variable_do_not_translate})").format(
+                number_of_roles_variable_do_not_translate=len(config["dj_roles"])
+            )
         )
         if len(config["dj_users"]) == 0:
             dj_user_str = EightBitANSI.paint_red(_("None"))
@@ -253,6 +335,66 @@ class EmbedGenerator:
             dj_role_str = EightBitANSI.paint_red(_("None"))
         else:
             dj_role_str = EightBitANSI.paint_green(dj_role_str)
+
+        auto_empty_dc_message = disabled
+        if config["empty_queue_dc"].enabled:
+            match config["empty_queue_dc"].time:
+                case 0:
+                    auto_empty_dc_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_empty_dc_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_empty_dc_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=config["empty_queue_dc"].time,
+                    )
+            auto_empty_dc_message = EightBitANSI.paint_green(auto_empty_dc_message)
+
+        auto_alone_dc_message = disabled
+        if config["alone_dc"].enabled:
+            match config["alone_dc"].time:
+                case 0:
+                    auto_alone_dc_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_alone_dc_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_alone_dc_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=config["alone_dc"].time,
+                    )
+            auto_alone_dc_message = EightBitANSI.paint_green(auto_alone_dc_message)
+
+        auto_alone_pause_message = disabled
+        if config["alone_pause"].enabled:
+            match config["alone_pause"].time:
+                case 0:
+                    auto_alone_pause_message = _("{enabled_variable_do_not_translate}\n0 seconds").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case 1:
+                    auto_alone_pause_message = _("{enabled_variable_do_not_translate}\n1 second").format(
+                        enabled_variable_do_not_translate=enabled,
+                    )
+                case __:
+                    auto_alone_pause_message = _(
+                        "{enabled_variable_do_not_translate}\n{setting_timer_variable_do_not_translate} seconds"
+                    ).format(
+                        enabled_variable_do_not_translate=enabled,
+                        setting_timer_variable_do_not_translate=config["alone_pause"].time,
+                    )
+            auto_alone_pause_message = EightBitANSI.paint_green(auto_alone_pause_message)
 
         data = [
             (EightBitANSI.paint_white(_("Volume")), EightBitANSI.paint_cyan(config["volume"])),
@@ -285,30 +427,9 @@ class EmbedGenerator:
                 EightBitANSI.paint_white(_("Auto Deafen")),
                 enabled if config["self_deaf"] else disabled,
             ),
-            (
-                EightBitANSI.paint_white(_("Auto Disconnect")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=config["empty_queue_dc"].time)
-                )
-                if config["empty_queue_dc"].enabled
-                else disabled,
-            ),
-            (
-                EightBitANSI.paint_white(_("Auto Alone Pause")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=config["alone_pause"].time)
-                )
-                if config["alone_pause"].enabled
-                else disabled,
-            ),
-            (
-                EightBitANSI.paint_white(_("Auto Alone Disconnect")),
-                EightBitANSI.paint_green(
-                    _("{enabled}\n{timer} seconds").format(enabled=enabled, timer=config["alone_dc"].time)
-                )
-                if config["alone_dc"].enabled
-                else disabled,
-            ),
+            (EightBitANSI.paint_white(_("Auto Empty Disconnect")), auto_empty_dc_message),
+            (EightBitANSI.paint_white(_("Auto Alone Pause")), auto_alone_pause_message),
+            (EightBitANSI.paint_white(_("Auto Alone Disconnect")), auto_alone_dc_message),
             (
                 EightBitANSI.paint_white(_("Forced Voice Channel")),
                 EightBitANSI.paint_green(config["forced_channel_id"])
@@ -327,8 +448,8 @@ class EmbedGenerator:
                 if config["notify_channel_id"] != 0
                 else EightBitANSI.paint_red(_("None")),
             ),
-            (EightBitANSI.paint_white(_("DJ Users")), dj_user_str),
-            (EightBitANSI.paint_white(_("DJ Roles")), dj_role_str),
+            (EightBitANSI.paint_white(_("Disc Jockey Users")), dj_user_str),
+            (EightBitANSI.paint_white(_("Disc Jockey Roles")), dj_role_str),
         ]
 
         return await self.cog.pylav.construct_embed(
@@ -336,7 +457,7 @@ class EmbedGenerator:
                 tabulate(
                     data,
                     headers=(
-                        EightBitANSI.paint_yellow(_("Server Player Config"), underline=True, bold=True),
+                        EightBitANSI.paint_yellow(_("Server Player Settings"), underline=True, bold=True),
                         EightBitANSI.paint_yellow(_("Value"), underline=True, bold=True),
                     ),
                     tablefmt="fancy_grid",
@@ -389,13 +510,13 @@ class EmbedGenerator:
         if not await self.cog.bot.is_owner(self.context.author):
             return await self.cog.pylav.construct_embed(
                 messageable=self.context,
-                description=_("You need to be the bot owner to be able to show this page."),
+                description=_("Due to sensitive information, I can only show the contents of this page to my owner."),
             )
 
         pylav_config = await self.cog.pylav.lib_db_manager.get_config().fetch_all()
 
         data = [
-            (EightBitANSI.paint_white(_("Config Folder")), EightBitANSI.paint_magenta(pylav_config["config_folder"])),
+            (EightBitANSI.paint_white(_("Settings Folder")), EightBitANSI.paint_magenta(pylav_config["config_folder"])),
             (
                 EightBitANSI.paint_white(_("Local Tracks")),
                 EightBitANSI.paint_magenta(pylav_config["localtrack_folder"]),
@@ -471,7 +592,7 @@ class EmbedGenerator:
                 tabulate(
                     data,
                     headers=(
-                        EightBitANSI.paint_yellow(_("Managed Node Config"), underline=True, bold=True),
+                        EightBitANSI.paint_yellow(_("Managed Node Settings"), underline=True, bold=True),
                         EightBitANSI.paint_yellow(_("Value"), underline=True, bold=True),
                     ),
                     tablefmt="fancy_grid",
@@ -510,7 +631,6 @@ class InfoSelector(discord.ui.Select):
         context: PyLavContext,
         options: list[discord.SelectOption],
     ):
-
         super().__init__(
             min_values=1,
             max_values=1,
@@ -525,7 +645,7 @@ class InfoSelector(discord.ui.Select):
         if self.view.author.id != interaction.user.id:
             await interaction.response.send_message(
                 embed=await self.cog.pylav.construct_embed(
-                    messageable=interaction, description=_("You are not authorized to interact with this option")
+                    messageable=interaction, description=_("You are not authorized to interact with this option.")
                 ),
                 ephemeral=True,
             )
@@ -555,7 +675,7 @@ class InfoView(discord.ui.View):
             self.author and (interaction.user.id != self.author.id)
         ):
             await interaction.response.send_message(
-                content=_("You are not authorized to interact with this"), ephemeral=True
+                content=_("You are not authorized to interact with this."), ephemeral=True
             )
             return False
         return True
