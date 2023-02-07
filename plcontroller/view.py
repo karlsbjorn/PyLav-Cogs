@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import asyncio
-import threading
+import contextlib
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -12,7 +12,6 @@ from pylav.constants.config import DEFAULT_SEARCH_SOURCE
 from pylav.extension.red.utils import rgetattr
 from pylav.extension.red.utils.decorators import is_dj_logic
 from pylav.helpers import emojis
-from pylav.helpers.singleton import synchronized_method_call_with_self_threading_lock
 from pylav.players.player import Player
 from pylav.type_hints.bot import DISCORD_INTERACTION_TYPE
 
@@ -281,7 +280,8 @@ class PersistentControllerView(discord.ui.View):
         self.message: discord.Message | None = message
         self.channel = channel
         self.guild = channel.guild
-        self._threading_lock = threading.Lock()
+        self.__update_view_lock = asyncio.Lock()
+        self.__prepare_lock = asyncio.Lock()
         self.__show_help = False
 
         self.repeat_queue_button_on = ToggleRepeatQueueButton(
@@ -378,68 +378,142 @@ class PersistentControllerView(discord.ui.View):
     def disable_show_help(self) -> None:
         self.__show_help = False
 
-    @synchronized_method_call_with_self_threading_lock()
-    async def prepare(self):
-        player = self.cog.pylav.get_player(self.channel.guild.id)
-        self.clear_items()
-        self.show_history_button.disabled = False
-        self.repeat_button_on.disabled = False
-        self.repeat_button_off.disabled = False
-        self.repeat_queue_button_on.disabled = False
-        self.decrease_volume_button.disabled = False
-        self.increase_volume_button.disabled = False
-        self.refresh_button.disabled = False
-        self.paused_button.disabled = False
-        self.resume_button.disabled = False
-        self.previous_track_button.disabled = False
-        self.skip_button.disabled = False
-        self.shuffle_button.disabled = False
-        self.stop_button.disabled = False
-
-        if (player is not None) and (repeat_current := await player.config.fetch_repeat_current()):
-            self.add_item(self.repeat_button_on)
-        elif (player is not None) and (not repeat_current) and (await player.config.fetch_repeat_queue()):
-            self.add_item(self.repeat_queue_button_on)
-        else:
-            self.add_item(self.repeat_button_off)
-        self.add_item(self.show_history_button)
-        self.add_item(self.decrease_volume_button)
-        self.add_item(self.increase_volume_button)
-        self.add_item(self.refresh_button)
-
-        if player is not None and player.paused or player is None:
-            self.add_item(self.resume_button)
-        else:
-            self.add_item(self.paused_button)
-
-        self.add_item(self.previous_track_button)
-        self.add_item(self.skip_button)
-        self.add_item(self.shuffle_button)
-
-        self.add_item(self.stop_button)
-
-        if player is None:
-            self.show_history_button.disabled = True
-            self.repeat_button_off.disabled = True
-            self.decrease_volume_button.disabled = True
-            self.increase_volume_button.disabled = True
-
-            self.resume_button.disabled = True
-            self.previous_track_button.disabled = True
-            self.skip_button.disabled = True
-            self.shuffle_button.disabled = True
-
-            self.stop_button.disabled = True
+    async def enable_slow_mode(self) -> None:
+        if self.channel.slowmode_delay != 0:
             return
+        await self.channel.edit(slowmode_delay=5)
 
-        if player.queue.empty():
-            self.shuffle_button.disabled = True
-        if not player.current:
-            self.stop_button.disabled = True
+    async def disable_slow_mode(self) -> None:
+        if self.channel.slowmode_delay == 0:
+            return
+        await self.channel.edit(slowmode_delay=0)
 
-        if player.history.empty():
-            self.previous_track_button.disabled = True
-            self.show_history_button.disabled = True
+    async def set_permissions(self) -> bool:
+        permissions = self.channel.permissions_for(self.channel.guild.me)
+        if permissions.manage_roles or self.guild.me.guild_permissions.manage_roles:
+            default_role_permissions = self.channel.permissions_for(self.channel.guild.default_role)
+            if not all(
+                [
+                    default_role_permissions.view_channel,
+                    default_role_permissions.read_messages,
+                    default_role_permissions.send_messages,
+                    default_role_permissions.read_message_history,
+                ]
+            ) or any(
+                [
+                    default_role_permissions.create_instant_invite,
+                    default_role_permissions.manage_channels,
+                    default_role_permissions.add_reactions,
+                    default_role_permissions.send_tts_messages,
+                    default_role_permissions.manage_messages,
+                    default_role_permissions.embed_links,
+                    default_role_permissions.attach_files,
+                    default_role_permissions.mention_everyone,
+                    default_role_permissions.external_emojis,
+                    default_role_permissions.manage_roles,
+                    default_role_permissions.manage_webhooks,
+                    default_role_permissions.use_application_commands,
+                    default_role_permissions.create_public_threads,
+                    default_role_permissions.create_private_threads,
+                    default_role_permissions.external_stickers,
+                    default_role_permissions.send_messages_in_threads,
+                    default_role_permissions.manage_events,
+                    default_role_permissions.manage_threads,
+                    default_role_permissions.use_embedded_activities,
+                ]
+            ):
+                with contextlib.suppress(discord.Forbidden):
+                    # No explicitly needed; However, just here to allow for a cleaner channel.
+                    await self.channel.set_permissions(
+                        self.channel.guild.default_role,
+                        view_channel=True,
+                        read_messages=True,
+                        send_messages=True,
+                        read_message_history=True,
+                        create_instant_invite=False,
+                        manage_channels=False,
+                        add_reactions=False,
+                        send_tts_messages=False,
+                        manage_messages=False,
+                        embed_links=False,
+                        attach_files=False,
+                        mention_everyone=False,
+                        external_emojis=False,
+                        manage_roles=False,
+                        manage_webhooks=False,
+                        use_application_commands=False,
+                        create_public_threads=False,
+                        create_private_threads=False,
+                        external_stickers=False,
+                        send_messages_in_threads=False,
+                        manage_events=False,
+                        manage_threads=False,
+                        use_embedded_activities=False,
+                        reason=_("PyLav Controller"),
+                    )
+
+    async def prepare(self):
+        async with self.__prepare_lock:
+            player = self.cog.pylav.get_player(self.channel.guild.id)
+            self.clear_items()
+            self.show_history_button.disabled = False
+            self.repeat_button_on.disabled = False
+            self.repeat_button_off.disabled = False
+            self.repeat_queue_button_on.disabled = False
+            self.decrease_volume_button.disabled = False
+            self.increase_volume_button.disabled = False
+            self.refresh_button.disabled = False
+            self.paused_button.disabled = False
+            self.resume_button.disabled = False
+            self.previous_track_button.disabled = False
+            self.skip_button.disabled = False
+            self.shuffle_button.disabled = False
+            self.stop_button.disabled = False
+
+            if (player is not None) and (repeat_current := await player.config.fetch_repeat_current()):
+                self.add_item(self.repeat_button_on)
+            elif (player is not None) and (not repeat_current) and (await player.config.fetch_repeat_queue()):
+                self.add_item(self.repeat_queue_button_on)
+            else:
+                self.add_item(self.repeat_button_off)
+            self.add_item(self.show_history_button)
+            self.add_item(self.decrease_volume_button)
+            self.add_item(self.increase_volume_button)
+            self.add_item(self.refresh_button)
+
+            if player is not None and player.paused or player is None:
+                self.add_item(self.resume_button)
+            else:
+                self.add_item(self.paused_button)
+
+            self.add_item(self.previous_track_button)
+            self.add_item(self.skip_button)
+            self.add_item(self.shuffle_button)
+
+            self.add_item(self.stop_button)
+
+            if player is None:
+                self.show_history_button.disabled = True
+                self.repeat_button_off.disabled = True
+                self.decrease_volume_button.disabled = True
+                self.increase_volume_button.disabled = True
+
+                self.resume_button.disabled = True
+                self.previous_track_button.disabled = True
+                self.skip_button.disabled = True
+                self.shuffle_button.disabled = True
+
+                self.stop_button.disabled = True
+                return
+
+            if player.queue.empty():
+                self.shuffle_button.disabled = True
+            if not player.current:
+                self.stop_button.disabled = True
+
+            if player.history.empty():
+                self.previous_track_button.disabled = True
+                self.show_history_button.disabled = True
 
     async def get_player(self, message: discord.Message) -> Player | None:
         if not await is_dj_logic(message, bot=self.cog.bot):
@@ -517,11 +591,11 @@ class PersistentControllerView(discord.ui.View):
             embed=True, messageable=self.channel, progress=False, show_help=self.__show_help
         )
 
-    @synchronized_method_call_with_self_threading_lock()
     async def update_view(self, forced: bool = False):
-        await self.prepare()
-        embed = await self.get_now_playing_embed(forced)
-        await self.message.edit(view=self, embed=embed)
+        async with self.__update_view_lock:
+            await self.prepare()
+            embed = await self.get_now_playing_embed(forced)
+            await self.message.edit(view=self, embed=embed)
 
     async def interaction_check(self, interaction: DISCORD_INTERACTION_TYPE, /) -> bool:
         if not interaction.response.is_done():
@@ -531,6 +605,15 @@ class PersistentControllerView(discord.ui.View):
             await interaction.send(
                 embed=await interaction.client.pylav.construct_embed(
                     description=_("You need to be a disc jockey to interact with the controller in this server."),
+                    messageable=interaction,
+                ),
+                ephemeral=True,
+            )
+            return False
+        if not (self.cog.pylav.get_player(self.channel.guild.id)):
+            await interaction.send(
+                embed=await interaction.client.pylav.construct_embed(
+                    description=_("I am not currently playing anything on this server."),
                     messageable=interaction,
                 ),
                 ephemeral=True,

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
+import datetime
 from collections import defaultdict
 from datetime import timedelta
 from functools import partial
@@ -9,6 +10,7 @@ from pathlib import Path
 from typing import Any, Literal
 
 import discord
+from apscheduler.jobstores.base import JobLookupError
 from redbot.core import Config, commands
 from redbot.core.i18n import Translator, cog_i18n
 from redbot.core.utils.antispam import AntiSpam
@@ -20,13 +22,14 @@ from pylav.core.context import PyLavContext
 from pylav.events.player import PlayerPausedEvent, PlayerResumedEvent, PlayerStoppedEvent
 from pylav.events.queue import QueueEndEvent
 from pylav.events.track import TrackStartEvent
+from pylav.helpers.time import get_now_utc
 from pylav.players.player import Player
 from pylav.players.query.obj import Query
 from pylav.type_hints.bot import DISCORD_BOT_TYPE, DISCORD_COG_TYPE_MIXIN
 
 _ = Translator("PyLavController", Path(__file__))
 
-LOGGER = logging.getLogger("PyLav.cog.Controller")
+LOGGER = logging.getLogger("red.PyLav.cog.Controller")
 
 
 @cog_i18n(_)
@@ -41,22 +44,27 @@ class PyLavController(
         super().__init__(*args, **kwargs)
         self.bot = bot
         self._config = Config.get_conf(self, identifier=208903205982044161)
+        self.__lock = defaultdict(asyncio.Lock)
         self._config.register_guild(
             channel=None,
             list_for_requests=False,
             list_for_searches=False,
             persistent_view_message_id=None,
             enable_antispam=True,
+            use_slow_mode=True,
         )
         self._channel_cache: dict[int, int] = {}
         self._list_for_search_cache: dict[int, bool] = {}
         self._list_for_command_cache: dict[int, bool] = {}
         self._enable_antispam_cache: dict[int, bool] = {}
+        self._use_slow_mode_cache: dict[int, bool] = {}
         self._view_cache: dict[int, PersistentControllerView] = {}
+        self.__failed_messages_to_delete: dict[int, set[discord.Message]] = defaultdict(set)
+        self.__success_messages_to_delete: dict[int, set[discord.Message]] = defaultdict(set)
+        self.__ready = asyncio.Event()
         intervals = [
-            (timedelta(seconds=15), 1),
-            (timedelta(minutes=1), 3),
-            (timedelta(hours=1), 30),
+            (timedelta(minutes=1), 5),
+            (timedelta(hours=1), 50),
         ]
 
         self.antispam: dict[int, dict[int, AntiSpam]] = defaultdict(lambda: defaultdict(partial(AntiSpam, intervals)))
@@ -65,9 +73,13 @@ class PyLavController(
         for view in self._view_cache.values():
             view.stop()
         self._view_cache.clear()
+        with contextlib.suppress(JobLookupError):
+            self.pylav.scheduler.remove_job(f"{self.__class__.__name__}-{self.bot.user.id}-delete_failed_messages")
+        with contextlib.suppress(JobLookupError):
+            self.pylav.scheduler.remove_job(f"{self.__class__.__name__}-{self.bot.user.id}-delete_successful_messages")
 
     async def initialize(self):
-        await self.bot.wait_until_red_ready()
+        await self.pylav.wait_until_ready()
 
         guild_data = await self._config.all_guilds()
 
@@ -77,9 +89,31 @@ class PyLavController(
             self._list_for_command_cache[guild_id] = data["list_for_requests"]
             self._list_for_search_cache[guild_id] = data["list_for_searches"]
             self._enable_antispam_cache[guild_id] = data["enable_antispam"]
+            self._use_slow_mode_cache[guild_id] = data["use_slow_mode"]
             if data["persistent_view_message_id"]:
                 if channel := self.bot.get_channel(channel_id):
                     await self.prepare_channel(channel)
+        self.__ready.set()
+        self.pylav.scheduler.add_job(
+            self.delete_failed_messages,
+            trigger="interval",
+            seconds=5,
+            max_instances=1,
+            id=f"{self.__class__.__name__}-{self.bot.user.id}-delete_failed_messages",
+            replace_existing=True,
+            coalesce=True,
+            next_run_time=get_now_utc() + datetime.timedelta(seconds=5),
+        )
+        self.pylav.scheduler.add_job(
+            self.delete_successful_messages,
+            trigger="interval",
+            seconds=5,
+            max_instances=1,
+            id=f"{self.__class__.__name__}-{self.bot.user.id}-delete_successful_messages",
+            replace_existing=True,
+            coalesce=True,
+            next_run_time=get_now_utc() + datetime.timedelta(seconds=5),
+        )
 
     @commands.group(name="plcontrollerset")
     @commands.guild_only()
@@ -93,51 +127,34 @@ class PyLavController(
     ):
         """Set the channel to create the controller in."""
         channel_permissions = channel.permissions_for(context.guild.me)
-        if not channel_permissions.send_messages:
+        if not all(
+            [
+                channel_permissions.read_messages,
+                channel_permissions.manage_channels,
+                channel_permissions.manage_roles,
+                channel_permissions.send_messages,
+                channel_permissions.embed_links,
+                channel_permissions.add_reactions,
+                channel_permissions.external_emojis,
+                channel_permissions.manage_messages,
+                channel_permissions.manage_threads,
+                channel_permissions.read_message_history,
+            ]
+        ):
             await context.send(
                 embed=await context.construct_embed(
-                    description=_(
-                        "I need 'Send Messages' permission in {channel_name_variable_do_not_translate}."
-                    ).format(channel_name_variable_do_not_translate=channel.mention),
+                    title=_(
+                        "I do not have the required permissions in {channel_name_variable_do_not_translate}."
+                    ).format(channel_name_variable_do_not_translate=channel.name),
+                    description=(
+                        "Please make sure I have the following permissions: "
+                        "`View Channel`, `Manage Channel`, `Manage Permissions`, "
+                        "`Send Messages`, `Embed Links`, `Add Reactions`, "
+                        "`Use External Emojis`, `Manage Messages`, `Manage Threads` and `Read Message History` "
+                        "in {channel_variable_do_not_translate}."
+                    ).format(channel_variable_do_not_translate=channel.mention),
                     messageable=context,
-                ),
-                ephemeral=True,
-            )
-            return
-
-        if not channel_permissions.read_messages:
-            await context.send(
-                embed=await context.construct_embed(
-                    description=_(
-                        "I need 'Read Messages' permission in {channel_name_variable_do_not_translate}."
-                    ).format(channel_name_variable_do_not_translate=channel.mention),
-                    messageable=context,
-                ),
-                ephemeral=True,
-            )
-            return
-
-        if not channel_permissions.embed_links:
-            await context.send(
-                embed=await context.construct_embed(
-                    description=_(
-                        "I need 'Embed Links' permission in {channel_name_variable_do_not_translate}."
-                    ).format(channel_name_variable_do_not_translate=channel.mention),
-                    messageable=context,
-                ),
-                ephemeral=True,
-            )
-            return
-
-        if not channel_permissions.manage_messages:
-            await context.send(
-                embed=await context.construct_embed(
-                    description=_(
-                        "I need 'Manage Messages' permission in {channel_name_variable_do_not_translate}."
-                    ).format(channel_name_variable_do_not_translate=channel.mention),
-                    messageable=context,
-                ),
-                ephemeral=True,
+                )
             )
             return
 
@@ -159,6 +176,24 @@ class PyLavController(
     @command_plcontrollerset.command(name="acceptrequests", aliases=["ar", "listen"])
     async def command_plcontrollerset_acceptrequests(self, context: PyLavContext):
         """Toggle whether the controller should listen for requests."""
+        if (
+            context.guild.id not in self._channel_cache
+            or (channel_id := self._channel_cache[context.guild.id]) is None
+            or channel_id not in self._view_cache
+        ):
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_(
+                        "I am not set up for the controller channel yet, "
+                        "please run {setup_command_variable_do_not_translate} first."
+                    ).format(
+                        setup_command_variable_do_not_translate=f"`{context.clean_prefix}{self.command_plcontrollerset_channel.qualified_name}`"
+                    ),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+            return
         current = await self._config.guild(context.guild).list_for_requests()
         await self._config.guild(context.guild).list_for_requests.set(not current)
         self._list_for_command_cache[context.guild.id] = not current
@@ -183,10 +218,22 @@ class PyLavController(
     @command_plcontrollerset.command(name="acceptsearches", aliases=["as", "search"])
     async def command_plcontrollerset_acceptsearches(self, context: PyLavContext):
         """Toggle whether the controller should listen for searches."""
+        if (channel_id := self._channel_cache.get(context.guild.id)) is None or channel_id not in self._view_cache:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_(
+                        "I am not set up for the controller channel yet, please run {setup_command_variable_do_not_translate} first."
+                    ).format(
+                        setup_command_variable_do_not_translate=f"`{context.clean_prefix}{self.command_plcontrollerset_channel.qualified_name}`"
+                    ),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+            return
         current = await self._config.guild(context.guild).list_for_searches()
         await self._config.guild(context.guild).list_for_searches.set(not current)
         self._list_for_search_cache[context.guild.id] = not current
-        channel_id = self._channel_cache[context.guild.id]
         if channel := self.bot.get_channel(channel_id):
             if not current:
                 self._view_cache[channel.id].enable_show_help()
@@ -205,6 +252,47 @@ class PyLavController(
             await context.send(
                 embed=await context.construct_embed(
                     description=_("From now on, I will ignore user searches in the controller channel."),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+
+    @command_plcontrollerset.command(name="slowmode", aliases=["sm"])
+    async def command_plcontrollerset_slowmode(self, context: PyLavContext):
+        """Toggle whether the controller should use slowmode."""
+        if (channel_id := self._channel_cache.get(context.guild.id)) is None or channel_id not in self._view_cache:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_(
+                        "I am not set up for the controller channel yet, please run {setup_command_variable_do_not_translate} first."
+                    ).format(
+                        setup_command_variable_do_not_translate=f"`{context.clean_prefix}{self.command_plcontrollerset_channel.qualified_name}`"
+                    ),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+            return
+        current = await self._config.guild(context.guild).use_slow_mode()
+        await self._config.guild(context.guild).use_slow_mode.set(not current)
+        self._use_slow_mode_cache[context.guild.id] = not current
+        if channel := self.bot.get_channel(channel_id):
+            if not current:
+                await self._view_cache[channel.id].enable_slow_mode()
+            else:
+                await self._view_cache[channel.id].disable_slow_mode()
+        if not current:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_("From now on, I will use slowmode in the controller channel."),
+                    messageable=context,
+                ),
+                ephemeral=True,
+            )
+        else:
+            await context.send(
+                embed=await context.construct_embed(
+                    description=_("From now on, I will not use slowmode in the controller channel."),
                     messageable=context,
                 ),
                 ephemeral=True,
@@ -515,6 +603,37 @@ class PyLavController(
         )
 
     async def prepare_channel(self, channel: discord.TextChannel | discord.Thread | discord.VoiceChannel):
+        permissions = channel.permissions_for(channel.guild.me)
+        if not all(
+            [
+                permissions.read_messages,
+                permissions.manage_channels,
+                permissions.manage_roles,
+                permissions.send_messages,
+                permissions.embed_links,
+                permissions.add_reactions,
+                permissions.external_emojis,
+                permissions.manage_messages,
+                permissions.manage_threads,
+                permissions.read_message_history,
+            ]
+        ):
+            await channel.send(
+                embed=await self.pylav.construct_embed(
+                    title=_("I do not have the required permissions in this channel."),
+                    description=_(
+                        "Please make sure I have the following permissions: "
+                        "`View Channel`, `Manage Channel`, `Manage Permissions`, "
+                        "`Send Messages`, `Embed Links`, `Add Reactions`, "
+                        "`Use External Emojis`, `Manage Messages`, `Manage Threads` and `Read Message History`. "
+                        "Once you give me these permissions, run {command_variable_do_not_edit}."
+                    ).format(
+                        command_variable_do_not_edit=f"`{(await self.bot.get_valid_prefixes(channel.guild))[0]}{self.command_plcontrollerset_channel.qualified_name}`"
+                    ),
+                    messageable=channel,
+                )
+            )
+            return
         existing_view_id = await self._config.guild(channel.guild).persistent_view_message_id()
         if existing_view_id:
             with contextlib.suppress(discord.NotFound):
@@ -522,19 +641,29 @@ class PyLavController(
                 self._view_cache[channel.id] = PersistentControllerView(
                     cog=self, channel=channel, message=existing_view
                 )
+                await self._view_cache[channel.id].set_permissions()
                 await self._view_cache[channel.id].prepare()
                 if channel.guild.id in self._list_for_search_cache and self._list_for_search_cache[channel.guild.id]:
                     self._view_cache[channel.id].enable_show_help()
                 self.bot.add_view(self._view_cache[channel.id], message_id=existing_view_id)
+                if self._use_slow_mode_cache[channel.guild.id]:
+                    await self._view_cache[channel.id].enable_slow_mode()
+                else:
+                    await self._view_cache[channel.id].disable_slow_mode()
                 return
         self._view_cache[channel.id] = PersistentControllerView(cog=self, channel=channel)
         await self._view_cache[channel.id].prepare()
+        await self._view_cache[channel.id].set_permissions()
         if channel.guild.id in self._list_for_search_cache and self._list_for_search_cache[channel.guild.id]:
             self._view_cache[channel.id].enable_show_help()
         message = await self.send_channel_view(channel)
         await self._config.guild(channel.guild).persistent_view_message_id.set(message.id)
         self._view_cache[channel.id].set_message(message)
         self.bot.add_view(self._view_cache[channel.id], message_id=message.id)
+        if self._use_slow_mode_cache[channel.guild.id]:
+            await self._view_cache[channel.id].enable_slow_mode()
+        else:
+            await self._view_cache[channel.id].disable_slow_mode()
 
     async def send_channel_view(
         self, channel: discord.TextChannel | discord.Thread | discord.VoiceChannel
@@ -567,10 +696,10 @@ class PyLavController(
 
         if await self.bot.cog_disabled_in_guild(self, guild):
             return
-
-        player = await self._view_cache[channel.id].get_player(message)
+        async with self.__lock[message.guild.id]:
+            player = await self._view_cache[channel.id].get_player(message)
         if player is None:
-            await message.delete(delay=1)
+            await self.add_failure_reaction(message)
             return
 
         await self.process_potential_query(message, player)
@@ -579,12 +708,12 @@ class PyLavController(
         if (message.guild.id not in self._list_for_command_cache) or (
             self._list_for_command_cache[message.guild.id] is False
         ):
-            await message.delete(delay=1)
+            await self.add_failure_reaction(message)
             return
 
         if message.guild.id in self._enable_antispam_cache and self._enable_antispam_cache[message.guild.id]:
             if self.antispam[message.guild.id][message.author.id].spammy:
-                await message.delete(delay=1)
+                await self.add_failure_reaction(message)
                 return
             self.antispam[message.guild.id][message.author.id].stamp()
 
@@ -592,31 +721,25 @@ class PyLavController(
             message.clean_content, dont_search=not self._list_for_search_cache[message.guild.id]
         )
         if query.invalid:
-            await message.add_reaction("\N{CROSS MARK}")
-            await message.delete(delay=5)
+            await self.add_failure_reaction(message)
             return
         if query.is_search and not self._list_for_search_cache[message.guild.id]:
-            await message.add_reaction("\N{CROSS MARK}")
-            await message.delete(delay=5)
+            await self.add_failure_reaction(message)
             return
 
-        await message.add_reaction("\N{WHITE HEAVY CHECK MARK}")
         successful, count, failed = await self.pylav.get_all_tracks_for_queries(
             query, player=player, requester=message.author
         )
+
         if successful:
             if query.is_search:
                 successful = [successful[0]]
             await player.bulk_add(tracks_and_queries=successful, requester=message.author.id)
             if (not player.is_playing) and player.queue.size() > 0:
                 await player.next(requester=message.author)
-            delay = 10
+            await self.add_success_reaction(message)
         else:
-            await message.clear_reactions()
-            await message.add_reaction("\N{CROSS MARK}")
-            delay = 5
-
-        await message.delete(delay=delay)
+            await self.add_failure_reaction(message)
 
     async def red_delete_data_for_user(
         self,
@@ -648,7 +771,7 @@ class PyLavController(
 
     async def process_event(
         self, event: TrackStartEvent | QueueEndEvent | PlayerStoppedEvent | PlayerPausedEvent | PlayerResumedEvent
-    ):
+    ) -> None:
         await asyncio.sleep(1)
         guild = event.player.guild
         if guild.id not in self._channel_cache:
@@ -661,3 +784,65 @@ class PyLavController(
         if await self.bot.cog_disabled_in_guild(self, channel.guild):
             return
         await self._view_cache[channel.id].update_view()
+
+    async def __add_failed_message_to_delete(self, message: discord.Message) -> None:
+        async with self.__lock[message.guild.id]:
+            self.__failed_messages_to_delete[message.guild.id].add(message)
+
+    async def __copy_failed_message_to_delete(self, guild_id: int) -> set[discord.Message]:
+        async with self.__lock[guild_id]:
+            now = get_now_utc()
+            r = {m for m in self.__failed_messages_to_delete[guild_id] if m.created_at + timedelta(seconds=10) < now}
+            remaining = self.__failed_messages_to_delete[guild_id] - r
+            self.__failed_messages_to_delete[guild_id] = remaining
+            return r
+
+    async def delete_failed_messages(self) -> None:
+        await self.__ready.wait()
+        for guild_id in self.__failed_messages_to_delete:
+            if self.bot.get_guild(guild_id) is None:
+                self.__failed_messages_to_delete.pop(guild_id, None)
+                continue
+            channel = self.bot.get_channel(self._channel_cache[guild_id])
+            if channel is None:
+                return
+            messages = list(await self.__copy_failed_message_to_delete(guild_id))
+            for chunk in [messages[i : i + 100] for i in range(0, len(messages), 100)]:
+                await channel.delete_messages(chunk, reason=_("PyLavController: Deleting failed messages is channel"))
+
+    async def add_failure_reaction(self, message: discord.Message) -> None:
+        await self.__add_failed_message_to_delete(message)
+        with contextlib.suppress(discord.HTTPException):
+            await message.add_reaction("\N{CROSS MARK}")
+
+    async def __add_successful_message_to_delete(self, message: discord.Message) -> None:
+        async with self.__lock[message.guild.id]:
+            self.__success_messages_to_delete[message.guild.id].add(message)
+
+    async def __copy_success_messages_to_delete(self, guild_id: int) -> set[discord.Message]:
+        async with self.__lock[guild_id]:
+            now = get_now_utc()
+            r = {m for m in self.__success_messages_to_delete[guild_id] if m.created_at + timedelta(seconds=30) < now}
+            remaining = self.__success_messages_to_delete[guild_id] - r
+            self.__success_messages_to_delete[guild_id] = remaining
+            return r
+
+    async def delete_successful_messages(self) -> None:
+        await self.__ready.wait()
+        for guild_id in self.__success_messages_to_delete:
+            if self.bot.get_guild(guild_id) is None:
+                self.__success_messages_to_delete.pop(guild_id, None)
+                continue
+            channel = self.bot.get_channel(self._channel_cache[guild_id])
+            if channel is None:
+                return
+            messages = list(await self.__copy_success_messages_to_delete(guild_id))
+            for chunk in [messages[i : i + 100] for i in range(0, len(messages), 100)]:
+                await channel.delete_messages(
+                    chunk, reason=_("PyLavController: Deleting successful messages is channel")
+                )
+
+    async def add_success_reaction(self, message: discord.Message) -> None:
+        await self.__add_successful_message_to_delete(message)
+        with contextlib.suppress(discord.HTTPException):
+            await message.add_reaction("\N{WHITE HEAVY CHECK MARK}")
