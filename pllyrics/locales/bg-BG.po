@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-02-03 20:16+0000\n"
-"PO-Revision-Date: 2023-02-06 20:45\n"
+"POT-Creation-Date: 2023-02-10 18:22+0000\n"
+"PO-Revision-Date: 2023-02-10 18:22\n"
 "Last-Translator: \n"
 "Language-Team: Bulgarian\n"
 "MIME-Version: 1.0\n"
@@ -88,65 +88,97 @@ msgstr "Покажи текста за текущата песен, ако им�
 msgid "I am not currently playing anything on this server."
 msgstr "В момента не играя нищо на този сървър."
 
-#: pllyrics/cog.py:203
+#: pllyrics/cog.py:206
 msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
 msgstr "Срещнах грешка, докато търсех текста на тази песен: {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:215
+#: pllyrics/cog.py:218
 msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
 msgstr "Цветният API, който използвам, за да намеря текстове, върна грешка, докато търсех текста за тази песен {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:227
-msgid "No lyrics found"
-msgstr "Няма намерени текстове на песни"
+#: pllyrics/cog.py:230
+msgid "No lyrics found."
+msgstr ""
 
-#: pllyrics/cog.py:242
-msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "Намерих текста за {title_variable_do_not_translate} от {author_variable_do_not_translate} -Част {page_variable_do_not_translate}."
-
-#: pllyrics/cog.py:246
-msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "Намерих текста за {title_variable_do_not_translate} -Част {page_variable_do_not_translate}."
+#: pllyrics/cog.py:248
+msgid "Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:252
-msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "(Познай) Намерих текста за {title_variable_do_not_translate} от {author_variable_do_not_translate} -Част {page_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:256
-msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "(Познай) Намерих текста за {title_variable_do_not_translate} -Част {page_variable_do_not_translate}."
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
-#: pllyrics/cog.py:262
-msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
-msgstr "Намерих текста за {title_variable_do_not_translate} от {author_variable_do_not_translate}."
+#: pllyrics/cog.py:260
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:266
-msgid "I have found the lyrics for {title_variable_do_not_translate}."
-msgstr "Намерих текста за {title_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:268
-msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
-msgstr "(Познай) Намерих текста за {title_variable_do_not_translate} от {author_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:272
-msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
-msgstr "(Познай) Намерих текста за {title_variable_do_not_translate}."
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
 
-#: pllyrics/cog.py:289 pllyrics/cog.py:369
+#: pllyrics/cog.py:274
+msgid "(Guess) Lyrics for {title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:282
+msgid "{title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:286
+msgid "{title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:290
+msgid "(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:294
+msgid "(Guess) {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:298
+msgid "{title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:300
+msgid "{title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:304
+msgid "(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:306
+msgid "(Guess) {title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:328 pllyrics/cog.py:413
 msgid "Lyrics provided by {provider_variable_do_not_translate}."
 msgstr "Текстове на песни, предоставени от {provider_variable_do_not_translate}."
 
-#: pllyrics/cog.py:306
+#: pllyrics/cog.py:350
 msgid "Lyrics provided by {provider_variable_do_not_translate}"
 msgstr "Текстове на песни, предоставени от {provider_variable_do_not_translate}"
 
-#: pllyrics/cog.py:359
+#: pllyrics/cog.py:404
 msgid "{lyrics_variable_do_not_translate}\n\n"
 "Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
 msgstr "{lyrics_variable_do_not_translate}\n\n"
 "Положение: {duration_variable_do_not_translate} до {until_variable_do_not_translate}"
 
-#: pllyrics/cog.py:365
+#: pllyrics/cog.py:410
 msgid "Start"
 msgstr "Започвам"
 

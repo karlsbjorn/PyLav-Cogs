@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-02-07 01:00+0000\n"
-"PO-Revision-Date: 2023-02-07 01:01\n"
+"POT-Creation-Date: 2023-02-07 20:32+0000\n"
+"PO-Revision-Date: 2023-02-08 21:06\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +114,7 @@ msgstr "प्लेयर वॉल्यूम सेट पर {volume_variab
 
 #: plcontroller/cog.py:385 plcontroller/cog.py:420 plcontroller/cog.py:462
 #: plcontroller/cog.py:491 plcontroller/cog.py:521 plcontroller/cog.py:551
-#: plcontroller/cog.py:577 plcontroller/view.py:586 plcontroller/view.py:616
+#: plcontroller/cog.py:577 plcontroller/view.py:591 plcontroller/view.py:621
 msgid "I am not currently playing anything on this server."
 msgstr "मैं वर्तमान में इस सर्वर पर कुछ भी नहीं खेल रहा हूं।"
 
@@ -188,33 +188,33 @@ msgstr "कृपया सुनिश्चित करें कि मे�
 
 #: plcontroller/cog.py:811
 msgid "PyLavController: Deleting failed messages is channel"
-msgstr ""
+msgstr "PyLavController: विफल संदेशों को हटाना चैनल है"
 
 #: plcontroller/cog.py:842
 msgid "PyLavController: Deleting successful messages is channel"
-msgstr ""
+msgstr "PyLavController: सफल संदेशों को हटाना चैनल है"
 
 #: plcontroller/view.py:151 plcontroller/view.py:176 plcontroller/view.py:210
 msgid "I am not connected to any voice channel at the moment."
 msgstr "मैं इस समय किसी वॉयस चैनल से जुड़ा नहीं हूं।"
 
-#: plcontroller/view.py:452
+#: plcontroller/view.py:457
 msgid "PyLav Controller"
 msgstr "PyLav नियंत्रक"
 
-#: plcontroller/view.py:522
+#: plcontroller/view.py:527
 msgid "You need to be a disc jockey in this server to play tracks in this server."
 msgstr "इस सर्वर में ट्रैक चलाने के लिए आपको इस सर्वर में डिस्क जॉकी होना आवश्यक है."
 
-#: plcontroller/view.py:536
+#: plcontroller/view.py:541
 msgid "You must be in a voice channel, so I can connect to it."
 msgstr "आपको एक वॉयस चैनल में होना चाहिए, इसलिए मैं इससे जुड़ सकता हूं।"
 
-#: plcontroller/view.py:544
+#: plcontroller/view.py:549
 msgid "I do not have permission to connect or speak in {channel_variable_do_not_translate}."
 msgstr "मुझे कनेक्ट करने या बोलने की अनुमति नहीं है {channel_variable_do_not_translate}."
 
-#: plcontroller/view.py:560
+#: plcontroller/view.py:565
 msgid "\n\n"
 "You can search specific services by using the following prefixes:\n"
 "{deezer_service_variable_do_not_translate}  - Deezer\n"
@@ -238,7 +238,7 @@ msgstr "\n\n"
 "उदाहरण: {example_variable_do_not_translate}.\n\n"
 "यदि कोई उपसर्ग का उपयोग नहीं किया जाता है तो मैं डिफ़ॉल्ट रूप से {fallback_service_variable_do_not_translate}\n"
 
-#: plcontroller/view.py:607
+#: plcontroller/view.py:612
 msgid "You need to be a disc jockey to interact with the controller in this server."
 msgstr "इस सर्वर में नियंत्रक के साथ इंटरैक्ट करने के लिए आपको डिस्क जॉकी होने की आवश्यकता है।"
 

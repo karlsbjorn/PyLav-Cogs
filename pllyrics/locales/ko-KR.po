@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-02-03 20:16+0000\n"
-"PO-Revision-Date: 2023-02-06 20:45\n"
+"POT-Creation-Date: 2023-02-10 18:22+0000\n"
+"PO-Revision-Date: 2023-02-10 18:22\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -88,65 +88,97 @@ msgstr "가능한 경우 현재 트랙의 가사 표시"
 msgid "I am not currently playing anything on this server."
 msgstr "현재이 서버에서 아무 것도하지 않습니다."
 
-#: pllyrics/cog.py:203
+#: pllyrics/cog.py:206
 msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
 msgstr "이 노래의 가사를 찾는 동안 오류가 발생했습니다. {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:215
+#: pllyrics/cog.py:218
 msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
 msgstr "가사를 찾는 데 사용하는 Flowery API가이 노래의 가사를 찾는 동안 오류를 반환했습니다. {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:227
-msgid "No lyrics found"
-msgstr "가사를 찾을 수 없음"
+#: pllyrics/cog.py:230
+msgid "No lyrics found."
+msgstr ""
 
-#: pllyrics/cog.py:242
-msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "나는 가사를 발견했다. {title_variable_do_not_translate} 곁에 {author_variable_do_not_translate} -부분 {page_variable_do_not_translate}."
-
-#: pllyrics/cog.py:246
-msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "나는 가사를 발견했다. {title_variable_do_not_translate} -부분 {page_variable_do_not_translate}."
+#: pllyrics/cog.py:248
+msgid "Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:252
-msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "(추측) 나는 가사를 발견했다. {title_variable_do_not_translate} 곁에 {author_variable_do_not_translate} -부분 {page_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:256
-msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "(추측) 나는 가사를 발견했다. {title_variable_do_not_translate} -부분 {page_variable_do_not_translate}."
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
-#: pllyrics/cog.py:262
-msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
-msgstr "나는 가사를 발견했다. {title_variable_do_not_translate} 곁에 {author_variable_do_not_translate}."
+#: pllyrics/cog.py:260
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:266
-msgid "I have found the lyrics for {title_variable_do_not_translate}."
-msgstr "나는 가사를 발견했다. {title_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:268
-msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
-msgstr "(추측) 나는 가사를 발견했다. {title_variable_do_not_translate} 곁에 {author_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:272
-msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
-msgstr "(추측) 나는 가사를 발견했다. {title_variable_do_not_translate}."
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
 
-#: pllyrics/cog.py:289 pllyrics/cog.py:369
+#: pllyrics/cog.py:274
+msgid "(Guess) Lyrics for {title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:282
+msgid "{title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:286
+msgid "{title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:290
+msgid "(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:294
+msgid "(Guess) {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:298
+msgid "{title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:300
+msgid "{title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:304
+msgid "(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:306
+msgid "(Guess) {title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:328 pllyrics/cog.py:413
 msgid "Lyrics provided by {provider_variable_do_not_translate}."
 msgstr "가사 제공 {provider_variable_do_not_translate}."
 
-#: pllyrics/cog.py:306
+#: pllyrics/cog.py:350
 msgid "Lyrics provided by {provider_variable_do_not_translate}"
 msgstr "가사 제공 {provider_variable_do_not_translate}"
 
-#: pllyrics/cog.py:359
+#: pllyrics/cog.py:404
 msgid "{lyrics_variable_do_not_translate}\n\n"
 "Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
 msgstr "{lyrics_variable_do_not_translate}\n\n"
 "위치: {duration_variable_do_not_translate} 까지 {until_variable_do_not_translate}"
 
-#: pllyrics/cog.py:365
+#: pllyrics/cog.py:410
 msgid "Start"
 msgstr "시작하다"
 

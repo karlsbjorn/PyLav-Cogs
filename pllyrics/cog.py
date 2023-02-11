@@ -172,7 +172,7 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
             guild=context.guild,
             send_error=True,
             channel_id=context.channel.id,
-            forced=True,
+            manual=True,
         )
 
     async def cog_unload(self) -> None:
@@ -181,7 +181,7 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
                 task.cancel()
 
     async def _send_full_lyrics(
-        self, track: Track, channel_id: int, guild: discord.Guild, send_error: bool = False, forced: bool = False
+        self, track: Track, channel_id: int, guild: discord.Guild, send_error: bool = False, manual: bool = False
     ) -> None:
         channel = guild.get_channel(channel_id)
         if not channel:
@@ -191,7 +191,10 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
             return
         if not player.current:
             return
-        if self._track_cache[guild.id] and self._track_cache[guild.id] != track.encoded and not forced:
+        if (
+            guild.id not in self._track_cache
+            or (self._track_cache[guild.id] and self._track_cache[guild.id] != track.encoded)
+        ) and not manual:
             return
         try:
             exact, response = await track.fetch_lyrics()
@@ -224,88 +227,130 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
                 return
             await channel.send(
                 embed=await self.pylav.construct_embed(
-                    description=_("No lyrics found"),
+                    description=_("No lyrics found."),
                     messageable=channel,
                 ),
             )
             return
         lyrics = response.lyrics.text
         show_author = await track.source() in {"deezer", "spotify", "applemusic"}
-        if self._track_cache[guild.id] and self._track_cache[guild.id] != track.encoded:
+        if guild.id not in self._track_cache or (
+            self._track_cache[guild.id] and self._track_cache[guild.id] != track.encoded
+        ):
             return
-        await self._send_lyrics_messages(channel, exact, lyrics, response, show_author, track)
+        await self._send_lyrics_messages(channel, exact, lyrics, response, show_author, track, manual)
 
-    def _get_translated_message_contents(self, exact: bool, show_author: bool, part: int | None = None) -> str:
+    @staticmethod
+    def _get_translated_automated_message_contents(exact: bool, show_author: bool, part: int | None = None):
         if part:
             if exact:
                 return (
                     _(
-                        "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+                        "Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
                     )
                     if show_author
-                    else _(
-                        "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-                    )
+                    else _("Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}")
                 )
             else:
                 return (
                     _(
-                        "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+                        "(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
                     )
                     if show_author
                     else _(
-                        "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
+                        "(Guess) Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
                     )
                 )
         elif exact:
-            if show_author:
-                return _(
-                    "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
-                )
-            else:
-                return _("I have found the lyrics for {title_variable_do_not_translate}.")
-        elif show_author:
-            return _(
-                "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
+            return (
+                _("Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}")
+                if show_author
+                else _("Lyrics for {title_variable_do_not_translate}")
             )
         else:
-            return _("(Guess)I have found the lyrics for {title_variable_do_not_translate}.")
+            return (
+                _("(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}")
+                if show_author
+                else _("(Guess) Lyrics for {title_variable_do_not_translate}")
+            )
 
-    async def _send_lyrics_messages(self, channel, exact, lyrics, response, show_author, track):
+    @staticmethod
+    def _get_translated_message_contents(exact: bool, show_author: bool, part: int | None = None) -> str:
+        if part:
+            if exact:
+                return (
+                    _(
+                        "{title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+                    )
+                    if show_author
+                    else _("{title_variable_do_not_translate} - Part {page_variable_do_not_translate}")
+                )
+            else:
+                return (
+                    _(
+                        "(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+                    )
+                    if show_author
+                    else _("(Guess) {title_variable_do_not_translate} - Part {page_variable_do_not_translate}")
+                )
+        elif exact:
+            return (
+                _("{title_variable_do_not_translate} by {author_variable_do_not_translate}")
+                if show_author
+                else _("{title_variable_do_not_translate}")
+            )
+        else:
+            return (
+                _("(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate}")
+                if show_author
+                else _("(Guess) {title_variable_do_not_translate}")
+            )
+
+    async def _send_lyrics_messages(self, channel, exact, lyrics, response, show_author, track, manual):
         if len(lyrics) > 3950:
             embed_list = []
             for i, page in enumerate(pagify(lyrics, delims=["\n"], page_length=3950), start=1):
-                translated_message = self._get_translated_message_contents(exact, show_author, i)
+                translated_message = (
+                    self._get_translated_message_contents(exact, show_author, i)
+                    if manual
+                    else self._get_translated_automated_message_contents(exact, show_author, i)
+                )
                 embed_list.append(
                     await self.pylav.construct_embed(
                         title=translated_message.format(
                             title_variable_do_not_translate=await track.title(),
                             page_variable_do_not_translate=i,
-                            name_variable_do_not_translate=await track.author(),
+                            author_variable_do_not_translate=await track.author(),
                         ),
-                        description=page,
                         url=await track.uri(),
-                        messageable=channel,
+                        description=page,
+                        thumbnail=await track.artworkUrl(),
                         footer=_("Lyrics provided by {provider_variable_do_not_translate}.").format(
                             provider_variable_do_not_translate=response.provider
                         ),
+                        messageable=channel,
                     )
                 )
             await channel.send(embeds=embed_list)
         else:
-            translated_message = self._get_translated_message_contents(exact, show_author, None)
+            translated_message = (
+                self._get_translated_message_contents(exact, show_author, None)
+                if manual
+                else self._get_translated_automated_message_contents(exact, show_author, None)
+            )
             await channel.send(
                 embed=await self.pylav.construct_embed(
                     title=translated_message.format(
                         title_variable_do_not_translate=await track.title(),
-                        name_variable_do_not_translate=await track.author(),
+                        author_variable_do_not_translate=await track.author(),
                     ),
                     url=await track.uri(),
                     description=lyrics,
-                    messageable=channel,
+                    thumbnail=await track.artworkUrl(),
                     footer=_("Lyrics provided by {provider_variable_do_not_translate}").format(
                         provider_variable_do_not_translate=response.provider
                     ),
+                    messageable=channel,
                 )
             )
 
@@ -348,12 +393,12 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
             if player.timescale.changed:
                 sleep_duration = player.timescale.adjust_position(sleep_duration)
 
-            translated_message = self._get_translated_message_contents(exact, show_author, None)
+            translated_message = self._get_translated_automated_message_contents(exact, show_author, None)
             await channel.send(
                 embed=await self.pylav.construct_embed(
                     title=translated_message.format(
                         title_variable_do_not_translate=await track.title(),
-                        name_variable_do_not_translate=await track.author(),
+                        author_variable_do_not_translate=await track.author(),
                     ),
                     url=await track.uri(),
                     description=_(
@@ -365,10 +410,11 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
                         else _("Start"),
                         until_variable_do_not_translate=format_time_dd_hh_mm_ss(start_point + delta),
                     ),
-                    messageable=channel,
                     footer=_("Lyrics provided by {provider_variable_do_not_translate}.").format(
                         provider_variable_do_not_translate=response.provider
                     ),
+                    thumbnail=await track.artworkUrl(),
+                    messageable=channel,
                 )
             )
             await asyncio.sleep(sleep_duration // 1000)
@@ -406,14 +452,6 @@ class PyLavLyrics(DISCORD_COG_TYPE_MIXIN):
         for task in self._tasks:
             if task.done():
                 self._tasks.remove(task)
-
-    @commands.Cog.listener()
-    async def on_pylav_track_start_spotify_event(self, event: TrackStartEvent) -> None:
-        await self.process_event(event)
-
-    @commands.Cog.listener()
-    async def on_pylav_track_start_deezer_event(self, event: TrackStartEvent) -> None:
-        await self.process_event(event)
 
     @commands.Cog.listener()
     async def on_pylav_track_start_event(self, event: TrackStartEvent) -> None:

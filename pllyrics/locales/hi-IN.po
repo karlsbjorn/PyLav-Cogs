@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pylav\n"
-"POT-Creation-Date: 2023-02-03 20:16+0000\n"
-"PO-Revision-Date: 2023-02-06 20:46\n"
+"POT-Creation-Date: 2023-02-10 18:22+0000\n"
+"PO-Revision-Date: 2023-02-10 18:22\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
@@ -88,65 +88,97 @@ msgstr "यदि उपलब्ध हो तो वर्तमान ट्�
 msgid "I am not currently playing anything on this server."
 msgstr "मैं वर्तमान में इस सर्वर पर कुछ भी नहीं खेल रहा हूं।"
 
-#: pllyrics/cog.py:203
+#: pllyrics/cog.py:206
 msgid "I have encountered an error while looking for the lyrics for this song: {error_variable_do_not_translate}."
 msgstr "मुझे इस गीत के लिए गीत की तलाश करते समय एक त्रुटि का सामना करना पड़ा है: {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:215
+#: pllyrics/cog.py:218
 msgid "The Flowery API, which I use to find lyrics, has returned an error while looking for the lyrics for this song {error_variable_do_not_translate}."
 msgstr "फूलों का एपीआई, जिसका उपयोग मैं गीत खोजने के लिए करता हूं, ने इस गीत के लिए गीत की तलाश करते समय एक त्रुटि दी है {error_variable_do_not_translate}."
 
-#: pllyrics/cog.py:227
-msgid "No lyrics found"
-msgstr "कोई गीत नहीं मिला"
+#: pllyrics/cog.py:230
+msgid "No lyrics found."
+msgstr ""
 
-#: pllyrics/cog.py:242
-msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate} द्वारा {author_variable_do_not_translate} -भाग {page_variable_do_not_translate}."
-
-#: pllyrics/cog.py:246
-msgid "I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate} -भाग {page_variable_do_not_translate}."
+#: pllyrics/cog.py:248
+msgid "Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:252
-msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "(अनुमान) मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate} द्वारा {author_variable_do_not_translate} -भाग {page_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:256
-msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}."
-msgstr "(अनुमान) मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate} -भाग {page_variable_do_not_translate}."
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
-#: pllyrics/cog.py:262
-msgid "I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
-msgstr "मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate} द्वारा {author_variable_do_not_translate}."
+#: pllyrics/cog.py:260
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:266
-msgid "I have found the lyrics for {title_variable_do_not_translate}."
-msgstr "मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:268
-msgid "(Guess) I have found the lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}."
-msgstr "(अनुमान) मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate} द्वारा {author_variable_do_not_translate}."
+msgid "Lyrics for {title_variable_do_not_translate}"
+msgstr ""
 
 #: pllyrics/cog.py:272
-msgid "(Guess)I have found the lyrics for {title_variable_do_not_translate}."
-msgstr "(अनुमान) मुझे इसके लिए गीत मिल गए हैं {title_variable_do_not_translate}."
+msgid "(Guess) Lyrics for {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
 
-#: pllyrics/cog.py:289 pllyrics/cog.py:369
+#: pllyrics/cog.py:274
+msgid "(Guess) Lyrics for {title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:282
+msgid "{title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:286
+msgid "{title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:290
+msgid "(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:294
+msgid "(Guess) {title_variable_do_not_translate} - Part {page_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:298
+msgid "{title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:300
+msgid "{title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:304
+msgid "(Guess) {title_variable_do_not_translate} by {author_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:306
+msgid "(Guess) {title_variable_do_not_translate}"
+msgstr ""
+
+#: pllyrics/cog.py:328 pllyrics/cog.py:413
 msgid "Lyrics provided by {provider_variable_do_not_translate}."
 msgstr "द्वारा प्रदान किए गए गीत {provider_variable_do_not_translate}."
 
-#: pllyrics/cog.py:306
+#: pllyrics/cog.py:350
 msgid "Lyrics provided by {provider_variable_do_not_translate}"
 msgstr "द्वारा प्रदान किए गए गीत {provider_variable_do_not_translate}"
 
-#: pllyrics/cog.py:359
+#: pllyrics/cog.py:404
 msgid "{lyrics_variable_do_not_translate}\n\n"
 "Position: {duration_variable_do_not_translate} until {until_variable_do_not_translate}"
 msgstr "{lyrics_variable_do_not_translate}\n\n"
 "पद: {duration_variable_do_not_translate} तक {until_variable_do_not_translate}"
 
-#: pllyrics/cog.py:365
+#: pllyrics/cog.py:410
 msgid "Start"
 msgstr "निकल"
 
