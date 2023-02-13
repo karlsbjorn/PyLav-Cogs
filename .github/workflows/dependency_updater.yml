@@ -11,13 +11,14 @@ on:
 jobs:
     update:
         name: Update PyLav version
-        runs-on: ubuntu-latest
+        runs-on: [self-hosted, linux, x64]
         steps:
         -   uses: actions/checkout@v3
         -   name: Set up Python
             uses: actions/setup-python@v4
             with:
                 python-version: '3.11'
+                cache: pip
         -   name: Install Python dependencies
             uses: py-actions/py-dependency-install@v4
             with:

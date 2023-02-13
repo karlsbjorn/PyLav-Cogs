@@ -12,8 +12,8 @@ on:
 
 jobs:
     crowdin:
-        if: github.repository == 'Drapersniper/PyLav-Cogs'
-        runs-on: ubuntu-latest
+        if: github.repository == 'PyLav/PyLav-Cogs'
+        runs-on: [ubuntu-latest]
         steps:
         -   uses: actions/checkout@v3
         -   name: Set up Python
