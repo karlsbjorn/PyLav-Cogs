@@ -1,5 +1,4 @@
 # Official [PyLav](https://github.com/PyLav/Py-Lav) Cogs for [Red-DiscordBot](https://github.com/Cog-Creators/Red-DiscordBot)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/PyLav/PyLav-Cogs/master.svg)](https://results.pre-commit.ci/latest/github/PyLav/PyLav-Cogs/master)
 [![Crowdin](https://badges.crowdin.net/pylav/localized.svg)](https://crowdin.com/project/pylav)[![GitHub license](https://img.shields.io/github/license/PyLav/Py-Lav.svg)](https://github.com/PyLav/Py-Lav/blob/master/LICENSE)
 [![Support Server](https://img.shields.io/discord/970987707834720266)](https://discord.com/invite/Sjh2TSCYQB)
 
@@ -28,7 +27,7 @@ About Cogs
 Installation
 ---------------------------
 To add the cogs to your Red instance run:
-- `[p]repo add PyLav https://github.com/PyLav/PyLav-Cogs`.
+- `[p]repo add PyLav https://github.com/PyLav/Red-Cogs`.
 - `[p]cog install PyLav <Package Name>`
 - `[p]load <Package Name>`
 
@@ -43,7 +42,7 @@ Follow [PyLav Setup](https://github.com/PyLav/PyLav/blob/master/SETUP.md)
 If you already have a Red instance with PyLav setup then you can do the following
 ```
 [p]load downloader
-[p]repo add PyLav https://github.com/PyLav/PyLav-Cogs
+[p]repo add PyLav https://github.com/PyLav/Red-Cogs
 [p]cog install PyLav audio
 [p]load audio
 ```
