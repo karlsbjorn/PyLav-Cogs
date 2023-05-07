@@ -13,7 +13,7 @@ on:
 jobs:
     analyze:
         name: Analyze
-        runs-on: [self-hosted, linux, x64]
+        runs-on: [ubuntu-latest]
         permissions:
             actions: read
             contents: read
@@ -25,7 +25,7 @@ jobs:
                 -   python
         steps:
         -   name: Checkout repository
-            uses: actions/checkout@v3.4.0
+            uses: actions/checkout@v3.5.2
         -   name: Initialize CodeQL
             uses: github/codeql-action/init@v2
             with:
