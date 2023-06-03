@@ -45,6 +45,7 @@ class PyLavRadio(DISCORD_COG_TYPE_MIXIN):
         description=shorten_string(
             max_length=100, string=_("Stavi radio stanicu u red čekanja. Koristi argumente za filtriranje.")
         ),
+        extras={"red_force_enable": True},
     )
     @app_commands.describe(
         stations=shorten_string(max_length=100, string=_("Ime stanice")),
@@ -151,6 +152,7 @@ class PyLavRadio(DISCORD_COG_TYPE_MIXIN):
                     messageable=context,
                 ),
                 ephemeral=True,
+                file=await single_track.get_embedded_artwork(),
             )
             await station.click()
         else:

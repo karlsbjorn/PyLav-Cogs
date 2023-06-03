@@ -8,9 +8,10 @@ from redbot.core.i18n import Translator
 from redbot.core.utils.chat_formatting import box
 from tabulate import tabulate
 
+from pylav._internals.functions import get_true_path
+from pylav.constants.config import IN_CONTAINER
 from pylav.core.context import PyLavContext
 from pylav.extension.bundled_node import LAVALINK_DOWNLOAD_DIR
-from pylav.extension.bundled_node.utils import get_true_path
 from pylav.helpers.format.ascii import EightBitANSI
 from pylav.helpers.format.strings import shorten_string
 from pylav.type_hints.bot import DISCORD_COG_TYPE, DISCORD_INTERACTION_TYPE
@@ -30,7 +31,7 @@ class EmbedGenerator:
         data = [
             (
                 EightBitANSI.paint_white(_("Use Managed Node")),
-                enabled if pylav_config["enable_managed_node"] else disabled,
+                enabled if pylav_config["enable_managed_node"] and not IN_CONTAINER else disabled,
             ),
             (
                 EightBitANSI.paint_white(_("Auto Update\nManaged Node")),

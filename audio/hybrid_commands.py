@@ -9,6 +9,7 @@ import discord
 from discord import app_commands
 from redbot.core import commands
 from redbot.core.i18n import Translator
+from redbot.core.utils.chat_formatting import humanize_list
 
 from pylav.core.context import PyLavContext
 from pylav.extension.red.ui.menus.queue import QueueMenu
@@ -18,7 +19,7 @@ from pylav.extension.red.utils.decorators import invoker_is_dj, requires_player
 from pylav.extension.red.utils.validators import valid_query_attachment
 from pylav.helpers.format.strings import format_time_dd_hh_mm_ss, shorten_string
 from pylav.logging import getLogger
-from pylav.nodes.api.responses.track import Track as TrackResponse
+from pylav.nodes.api.responses.track import Track as Track_namespace_conflict
 from pylav.players.query.obj import Query
 from pylav.players.tracks.obj import Track
 from pylav.type_hints.bot import DISCORD_COG_TYPE_MIXIN
@@ -35,6 +36,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         name="play",
         description=shorten_string(max_length=100, string=_("Reproduciraj pjesmu.")),
         aliases=["p"],
+        extras={"red_force_enable": True},
     )
     @app_commands.describe(
         query=shorten_string(max_length=100, string=_("Upit za reprodukciju, link ili tekst za pretraživanje")),
@@ -117,7 +119,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             await player.stop(context.author)
             await player.move_to(context.author, context.author.voice.channel)
 
-        if isinstance(query, (Track, TrackResponse)):
+        if isinstance(query, (Track, Track_namespace_conflict)):
             track = await Track.build_track(
                 node=player.node,
                 data=query,
@@ -130,7 +132,9 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             await player.add(track=track, requester=context.author.id)
             if not (player.is_active or player.queue.empty()):
                 await player.next(requester=context.author)
-            await self._process_play_message(context, track, 1)
+            query = await track.query()
+            queries = [] if query is None else [query]
+            await self._process_play_message(context, track, 1, queries)
             return
         queries = [await Query.from_string(qf) for q in query.split("\n") if (qf := q.strip("<>").strip())]
         total_tracks_enqueue = 0
@@ -142,22 +146,63 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         if not (player.is_active or player.queue.empty()):
             await player.next(requester=context.author)
 
-        await self._process_play_message(context, single_track, total_tracks_enqueue)
+        await self._process_play_message(context, single_track, total_tracks_enqueue, queries)
 
-    async def _process_play_message(self, context, single_track, total_tracks_enqueue):
+    async def _process_play_message(self, context, single_track, total_tracks_enqueue, queries):
         artwork = None
+        file = None
         match total_tracks_enqueue:
             case 1:
-                description = _("{track_name_variable_do_not_translate} enqueued.").format(
-                    track_name_variable_do_not_translate=await single_track.get_track_display_name(with_url=True)
-                )
+                if len(queries) == 1:
+                    description = _(
+                        "{track_name_variable_do_not_translate} enqueued for {service_variable_do_not_translate}."
+                    ).format(
+                        service_variable_do_not_translate=queries[0].source,
+                        track_name_variable_do_not_translate=await single_track.get_track_display_name(with_url=True),
+                    )
+                elif len(queries) > 1:
+                    description = _(
+                        "{track_name_variable_do_not_translate} enqueued for {services_variable_do_not_translate}."
+                    ).format(
+                        services_variable_do_not_translate=humanize_list([q.source for q in queries]),
+                        track_name_variable_do_not_translate=await single_track.get_track_display_name(with_url=True),
+                    )
+                else:
+                    description = _("{track_name_variable_do_not_translate} enqueued.").format(
+                        track_name_variable_do_not_translate=await single_track.get_track_display_name(with_url=True)
+                    )
                 artwork = await single_track.artworkUrl()
+                file = await single_track.get_embedded_artwork()
             case 0:
-                description = _("No tracks were found for your query.")
+                if len(queries) == 1:
+                    description = _(
+                        "No tracks were found for your query on {service_variable_do_not_translate}."
+                    ).format(service_variable_do_not_translate=queries[0].source)
+                elif len(queries) > 1:
+                    description = _(
+                        "No tracks were found for your queries on {services_variable_do_not_translate}."
+                    ).format(services_variable_do_not_translate=humanize_list([q.source for q in queries]))
+                else:
+                    description = _("No tracks were found for your query.")
             case __:
-                description = _("{number_of_tracks_variable_do_not_translate} tracks enqueued.").format(
-                    number_of_tracks_variable_do_not_translate=total_tracks_enqueue
-                )
+                if len(queries) == 1:
+                    description = _(
+                        "{number_of_tracks_variable_do_not_translate} tracks enqueued for {service_variable_do_not_translate}."
+                    ).format(
+                        service_variable_do_not_translate=queries[0].source,
+                        number_of_tracks_variable_do_not_translate=total_tracks_enqueue,
+                    )
+                elif len(queries) > 1:
+                    description = _(
+                        "{number_of_tracks_variable_do_not_translate} tracks enqueued for {services_variable_do_not_translate}."
+                    ).format(
+                        services_variable_do_not_translate=humanize_list([q.source for q in queries]),
+                        number_of_tracks_variable_do_not_translate=total_tracks_enqueue,
+                    )
+                else:
+                    description = _("{number_of_tracks_variable_do_not_translate} tracks enqueued.").format(
+                        number_of_tracks_variable_do_not_translate=total_tracks_enqueue
+                    )
         await context.send(
             embed=await self.pylav.construct_embed(
                 description=description,
@@ -165,6 +210,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
                 messageable=context,
             ),
             ephemeral=True,
+            file=file,
         )
 
     async def _process_play_queries(self, context, queries, player, single_track, total_tracks_enqueue):
@@ -176,7 +222,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         total_tracks_enqueue += count
         if count:
             if count == 1:
-                await player.add(requester=context.author.id, track=successful[0])
+                await player.add(requester=context.author.id, track=single_track)
             else:
                 await player.bulk_add(requester=context.author.id, tracks_and_queries=successful)
         return single_track, total_tracks_enqueue
@@ -202,6 +248,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         description=shorten_string(
             max_length=100, string=_("Povezuje se na navedeni kanal ili tvoj trenutni kanal")
         ),
+        extras={"red_force_enable": True},
     )
     @app_commands.describe(channel=shorten_string(max_length=100, string=_("Glasovni kanal u koji se povezujem")))
     @commands.guild_only()
@@ -292,6 +339,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         name="np",
         description=shorten_string(max_length=100, string=_("Prikazuje pjesmu koja se trenutno reproducira")),
         aliases=["now"],
+        extras={"red_force_enable": True},
     )
     @commands.guild_only()
     @requires_player()
@@ -309,12 +357,13 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
                 ephemeral=True,
             )
             return
-        current_embed = await context.player.get_currently_playing_message(messageable=context)
-        await context.send(embed=current_embed, ephemeral=True)
+        kwargs = await context.player.get_currently_playing_message(messageable=context)
+        await context.send(ephemeral=True, **kwargs)
 
     @commands.hybrid_command(
         name="skip",
-        description=shorten_string(max_length=100, string=_("Preskoči trenutnu pjesmu")),
+        description=shorten_string(max_length=100, string=_("Skips the current track.")),
+        extras={"red_force_enable": True},
     )
     @commands.guild_only()
     @requires_player()
@@ -346,12 +395,14 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
                     messageable=context,
                 ),
                 ephemeral=True,
+                file=await context.player.current.get_embedded_artwork(),
             )
         await context.player.skip(requester=context.author)
 
     @commands.hybrid_command(
         name="stop",
-        description=shorten_string(max_length=100, string=_("Zaustavlja reprodukciju i uklanja sve u redu čekanja")),
+        description=shorten_string(max_length=100, string=_("Stops the player and clears the queue.")),
+        extras={"red_force_enable": True},
     )
     @commands.guild_only()
     @requires_player()
@@ -362,7 +413,21 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             context = await self.bot.get_context(context)
         if context.interaction and not context.interaction.response.is_done():
             await context.defer(ephemeral=True)
-        if not context.player or not context.player.current:
+        if not context.player:
+            if player_state := await self.pylav.player_manager.client.player_state_db_manager.fetch_player(
+                context.guild.id
+            ):
+                await player_state.delete()
+                await context.send(
+                    embed=await context.pylav.construct_embed(
+                        description=_(
+                            "I am not currently playing anything on this server, but I've gone ahead and wiped the saved player state."
+                        ),
+                        messageable=context,
+                    ),
+                    ephemeral=True,
+                )
+                return
             await context.send(
                 embed=await context.pylav.construct_embed(
                     description=_("I am not currently playing anything on this server."), messageable=context
@@ -382,6 +447,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         name="dc",
         description=shorten_string(max_length=100, string=_("Isključuje bota iz glasovnog kanala")),
         aliases=["disconnect"],
+        extras={"red_force_enable": True},
     )
     @requires_player()
     @invoker_is_dj()
@@ -415,6 +481,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         name="queue",
         description=shorten_string(max_length=100, string=_("Prikazuje trenutni red čekanja")),
         aliases=["q"],
+        extras={"red_force_enable": True},
     )
     @commands.guild_only()
     @requires_player()
@@ -440,7 +507,9 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
         ).start(ctx=context)
 
     @commands.hybrid_command(
-        name="shuffle", description=shorten_string(max_length=100, string=_("Miješa trenutni red čekanja"))
+        name="shuffle",
+        description=shorten_string(max_length=100, string=_("Shuffles the current queue.")),
+        extras={"red_force_enable": True},
     )
     @commands.guild_only()
     @requires_player()
@@ -488,7 +557,8 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
     @commands.hybrid_command(
         name="repeat",
-        description=shorten_string(max_length=100, string=_("Ponavljaj trenutnu pjesmu ili red čekanja")),
+        description=shorten_string(max_length=100, string=_("Set whether to repeat the current song or queue.")),
+        extras={"red_force_enable": True},
     )
     @app_commands.describe(queue=shorten_string(max_length=100, string=_("Ponavlja li se red čekanja?")))
     @commands.guild_only()
@@ -532,7 +602,11 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             embed=await context.pylav.construct_embed(description=msg, messageable=context), ephemeral=True
         )
 
-    @commands.hybrid_command(name="pause", description=shorten_string(max_length=100, string=_("Pauziraj pjesmu")))
+    @commands.hybrid_command(
+        name="pause",
+        description=shorten_string(max_length=100, string=_("Pause the player")),
+        extras={"red_force_enable": True},
+    )
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -570,7 +644,11 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
-    @commands.hybrid_command(name="resume", description=shorten_string(max_length=100, string=_("Nastavi pjesmu")))
+    @commands.hybrid_command(
+        name="resume",
+        description=shorten_string(max_length=100, string=_("Resume the player")),
+        extras={"red_force_enable": True},
+    )
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -608,8 +686,10 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
-    @commands.hybrid_command(name="volume", description=_("Promijeni glasnoću"))
-    @app_commands.describe(volume=_("Glasnoća"))
+    @commands.hybrid_command(
+        name="volume", description=_("Set the current volume for the player."), extras={"red_force_enable": True}
+    )
+    @app_commands.describe(volume=_("The volume to set"))
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -669,8 +749,8 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             ephemeral=True,
         )
 
-    @commands.hybrid_command(name="seek", description=_("Pomakni pjesmu"))
-    @app_commands.describe(seek=_("Pomak"))
+    @commands.hybrid_command(name="seek", description=_("Seek the current track."), extras={"red_force_enable": True})
+    @app_commands.describe(seek=_("The player position to seek to"))
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -747,7 +827,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
             if seek == 0:
                 seek_ms = 0
             else:
-                seek_ms = (await context.player.fetch_position()) + seek * 1000
+                seek_ms = (await context.player.position()) + seek * 1000
         except ValueError:
             if seek[-1] == "%":
                 try:
@@ -783,7 +863,7 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
                     )
                     return
                 seek_ms = await context.player.current.duration() * (seek / 100)
-                seek = -round(((await context.player.fetch_position()) - seek_ms) / 1000)
+                seek = -round(((await context.player.position()) - seek_ms) / 1000)
             # Taken from https://github.com/Cog-Creators/Red-DiscordBot/blob/ec55622418810731e1ee2ede1569f81f9bddeeec/redbot/cogs/audio/core/utilities/miscellaneous.py#L28
             elif (match := _RE_TIME_CONVERTER.match(seek)) is not None:
                 hr = int(match.group(1)) if match.group(1) else 0
@@ -827,7 +907,12 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
 
         await context.player.seek(seek_ms, context.author, False)
 
-    @commands.hybrid_command(name="prev", description=_("Pusti prethodnu pjesmu"), aliases=["previous"])
+    @commands.hybrid_command(
+        name="prev",
+        description=_("Play previously played tracks."),
+        aliases=["previous"],
+        extras={"red_force_enable": True},
+    )
     @commands.guild_only()
     @requires_player()
     @invoker_is_dj()
@@ -870,4 +955,5 @@ class HybridCommands(DISCORD_COG_TYPE_MIXIN):
                 messageable=context,
             ),
             ephemeral=True,
+            file=await context.player.current.get_embedded_artwork(),
         )
